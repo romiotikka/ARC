@@ -1,0 +1,12 @@
+.venv/
+.vscode/
+
+archive/
+
+data/*.db
+data/*.bak
+data/data_backup/
+
+__pycache__/
+*.pyc
+
