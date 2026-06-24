@@ -1,0 +1,88 @@
+[2026-06-24T13:07:49.683Z] INFO  
+[2026-06-24T13:07:49.696Z] INFO  ╔═══════════════════════════════════════════════════════════╗
+[2026-06-24T13:07:49.698Z] INFO  ║    EstLat Automatic Update Pipeline                       ║
+[2026-06-24T13:07:49.701Z] INFO  ╚═══════════════════════════════════════════════════════════╝
+[2026-06-24T13:07:49.709Z] INFO  Started at 2026-06-24T13:07:49.708Z
+[2026-06-24T13:07:49.711Z] INFO  Initializing database...
+[2026-06-24T13:07:49.793Z] INFO  Database initialized successfully
+[2026-06-24T13:07:49.796Z] INFO  Step 1: Collecting game mappings from EstLat...
+[2026-06-24T13:07:49.937Z] ERROR ✗ Collection failed: collect_estlatbl_seasons.mjs exited with code 1
+[2026-06-24T13:07:49.942Z] ERROR ✗ Pipeline failed: collect_estlatbl_seasons.mjs exited with code 1
+[2026-06-24T13:08:10.906Z] INFO  
+[2026-06-24T13:08:10.911Z] INFO  ╔═══════════════════════════════════════════════════════════╗
+[2026-06-24T13:08:10.916Z] INFO  ║    EstLat Automatic Update Pipeline                       ║
+[2026-06-24T13:08:10.919Z] INFO  ╚═══════════════════════════════════════════════════════════╝
+[2026-06-24T13:08:10.922Z] INFO  Started at 2026-06-24T13:08:10.922Z
+[2026-06-24T13:08:10.925Z] INFO  Initializing database...
+[2026-06-24T13:08:10.934Z] INFO  Database initialized successfully
+[2026-06-24T13:08:10.936Z] INFO  Step 1: Collecting game mappings from EstLat...
+[2026-06-24T13:08:12.799Z] ERROR ✗ Collection failed: collect_estlatbl_seasons.mjs exited with code 1
+[2026-06-24T13:08:12.801Z] ERROR ✗ Pipeline failed: collect_estlatbl_seasons.mjs exited with code 1
+[2026-06-24T13:08:55.414Z] INFO  
+[2026-06-24T13:08:55.422Z] INFO  ╔═══════════════════════════════════════════════════════════╗
+[2026-06-24T13:08:55.425Z] INFO  ║    EstLat Automatic Update Pipeline                       ║
+[2026-06-24T13:08:55.428Z] INFO  ╚═══════════════════════════════════════════════════════════╝
+[2026-06-24T13:08:55.434Z] INFO  Started at 2026-06-24T13:08:55.433Z
+[2026-06-24T13:08:55.438Z] INFO  Initializing database...
+[2026-06-24T13:08:55.443Z] INFO  Database initialized successfully
+[2026-06-24T13:08:55.445Z] INFO  Step 1: Collecting game mappings from EstLat...
+[2026-06-24T13:11:29.824Z] INFO  ✓ Collection complete
+[2026-06-24T13:11:29.827Z] INFO  Step 2: Importing game boxscores from FIBA LiveStats...
+[2026-06-24T13:11:30.199Z] INFO  ✓ Import complete
+[2026-06-24T13:11:30.203Z] INFO  
+[2026-06-24T13:11:30.205Z] INFO  === Update Complete ===
+[2026-06-24T13:11:30.207Z] INFO  Duration: 155s
+[2026-06-24T13:11:30.209Z] INFO  Configuration: recent_seasons=true, import_limit=1
+[2026-06-24T13:11:30.211Z] WARN  ⚠ 1 games in Dead Letter Queue (pending retry)
+[2026-06-24T13:11:30.213Z] INFO  ✓ Pipeline succeeded
+[2026-06-24T13:11:30.941Z] INFO  
+[2026-06-24T13:11:30.947Z] INFO  ╔═══════════════════════════════════════════════════════════╗
+[2026-06-24T13:11:30.951Z] INFO  ║    EstLat Automatic Update Pipeline                       ║
+[2026-06-24T13:11:30.953Z] INFO  ╚═══════════════════════════════════════════════════════════╝
+[2026-06-24T13:11:30.956Z] INFO  Started at 2026-06-24T13:11:30.956Z
+[2026-06-24T13:11:30.959Z] INFO  Initializing database...
+[2026-06-24T13:11:30.965Z] INFO  Database initialized successfully
+[2026-06-24T13:11:30.967Z] INFO  Step 1: Collecting game mappings from EstLat...
+[2026-06-24T13:11:31.090Z] INFO  ✓ Collection complete
+[2026-06-24T13:11:31.092Z] INFO  Step 2: Importing game boxscores from FIBA LiveStats...
+[2026-06-24T13:11:31.448Z] INFO  ✓ Import complete
+[2026-06-24T13:11:31.453Z] INFO  
+[2026-06-24T13:11:31.455Z] INFO  === Update Complete ===
+[2026-06-24T13:11:31.457Z] INFO  Duration: 1s
+[2026-06-24T13:11:31.466Z] INFO  Configuration: recent_seasons=true, import_limit=1
+[2026-06-24T13:11:31.474Z] WARN  ⚠ 1 games in Dead Letter Queue (pending retry)
+[2026-06-24T13:11:31.489Z] INFO  ✓ Pipeline succeeded
+[2026-06-24T13:19:32.581Z] INFO  
+[2026-06-24T13:19:32.587Z] INFO  ╔═══════════════════════════════════════════════════════════╗
+[2026-06-24T13:19:32.590Z] INFO  ║    EstLat Automatic Update Pipeline                       ║
+[2026-06-24T13:19:32.593Z] INFO  ╚═══════════════════════════════════════════════════════════╝
+[2026-06-24T13:19:32.597Z] INFO  Started at 2026-06-24T13:19:32.596Z
+[2026-06-24T13:19:32.599Z] INFO  Initializing database...
+[2026-06-24T13:19:32.607Z] INFO  Database initialized successfully
+[2026-06-24T13:19:32.609Z] INFO  Step 1: Collecting game mappings from EstLat...
+[2026-06-24T13:21:31.346Z] INFO  ✓ Collection complete
+[2026-06-24T13:21:31.349Z] INFO  Step 2: Importing game boxscores from FIBA LiveStats...
+[2026-06-24T13:21:31.879Z] INFO  ✓ Import complete
+[2026-06-24T13:21:31.887Z] INFO  
+[2026-06-24T13:21:31.889Z] INFO  === Update Complete ===
+[2026-06-24T13:21:31.891Z] INFO  Duration: 119s
+[2026-06-24T13:21:31.893Z] INFO  Configuration: recent_seasons=true, import_limit=1
+[2026-06-24T13:21:31.899Z] WARN  ⚠ 1 games in Dead Letter Queue (pending retry)
+[2026-06-24T13:21:31.904Z] INFO  ✓ Pipeline succeeded
+[2026-06-24T13:28:17.249Z] INFO  
+[2026-06-24T13:28:17.256Z] INFO  ╔═══════════════════════════════════════════════════════════╗
+[2026-06-24T13:28:17.258Z] INFO  ║    EstLat Automatic Update Pipeline                       ║
+[2026-06-24T13:28:17.265Z] INFO  ╚═══════════════════════════════════════════════════════════╝
+[2026-06-24T13:28:17.268Z] INFO  Started at 2026-06-24T13:28:17.268Z
+[2026-06-24T13:28:17.270Z] INFO  Initializing database...
+[2026-06-24T13:28:17.275Z] INFO  Database initialized successfully
+[2026-06-24T13:28:17.280Z] INFO  Step 1: Collecting game mappings from EstLat...
+[2026-06-24T13:28:17.380Z] INFO  ✓ Collection complete
+[2026-06-24T13:28:17.382Z] INFO  Step 2: Importing game boxscores from FIBA LiveStats...
+[2026-06-24T13:28:17.497Z] INFO  ✓ Import complete
+[2026-06-24T13:28:17.500Z] INFO  
+[2026-06-24T13:28:17.502Z] INFO  === Update Complete ===
+[2026-06-24T13:28:17.504Z] INFO  Duration: 0s
+[2026-06-24T13:28:17.506Z] INFO  Configuration: recent_seasons=true, import_limit=5
+[2026-06-24T13:28:17.507Z] WARN  ⚠ 1 games in Dead Letter Queue (pending retry)
+[2026-06-24T13:28:17.511Z] INFO  ✓ Pipeline succeeded

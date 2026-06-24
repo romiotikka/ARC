@@ -4,9 +4,10 @@ import { DatabaseSync } from "node:sqlite";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const rootDir = join(__dirname, "..");
-const databasePath = join(rootDir, "data", "arc.db");
+const databasePath = join(rootDir, "data", "arc2.db");
 
-const LEAGUE_ID = "estlatbl";
+const LEAGUE_KEY = "estlatbl";
+const LEAGUE_ID = 1;
 
 const DEFAULT_SEASONS = [
   { setSid: 2026, seasonId: 20252026, label: "2025-26", startYear: 2025, endYear: 2026 },
@@ -14,6 +15,34 @@ const DEFAULT_SEASONS = [
   { setSid: 2024, seasonId: 20232024, label: "2023-24", startYear: 2023, endYear: 2024 },
   { setSid: 2023, seasonId: 20222023, label: "2022-23", startYear: 2022, endYear: 2023 },
 ];
+
+function parseArgs(argv) {
+  const args = {
+    recent: false,
+    recentCount: 2,
+  };
+
+  for (let index = 2; index < argv.length; index += 1) {
+    const arg = argv[index];
+
+    if (arg === "--recent") {
+      args.recent = true;
+    } else if (arg === "--recent-count") {
+      args.recentCount = Number(argv[index + 1]);
+      index += 1;
+    }
+  }
+
+  return args;
+}
+
+function selectSeasons(seasons, args) {
+  if (!args.recent) {
+    return seasons;
+  }
+
+  return seasons.slice(0, args.recentCount);
+}
 
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -76,7 +105,7 @@ function upsertSeason(database, season) {
 }
 
 function upsertGameMapping(database, season, providerGameId, matchId) {
-  const gameId = `${LEAGUE_ID}_${providerGameId}`;
+  const gameId = `${LEAGUE_KEY}_${providerGameId}`;
   const jsonUrl = `https://fibalivestats.dcd.shared.geniussports.com/data/${matchId}/data.json`;
 
   database
@@ -94,7 +123,22 @@ function upsertGameMapping(database, season, providerGameId, matchId) {
   database
     .prepare(
       `
-      INSERT INTO source_livestats_games (
+      UPDATE source_livestats_games
+      SET
+        league_id = ?,
+        season_id = ?,
+        provider_game_id = ?,
+        match_id = ?,
+        json_url = ?
+      WHERE game_id = ?
+      `,
+    )
+    .run(LEAGUE_ID, season.seasonId, String(providerGameId), String(matchId), jsonUrl, gameId);
+
+  database
+    .prepare(
+      `
+      INSERT OR IGNORE INTO source_livestats_games (
         game_id,
         league_id,
         season_id,
@@ -103,15 +147,24 @@ function upsertGameMapping(database, season, providerGameId, matchId) {
         json_url
       )
       VALUES (?, ?, ?, ?, ?, ?)
-      ON CONFLICT (game_id) DO UPDATE SET
-        league_id = excluded.league_id,
-        season_id = excluded.season_id,
-        provider_game_id = excluded.provider_game_id,
-        match_id = excluded.match_id,
-        json_url = excluded.json_url
       `,
     )
     .run(gameId, LEAGUE_ID, season.seasonId, String(providerGameId), String(matchId), jsonUrl);
+
+  // Ensure existing rows keyed by match_id are also refreshed without crashing on uniqueness conflicts.
+  database
+    .prepare(
+      `
+      UPDATE source_livestats_games
+      SET
+        league_id = ?,
+        season_id = ?,
+        provider_game_id = ?,
+        json_url = ?
+      WHERE match_id = ?
+      `,
+    )
+    .run(LEAGUE_ID, season.seasonId, String(providerGameId), jsonUrl, String(matchId));
 }
 
 async function collectSeason(database, season) {
@@ -148,6 +201,9 @@ async function collectSeason(database, season) {
   };
 }
 
+const args = parseArgs(process.argv);
+const seasons = selectSeasons(DEFAULT_SEASONS, args);
+
 const database = new DatabaseSync(databasePath);
 database.exec("PRAGMA foreign_keys = ON;");
 
@@ -156,7 +212,7 @@ try {
   upsertLeague(database);
   database.exec("COMMIT;");
 
-  for (const season of DEFAULT_SEASONS) {
+  for (const season of seasons) {
     database.exec("BEGIN;");
 
     try {

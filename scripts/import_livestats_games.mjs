@@ -1,10 +1,11 @@
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { DatabaseSync } from "node:sqlite";
+import { DeadLetterQueue } from "./lib/estlatbl-utils.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const rootDir = join(__dirname, "..");
-const databasePath = join(rootDir, "data", "arc.db");
+const databasePath = join(rootDir, "data", "arc2.db");
 
 function parseArgs(argv) {
   const args = {
@@ -172,7 +173,9 @@ function selectMappings(database, args) {
     SELECT s.*
     FROM source_livestats_games s
     LEFT JOIN team_games tg ON tg.game_id = s.game_id
+    LEFT JOIN games g ON g.game_id = s.game_id
     WHERE tg.team_game_id IS NULL
+      AND COALESCE(g.status, 'scheduled_or_import_pending') <> 'boxscore_import_failed'
     ORDER BY s.provider_game_id
   `;
 
@@ -400,6 +403,9 @@ async function importMapping(database, mapping) {
   const database = new DatabaseSync(databasePath);
   database.exec("PRAGMA foreign_keys = ON;");
 
+  // Initialize DLQ for tracking failed imports
+  const dlq = new DeadLetterQueue(database);
+
   try {
     const mappings = selectMappings(database, args);
 
@@ -409,6 +415,8 @@ async function importMapping(database, mapping) {
     }
 
     let totalPlayerGames = 0;
+    let successCount = 0;
+    let failureCount = 0;
 
     for (const mapping of mappings) {
       database.exec("BEGIN;");
@@ -417,11 +425,35 @@ async function importMapping(database, mapping) {
         const result = await importMapping(database, mapping);
         database.exec("COMMIT;");
         totalPlayerGames += result.playerGames;
+        successCount += 1;
         console.log(
           `Imported ${result.gameId} (${result.matchId}): ${result.homeTeam} vs ${result.awayTeam}, player_games=${result.playerGames}`,
         );
       } catch (error) {
         database.exec("ROLLBACK;");
+        failureCount += 1;
+
+        // Determine error type for DLQ categorization
+        let errorType = "unknown_error";
+        if (error.message.includes("LiveStats request failed")) {
+          errorType = "network_error";
+        } else if (error.message.includes("Unexpected end of JSON input")) {
+          errorType = "json_parse_error";
+        } else if (error.message.includes("Missing")) {
+          errorType = "data_validation_error";
+        }
+
+        // Record failure in DLQ for later analysis/retry.
+        // DLQ issues must not abort processing of remaining games.
+        try {
+          dlq.recordFailure(mapping, errorType, error.message);
+        } catch (dlqError) {
+          console.error(
+            `DLQ record failed for ${mapping.game_id} (${mapping.match_id}): ${dlqError.message}`,
+          );
+        }
+
+        // Mark game as failed in games table
         database
           .prepare(
             `
@@ -431,6 +463,7 @@ async function importMapping(database, mapping) {
             `,
           )
           .run("boxscore_import_failed", mapping.game_id);
+
         console.error(
           `Failed ${mapping.game_id} (${mapping.match_id}): ${error.message}`,
         );
@@ -438,8 +471,18 @@ async function importMapping(database, mapping) {
     }
 
     console.log("");
-    console.log(`Imported games: ${mappings.length}`);
+    console.log(`Import complete: succeeded=${successCount}, failed=${failureCount}`);
+    console.log(`Imported games: ${successCount}`);
     console.log(`Imported player_games: ${totalPlayerGames}`);
+
+    // Report DLQ stats
+    const dlqStats = dlq.getFailureStats();
+    if (dlqStats.length > 0) {
+      console.log("\nDead Letter Queue Status:");
+      for (const stat of dlqStats) {
+        console.log(`  ${stat.status}: ${stat.count} (max_retries=${stat.max_retries})`);
+      }
+    }
   } finally {
     database.close();
   }
