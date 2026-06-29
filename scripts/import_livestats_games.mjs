@@ -11,6 +11,7 @@ function parseArgs(argv) {
   const args = {
     limit: 1,
     matchId: null,
+    eventsOnly: false,
   };
 
   for (let index = 2; index < argv.length; index += 1) {
@@ -24,6 +25,9 @@ function parseArgs(argv) {
     } else if (arg === "--match-id") {
       args.matchId = argv[index + 1];
       index += 1;
+    } else if (arg === "--events-only") {
+      args.eventsOnly = true;
+      args.limit = null;
     }
   }
 
@@ -917,6 +921,42 @@ function updateGame(database, mapping, homeTeamId, awayTeamId, homeTeam, awayTea
     );
 }
 
+function selectGamesForEventsImport(database) {
+  return database
+    .prepare(
+      `
+      SELECT s.game_id, s.match_id, s.json_url, g.home_team_id, g.away_team_id
+      FROM source_livestats_games s
+      JOIN games g ON g.game_id = s.game_id
+      WHERE g.home_team_id IS NOT NULL
+        AND g.away_team_id IS NOT NULL
+        AND NOT EXISTS (
+          SELECT 1 FROM events e WHERE e.game_id = s.game_id
+        )
+      ORDER BY s.provider_game_id
+      `,
+    )
+    .all();
+}
+
+async function importEventsForGame(database, gameRow) {
+  const data = await fetchJson(gameRow.json_url);
+  const homeTeam = data.tm?.["1"];
+  const awayTeam = data.tm?.["2"];
+
+  if (!homeTeam || !awayTeam) {
+    throw new Error(`Missing home/away team data for match_id ${gameRow.match_id}`);
+  }
+
+  const teamIdsByLiveStatsNumber = new Map([
+    ["1", gameRow.home_team_id],
+    ["2", gameRow.away_team_id],
+  ]);
+
+  const result = importEvents(database, gameRow.game_id, data, teamIdsByLiveStatsNumber);
+  return result.imported;
+}
+
 async function importMapping(database, mapping) {
   const data = await fetchJson(mapping.json_url);
   const homeTeam = data.tm?.["1"];
@@ -959,6 +999,80 @@ async function importMapping(database, mapping) {
   const dlq = new DeadLetterQueue(database);
 
   try {
+    // ── Events-only bulk population mode ──────────────────────────────────────
+    if (args.eventsOnly) {
+      const gameRows = selectGamesForEventsImport(database);
+
+      if (gameRows.length === 0) {
+        console.log("No games require event import.");
+        process.exit(0);
+      }
+
+      // Step 1: 1-game validation
+      const validationGame = gameRows[0];
+      let validationPassed = false;
+      let validationEvents = 0;
+
+      database.exec("BEGIN;");
+      try {
+        validationEvents = await importEventsForGame(database, validationGame);
+        const newViolations = database
+          .prepare(
+            `SELECT COUNT(*) AS cnt FROM pragma_foreign_key_check WHERE \"table\" = 'events'`,
+          )
+          .get().cnt;
+        if (validationEvents > 0 && newViolations === 0) {
+          validationPassed = true;
+          database.exec("COMMIT;");
+        } else {
+          database.exec("ROLLBACK;");
+        }
+      } catch (validationError) {
+        database.exec("ROLLBACK;");
+        console.error(`validation error: ${validationError.message}`);
+      }
+
+      console.log(`game_id: ${validationGame.game_id}`);
+      console.log(`events inserted: ${validationEvents}`);
+      console.log(`validation: ${validationPassed ? "passed" : "failed"}`);
+
+      if (!validationPassed) {
+        process.exit(1);
+      }
+
+      // Step 2: Bulk import remaining games (skip the already-done validation game)
+      let gamesProcessed = 1;
+      let gamesSucceeded = 1;
+      let gamesFailed = 0;
+      let totalEventsInserted = validationEvents;
+      let runtimeErrorCount = 0;
+
+      for (const gameRow of gameRows.slice(1)) {
+        gamesProcessed += 1;
+        database.exec("BEGIN;");
+        try {
+          const inserted = await importEventsForGame(database, gameRow);
+          database.exec("COMMIT;");
+          gamesSucceeded += 1;
+          totalEventsInserted += inserted;
+        } catch (gameError) {
+          database.exec("ROLLBACK;");
+          gamesFailed += 1;
+          runtimeErrorCount += 1;
+          console.error(`failed ${gameRow.game_id} (${gameRow.match_id}): ${gameError.message}`);
+        }
+      }
+
+      console.log("");
+      console.log(`games processed: ${gamesProcessed}`);
+      console.log(`games succeeded: ${gamesSucceeded}`);
+      console.log(`games failed: ${gamesFailed}`);
+      console.log(`events inserted: ${totalEventsInserted}`);
+      console.log(`runtime errors count: ${runtimeErrorCount}`);
+      process.exit(gamesFailed > 0 ? 1 : 0);
+    }
+    // ── End events-only mode ─────────────────────────────────────────────────
+
     const mappings = selectMappings(database, args);
 
     if (mappings.length === 0) {
