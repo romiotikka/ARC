@@ -173,6 +173,8 @@ def table_counts(connection: sqlite3.Connection) -> list[tuple[str, int]]:
         "team_games",
         "player_games",
         "events",
+        "lineups",
+        "lineup_segments",
     ]
 
     counts = []

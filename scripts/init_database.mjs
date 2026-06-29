@@ -132,6 +132,8 @@ try {
     "team_games",
     "player_games",
     "events",
+    "lineups",
+    "lineup_segments",
   ];
 
   console.log(`Database: ${databasePath}`);

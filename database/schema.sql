@@ -130,23 +130,63 @@ CREATE TABLE IF NOT EXISTS player_games (
 CREATE TABLE IF NOT EXISTS events (
     event_id INTEGER PRIMARY KEY AUTOINCREMENT,
     game_id TEXT NOT NULL,
-    provider_action_number INTEGER,
+    action_number INTEGER,
     period INTEGER,
     clock TEXT,
     team_id TEXT,
     player_id TEXT,
-    action_type TEXT NOT NULL,
-    sub_type TEXT,
-    result TEXT,
+    event_secondary_player_id TEXT,
+    event_type TEXT,
+    event_result TEXT,
+    shot_type TEXT,
+    shot_move TEXT,
+    points INTEGER,
     x REAL,
     y REAL,
-    raw_json TEXT,
-    source TEXT NOT NULL DEFAULT 'fiba_livestats',
-    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    possession_team_id_after TEXT,
+    shot_clock REAL,
+    contested INTEGER,
+    distance REAL,
+    metadata_json TEXT,
     FOREIGN KEY (game_id) REFERENCES games(game_id),
     FOREIGN KEY (team_id) REFERENCES teams(team_id),
     FOREIGN KEY (player_id) REFERENCES players(player_id),
-    UNIQUE (game_id, provider_action_number, action_type, player_id)
+    FOREIGN KEY (event_secondary_player_id) REFERENCES players(player_id),
+    FOREIGN KEY (possession_team_id_after) REFERENCES teams(team_id),
+    UNIQUE (game_id, action_number)
+);
+
+CREATE TABLE IF NOT EXISTS lineups (
+    lineup_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    team_id TEXT NOT NULL,
+    player_1 TEXT NOT NULL,
+    player_2 TEXT NOT NULL,
+    player_3 TEXT NOT NULL,
+    player_4 TEXT NOT NULL,
+    player_5 TEXT NOT NULL,
+    lineup_hash TEXT NOT NULL,
+    FOREIGN KEY (team_id) REFERENCES teams(team_id),
+    FOREIGN KEY (player_1) REFERENCES players(player_id),
+    FOREIGN KEY (player_2) REFERENCES players(player_id),
+    FOREIGN KEY (player_3) REFERENCES players(player_id),
+    FOREIGN KEY (player_4) REFERENCES players(player_id),
+    FOREIGN KEY (player_5) REFERENCES players(player_id),
+    UNIQUE (team_id, lineup_hash)
+);
+
+CREATE TABLE IF NOT EXISTS lineup_segments (
+    lineup_segment_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    game_id TEXT NOT NULL,
+    lineup_id INTEGER NOT NULL,
+    team_id TEXT NOT NULL,
+    period INTEGER,
+    start_action_number INTEGER,
+    end_action_number INTEGER,
+    start_clock TEXT,
+    end_clock TEXT,
+    FOREIGN KEY (game_id) REFERENCES games(game_id),
+    FOREIGN KEY (lineup_id) REFERENCES lineups(lineup_id),
+    FOREIGN KEY (team_id) REFERENCES teams(team_id)
 );
 
 CREATE TABLE IF NOT EXISTS source_livestats_games (
@@ -176,5 +216,29 @@ CREATE INDEX IF NOT EXISTS idx_events_game
     ON events (game_id);
 
 CREATE INDEX IF NOT EXISTS idx_events_action_number
-    ON events (game_id, provider_action_number);
+    ON events (game_id, action_number);
+
+CREATE INDEX IF NOT EXISTS idx_events_player
+    ON events (game_id, player_id);
+
+CREATE INDEX IF NOT EXISTS idx_events_team
+    ON events (game_id, team_id);
+
+CREATE INDEX IF NOT EXISTS idx_events_type
+    ON events (game_id, event_type);
+
+CREATE INDEX IF NOT EXISTS idx_lineups_team
+    ON lineups (team_id);
+
+CREATE INDEX IF NOT EXISTS idx_lineups_hash
+    ON lineups (team_id, lineup_hash);
+
+CREATE INDEX IF NOT EXISTS idx_lineup_segments_game_team
+    ON lineup_segments (game_id, team_id);
+
+CREATE INDEX IF NOT EXISTS idx_lineup_segments_game_lineup
+    ON lineup_segments (game_id, lineup_id);
+
+CREATE INDEX IF NOT EXISTS idx_lineup_segments_lineup
+    ON lineup_segments (lineup_id);
 
