@@ -222,6 +222,7 @@ def create_lineup_segments_table(connection: sqlite3.Connection, table_name: str
             end_action_number INTEGER,
             start_clock TEXT,
             end_clock TEXT,
+            duration_seconds INTEGER,
             FOREIGN KEY (game_id) REFERENCES games(game_id),
             FOREIGN KEY (lineup_id) REFERENCES lineups(lineup_id),
             FOREIGN KEY (team_id) REFERENCES teams(team_id)
@@ -277,16 +278,19 @@ def migrate_lineup_segments_table(connection: sqlite3.Connection) -> None:
         create_lineup_segments_table(connection, "lineup_segments")
         return
 
+    existing_columns = table_columns(connection, "lineup_segments")
     has_required = (
         table_has_primary_key(connection, "lineup_segments", "lineup_segment_id")
         and has_foreign_key(connection, "lineup_segments", "game_id", "games", "game_id")
         and has_foreign_key(connection, "lineup_segments", "team_id", "teams", "team_id")
         and has_foreign_key(connection, "lineup_segments", "lineup_id", "lineups", "lineup_id")
+        and "duration_seconds" in existing_columns
     )
     if has_required:
         return
 
     create_lineup_segments_table(connection, "lineup_segments_new")
+    duration_seconds_sql = "duration_seconds" if "duration_seconds" in existing_columns else "NULL AS duration_seconds"
     connection.execute(
         """
         INSERT INTO lineup_segments_new (
@@ -298,7 +302,8 @@ def migrate_lineup_segments_table(connection: sqlite3.Connection) -> None:
             start_action_number,
             end_action_number,
             start_clock,
-            end_clock
+            end_clock,
+            duration_seconds
         )
         SELECT
             lineup_segment_id,
@@ -309,9 +314,10 @@ def migrate_lineup_segments_table(connection: sqlite3.Connection) -> None:
             start_action_number,
             end_action_number,
             start_clock,
-            end_clock
+            end_clock,
+            {duration_seconds_sql}
         FROM lineup_segments
-        """
+        """.format(duration_seconds_sql=duration_seconds_sql)
     )
     connection.execute("DROP TABLE lineup_segments")
     connection.execute("ALTER TABLE lineup_segments_new RENAME TO lineup_segments")

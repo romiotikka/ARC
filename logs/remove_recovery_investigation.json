@@ -1,0 +1,2874 @@
+{
+  "generated_at_utc": "2026-07-01T21:03:30.708539+00:00",
+  "games_considered": 50,
+  "games_ok": 50,
+  "games_error": 0,
+  "games_returned_to_5": 49,
+  "games_never_returned_to_5": 1,
+  "grouped_root_causes": [
+    {
+      "root_cause": "early_exception_before_later_recovery",
+      "count": 49,
+      "example_game_ids": [
+        "1_20222023_0008",
+        "1_20222023_0010",
+        "1_20222023_0049",
+        "1_20222023_0055",
+        "1_20222023_0087",
+        "1_20222023_0092",
+        "1_20222023_0141",
+        "1_20222023_0144",
+        "1_20222023_0148",
+        "1_20222023_0166"
+      ]
+    },
+    {
+      "root_cause": "no_in_before_liveball_resume",
+      "count": 1,
+      "example_game_ids": [
+        "1_20242025_0157"
+      ]
+    }
+  ],
+  "games": [
+    {
+      "game_id": "1_20222023_0008",
+      "status": "ok",
+      "first_remove_action": 60,
+      "first_later_in_action": 62,
+      "events_between_remove_and_first_in": 1,
+      "all_events_between_remove_and_first_in": [
+        {
+          "game_id": "1_20222023_0008",
+          "period": 1,
+          "clock": "06:38:00",
+          "action_number": 61,
+          "event_type": "substitution",
+          "team_id": "team_bc_kalev_cramo",
+          "player_id": "279",
+          "secondary_player_id": null,
+          "lineup_before": "19,279,414,527",
+          "mutation": "REMOVE(279)",
+          "lineup_after": "19,414,527"
+        }
+      ],
+      "tracked_events": [
+        {
+          "game_id": "1_20222023_0008",
+          "period": 1,
+          "clock": "06:38:00",
+          "action_number": 60,
+          "event_type": "substitution",
+          "team_id": "team_bc_kalev_cramo",
+          "player_id": "339",
+          "secondary_player_id": null,
+          "lineup_before": "19,279,339,414,527",
+          "mutation": "REMOVE(339)",
+          "lineup_after": "19,279,414,527"
+        },
+        {
+          "game_id": "1_20222023_0008",
+          "period": 1,
+          "clock": "06:38:00",
+          "action_number": 61,
+          "event_type": "substitution",
+          "team_id": "team_bc_kalev_cramo",
+          "player_id": "279",
+          "secondary_player_id": null,
+          "lineup_before": "19,279,414,527",
+          "mutation": "REMOVE(279)",
+          "lineup_after": "19,414,527"
+        },
+        {
+          "game_id": "1_20222023_0008",
+          "period": 1,
+          "clock": "06:38:00",
+          "action_number": 62,
+          "event_type": "substitution",
+          "team_id": "team_bc_kalev_cramo",
+          "player_id": "11",
+          "secondary_player_id": null,
+          "lineup_before": "19,414,527",
+          "mutation": "ADD(11)",
+          "lineup_after": "11,19,414,527"
+        },
+        {
+          "game_id": "1_20222023_0008",
+          "period": 1,
+          "clock": "06:38:00",
+          "action_number": 63,
+          "event_type": "substitution",
+          "team_id": "team_bc_kalev_cramo",
+          "player_id": "573",
+          "secondary_player_id": null,
+          "lineup_before": "11,19,414,527",
+          "mutation": "ADD(573)",
+          "lineup_after": "11,19,414,527,573"
+        }
+      ],
+      "returned_to_5": true,
+      "stop_reason": "lineup_returned_to_5",
+      "no_recovery_reason": null,
+      "root_cause": "early_exception_before_later_recovery",
+      "flags": {
+        "same_clock_substitutions_present": true,
+        "timeout_or_foul_sequence_present": false,
+        "team_switching_present": false,
+        "period_transition_hit": false,
+        "liveball_resume_hit": false,
+        "event_ordering_issue_suspected": false
+      }
+    },
+    {
+      "game_id": "1_20222023_0010",
+      "status": "ok",
+      "first_remove_action": 41,
+      "first_later_in_action": 43,
+      "events_between_remove_and_first_in": 1,
+      "all_events_between_remove_and_first_in": [
+        {
+          "game_id": "1_20222023_0010",
+          "period": 1,
+          "clock": "06:38:00",
+          "action_number": 42,
+          "event_type": "substitution",
+          "team_id": "team_bc_kalev_cramo",
+          "player_id": "279",
+          "secondary_player_id": null,
+          "lineup_before": "11,19,279,366",
+          "mutation": "REMOVE(279)",
+          "lineup_after": "11,19,366"
+        }
+      ],
+      "tracked_events": [
+        {
+          "game_id": "1_20222023_0010",
+          "period": 1,
+          "clock": "06:38:00",
+          "action_number": 41,
+          "event_type": "substitution",
+          "team_id": "team_bc_kalev_cramo",
+          "player_id": "339",
+          "secondary_player_id": null,
+          "lineup_before": "11,19,279,339,366",
+          "mutation": "REMOVE(339)",
+          "lineup_after": "11,19,279,366"
+        },
+        {
+          "game_id": "1_20222023_0010",
+          "period": 1,
+          "clock": "06:38:00",
+          "action_number": 42,
+          "event_type": "substitution",
+          "team_id": "team_bc_kalev_cramo",
+          "player_id": "279",
+          "secondary_player_id": null,
+          "lineup_before": "11,19,279,366",
+          "mutation": "REMOVE(279)",
+          "lineup_after": "11,19,366"
+        },
+        {
+          "game_id": "1_20222023_0010",
+          "period": 1,
+          "clock": "06:38:00",
+          "action_number": 43,
+          "event_type": "substitution",
+          "team_id": "team_bc_kalev_cramo",
+          "player_id": "531",
+          "secondary_player_id": null,
+          "lineup_before": "11,19,366",
+          "mutation": "ADD(531)",
+          "lineup_after": "11,19,366,531"
+        },
+        {
+          "game_id": "1_20222023_0010",
+          "period": 1,
+          "clock": "06:38:00",
+          "action_number": 44,
+          "event_type": "substitution",
+          "team_id": "team_bc_kalev_cramo",
+          "player_id": "414",
+          "secondary_player_id": null,
+          "lineup_before": "11,19,366,531",
+          "mutation": "ADD(414)",
+          "lineup_after": "11,19,366,414,531"
+        }
+      ],
+      "returned_to_5": true,
+      "stop_reason": "lineup_returned_to_5",
+      "no_recovery_reason": null,
+      "root_cause": "early_exception_before_later_recovery",
+      "flags": {
+        "same_clock_substitutions_present": true,
+        "timeout_or_foul_sequence_present": false,
+        "team_switching_present": false,
+        "period_transition_hit": false,
+        "liveball_resume_hit": false,
+        "event_ordering_issue_suspected": false
+      }
+    },
+    {
+      "game_id": "1_20222023_0049",
+      "status": "ok",
+      "first_remove_action": 46,
+      "first_later_in_action": 47,
+      "events_between_remove_and_first_in": 0,
+      "all_events_between_remove_and_first_in": [],
+      "tracked_events": [
+        {
+          "game_id": "1_20222023_0049",
+          "period": 1,
+          "clock": "07:14:00",
+          "action_number": 46,
+          "event_type": "substitution",
+          "team_id": "team_valmiera_glass_via",
+          "player_id": "403",
+          "secondary_player_id": null,
+          "lineup_before": "103,403,522,546,563",
+          "mutation": "REMOVE(403)",
+          "lineup_after": "103,522,546,563"
+        },
+        {
+          "game_id": "1_20222023_0049",
+          "period": 1,
+          "clock": "07:14:00",
+          "action_number": 47,
+          "event_type": "substitution",
+          "team_id": "team_valmiera_glass_via",
+          "player_id": "259",
+          "secondary_player_id": null,
+          "lineup_before": "103,522,546,563",
+          "mutation": "ADD(259)",
+          "lineup_after": "103,259,522,546,563"
+        }
+      ],
+      "returned_to_5": true,
+      "stop_reason": "lineup_returned_to_5",
+      "no_recovery_reason": null,
+      "root_cause": "early_exception_before_later_recovery",
+      "flags": {
+        "same_clock_substitutions_present": true,
+        "timeout_or_foul_sequence_present": false,
+        "team_switching_present": false,
+        "period_transition_hit": false,
+        "liveball_resume_hit": false,
+        "event_ordering_issue_suspected": false
+      }
+    },
+    {
+      "game_id": "1_20222023_0055",
+      "status": "ok",
+      "first_remove_action": 58,
+      "first_later_in_action": 60,
+      "events_between_remove_and_first_in": 1,
+      "all_events_between_remove_and_first_in": [
+        {
+          "game_id": "1_20222023_0055",
+          "period": 1,
+          "clock": "05:56:00",
+          "action_number": 59,
+          "event_type": "substitution",
+          "team_id": "team_bk_liepaja",
+          "player_id": "12",
+          "secondary_player_id": null,
+          "lineup_before": "12,303,442,495",
+          "mutation": "REMOVE(12)",
+          "lineup_after": "303,442,495"
+        }
+      ],
+      "tracked_events": [
+        {
+          "game_id": "1_20222023_0055",
+          "period": 1,
+          "clock": "05:56:00",
+          "action_number": 58,
+          "event_type": "substitution",
+          "team_id": "team_bk_liepaja",
+          "player_id": "321",
+          "secondary_player_id": null,
+          "lineup_before": "12,303,321,442,495",
+          "mutation": "REMOVE(321)",
+          "lineup_after": "12,303,442,495"
+        },
+        {
+          "game_id": "1_20222023_0055",
+          "period": 1,
+          "clock": "05:56:00",
+          "action_number": 59,
+          "event_type": "substitution",
+          "team_id": "team_bk_liepaja",
+          "player_id": "12",
+          "secondary_player_id": null,
+          "lineup_before": "12,303,442,495",
+          "mutation": "REMOVE(12)",
+          "lineup_after": "303,442,495"
+        },
+        {
+          "game_id": "1_20222023_0055",
+          "period": 1,
+          "clock": "05:56:00",
+          "action_number": 60,
+          "event_type": "substitution",
+          "team_id": "team_bk_liepaja",
+          "player_id": "146",
+          "secondary_player_id": null,
+          "lineup_before": "303,442,495",
+          "mutation": "ADD(146)",
+          "lineup_after": "146,303,442,495"
+        },
+        {
+          "game_id": "1_20222023_0055",
+          "period": 1,
+          "clock": "05:56:00",
+          "action_number": 61,
+          "event_type": "substitution",
+          "team_id": "team_bk_liepaja",
+          "player_id": "407",
+          "secondary_player_id": null,
+          "lineup_before": "146,303,442,495",
+          "mutation": "ADD(407)",
+          "lineup_after": "146,303,407,442,495"
+        }
+      ],
+      "returned_to_5": true,
+      "stop_reason": "lineup_returned_to_5",
+      "no_recovery_reason": null,
+      "root_cause": "early_exception_before_later_recovery",
+      "flags": {
+        "same_clock_substitutions_present": true,
+        "timeout_or_foul_sequence_present": false,
+        "team_switching_present": false,
+        "period_transition_hit": false,
+        "liveball_resume_hit": false,
+        "event_ordering_issue_suspected": false
+      }
+    },
+    {
+      "game_id": "1_20222023_0087",
+      "status": "ok",
+      "first_remove_action": 59,
+      "first_later_in_action": 60,
+      "events_between_remove_and_first_in": 0,
+      "all_events_between_remove_and_first_in": [],
+      "tracked_events": [
+        {
+          "game_id": "1_20222023_0087",
+          "period": 1,
+          "clock": "06:06:00",
+          "action_number": 59,
+          "event_type": "substitution",
+          "team_id": "team_bc_kalev_cramo",
+          "player_id": "527",
+          "secondary_player_id": null,
+          "lineup_before": "19,366,414,527,568",
+          "mutation": "REMOVE(527)",
+          "lineup_after": "19,366,414,568"
+        },
+        {
+          "game_id": "1_20222023_0087",
+          "period": 1,
+          "clock": "06:06:00",
+          "action_number": 60,
+          "event_type": "substitution",
+          "team_id": "team_bc_kalev_cramo",
+          "player_id": "279",
+          "secondary_player_id": null,
+          "lineup_before": "19,366,414,568",
+          "mutation": "ADD(279)",
+          "lineup_after": "19,279,366,414,568"
+        }
+      ],
+      "returned_to_5": true,
+      "stop_reason": "lineup_returned_to_5",
+      "no_recovery_reason": null,
+      "root_cause": "early_exception_before_later_recovery",
+      "flags": {
+        "same_clock_substitutions_present": true,
+        "timeout_or_foul_sequence_present": false,
+        "team_switching_present": false,
+        "period_transition_hit": false,
+        "liveball_resume_hit": false,
+        "event_ordering_issue_suspected": false
+      }
+    },
+    {
+      "game_id": "1_20222023_0092",
+      "status": "ok",
+      "first_remove_action": 71,
+      "first_later_in_action": 72,
+      "events_between_remove_and_first_in": 0,
+      "all_events_between_remove_and_first_in": [],
+      "tracked_events": [
+        {
+          "game_id": "1_20222023_0092",
+          "period": 1,
+          "clock": "06:04:00",
+          "action_number": 71,
+          "event_type": "substitution",
+          "team_id": "team_parnu_sadam",
+          "player_id": "285",
+          "secondary_player_id": null,
+          "lineup_before": "285,365,494,503,538",
+          "mutation": "REMOVE(285)",
+          "lineup_after": "365,494,503,538"
+        },
+        {
+          "game_id": "1_20222023_0092",
+          "period": 1,
+          "clock": "06:04:00",
+          "action_number": 72,
+          "event_type": "substitution",
+          "team_id": "team_parnu_sadam",
+          "player_id": "354",
+          "secondary_player_id": null,
+          "lineup_before": "365,494,503,538",
+          "mutation": "ADD(354)",
+          "lineup_after": "354,365,494,503,538"
+        }
+      ],
+      "returned_to_5": true,
+      "stop_reason": "lineup_returned_to_5",
+      "no_recovery_reason": null,
+      "root_cause": "early_exception_before_later_recovery",
+      "flags": {
+        "same_clock_substitutions_present": true,
+        "timeout_or_foul_sequence_present": false,
+        "team_switching_present": false,
+        "period_transition_hit": false,
+        "liveball_resume_hit": false,
+        "event_ordering_issue_suspected": false
+      }
+    },
+    {
+      "game_id": "1_20222023_0141",
+      "status": "ok",
+      "first_remove_action": 52,
+      "first_later_in_action": 53,
+      "events_between_remove_and_first_in": 0,
+      "all_events_between_remove_and_first_in": [],
+      "tracked_events": [
+        {
+          "game_id": "1_20222023_0141",
+          "period": 1,
+          "clock": "05:17:00",
+          "action_number": 52,
+          "event_type": "substitution",
+          "team_id": "team_tartu_ulikool_maks_and_moorits",
+          "player_id": "537",
+          "secondary_player_id": null,
+          "lineup_before": "60,323,382,458,537",
+          "mutation": "REMOVE(537)",
+          "lineup_after": "60,323,382,458"
+        },
+        {
+          "game_id": "1_20222023_0141",
+          "period": 1,
+          "clock": "05:17:00",
+          "action_number": 53,
+          "event_type": "substitution",
+          "team_id": "team_tartu_ulikool_maks_and_moorits",
+          "player_id": "49",
+          "secondary_player_id": null,
+          "lineup_before": "60,323,382,458",
+          "mutation": "ADD(49)",
+          "lineup_after": "49,60,323,382,458"
+        }
+      ],
+      "returned_to_5": true,
+      "stop_reason": "lineup_returned_to_5",
+      "no_recovery_reason": null,
+      "root_cause": "early_exception_before_later_recovery",
+      "flags": {
+        "same_clock_substitutions_present": true,
+        "timeout_or_foul_sequence_present": false,
+        "team_switching_present": false,
+        "period_transition_hit": false,
+        "liveball_resume_hit": false,
+        "event_ordering_issue_suspected": false
+      }
+    },
+    {
+      "game_id": "1_20222023_0144",
+      "status": "ok",
+      "first_remove_action": 25,
+      "first_later_in_action": 26,
+      "events_between_remove_and_first_in": 0,
+      "all_events_between_remove_and_first_in": [],
+      "tracked_events": [
+        {
+          "game_id": "1_20222023_0144",
+          "period": 1,
+          "clock": "08:53:00",
+          "action_number": 25,
+          "event_type": "substitution",
+          "team_id": "team_bc_kalev_cramo",
+          "player_id": "568",
+          "secondary_player_id": null,
+          "lineup_before": "19,339,414,568,573",
+          "mutation": "REMOVE(568)",
+          "lineup_after": "19,339,414,573"
+        },
+        {
+          "game_id": "1_20222023_0144",
+          "period": 1,
+          "clock": "08:53:00",
+          "action_number": 26,
+          "event_type": "substitution",
+          "team_id": "team_bc_kalev_cramo",
+          "player_id": "184",
+          "secondary_player_id": null,
+          "lineup_before": "19,339,414,573",
+          "mutation": "ADD(184)",
+          "lineup_after": "19,184,339,414,573"
+        }
+      ],
+      "returned_to_5": true,
+      "stop_reason": "lineup_returned_to_5",
+      "no_recovery_reason": null,
+      "root_cause": "early_exception_before_later_recovery",
+      "flags": {
+        "same_clock_substitutions_present": true,
+        "timeout_or_foul_sequence_present": false,
+        "team_switching_present": false,
+        "period_transition_hit": false,
+        "liveball_resume_hit": false,
+        "event_ordering_issue_suspected": false
+      }
+    },
+    {
+      "game_id": "1_20222023_0148",
+      "status": "ok",
+      "first_remove_action": 31,
+      "first_later_in_action": 32,
+      "events_between_remove_and_first_in": 0,
+      "all_events_between_remove_and_first_in": [],
+      "tracked_events": [
+        {
+          "game_id": "1_20222023_0148",
+          "period": 1,
+          "clock": "08:11:00",
+          "action_number": 31,
+          "event_type": "substitution",
+          "team_id": "team_vef_riga",
+          "player_id": "2",
+          "secondary_player_id": null,
+          "lineup_before": "2,28,156,320,399",
+          "mutation": "REMOVE(2)",
+          "lineup_after": "28,156,320,399"
+        },
+        {
+          "game_id": "1_20222023_0148",
+          "period": 1,
+          "clock": "08:11:00",
+          "action_number": 32,
+          "event_type": "substitution",
+          "team_id": "team_vef_riga",
+          "player_id": "34",
+          "secondary_player_id": null,
+          "lineup_before": "28,156,320,399",
+          "mutation": "ADD(34)",
+          "lineup_after": "28,34,156,320,399"
+        }
+      ],
+      "returned_to_5": true,
+      "stop_reason": "lineup_returned_to_5",
+      "no_recovery_reason": null,
+      "root_cause": "early_exception_before_later_recovery",
+      "flags": {
+        "same_clock_substitutions_present": true,
+        "timeout_or_foul_sequence_present": false,
+        "team_switching_present": false,
+        "period_transition_hit": false,
+        "liveball_resume_hit": false,
+        "event_ordering_issue_suspected": false
+      }
+    },
+    {
+      "game_id": "1_20222023_0166",
+      "status": "ok",
+      "first_remove_action": 47,
+      "first_later_in_action": 48,
+      "events_between_remove_and_first_in": 0,
+      "all_events_between_remove_and_first_in": [],
+      "tracked_events": [
+        {
+          "game_id": "1_20222023_0166",
+          "period": 1,
+          "clock": "06:45:00",
+          "action_number": 47,
+          "event_type": "substitution",
+          "team_id": "team_bk_liepaja",
+          "player_id": "442",
+          "secondary_player_id": null,
+          "lineup_before": "12,105,303,321,442",
+          "mutation": "REMOVE(442)",
+          "lineup_after": "12,105,303,321"
+        },
+        {
+          "game_id": "1_20222023_0166",
+          "period": 1,
+          "clock": "06:45:00",
+          "action_number": 48,
+          "event_type": "substitution",
+          "team_id": "team_bk_liepaja",
+          "player_id": "248",
+          "secondary_player_id": null,
+          "lineup_before": "12,105,303,321",
+          "mutation": "ADD(248)",
+          "lineup_after": "12,105,248,303,321"
+        }
+      ],
+      "returned_to_5": true,
+      "stop_reason": "lineup_returned_to_5",
+      "no_recovery_reason": null,
+      "root_cause": "early_exception_before_later_recovery",
+      "flags": {
+        "same_clock_substitutions_present": true,
+        "timeout_or_foul_sequence_present": false,
+        "team_switching_present": false,
+        "period_transition_hit": false,
+        "liveball_resume_hit": false,
+        "event_ordering_issue_suspected": false
+      }
+    },
+    {
+      "game_id": "1_20222023_0174",
+      "status": "ok",
+      "first_remove_action": 50,
+      "first_later_in_action": 51,
+      "events_between_remove_and_first_in": 0,
+      "all_events_between_remove_and_first_in": [],
+      "tracked_events": [
+        {
+          "game_id": "1_20222023_0174",
+          "period": 1,
+          "clock": "06:56:00",
+          "action_number": 50,
+          "event_type": "substitution",
+          "team_id": "team_bc_kalev_cramo",
+          "player_id": "527",
+          "secondary_player_id": null,
+          "lineup_before": "11,19,339,366,527",
+          "mutation": "REMOVE(527)",
+          "lineup_after": "11,19,339,366"
+        },
+        {
+          "game_id": "1_20222023_0174",
+          "period": 1,
+          "clock": "06:56:00",
+          "action_number": 51,
+          "event_type": "substitution",
+          "team_id": "team_bc_kalev_cramo",
+          "player_id": "184",
+          "secondary_player_id": null,
+          "lineup_before": "11,19,339,366",
+          "mutation": "ADD(184)",
+          "lineup_after": "11,19,184,339,366"
+        }
+      ],
+      "returned_to_5": true,
+      "stop_reason": "lineup_returned_to_5",
+      "no_recovery_reason": null,
+      "root_cause": "early_exception_before_later_recovery",
+      "flags": {
+        "same_clock_substitutions_present": true,
+        "timeout_or_foul_sequence_present": false,
+        "team_switching_present": false,
+        "period_transition_hit": false,
+        "liveball_resume_hit": false,
+        "event_ordering_issue_suspected": false
+      }
+    },
+    {
+      "game_id": "1_20222023_0183",
+      "status": "ok",
+      "first_remove_action": 55,
+      "first_later_in_action": 56,
+      "events_between_remove_and_first_in": 0,
+      "all_events_between_remove_and_first_in": [],
+      "tracked_events": [
+        {
+          "game_id": "1_20222023_0183",
+          "period": 1,
+          "clock": "06:42:00",
+          "action_number": 55,
+          "event_type": "substitution",
+          "team_id": "team_valmiera_glass_via",
+          "player_id": "129",
+          "secondary_player_id": null,
+          "lineup_before": "103,129,275,522,563",
+          "mutation": "REMOVE(129)",
+          "lineup_after": "103,275,522,563"
+        },
+        {
+          "game_id": "1_20222023_0183",
+          "period": 1,
+          "clock": "06:42:00",
+          "action_number": 56,
+          "event_type": "substitution",
+          "team_id": "team_valmiera_glass_via",
+          "player_id": "232",
+          "secondary_player_id": null,
+          "lineup_before": "103,275,522,563",
+          "mutation": "ADD(232)",
+          "lineup_after": "103,232,275,522,563"
+        }
+      ],
+      "returned_to_5": true,
+      "stop_reason": "lineup_returned_to_5",
+      "no_recovery_reason": null,
+      "root_cause": "early_exception_before_later_recovery",
+      "flags": {
+        "same_clock_substitutions_present": true,
+        "timeout_or_foul_sequence_present": false,
+        "team_switching_present": false,
+        "period_transition_hit": false,
+        "liveball_resume_hit": false,
+        "event_ordering_issue_suspected": false
+      }
+    },
+    {
+      "game_id": "1_20222023_0196",
+      "status": "ok",
+      "first_remove_action": 21,
+      "first_later_in_action": 22,
+      "events_between_remove_and_first_in": 0,
+      "all_events_between_remove_and_first_in": [],
+      "tracked_events": [
+        {
+          "game_id": "1_20222023_0196",
+          "period": 1,
+          "clock": "07:55:00",
+          "action_number": 21,
+          "event_type": "substitution",
+          "team_id": "team_tallinna_kalev_audentes",
+          "player_id": "451",
+          "secondary_player_id": null,
+          "lineup_before": "193,433,451,496,544",
+          "mutation": "REMOVE(451)",
+          "lineup_after": "193,433,496,544"
+        },
+        {
+          "game_id": "1_20222023_0196",
+          "period": 1,
+          "clock": "07:55:00",
+          "action_number": 22,
+          "event_type": "substitution",
+          "team_id": "team_tallinna_kalev_audentes",
+          "player_id": "274",
+          "secondary_player_id": null,
+          "lineup_before": "193,433,496,544",
+          "mutation": "ADD(274)",
+          "lineup_after": "193,274,433,496,544"
+        }
+      ],
+      "returned_to_5": true,
+      "stop_reason": "lineup_returned_to_5",
+      "no_recovery_reason": null,
+      "root_cause": "early_exception_before_later_recovery",
+      "flags": {
+        "same_clock_substitutions_present": true,
+        "timeout_or_foul_sequence_present": false,
+        "team_switching_present": false,
+        "period_transition_hit": false,
+        "liveball_resume_hit": false,
+        "event_ordering_issue_suspected": false
+      }
+    },
+    {
+      "game_id": "1_20222023_0213",
+      "status": "ok",
+      "first_remove_action": 30,
+      "first_later_in_action": 31,
+      "events_between_remove_and_first_in": 0,
+      "all_events_between_remove_and_first_in": [],
+      "tracked_events": [
+        {
+          "game_id": "1_20222023_0213",
+          "period": 1,
+          "clock": "08:36:00",
+          "action_number": 30,
+          "event_type": "substitution",
+          "team_id": "team_taltech_optibet",
+          "player_id": "477",
+          "secondary_player_id": null,
+          "lineup_before": "130,264,344,461,477",
+          "mutation": "REMOVE(477)",
+          "lineup_after": "130,264,344,461"
+        },
+        {
+          "game_id": "1_20222023_0213",
+          "period": 1,
+          "clock": "08:36:00",
+          "action_number": 31,
+          "event_type": "substitution",
+          "team_id": "team_taltech_optibet",
+          "player_id": "159",
+          "secondary_player_id": null,
+          "lineup_before": "130,264,344,461",
+          "mutation": "ADD(159)",
+          "lineup_after": "130,159,264,344,461"
+        }
+      ],
+      "returned_to_5": true,
+      "stop_reason": "lineup_returned_to_5",
+      "no_recovery_reason": null,
+      "root_cause": "early_exception_before_later_recovery",
+      "flags": {
+        "same_clock_substitutions_present": true,
+        "timeout_or_foul_sequence_present": false,
+        "team_switching_present": false,
+        "period_transition_hit": false,
+        "liveball_resume_hit": false,
+        "event_ordering_issue_suspected": false
+      }
+    },
+    {
+      "game_id": "1_20222023_0219",
+      "status": "ok",
+      "first_remove_action": 74,
+      "first_later_in_action": 76,
+      "events_between_remove_and_first_in": 1,
+      "all_events_between_remove_and_first_in": [
+        {
+          "game_id": "1_20222023_0219",
+          "period": 1,
+          "clock": "05:52:00",
+          "action_number": 75,
+          "event_type": "substitution",
+          "team_id": "team_bc_kalev_cramo",
+          "player_id": "366",
+          "secondary_player_id": null,
+          "lineup_before": "11,267,366,568",
+          "mutation": "REMOVE(366)",
+          "lineup_after": "11,267,568"
+        }
+      ],
+      "tracked_events": [
+        {
+          "game_id": "1_20222023_0219",
+          "period": 1,
+          "clock": "05:52:00",
+          "action_number": 74,
+          "event_type": "substitution",
+          "team_id": "team_bc_kalev_cramo",
+          "player_id": "184",
+          "secondary_player_id": null,
+          "lineup_before": "11,184,267,366,568",
+          "mutation": "REMOVE(184)",
+          "lineup_after": "11,267,366,568"
+        },
+        {
+          "game_id": "1_20222023_0219",
+          "period": 1,
+          "clock": "05:52:00",
+          "action_number": 75,
+          "event_type": "substitution",
+          "team_id": "team_bc_kalev_cramo",
+          "player_id": "366",
+          "secondary_player_id": null,
+          "lineup_before": "11,267,366,568",
+          "mutation": "REMOVE(366)",
+          "lineup_after": "11,267,568"
+        },
+        {
+          "game_id": "1_20222023_0219",
+          "period": 1,
+          "clock": "05:52:00",
+          "action_number": 76,
+          "event_type": "substitution",
+          "team_id": "team_bc_kalev_cramo",
+          "player_id": "531",
+          "secondary_player_id": null,
+          "lineup_before": "11,267,568",
+          "mutation": "ADD(531)",
+          "lineup_after": "11,267,531,568"
+        },
+        {
+          "game_id": "1_20222023_0219",
+          "period": 1,
+          "clock": "05:52:00",
+          "action_number": 77,
+          "event_type": "substitution",
+          "team_id": "team_bc_kalev_cramo",
+          "player_id": "279",
+          "secondary_player_id": null,
+          "lineup_before": "11,267,531,568",
+          "mutation": "ADD(279)",
+          "lineup_after": "11,267,279,531,568"
+        }
+      ],
+      "returned_to_5": true,
+      "stop_reason": "lineup_returned_to_5",
+      "no_recovery_reason": null,
+      "root_cause": "early_exception_before_later_recovery",
+      "flags": {
+        "same_clock_substitutions_present": true,
+        "timeout_or_foul_sequence_present": false,
+        "team_switching_present": false,
+        "period_transition_hit": false,
+        "liveball_resume_hit": false,
+        "event_ordering_issue_suspected": false
+      }
+    },
+    {
+      "game_id": "1_20222023_0221",
+      "status": "ok",
+      "first_remove_action": 63,
+      "first_later_in_action": 64,
+      "events_between_remove_and_first_in": 0,
+      "all_events_between_remove_and_first_in": [],
+      "tracked_events": [
+        {
+          "game_id": "1_20222023_0221",
+          "period": 1,
+          "clock": "05:38:00",
+          "action_number": 63,
+          "event_type": "substitution",
+          "team_id": "team_bk_liepaja",
+          "player_id": "495",
+          "secondary_player_id": null,
+          "lineup_before": "303,407,442,450,495",
+          "mutation": "REMOVE(495)",
+          "lineup_after": "303,407,442,450"
+        },
+        {
+          "game_id": "1_20222023_0221",
+          "period": 1,
+          "clock": "05:38:00",
+          "action_number": 64,
+          "event_type": "substitution",
+          "team_id": "team_bk_liepaja",
+          "player_id": "290",
+          "secondary_player_id": null,
+          "lineup_before": "303,407,442,450",
+          "mutation": "ADD(290)",
+          "lineup_after": "290,303,407,442,450"
+        }
+      ],
+      "returned_to_5": true,
+      "stop_reason": "lineup_returned_to_5",
+      "no_recovery_reason": null,
+      "root_cause": "early_exception_before_later_recovery",
+      "flags": {
+        "same_clock_substitutions_present": true,
+        "timeout_or_foul_sequence_present": false,
+        "team_switching_present": false,
+        "period_transition_hit": false,
+        "liveball_resume_hit": false,
+        "event_ordering_issue_suspected": false
+      }
+    },
+    {
+      "game_id": "1_20222023_0227",
+      "status": "ok",
+      "first_remove_action": 29,
+      "first_later_in_action": 30,
+      "events_between_remove_and_first_in": 0,
+      "all_events_between_remove_and_first_in": [],
+      "tracked_events": [
+        {
+          "game_id": "1_20222023_0227",
+          "period": 1,
+          "clock": "07:52:00",
+          "action_number": 29,
+          "event_type": "substitution",
+          "team_id": "team_viimsi_sportland",
+          "player_id": "247",
+          "secondary_player_id": null,
+          "lineup_before": "13,110,247,284,390",
+          "mutation": "REMOVE(247)",
+          "lineup_after": "13,110,284,390"
+        },
+        {
+          "game_id": "1_20222023_0227",
+          "period": 1,
+          "clock": "07:52:00",
+          "action_number": 30,
+          "event_type": "substitution",
+          "team_id": "team_viimsi_sportland",
+          "player_id": "514",
+          "secondary_player_id": null,
+          "lineup_before": "13,110,284,390",
+          "mutation": "ADD(514)",
+          "lineup_after": "13,110,284,390,514"
+        }
+      ],
+      "returned_to_5": true,
+      "stop_reason": "lineup_returned_to_5",
+      "no_recovery_reason": null,
+      "root_cause": "early_exception_before_later_recovery",
+      "flags": {
+        "same_clock_substitutions_present": true,
+        "timeout_or_foul_sequence_present": false,
+        "team_switching_present": false,
+        "period_transition_hit": false,
+        "liveball_resume_hit": false,
+        "event_ordering_issue_suspected": false
+      }
+    },
+    {
+      "game_id": "1_20222023_0247",
+      "status": "ok",
+      "first_remove_action": 48,
+      "first_later_in_action": 49,
+      "events_between_remove_and_first_in": 0,
+      "all_events_between_remove_and_first_in": [],
+      "tracked_events": [
+        {
+          "game_id": "1_20222023_0247",
+          "period": 1,
+          "clock": "06:10:00",
+          "action_number": 48,
+          "event_type": "substitution",
+          "team_id": "team_viimsi_sportland",
+          "player_id": "500",
+          "secondary_player_id": null,
+          "lineup_before": "110,122,284,390,500",
+          "mutation": "REMOVE(500)",
+          "lineup_after": "110,122,284,390"
+        },
+        {
+          "game_id": "1_20222023_0247",
+          "period": 1,
+          "clock": "06:10:00",
+          "action_number": 49,
+          "event_type": "substitution",
+          "team_id": "team_viimsi_sportland",
+          "player_id": "13",
+          "secondary_player_id": null,
+          "lineup_before": "110,122,284,390",
+          "mutation": "ADD(13)",
+          "lineup_after": "13,110,122,284,390"
+        }
+      ],
+      "returned_to_5": true,
+      "stop_reason": "lineup_returned_to_5",
+      "no_recovery_reason": null,
+      "root_cause": "early_exception_before_later_recovery",
+      "flags": {
+        "same_clock_substitutions_present": true,
+        "timeout_or_foul_sequence_present": false,
+        "team_switching_present": false,
+        "period_transition_hit": false,
+        "liveball_resume_hit": false,
+        "event_ordering_issue_suspected": false
+      }
+    },
+    {
+      "game_id": "1_20222023_0253",
+      "status": "ok",
+      "first_remove_action": 53,
+      "first_later_in_action": 54,
+      "events_between_remove_and_first_in": 0,
+      "all_events_between_remove_and_first_in": [],
+      "tracked_events": [
+        {
+          "game_id": "1_20222023_0253",
+          "period": 1,
+          "clock": "06:44:00",
+          "action_number": 53,
+          "event_type": "substitution",
+          "team_id": "team_bc_kalev_cramo",
+          "player_id": "184",
+          "secondary_player_id": null,
+          "lineup_before": "11,19,184,366,568",
+          "mutation": "REMOVE(184)",
+          "lineup_after": "11,19,366,568"
+        },
+        {
+          "game_id": "1_20222023_0253",
+          "period": 1,
+          "clock": "06:44:00",
+          "action_number": 54,
+          "event_type": "substitution",
+          "team_id": "team_bc_kalev_cramo",
+          "player_id": "339",
+          "secondary_player_id": null,
+          "lineup_before": "11,19,366,568",
+          "mutation": "ADD(339)",
+          "lineup_after": "11,19,339,366,568"
+        }
+      ],
+      "returned_to_5": true,
+      "stop_reason": "lineup_returned_to_5",
+      "no_recovery_reason": null,
+      "root_cause": "early_exception_before_later_recovery",
+      "flags": {
+        "same_clock_substitutions_present": true,
+        "timeout_or_foul_sequence_present": false,
+        "team_switching_present": false,
+        "period_transition_hit": false,
+        "liveball_resume_hit": false,
+        "event_ordering_issue_suspected": false
+      }
+    },
+    {
+      "game_id": "1_20232024_0003",
+      "status": "ok",
+      "first_remove_action": 68,
+      "first_later_in_action": 69,
+      "events_between_remove_and_first_in": 0,
+      "all_events_between_remove_and_first_in": [],
+      "tracked_events": [
+        {
+          "game_id": "1_20232024_0003",
+          "period": 1,
+          "clock": "06:06:00",
+          "action_number": 68,
+          "event_type": "substitution",
+          "team_id": "team_parnu_sadam",
+          "player_id": "517",
+          "secondary_player_id": null,
+          "lineup_before": "192,338,494,517,521",
+          "mutation": "REMOVE(517)",
+          "lineup_after": "192,338,494,521"
+        },
+        {
+          "game_id": "1_20232024_0003",
+          "period": 1,
+          "clock": "06:06:00",
+          "action_number": 69,
+          "event_type": "substitution",
+          "team_id": "team_parnu_sadam",
+          "player_id": "503",
+          "secondary_player_id": null,
+          "lineup_before": "192,338,494,521",
+          "mutation": "ADD(503)",
+          "lineup_after": "192,338,494,503,521"
+        }
+      ],
+      "returned_to_5": true,
+      "stop_reason": "lineup_returned_to_5",
+      "no_recovery_reason": null,
+      "root_cause": "early_exception_before_later_recovery",
+      "flags": {
+        "same_clock_substitutions_present": true,
+        "timeout_or_foul_sequence_present": false,
+        "team_switching_present": false,
+        "period_transition_hit": false,
+        "liveball_resume_hit": false,
+        "event_ordering_issue_suspected": false
+      }
+    },
+    {
+      "game_id": "1_20232024_0006",
+      "status": "ok",
+      "first_remove_action": 49,
+      "first_later_in_action": 50,
+      "events_between_remove_and_first_in": 0,
+      "all_events_between_remove_and_first_in": [],
+      "tracked_events": [
+        {
+          "game_id": "1_20232024_0006",
+          "period": 1,
+          "clock": "06:43:00",
+          "action_number": 49,
+          "event_type": "substitution",
+          "team_id": "team_bk_ventspils",
+          "player_id": "327",
+          "secondary_player_id": null,
+          "lineup_before": "137,189,327,442,500",
+          "mutation": "REMOVE(327)",
+          "lineup_after": "137,189,442,500"
+        },
+        {
+          "game_id": "1_20232024_0006",
+          "period": 1,
+          "clock": "06:43:00",
+          "action_number": 50,
+          "event_type": "substitution",
+          "team_id": "team_bk_ventspils",
+          "player_id": "3",
+          "secondary_player_id": null,
+          "lineup_before": "137,189,442,500",
+          "mutation": "ADD(3)",
+          "lineup_after": "3,137,189,442,500"
+        }
+      ],
+      "returned_to_5": true,
+      "stop_reason": "lineup_returned_to_5",
+      "no_recovery_reason": null,
+      "root_cause": "early_exception_before_later_recovery",
+      "flags": {
+        "same_clock_substitutions_present": true,
+        "timeout_or_foul_sequence_present": false,
+        "team_switching_present": false,
+        "period_transition_hit": false,
+        "liveball_resume_hit": false,
+        "event_ordering_issue_suspected": false
+      }
+    },
+    {
+      "game_id": "1_20232024_0014",
+      "status": "ok",
+      "first_remove_action": 36,
+      "first_later_in_action": 37,
+      "events_between_remove_and_first_in": 0,
+      "all_events_between_remove_and_first_in": [],
+      "tracked_events": [
+        {
+          "game_id": "1_20232024_0014",
+          "period": 1,
+          "clock": "07:52:00",
+          "action_number": 36,
+          "event_type": "substitution",
+          "team_id": "team_bc_kalev_cramo",
+          "player_id": "476",
+          "secondary_player_id": null,
+          "lineup_before": "184,267,339,414,476",
+          "mutation": "REMOVE(476)",
+          "lineup_after": "184,267,339,414"
+        },
+        {
+          "game_id": "1_20232024_0014",
+          "period": 1,
+          "clock": "07:52:00",
+          "action_number": 37,
+          "event_type": "substitution",
+          "team_id": "team_bc_kalev_cramo",
+          "player_id": "279",
+          "secondary_player_id": null,
+          "lineup_before": "184,267,339,414",
+          "mutation": "ADD(279)",
+          "lineup_after": "184,267,279,339,414"
+        }
+      ],
+      "returned_to_5": true,
+      "stop_reason": "lineup_returned_to_5",
+      "no_recovery_reason": null,
+      "root_cause": "early_exception_before_later_recovery",
+      "flags": {
+        "same_clock_substitutions_present": true,
+        "timeout_or_foul_sequence_present": false,
+        "team_switching_present": false,
+        "period_transition_hit": false,
+        "liveball_resume_hit": false,
+        "event_ordering_issue_suspected": false
+      }
+    },
+    {
+      "game_id": "1_20232024_0019",
+      "status": "ok",
+      "first_remove_action": 78,
+      "first_later_in_action": 79,
+      "events_between_remove_and_first_in": 0,
+      "all_events_between_remove_and_first_in": [],
+      "tracked_events": [
+        {
+          "game_id": "1_20232024_0019",
+          "period": 1,
+          "clock": "06:00:00",
+          "action_number": 78,
+          "event_type": "substitution",
+          "team_id": "team_valmiera_glass_via",
+          "player_id": "120",
+          "secondary_player_id": null,
+          "lineup_before": "120,169,186,396,509",
+          "mutation": "REMOVE(120)",
+          "lineup_after": "169,186,396,509"
+        },
+        {
+          "game_id": "1_20232024_0019",
+          "period": 1,
+          "clock": "06:00:00",
+          "action_number": 79,
+          "event_type": "substitution",
+          "team_id": "team_valmiera_glass_via",
+          "player_id": "227",
+          "secondary_player_id": null,
+          "lineup_before": "169,186,396,509",
+          "mutation": "ADD(227)",
+          "lineup_after": "169,186,227,396,509"
+        }
+      ],
+      "returned_to_5": true,
+      "stop_reason": "lineup_returned_to_5",
+      "no_recovery_reason": null,
+      "root_cause": "early_exception_before_later_recovery",
+      "flags": {
+        "same_clock_substitutions_present": true,
+        "timeout_or_foul_sequence_present": false,
+        "team_switching_present": false,
+        "period_transition_hit": false,
+        "liveball_resume_hit": false,
+        "event_ordering_issue_suspected": false
+      }
+    },
+    {
+      "game_id": "1_20232024_0036",
+      "status": "ok",
+      "first_remove_action": 64,
+      "first_later_in_action": 66,
+      "events_between_remove_and_first_in": 1,
+      "all_events_between_remove_and_first_in": [
+        {
+          "game_id": "1_20232024_0036",
+          "period": 1,
+          "clock": "05:13:00",
+          "action_number": 65,
+          "event_type": "substitution",
+          "team_id": "team_bk_ogre",
+          "player_id": "162",
+          "secondary_player_id": null,
+          "lineup_before": "162,187,256,502",
+          "mutation": "REMOVE(162)",
+          "lineup_after": "187,256,502"
+        }
+      ],
+      "tracked_events": [
+        {
+          "game_id": "1_20232024_0036",
+          "period": 1,
+          "clock": "05:13:00",
+          "action_number": 64,
+          "event_type": "substitution",
+          "team_id": "team_bk_ogre",
+          "player_id": "358",
+          "secondary_player_id": null,
+          "lineup_before": "162,187,256,358,502",
+          "mutation": "REMOVE(358)",
+          "lineup_after": "162,187,256,502"
+        },
+        {
+          "game_id": "1_20232024_0036",
+          "period": 1,
+          "clock": "05:13:00",
+          "action_number": 65,
+          "event_type": "substitution",
+          "team_id": "team_bk_ogre",
+          "player_id": "162",
+          "secondary_player_id": null,
+          "lineup_before": "162,187,256,502",
+          "mutation": "REMOVE(162)",
+          "lineup_after": "187,256,502"
+        },
+        {
+          "game_id": "1_20232024_0036",
+          "period": 1,
+          "clock": "05:13:00",
+          "action_number": 66,
+          "event_type": "substitution",
+          "team_id": "team_bk_ogre",
+          "player_id": "251",
+          "secondary_player_id": null,
+          "lineup_before": "187,256,502",
+          "mutation": "ADD(251)",
+          "lineup_after": "187,251,256,502"
+        },
+        {
+          "game_id": "1_20232024_0036",
+          "period": 1,
+          "clock": "05:13:00",
+          "action_number": 67,
+          "event_type": "substitution",
+          "team_id": "team_bk_ogre",
+          "player_id": "349",
+          "secondary_player_id": null,
+          "lineup_before": "187,251,256,502",
+          "mutation": "ADD(349)",
+          "lineup_after": "187,251,256,349,502"
+        }
+      ],
+      "returned_to_5": true,
+      "stop_reason": "lineup_returned_to_5",
+      "no_recovery_reason": null,
+      "root_cause": "early_exception_before_later_recovery",
+      "flags": {
+        "same_clock_substitutions_present": true,
+        "timeout_or_foul_sequence_present": false,
+        "team_switching_present": false,
+        "period_transition_hit": false,
+        "liveball_resume_hit": false,
+        "event_ordering_issue_suspected": false
+      }
+    },
+    {
+      "game_id": "1_20232024_0059",
+      "status": "ok",
+      "first_remove_action": 54,
+      "first_later_in_action": 55,
+      "events_between_remove_and_first_in": 0,
+      "all_events_between_remove_and_first_in": [],
+      "tracked_events": [
+        {
+          "game_id": "1_20232024_0059",
+          "period": 1,
+          "clock": "04:46:00",
+          "action_number": 54,
+          "event_type": "substitution",
+          "team_id": "5",
+          "player_id": "137",
+          "secondary_player_id": null,
+          "lineup_before": "137,143,189,327,500",
+          "mutation": "REMOVE(137)",
+          "lineup_after": "143,189,327,500"
+        },
+        {
+          "game_id": "1_20232024_0059",
+          "period": 1,
+          "clock": "04:46:00",
+          "action_number": 55,
+          "event_type": "substitution",
+          "team_id": "5",
+          "player_id": "548",
+          "secondary_player_id": null,
+          "lineup_before": "143,189,327,500",
+          "mutation": "ADD(548)",
+          "lineup_after": "143,189,327,500,548"
+        }
+      ],
+      "returned_to_5": true,
+      "stop_reason": "lineup_returned_to_5",
+      "no_recovery_reason": null,
+      "root_cause": "early_exception_before_later_recovery",
+      "flags": {
+        "same_clock_substitutions_present": true,
+        "timeout_or_foul_sequence_present": false,
+        "team_switching_present": false,
+        "period_transition_hit": false,
+        "liveball_resume_hit": false,
+        "event_ordering_issue_suspected": false
+      }
+    },
+    {
+      "game_id": "1_20232024_0111",
+      "status": "ok",
+      "first_remove_action": 71,
+      "first_later_in_action": 72,
+      "events_between_remove_and_first_in": 0,
+      "all_events_between_remove_and_first_in": [],
+      "tracked_events": [
+        {
+          "game_id": "1_20232024_0111",
+          "period": 1,
+          "clock": "05:24:00",
+          "action_number": 71,
+          "event_type": "substitution",
+          "team_id": "3",
+          "player_id": "278",
+          "secondary_player_id": null,
+          "lineup_before": "131,258,278,290,450",
+          "mutation": "REMOVE(278)",
+          "lineup_after": "131,258,290,450"
+        },
+        {
+          "game_id": "1_20232024_0111",
+          "period": 1,
+          "clock": "05:24:00",
+          "action_number": 72,
+          "event_type": "substitution",
+          "team_id": "3",
+          "player_id": "407",
+          "secondary_player_id": null,
+          "lineup_before": "131,258,290,450",
+          "mutation": "ADD(407)",
+          "lineup_after": "131,258,290,407,450"
+        }
+      ],
+      "returned_to_5": true,
+      "stop_reason": "lineup_returned_to_5",
+      "no_recovery_reason": null,
+      "root_cause": "early_exception_before_later_recovery",
+      "flags": {
+        "same_clock_substitutions_present": true,
+        "timeout_or_foul_sequence_present": false,
+        "team_switching_present": false,
+        "period_transition_hit": false,
+        "liveball_resume_hit": false,
+        "event_ordering_issue_suspected": false
+      }
+    },
+    {
+      "game_id": "1_20232024_0145",
+      "status": "ok",
+      "first_remove_action": 32,
+      "first_later_in_action": 33,
+      "events_between_remove_and_first_in": 0,
+      "all_events_between_remove_and_first_in": [],
+      "tracked_events": [
+        {
+          "game_id": "1_20232024_0145",
+          "period": 1,
+          "clock": "08:07:00",
+          "action_number": 32,
+          "event_type": "substitution",
+          "team_id": "6",
+          "player_id": "350",
+          "secondary_player_id": null,
+          "lineup_before": "323,339,350,354,389",
+          "mutation": "REMOVE(350)",
+          "lineup_after": "323,339,354,389"
+        },
+        {
+          "game_id": "1_20232024_0145",
+          "period": 1,
+          "clock": "08:07:00",
+          "action_number": 33,
+          "event_type": "substitution",
+          "team_id": "6",
+          "player_id": "279",
+          "secondary_player_id": null,
+          "lineup_before": "323,339,354,389",
+          "mutation": "ADD(279)",
+          "lineup_after": "279,323,339,354,389"
+        }
+      ],
+      "returned_to_5": true,
+      "stop_reason": "lineup_returned_to_5",
+      "no_recovery_reason": null,
+      "root_cause": "early_exception_before_later_recovery",
+      "flags": {
+        "same_clock_substitutions_present": true,
+        "timeout_or_foul_sequence_present": false,
+        "team_switching_present": false,
+        "period_transition_hit": false,
+        "liveball_resume_hit": false,
+        "event_ordering_issue_suspected": false
+      }
+    },
+    {
+      "game_id": "1_20232024_0165",
+      "status": "ok",
+      "first_remove_action": 58,
+      "first_later_in_action": 59,
+      "events_between_remove_and_first_in": 0,
+      "all_events_between_remove_and_first_in": [],
+      "tracked_events": [
+        {
+          "game_id": "1_20232024_0165",
+          "period": 1,
+          "clock": "07:02:00",
+          "action_number": 58,
+          "event_type": "substitution",
+          "team_id": "3",
+          "player_id": "258",
+          "secondary_player_id": null,
+          "lineup_before": "131,258,278,290,437",
+          "mutation": "REMOVE(258)",
+          "lineup_after": "131,278,290,437"
+        },
+        {
+          "game_id": "1_20232024_0165",
+          "period": 1,
+          "clock": "07:02:00",
+          "action_number": 59,
+          "event_type": "substitution",
+          "team_id": "3",
+          "player_id": "554",
+          "secondary_player_id": null,
+          "lineup_before": "131,278,290,437",
+          "mutation": "ADD(554)",
+          "lineup_after": "131,278,290,437,554"
+        }
+      ],
+      "returned_to_5": true,
+      "stop_reason": "lineup_returned_to_5",
+      "no_recovery_reason": null,
+      "root_cause": "early_exception_before_later_recovery",
+      "flags": {
+        "same_clock_substitutions_present": true,
+        "timeout_or_foul_sequence_present": false,
+        "team_switching_present": false,
+        "period_transition_hit": false,
+        "liveball_resume_hit": false,
+        "event_ordering_issue_suspected": false
+      }
+    },
+    {
+      "game_id": "1_20232024_0256",
+      "status": "ok",
+      "first_remove_action": 35,
+      "first_later_in_action": 36,
+      "events_between_remove_and_first_in": 0,
+      "all_events_between_remove_and_first_in": [],
+      "tracked_events": [
+        {
+          "game_id": "1_20232024_0256",
+          "period": 1,
+          "clock": "06:46:00",
+          "action_number": 35,
+          "event_type": "substitution",
+          "team_id": "6",
+          "player_id": "389",
+          "secondary_player_id": null,
+          "lineup_before": "65,267,323,350,389",
+          "mutation": "REMOVE(389)",
+          "lineup_after": "65,267,323,350"
+        },
+        {
+          "game_id": "1_20232024_0256",
+          "period": 1,
+          "clock": "06:46:00",
+          "action_number": 36,
+          "event_type": "substitution",
+          "team_id": "6",
+          "player_id": "476",
+          "secondary_player_id": null,
+          "lineup_before": "65,267,323,350",
+          "mutation": "ADD(476)",
+          "lineup_after": "65,267,323,350,476"
+        }
+      ],
+      "returned_to_5": true,
+      "stop_reason": "lineup_returned_to_5",
+      "no_recovery_reason": null,
+      "root_cause": "early_exception_before_later_recovery",
+      "flags": {
+        "same_clock_substitutions_present": true,
+        "timeout_or_foul_sequence_present": false,
+        "team_switching_present": false,
+        "period_transition_hit": false,
+        "liveball_resume_hit": false,
+        "event_ordering_issue_suspected": false
+      }
+    },
+    {
+      "game_id": "1_20242025_0018",
+      "status": "ok",
+      "first_remove_action": 34,
+      "first_later_in_action": 35,
+      "events_between_remove_and_first_in": 0,
+      "all_events_between_remove_and_first_in": [],
+      "tracked_events": [
+        {
+          "game_id": "1_20242025_0018",
+          "period": 1,
+          "clock": "07:19:00",
+          "action_number": 34,
+          "event_type": "substitution",
+          "team_id": "9",
+          "player_id": "486",
+          "secondary_player_id": null,
+          "lineup_before": "12,119,299,432,486",
+          "mutation": "REMOVE(486)",
+          "lineup_after": "12,119,299,432"
+        },
+        {
+          "game_id": "1_20242025_0018",
+          "period": 1,
+          "clock": "07:19:00",
+          "action_number": 35,
+          "event_type": "substitution",
+          "team_id": "9",
+          "player_id": "293",
+          "secondary_player_id": null,
+          "lineup_before": "12,119,299,432",
+          "mutation": "ADD(293)",
+          "lineup_after": "12,119,293,299,432"
+        }
+      ],
+      "returned_to_5": true,
+      "stop_reason": "lineup_returned_to_5",
+      "no_recovery_reason": null,
+      "root_cause": "early_exception_before_later_recovery",
+      "flags": {
+        "same_clock_substitutions_present": true,
+        "timeout_or_foul_sequence_present": false,
+        "team_switching_present": false,
+        "period_transition_hit": false,
+        "liveball_resume_hit": false,
+        "event_ordering_issue_suspected": false
+      }
+    },
+    {
+      "game_id": "1_20242025_0024",
+      "status": "ok",
+      "first_remove_action": 49,
+      "first_later_in_action": 50,
+      "events_between_remove_and_first_in": 0,
+      "all_events_between_remove_and_first_in": [],
+      "tracked_events": [
+        {
+          "game_id": "1_20242025_0024",
+          "period": 1,
+          "clock": "07:06:00",
+          "action_number": 49,
+          "event_type": "substitution",
+          "team_id": "17",
+          "player_id": "275",
+          "secondary_player_id": null,
+          "lineup_before": "2,107,275,310,396",
+          "mutation": "REMOVE(275)",
+          "lineup_after": "2,107,310,396"
+        },
+        {
+          "game_id": "1_20242025_0024",
+          "period": 1,
+          "clock": "07:06:00",
+          "action_number": 50,
+          "event_type": "substitution",
+          "team_id": "17",
+          "player_id": "120",
+          "secondary_player_id": null,
+          "lineup_before": "2,107,310,396",
+          "mutation": "ADD(120)",
+          "lineup_after": "2,107,120,310,396"
+        }
+      ],
+      "returned_to_5": true,
+      "stop_reason": "lineup_returned_to_5",
+      "no_recovery_reason": null,
+      "root_cause": "early_exception_before_later_recovery",
+      "flags": {
+        "same_clock_substitutions_present": true,
+        "timeout_or_foul_sequence_present": false,
+        "team_switching_present": false,
+        "period_transition_hit": false,
+        "liveball_resume_hit": false,
+        "event_ordering_issue_suspected": false
+      }
+    },
+    {
+      "game_id": "1_20242025_0052",
+      "status": "ok",
+      "first_remove_action": 35,
+      "first_later_in_action": 36,
+      "events_between_remove_and_first_in": 0,
+      "all_events_between_remove_and_first_in": [],
+      "tracked_events": [
+        {
+          "game_id": "1_20242025_0052",
+          "period": 1,
+          "clock": "08:09:00",
+          "action_number": 35,
+          "event_type": "substitution",
+          "team_id": "5",
+          "player_id": "575",
+          "secondary_player_id": null,
+          "lineup_before": "3,380,439,500,575",
+          "mutation": "REMOVE(575)",
+          "lineup_after": "3,380,439,500"
+        },
+        {
+          "game_id": "1_20242025_0052",
+          "period": 1,
+          "clock": "08:09:00",
+          "action_number": 36,
+          "event_type": "substitution",
+          "team_id": "5",
+          "player_id": "137",
+          "secondary_player_id": null,
+          "lineup_before": "3,380,439,500",
+          "mutation": "ADD(137)",
+          "lineup_after": "3,137,380,439,500"
+        }
+      ],
+      "returned_to_5": true,
+      "stop_reason": "lineup_returned_to_5",
+      "no_recovery_reason": null,
+      "root_cause": "early_exception_before_later_recovery",
+      "flags": {
+        "same_clock_substitutions_present": true,
+        "timeout_or_foul_sequence_present": false,
+        "team_switching_present": false,
+        "period_transition_hit": false,
+        "liveball_resume_hit": false,
+        "event_ordering_issue_suspected": false
+      }
+    },
+    {
+      "game_id": "1_20242025_0061",
+      "status": "ok",
+      "first_remove_action": 75,
+      "first_later_in_action": 76,
+      "events_between_remove_and_first_in": 0,
+      "all_events_between_remove_and_first_in": [],
+      "tracked_events": [
+        {
+          "game_id": "1_20242025_0061",
+          "period": 1,
+          "clock": "05:35:00",
+          "action_number": 75,
+          "event_type": "substitution",
+          "team_id": "11",
+          "player_id": "63",
+          "secondary_player_id": null,
+          "lineup_before": "63,131,176,234,535",
+          "mutation": "REMOVE(63)",
+          "lineup_after": "131,176,234,535"
+        },
+        {
+          "game_id": "1_20242025_0061",
+          "period": 1,
+          "clock": "05:35:00",
+          "action_number": 76,
+          "event_type": "substitution",
+          "team_id": "11",
+          "player_id": "383",
+          "secondary_player_id": null,
+          "lineup_before": "131,176,234,535",
+          "mutation": "ADD(383)",
+          "lineup_after": "131,176,234,383,535"
+        }
+      ],
+      "returned_to_5": true,
+      "stop_reason": "lineup_returned_to_5",
+      "no_recovery_reason": null,
+      "root_cause": "early_exception_before_later_recovery",
+      "flags": {
+        "same_clock_substitutions_present": true,
+        "timeout_or_foul_sequence_present": false,
+        "team_switching_present": false,
+        "period_transition_hit": false,
+        "liveball_resume_hit": false,
+        "event_ordering_issue_suspected": false
+      }
+    },
+    {
+      "game_id": "1_20242025_0074",
+      "status": "ok",
+      "first_remove_action": 41,
+      "first_later_in_action": 42,
+      "events_between_remove_and_first_in": 0,
+      "all_events_between_remove_and_first_in": [],
+      "tracked_events": [
+        {
+          "game_id": "1_20242025_0074",
+          "period": 1,
+          "clock": "07:03:00",
+          "action_number": 41,
+          "event_type": "substitution",
+          "team_id": "18",
+          "player_id": "314",
+          "secondary_player_id": null,
+          "lineup_before": "13,247,281,314,418",
+          "mutation": "REMOVE(314)",
+          "lineup_after": "13,247,281,418"
+        },
+        {
+          "game_id": "1_20242025_0074",
+          "period": 1,
+          "clock": "07:03:00",
+          "action_number": 42,
+          "event_type": "substitution",
+          "team_id": "18",
+          "player_id": "346",
+          "secondary_player_id": null,
+          "lineup_before": "13,247,281,418",
+          "mutation": "ADD(346)",
+          "lineup_after": "13,247,281,346,418"
+        }
+      ],
+      "returned_to_5": true,
+      "stop_reason": "lineup_returned_to_5",
+      "no_recovery_reason": null,
+      "root_cause": "early_exception_before_later_recovery",
+      "flags": {
+        "same_clock_substitutions_present": true,
+        "timeout_or_foul_sequence_present": false,
+        "team_switching_present": false,
+        "period_transition_hit": false,
+        "liveball_resume_hit": false,
+        "event_ordering_issue_suspected": false
+      }
+    },
+    {
+      "game_id": "1_20242025_0130",
+      "status": "ok",
+      "first_remove_action": 37,
+      "first_later_in_action": 39,
+      "events_between_remove_and_first_in": 1,
+      "all_events_between_remove_and_first_in": [
+        {
+          "game_id": "1_20242025_0130",
+          "period": 1,
+          "clock": "07:30:00",
+          "action_number": 38,
+          "event_type": "substitution",
+          "team_id": "6",
+          "player_id": "164",
+          "secondary_player_id": null,
+          "lineup_before": "29,164,267,508",
+          "mutation": "REMOVE(164)",
+          "lineup_after": "29,267,508"
+        }
+      ],
+      "tracked_events": [
+        {
+          "game_id": "1_20242025_0130",
+          "period": 1,
+          "clock": "07:30:00",
+          "action_number": 37,
+          "event_type": "substitution",
+          "team_id": "6",
+          "player_id": "518",
+          "secondary_player_id": null,
+          "lineup_before": "29,164,267,508,518",
+          "mutation": "REMOVE(518)",
+          "lineup_after": "29,164,267,508"
+        },
+        {
+          "game_id": "1_20242025_0130",
+          "period": 1,
+          "clock": "07:30:00",
+          "action_number": 38,
+          "event_type": "substitution",
+          "team_id": "6",
+          "player_id": "164",
+          "secondary_player_id": null,
+          "lineup_before": "29,164,267,508",
+          "mutation": "REMOVE(164)",
+          "lineup_after": "29,267,508"
+        },
+        {
+          "game_id": "1_20242025_0130",
+          "period": 1,
+          "clock": "07:30:00",
+          "action_number": 39,
+          "event_type": "substitution",
+          "team_id": "6",
+          "player_id": "323",
+          "secondary_player_id": null,
+          "lineup_before": "29,267,508",
+          "mutation": "ADD(323)",
+          "lineup_after": "29,267,323,508"
+        },
+        {
+          "game_id": "1_20242025_0130",
+          "period": 1,
+          "clock": "07:30:00",
+          "action_number": 40,
+          "event_type": "substitution",
+          "team_id": "6",
+          "player_id": "148",
+          "secondary_player_id": null,
+          "lineup_before": "29,267,323,508",
+          "mutation": "ADD(148)",
+          "lineup_after": "29,148,267,323,508"
+        }
+      ],
+      "returned_to_5": true,
+      "stop_reason": "lineup_returned_to_5",
+      "no_recovery_reason": null,
+      "root_cause": "early_exception_before_later_recovery",
+      "flags": {
+        "same_clock_substitutions_present": true,
+        "timeout_or_foul_sequence_present": false,
+        "team_switching_present": false,
+        "period_transition_hit": false,
+        "liveball_resume_hit": false,
+        "event_ordering_issue_suspected": false
+      }
+    },
+    {
+      "game_id": "1_20242025_0138",
+      "status": "ok",
+      "first_remove_action": 98,
+      "first_later_in_action": 99,
+      "events_between_remove_and_first_in": 0,
+      "all_events_between_remove_and_first_in": [],
+      "tracked_events": [
+        {
+          "game_id": "1_20242025_0138",
+          "period": 1,
+          "clock": "04:22:00",
+          "action_number": 98,
+          "event_type": "substitution",
+          "team_id": "8",
+          "player_id": "481",
+          "secondary_player_id": null,
+          "lineup_before": "122,223,481,491,561",
+          "mutation": "REMOVE(481)",
+          "lineup_after": "122,223,491,561"
+        },
+        {
+          "game_id": "1_20242025_0138",
+          "period": 1,
+          "clock": "04:22:00",
+          "action_number": 99,
+          "event_type": "substitution",
+          "team_id": "8",
+          "player_id": "507",
+          "secondary_player_id": null,
+          "lineup_before": "122,223,491,561",
+          "mutation": "ADD(507)",
+          "lineup_after": "122,223,491,507,561"
+        }
+      ],
+      "returned_to_5": true,
+      "stop_reason": "lineup_returned_to_5",
+      "no_recovery_reason": null,
+      "root_cause": "early_exception_before_later_recovery",
+      "flags": {
+        "same_clock_substitutions_present": true,
+        "timeout_or_foul_sequence_present": false,
+        "team_switching_present": false,
+        "period_transition_hit": false,
+        "liveball_resume_hit": false,
+        "event_ordering_issue_suspected": false
+      }
+    },
+    {
+      "game_id": "1_20242025_0141",
+      "status": "ok",
+      "first_remove_action": 68,
+      "first_later_in_action": 69,
+      "events_between_remove_and_first_in": 0,
+      "all_events_between_remove_and_first_in": [],
+      "tracked_events": [
+        {
+          "game_id": "1_20242025_0141",
+          "period": 1,
+          "clock": "05:34:00",
+          "action_number": 68,
+          "event_type": "substitution",
+          "team_id": "13",
+          "player_id": "317",
+          "secondary_player_id": null,
+          "lineup_before": "72,317,417,429,514",
+          "mutation": "REMOVE(317)",
+          "lineup_after": "72,417,429,514"
+        },
+        {
+          "game_id": "1_20242025_0141",
+          "period": 1,
+          "clock": "05:34:00",
+          "action_number": 69,
+          "event_type": "substitution",
+          "team_id": "13",
+          "player_id": "433",
+          "secondary_player_id": null,
+          "lineup_before": "72,417,429,514",
+          "mutation": "ADD(433)",
+          "lineup_after": "72,417,429,433,514"
+        }
+      ],
+      "returned_to_5": true,
+      "stop_reason": "lineup_returned_to_5",
+      "no_recovery_reason": null,
+      "root_cause": "early_exception_before_later_recovery",
+      "flags": {
+        "same_clock_substitutions_present": true,
+        "timeout_or_foul_sequence_present": false,
+        "team_switching_present": false,
+        "period_transition_hit": false,
+        "liveball_resume_hit": false,
+        "event_ordering_issue_suspected": false
+      }
+    },
+    {
+      "game_id": "1_20242025_0153",
+      "status": "ok",
+      "first_remove_action": 84,
+      "first_later_in_action": 86,
+      "events_between_remove_and_first_in": 1,
+      "all_events_between_remove_and_first_in": [
+        {
+          "game_id": "1_20242025_0153",
+          "period": 1,
+          "clock": "05:00:00",
+          "action_number": 85,
+          "event_type": "substitution",
+          "team_id": "11",
+          "player_id": "131",
+          "secondary_player_id": null,
+          "lineup_before": "131,176,234,535",
+          "mutation": "REMOVE(131)",
+          "lineup_after": "176,234,535"
+        }
+      ],
+      "tracked_events": [
+        {
+          "game_id": "1_20242025_0153",
+          "period": 1,
+          "clock": "05:00:00",
+          "action_number": 84,
+          "event_type": "substitution",
+          "team_id": "11",
+          "player_id": "63",
+          "secondary_player_id": null,
+          "lineup_before": "63,131,176,234,535",
+          "mutation": "REMOVE(63)",
+          "lineup_after": "131,176,234,535"
+        },
+        {
+          "game_id": "1_20242025_0153",
+          "period": 1,
+          "clock": "05:00:00",
+          "action_number": 85,
+          "event_type": "substitution",
+          "team_id": "11",
+          "player_id": "131",
+          "secondary_player_id": null,
+          "lineup_before": "131,176,234,535",
+          "mutation": "REMOVE(131)",
+          "lineup_after": "176,234,535"
+        },
+        {
+          "game_id": "1_20242025_0153",
+          "period": 1,
+          "clock": "05:00:00",
+          "action_number": 86,
+          "event_type": "substitution",
+          "team_id": "11",
+          "player_id": "462",
+          "secondary_player_id": null,
+          "lineup_before": "176,234,535",
+          "mutation": "ADD(462)",
+          "lineup_after": "176,234,462,535"
+        },
+        {
+          "game_id": "1_20242025_0153",
+          "period": 1,
+          "clock": "05:00:00",
+          "action_number": 87,
+          "event_type": "substitution",
+          "team_id": "11",
+          "player_id": "383",
+          "secondary_player_id": null,
+          "lineup_before": "176,234,462,535",
+          "mutation": "ADD(383)",
+          "lineup_after": "176,234,383,462,535"
+        }
+      ],
+      "returned_to_5": true,
+      "stop_reason": "lineup_returned_to_5",
+      "no_recovery_reason": null,
+      "root_cause": "early_exception_before_later_recovery",
+      "flags": {
+        "same_clock_substitutions_present": true,
+        "timeout_or_foul_sequence_present": false,
+        "team_switching_present": false,
+        "period_transition_hit": false,
+        "liveball_resume_hit": false,
+        "event_ordering_issue_suspected": false
+      }
+    },
+    {
+      "game_id": "1_20242025_0157",
+      "status": "ok",
+      "first_remove_action": 58,
+      "first_later_in_action": null,
+      "events_between_remove_and_first_in": null,
+      "all_events_between_remove_and_first_in": [],
+      "tracked_events": [
+        {
+          "game_id": "1_20242025_0157",
+          "period": 1,
+          "clock": "07:27:00",
+          "action_number": 58,
+          "event_type": "substitution",
+          "team_id": "3",
+          "player_id": "469",
+          "secondary_player_id": null,
+          "lineup_before": "132,258,278,460,469",
+          "mutation": "REMOVE(469)",
+          "lineup_after": "132,258,278,460"
+        },
+        {
+          "game_id": "1_20242025_0157",
+          "period": 1,
+          "clock": "07:20:00",
+          "action_number": 61,
+          "event_type": "2pt",
+          "team_id": "8",
+          "player_id": null,
+          "secondary_player_id": null,
+          "lineup_before": "132,258,278,460",
+          "mutation": "NO_CHANGE",
+          "lineup_after": "132,258,278,460"
+        }
+      ],
+      "returned_to_5": false,
+      "stop_reason": "play_resumed_before_recovery",
+      "no_recovery_reason": "no incoming substitution before stop boundary",
+      "root_cause": "no_in_before_liveball_resume",
+      "flags": {
+        "same_clock_substitutions_present": false,
+        "timeout_or_foul_sequence_present": false,
+        "team_switching_present": true,
+        "period_transition_hit": false,
+        "liveball_resume_hit": true,
+        "event_ordering_issue_suspected": false
+      }
+    },
+    {
+      "game_id": "1_20242025_0181",
+      "status": "ok",
+      "first_remove_action": 107,
+      "first_later_in_action": 108,
+      "events_between_remove_and_first_in": 0,
+      "all_events_between_remove_and_first_in": [],
+      "tracked_events": [
+        {
+          "game_id": "1_20242025_0181",
+          "period": 1,
+          "clock": "06:02:00",
+          "action_number": 107,
+          "event_type": "substitution",
+          "team_id": "4",
+          "player_id": "162",
+          "secondary_player_id": null,
+          "lineup_before": "162,169,256,381,502",
+          "mutation": "REMOVE(162)",
+          "lineup_after": "169,256,381,502"
+        },
+        {
+          "game_id": "1_20242025_0181",
+          "period": 1,
+          "clock": "06:02:00",
+          "action_number": 108,
+          "event_type": "substitution",
+          "team_id": "4",
+          "player_id": "289",
+          "secondary_player_id": null,
+          "lineup_before": "169,256,381,502",
+          "mutation": "ADD(289)",
+          "lineup_after": "169,256,289,381,502"
+        }
+      ],
+      "returned_to_5": true,
+      "stop_reason": "lineup_returned_to_5",
+      "no_recovery_reason": null,
+      "root_cause": "early_exception_before_later_recovery",
+      "flags": {
+        "same_clock_substitutions_present": true,
+        "timeout_or_foul_sequence_present": false,
+        "team_switching_present": false,
+        "period_transition_hit": false,
+        "liveball_resume_hit": false,
+        "event_ordering_issue_suspected": false
+      }
+    },
+    {
+      "game_id": "1_20242025_0206",
+      "status": "ok",
+      "first_remove_action": 45,
+      "first_later_in_action": 46,
+      "events_between_remove_and_first_in": 0,
+      "all_events_between_remove_and_first_in": [],
+      "tracked_events": [
+        {
+          "game_id": "1_20242025_0206",
+          "period": 1,
+          "clock": "07:36:00",
+          "action_number": 45,
+          "event_type": "substitution",
+          "team_id": "9",
+          "player_id": "106",
+          "secondary_player_id": null,
+          "lineup_before": "12,106,119,134,486",
+          "mutation": "REMOVE(106)",
+          "lineup_after": "12,119,134,486"
+        },
+        {
+          "game_id": "1_20242025_0206",
+          "period": 1,
+          "clock": "07:36:00",
+          "action_number": 46,
+          "event_type": "substitution",
+          "team_id": "9",
+          "player_id": "177",
+          "secondary_player_id": null,
+          "lineup_before": "12,119,134,486",
+          "mutation": "ADD(177)",
+          "lineup_after": "12,119,134,177,486"
+        }
+      ],
+      "returned_to_5": true,
+      "stop_reason": "lineup_returned_to_5",
+      "no_recovery_reason": null,
+      "root_cause": "early_exception_before_later_recovery",
+      "flags": {
+        "same_clock_substitutions_present": true,
+        "timeout_or_foul_sequence_present": false,
+        "team_switching_present": false,
+        "period_transition_hit": false,
+        "liveball_resume_hit": false,
+        "event_ordering_issue_suspected": false
+      }
+    },
+    {
+      "game_id": "1_20242025_0207",
+      "status": "ok",
+      "first_remove_action": 53,
+      "first_later_in_action": 56,
+      "events_between_remove_and_first_in": 2,
+      "all_events_between_remove_and_first_in": [
+        {
+          "game_id": "1_20242025_0207",
+          "period": 1,
+          "clock": "05:53:00",
+          "action_number": 54,
+          "event_type": "substitution",
+          "team_id": "5",
+          "player_id": "534",
+          "secondary_player_id": null,
+          "lineup_before": "380,439,534,575",
+          "mutation": "REMOVE(534)",
+          "lineup_after": "380,439,575"
+        },
+        {
+          "game_id": "1_20242025_0207",
+          "period": 1,
+          "clock": "05:53:00",
+          "action_number": 55,
+          "event_type": "substitution",
+          "team_id": "5",
+          "player_id": "575",
+          "secondary_player_id": null,
+          "lineup_before": "380,439,575",
+          "mutation": "REMOVE(575)",
+          "lineup_after": "380,439"
+        }
+      ],
+      "tracked_events": [
+        {
+          "game_id": "1_20242025_0207",
+          "period": 1,
+          "clock": "05:53:00",
+          "action_number": 53,
+          "event_type": "substitution",
+          "team_id": "5",
+          "player_id": "422",
+          "secondary_player_id": null,
+          "lineup_before": "380,422,439,534,575",
+          "mutation": "REMOVE(422)",
+          "lineup_after": "380,439,534,575"
+        },
+        {
+          "game_id": "1_20242025_0207",
+          "period": 1,
+          "clock": "05:53:00",
+          "action_number": 54,
+          "event_type": "substitution",
+          "team_id": "5",
+          "player_id": "534",
+          "secondary_player_id": null,
+          "lineup_before": "380,439,534,575",
+          "mutation": "REMOVE(534)",
+          "lineup_after": "380,439,575"
+        },
+        {
+          "game_id": "1_20242025_0207",
+          "period": 1,
+          "clock": "05:53:00",
+          "action_number": 55,
+          "event_type": "substitution",
+          "team_id": "5",
+          "player_id": "575",
+          "secondary_player_id": null,
+          "lineup_before": "380,439,575",
+          "mutation": "REMOVE(575)",
+          "lineup_after": "380,439"
+        },
+        {
+          "game_id": "1_20242025_0207",
+          "period": 1,
+          "clock": "05:53:00",
+          "action_number": 56,
+          "event_type": "substitution",
+          "team_id": "5",
+          "player_id": "500",
+          "secondary_player_id": null,
+          "lineup_before": "380,439",
+          "mutation": "ADD(500)",
+          "lineup_after": "380,439,500"
+        },
+        {
+          "game_id": "1_20242025_0207",
+          "period": 1,
+          "clock": "05:53:00",
+          "action_number": 57,
+          "event_type": "substitution",
+          "team_id": "5",
+          "player_id": "137",
+          "secondary_player_id": null,
+          "lineup_before": "380,439,500",
+          "mutation": "ADD(137)",
+          "lineup_after": "137,380,439,500"
+        },
+        {
+          "game_id": "1_20242025_0207",
+          "period": 1,
+          "clock": "05:53:00",
+          "action_number": 58,
+          "event_type": "substitution",
+          "team_id": "5",
+          "player_id": "213",
+          "secondary_player_id": null,
+          "lineup_before": "137,380,439,500",
+          "mutation": "ADD(213)",
+          "lineup_after": "137,213,380,439,500"
+        }
+      ],
+      "returned_to_5": true,
+      "stop_reason": "lineup_returned_to_5",
+      "no_recovery_reason": null,
+      "root_cause": "early_exception_before_later_recovery",
+      "flags": {
+        "same_clock_substitutions_present": true,
+        "timeout_or_foul_sequence_present": false,
+        "team_switching_present": false,
+        "period_transition_hit": false,
+        "liveball_resume_hit": false,
+        "event_ordering_issue_suspected": false
+      }
+    },
+    {
+      "game_id": "1_20242025_0208",
+      "status": "ok",
+      "first_remove_action": 110,
+      "first_later_in_action": 112,
+      "events_between_remove_and_first_in": 1,
+      "all_events_between_remove_and_first_in": [
+        {
+          "game_id": "1_20242025_0208",
+          "period": 1,
+          "clock": "04:22:00",
+          "action_number": 111,
+          "event_type": "substitution",
+          "team_id": "12",
+          "player_id": "450",
+          "secondary_player_id": null,
+          "lineup_before": "111,265,450,545",
+          "mutation": "REMOVE(450)",
+          "lineup_after": "111,265,545"
+        }
+      ],
+      "tracked_events": [
+        {
+          "game_id": "1_20242025_0208",
+          "period": 1,
+          "clock": "04:22:00",
+          "action_number": 110,
+          "event_type": "substitution",
+          "team_id": "12",
+          "player_id": "441",
+          "secondary_player_id": null,
+          "lineup_before": "111,265,441,450,545",
+          "mutation": "REMOVE(441)",
+          "lineup_after": "111,265,450,545"
+        },
+        {
+          "game_id": "1_20242025_0208",
+          "period": 1,
+          "clock": "04:22:00",
+          "action_number": 111,
+          "event_type": "substitution",
+          "team_id": "12",
+          "player_id": "450",
+          "secondary_player_id": null,
+          "lineup_before": "111,265,450,545",
+          "mutation": "REMOVE(450)",
+          "lineup_after": "111,265,545"
+        },
+        {
+          "game_id": "1_20242025_0208",
+          "period": 1,
+          "clock": "04:22:00",
+          "action_number": 112,
+          "event_type": "substitution",
+          "team_id": "12",
+          "player_id": "573",
+          "secondary_player_id": null,
+          "lineup_before": "111,265,545",
+          "mutation": "ADD(573)",
+          "lineup_after": "111,265,545,573"
+        },
+        {
+          "game_id": "1_20242025_0208",
+          "period": 1,
+          "clock": "04:22:00",
+          "action_number": 113,
+          "event_type": "substitution",
+          "team_id": "12",
+          "player_id": "449",
+          "secondary_player_id": null,
+          "lineup_before": "111,265,545,573",
+          "mutation": "ADD(449)",
+          "lineup_after": "111,265,449,545,573"
+        }
+      ],
+      "returned_to_5": true,
+      "stop_reason": "lineup_returned_to_5",
+      "no_recovery_reason": null,
+      "root_cause": "early_exception_before_later_recovery",
+      "flags": {
+        "same_clock_substitutions_present": true,
+        "timeout_or_foul_sequence_present": false,
+        "team_switching_present": false,
+        "period_transition_hit": false,
+        "liveball_resume_hit": false,
+        "event_ordering_issue_suspected": false
+      }
+    },
+    {
+      "game_id": "1_20252026_0031",
+      "status": "ok",
+      "first_remove_action": 57,
+      "first_later_in_action": 58,
+      "events_between_remove_and_first_in": 0,
+      "all_events_between_remove_and_first_in": [],
+      "tracked_events": [
+        {
+          "game_id": "1_20252026_0031",
+          "period": 1,
+          "clock": "06:24:00",
+          "action_number": 57,
+          "event_type": "substitution",
+          "team_id": "3",
+          "player_id": "131",
+          "secondary_player_id": null,
+          "lineup_before": "119,131,195,561,569",
+          "mutation": "REMOVE(131)",
+          "lineup_after": "119,195,561,569"
+        },
+        {
+          "game_id": "1_20252026_0031",
+          "period": 1,
+          "clock": "06:24:00",
+          "action_number": 58,
+          "event_type": "substitution",
+          "team_id": "3",
+          "player_id": "473",
+          "secondary_player_id": null,
+          "lineup_before": "119,195,561,569",
+          "mutation": "ADD(473)",
+          "lineup_after": "119,195,473,561,569"
+        }
+      ],
+      "returned_to_5": true,
+      "stop_reason": "lineup_returned_to_5",
+      "no_recovery_reason": null,
+      "root_cause": "early_exception_before_later_recovery",
+      "flags": {
+        "same_clock_substitutions_present": true,
+        "timeout_or_foul_sequence_present": false,
+        "team_switching_present": false,
+        "period_transition_hit": false,
+        "liveball_resume_hit": false,
+        "event_ordering_issue_suspected": false
+      }
+    },
+    {
+      "game_id": "1_20252026_0074",
+      "status": "ok",
+      "first_remove_action": 35,
+      "first_later_in_action": 36,
+      "events_between_remove_and_first_in": 0,
+      "all_events_between_remove_and_first_in": [],
+      "tracked_events": [
+        {
+          "game_id": "1_20252026_0074",
+          "period": 1,
+          "clock": "07:34:00",
+          "action_number": 35,
+          "event_type": "substitution",
+          "team_id": "6",
+          "player_id": "136",
+          "secondary_player_id": null,
+          "lineup_before": "29,136,164,184,508",
+          "mutation": "REMOVE(136)",
+          "lineup_after": "29,164,184,508"
+        },
+        {
+          "game_id": "1_20252026_0074",
+          "period": 1,
+          "clock": "07:34:00",
+          "action_number": 36,
+          "event_type": "substitution",
+          "team_id": "6",
+          "player_id": "382",
+          "secondary_player_id": null,
+          "lineup_before": "29,164,184,508",
+          "mutation": "ADD(382)",
+          "lineup_after": "29,164,184,382,508"
+        }
+      ],
+      "returned_to_5": true,
+      "stop_reason": "lineup_returned_to_5",
+      "no_recovery_reason": null,
+      "root_cause": "early_exception_before_later_recovery",
+      "flags": {
+        "same_clock_substitutions_present": true,
+        "timeout_or_foul_sequence_present": false,
+        "team_switching_present": false,
+        "period_transition_hit": false,
+        "liveball_resume_hit": false,
+        "event_ordering_issue_suspected": false
+      }
+    },
+    {
+      "game_id": "1_20252026_0084",
+      "status": "ok",
+      "first_remove_action": 41,
+      "first_later_in_action": 43,
+      "events_between_remove_and_first_in": 1,
+      "all_events_between_remove_and_first_in": [
+        {
+          "game_id": "1_20252026_0084",
+          "period": 1,
+          "clock": "06:34:00",
+          "action_number": 42,
+          "event_type": "substitution",
+          "team_id": "4",
+          "player_id": "162",
+          "secondary_player_id": null,
+          "lineup_before": "162,238,256,437",
+          "mutation": "REMOVE(162)",
+          "lineup_after": "238,256,437"
+        }
+      ],
+      "tracked_events": [
+        {
+          "game_id": "1_20252026_0084",
+          "period": 1,
+          "clock": "06:34:00",
+          "action_number": 41,
+          "event_type": "substitution",
+          "team_id": "4",
+          "player_id": "32",
+          "secondary_player_id": null,
+          "lineup_before": "32,162,238,256,437",
+          "mutation": "REMOVE(32)",
+          "lineup_after": "162,238,256,437"
+        },
+        {
+          "game_id": "1_20252026_0084",
+          "period": 1,
+          "clock": "06:34:00",
+          "action_number": 42,
+          "event_type": "substitution",
+          "team_id": "4",
+          "player_id": "162",
+          "secondary_player_id": null,
+          "lineup_before": "162,238,256,437",
+          "mutation": "REMOVE(162)",
+          "lineup_after": "238,256,437"
+        },
+        {
+          "game_id": "1_20252026_0084",
+          "period": 1,
+          "clock": "06:34:00",
+          "action_number": 43,
+          "event_type": "substitution",
+          "team_id": "4",
+          "player_id": "38",
+          "secondary_player_id": null,
+          "lineup_before": "238,256,437",
+          "mutation": "ADD(38)",
+          "lineup_after": "38,238,256,437"
+        },
+        {
+          "game_id": "1_20252026_0084",
+          "period": 1,
+          "clock": "06:34:00",
+          "action_number": 44,
+          "event_type": "substitution",
+          "team_id": "4",
+          "player_id": "251",
+          "secondary_player_id": null,
+          "lineup_before": "38,238,256,437",
+          "mutation": "ADD(251)",
+          "lineup_after": "38,238,251,256,437"
+        }
+      ],
+      "returned_to_5": true,
+      "stop_reason": "lineup_returned_to_5",
+      "no_recovery_reason": null,
+      "root_cause": "early_exception_before_later_recovery",
+      "flags": {
+        "same_clock_substitutions_present": true,
+        "timeout_or_foul_sequence_present": false,
+        "team_switching_present": false,
+        "period_transition_hit": false,
+        "liveball_resume_hit": false,
+        "event_ordering_issue_suspected": false
+      }
+    },
+    {
+      "game_id": "1_20252026_0101",
+      "status": "ok",
+      "first_remove_action": 43,
+      "first_later_in_action": 44,
+      "events_between_remove_and_first_in": 0,
+      "all_events_between_remove_and_first_in": [],
+      "tracked_events": [
+        {
+          "game_id": "1_20252026_0101",
+          "period": 1,
+          "clock": "07:58:00",
+          "action_number": 43,
+          "event_type": "substitution",
+          "team_id": "18",
+          "player_id": "140",
+          "secondary_player_id": null,
+          "lineup_before": "140,252,277,282,314",
+          "mutation": "REMOVE(140)",
+          "lineup_after": "252,277,282,314"
+        },
+        {
+          "game_id": "1_20252026_0101",
+          "period": 1,
+          "clock": "07:58:00",
+          "action_number": 44,
+          "event_type": "substitution",
+          "team_id": "18",
+          "player_id": "281",
+          "secondary_player_id": null,
+          "lineup_before": "252,277,282,314",
+          "mutation": "ADD(281)",
+          "lineup_after": "252,277,281,282,314"
+        }
+      ],
+      "returned_to_5": true,
+      "stop_reason": "lineup_returned_to_5",
+      "no_recovery_reason": null,
+      "root_cause": "early_exception_before_later_recovery",
+      "flags": {
+        "same_clock_substitutions_present": true,
+        "timeout_or_foul_sequence_present": false,
+        "team_switching_present": false,
+        "period_transition_hit": false,
+        "liveball_resume_hit": false,
+        "event_ordering_issue_suspected": false
+      }
+    },
+    {
+      "game_id": "1_20252026_0109",
+      "status": "ok",
+      "first_remove_action": 58,
+      "first_later_in_action": 59,
+      "events_between_remove_and_first_in": 0,
+      "all_events_between_remove_and_first_in": [],
+      "tracked_events": [
+        {
+          "game_id": "1_20252026_0109",
+          "period": 1,
+          "clock": "06:12:00",
+          "action_number": 58,
+          "event_type": "substitution",
+          "team_id": "9",
+          "player_id": "147",
+          "secondary_player_id": null,
+          "lineup_before": "18,106,147,448,504",
+          "mutation": "REMOVE(147)",
+          "lineup_after": "18,106,448,504"
+        },
+        {
+          "game_id": "1_20252026_0109",
+          "period": 1,
+          "clock": "06:12:00",
+          "action_number": 59,
+          "event_type": "substitution",
+          "team_id": "9",
+          "player_id": "406",
+          "secondary_player_id": null,
+          "lineup_before": "18,106,448,504",
+          "mutation": "ADD(406)",
+          "lineup_after": "18,106,406,448,504"
+        }
+      ],
+      "returned_to_5": true,
+      "stop_reason": "lineup_returned_to_5",
+      "no_recovery_reason": null,
+      "root_cause": "early_exception_before_later_recovery",
+      "flags": {
+        "same_clock_substitutions_present": true,
+        "timeout_or_foul_sequence_present": false,
+        "team_switching_present": false,
+        "period_transition_hit": false,
+        "liveball_resume_hit": false,
+        "event_ordering_issue_suspected": false
+      }
+    },
+    {
+      "game_id": "1_20252026_0165",
+      "status": "ok",
+      "first_remove_action": 44,
+      "first_later_in_action": 45,
+      "events_between_remove_and_first_in": 0,
+      "all_events_between_remove_and_first_in": [],
+      "tracked_events": [
+        {
+          "game_id": "1_20252026_0165",
+          "period": 1,
+          "clock": "07:52:00",
+          "action_number": 44,
+          "event_type": "substitution",
+          "team_id": "9",
+          "player_id": "377",
+          "secondary_player_id": null,
+          "lineup_before": "134,236,377,504,519",
+          "mutation": "REMOVE(377)",
+          "lineup_after": "134,236,504,519"
+        },
+        {
+          "game_id": "1_20252026_0165",
+          "period": 1,
+          "clock": "07:52:00",
+          "action_number": 45,
+          "event_type": "substitution",
+          "team_id": "9",
+          "player_id": "406",
+          "secondary_player_id": null,
+          "lineup_before": "134,236,504,519",
+          "mutation": "ADD(406)",
+          "lineup_after": "134,236,406,504,519"
+        }
+      ],
+      "returned_to_5": true,
+      "stop_reason": "lineup_returned_to_5",
+      "no_recovery_reason": null,
+      "root_cause": "early_exception_before_later_recovery",
+      "flags": {
+        "same_clock_substitutions_present": true,
+        "timeout_or_foul_sequence_present": false,
+        "team_switching_present": false,
+        "period_transition_hit": false,
+        "liveball_resume_hit": false,
+        "event_ordering_issue_suspected": false
+      }
+    },
+    {
+      "game_id": "1_20252026_0190",
+      "status": "ok",
+      "first_remove_action": 68,
+      "first_later_in_action": 69,
+      "events_between_remove_and_first_in": 0,
+      "all_events_between_remove_and_first_in": [],
+      "tracked_events": [
+        {
+          "game_id": "1_20252026_0190",
+          "period": 1,
+          "clock": "05:55:00",
+          "action_number": 68,
+          "event_type": "substitution",
+          "team_id": "10",
+          "player_id": "13",
+          "secondary_player_id": null,
+          "lineup_before": "13,14,110,159,176",
+          "mutation": "REMOVE(13)",
+          "lineup_after": "14,110,159,176"
+        },
+        {
+          "game_id": "1_20252026_0190",
+          "period": 1,
+          "clock": "05:55:00",
+          "action_number": 69,
+          "event_type": "substitution",
+          "team_id": "10",
+          "player_id": "115",
+          "secondary_player_id": null,
+          "lineup_before": "14,110,159,176",
+          "mutation": "ADD(115)",
+          "lineup_after": "14,110,115,159,176"
+        }
+      ],
+      "returned_to_5": true,
+      "stop_reason": "lineup_returned_to_5",
+      "no_recovery_reason": null,
+      "root_cause": "early_exception_before_later_recovery",
+      "flags": {
+        "same_clock_substitutions_present": true,
+        "timeout_or_foul_sequence_present": false,
+        "team_switching_present": false,
+        "period_transition_hit": false,
+        "liveball_resume_hit": false,
+        "event_ordering_issue_suspected": false
+      }
+    }
+  ]
+}

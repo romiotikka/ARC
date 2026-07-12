@@ -1,0 +1,6859 @@
+{
+  "root_cause_A_games_analyzed": 61,
+  "first_invalid_transitions": [
+    {
+      "game_id": "1_20222023_0008",
+      "period": 1,
+      "clock": "06:38:00",
+      "team_id": "team_bc_kalev_cramo",
+      "action_numbers": [
+        60,
+        61,
+        62,
+        63
+      ],
+      "lineup_before": [
+        "19",
+        "279",
+        "339",
+        "414",
+        "527"
+      ],
+      "outs": [
+        "339",
+        "279"
+      ],
+      "ins": [
+        "11",
+        "573"
+      ],
+      "lineup_after": [
+        "19",
+        "279",
+        "414",
+        "527"
+      ],
+      "lineup_size": 4,
+      "neighbors": [
+        {
+          "action_number": 54,
+          "clock": "06:59:00",
+          "event_type": "rebound",
+          "player_id": "19",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 55,
+          "clock": "06:44:00",
+          "event_type": "2pt",
+          "player_id": "527",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 56,
+          "clock": "06:44:00",
+          "event_type": "assist",
+          "player_id": "339",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 58,
+          "clock": "06:38:00",
+          "event_type": "foul",
+          "player_id": "339",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 59,
+          "clock": "06:38:00",
+          "event_type": "foulon",
+          "player_id": "246",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 60,
+          "clock": "06:38:00",
+          "event_type": "substitution",
+          "player_id": "339",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 61,
+          "clock": "06:38:00",
+          "event_type": "substitution",
+          "player_id": "279",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 62,
+          "clock": "06:38:00",
+          "event_type": "substitution",
+          "player_id": "11",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 63,
+          "clock": "06:38:00",
+          "event_type": "substitution",
+          "player_id": "573",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 64,
+          "clock": "06:38:00",
+          "event_type": "substitution",
+          "player_id": "481",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 65,
+          "clock": "06:38:00",
+          "event_type": "substitution",
+          "player_id": "22",
+          "secondary_player_id": ""
+        }
+      ],
+      "bucket": "C"
+    },
+    {
+      "game_id": "1_20222023_0010",
+      "period": 1,
+      "clock": "06:38:00",
+      "team_id": "team_bc_kalev_cramo",
+      "action_numbers": [
+        41,
+        42,
+        43,
+        44
+      ],
+      "lineup_before": [
+        "11",
+        "19",
+        "279",
+        "339",
+        "366"
+      ],
+      "outs": [
+        "339",
+        "279"
+      ],
+      "ins": [
+        "531",
+        "414"
+      ],
+      "lineup_after": [
+        "11",
+        "19",
+        "279",
+        "366"
+      ],
+      "lineup_size": 4,
+      "neighbors": [
+        {
+          "action_number": 35,
+          "clock": "07:02:00",
+          "event_type": "rebound",
+          "player_id": "339",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 36,
+          "clock": "06:57:00",
+          "event_type": "2pt",
+          "player_id": "366",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 37,
+          "clock": "06:57:00",
+          "event_type": "assist",
+          "player_id": "339",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 39,
+          "clock": "06:38:00",
+          "event_type": "foul",
+          "player_id": "279",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 40,
+          "clock": "06:38:00",
+          "event_type": "foulon",
+          "player_id": "12",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 41,
+          "clock": "06:38:00",
+          "event_type": "substitution",
+          "player_id": "339",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 42,
+          "clock": "06:38:00",
+          "event_type": "substitution",
+          "player_id": "279",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 43,
+          "clock": "06:38:00",
+          "event_type": "substitution",
+          "player_id": "531",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 44,
+          "clock": "06:38:00",
+          "event_type": "substitution",
+          "player_id": "414",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 46,
+          "clock": "06:34:00",
+          "event_type": "turnover",
+          "player_id": "303",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 47,
+          "clock": "06:34:00",
+          "event_type": "steal",
+          "player_id": "11",
+          "secondary_player_id": ""
+        }
+      ],
+      "bucket": "C"
+    },
+    {
+      "game_id": "1_20222023_0032",
+      "period": 1,
+      "clock": "05:33:00",
+      "team_id": "team_tartu_ulikool_maks_and_moorits",
+      "action_numbers": [
+        55,
+        56,
+        57,
+        58
+      ],
+      "lineup_before": [
+        "176",
+        "382",
+        "420",
+        "458",
+        "537"
+      ],
+      "outs": [
+        "537",
+        "420"
+      ],
+      "ins": [
+        "49",
+        "233"
+      ],
+      "lineup_after": [
+        "176",
+        "382",
+        "420",
+        "458"
+      ],
+      "lineup_size": 4,
+      "neighbors": [
+        {
+          "action_number": 49,
+          "clock": "06:01:00",
+          "event_type": "turnover",
+          "player_id": "420",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 50,
+          "clock": "06:01:00",
+          "event_type": "steal",
+          "player_id": "545",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 51,
+          "clock": "05:49:00",
+          "event_type": "3pt",
+          "player_id": "545",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 53,
+          "clock": "05:33:00",
+          "event_type": "foul",
+          "player_id": "162",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 54,
+          "clock": "05:33:00",
+          "event_type": "foulon",
+          "player_id": "458",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 55,
+          "clock": "05:33:00",
+          "event_type": "substitution",
+          "player_id": "537",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 56,
+          "clock": "05:33:00",
+          "event_type": "substitution",
+          "player_id": "420",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 57,
+          "clock": "05:33:00",
+          "event_type": "substitution",
+          "player_id": "49",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 58,
+          "clock": "05:33:00",
+          "event_type": "substitution",
+          "player_id": "233",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 59,
+          "clock": "05:33:00",
+          "event_type": "substitution",
+          "player_id": "499",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 60,
+          "clock": "05:33:00",
+          "event_type": "substitution",
+          "player_id": "162",
+          "secondary_player_id": ""
+        }
+      ],
+      "bucket": "C"
+    },
+    {
+      "game_id": "1_20222023_0049",
+      "period": 1,
+      "clock": "07:14:00",
+      "team_id": "team_valmiera_glass_via",
+      "action_numbers": [
+        46,
+        47
+      ],
+      "lineup_before": [
+        "103",
+        "403",
+        "522",
+        "546",
+        "563"
+      ],
+      "outs": [
+        "403"
+      ],
+      "ins": [
+        "259"
+      ],
+      "lineup_after": [
+        "103",
+        "522",
+        "546",
+        "563"
+      ],
+      "lineup_size": 4,
+      "neighbors": [
+        {
+          "action_number": 40,
+          "clock": "07:37:00",
+          "event_type": "rebound",
+          "player_id": "560",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 41,
+          "clock": "07:28:00",
+          "event_type": "3pt",
+          "player_id": "560",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 42,
+          "clock": "07:25:00",
+          "event_type": "rebound",
+          "player_id": "546",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 44,
+          "clock": "07:14:00",
+          "event_type": "foul",
+          "player_id": "560",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 45,
+          "clock": "07:14:00",
+          "event_type": "foulon",
+          "player_id": "522",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 46,
+          "clock": "07:14:00",
+          "event_type": "substitution",
+          "player_id": "403",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 47,
+          "clock": "07:14:00",
+          "event_type": "substitution",
+          "player_id": "259",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 48,
+          "clock": "07:14:00",
+          "event_type": "freethrow",
+          "player_id": "522",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 49,
+          "clock": "07:14:00",
+          "event_type": "freethrow",
+          "player_id": "522",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 51,
+          "clock": "07:14:00",
+          "event_type": "rebound",
+          "player_id": "25",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 52,
+          "clock": "07:05:00",
+          "event_type": "2pt",
+          "player_id": "25",
+          "secondary_player_id": ""
+        }
+      ],
+      "bucket": "C"
+    },
+    {
+      "game_id": "1_20222023_0055",
+      "period": 1,
+      "clock": "03:41:00",
+      "team_id": "team_bc_prometey",
+      "action_numbers": [
+        87,
+        88,
+        89,
+        90
+      ],
+      "lineup_before": [
+        "109",
+        "117",
+        "120",
+        "154",
+        "405"
+      ],
+      "outs": [
+        "120",
+        "405"
+      ],
+      "ins": [
+        "113",
+        "205"
+      ],
+      "lineup_after": [
+        "109",
+        "117",
+        "154",
+        "405"
+      ],
+      "lineup_size": 4,
+      "neighbors": [
+        {
+          "action_number": 81,
+          "clock": "03:59:00",
+          "event_type": "rebound",
+          "player_id": "303",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 82,
+          "clock": "03:46:00",
+          "event_type": "turnover",
+          "player_id": "442",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 83,
+          "clock": "03:46:00",
+          "event_type": "steal",
+          "player_id": "117",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 85,
+          "clock": "03:41:00",
+          "event_type": "2pt",
+          "player_id": "117",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 86,
+          "clock": "03:41:00",
+          "event_type": "timeout",
+          "player_id": "50",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 87,
+          "clock": "03:41:00",
+          "event_type": "substitution",
+          "player_id": "120",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 88,
+          "clock": "03:41:00",
+          "event_type": "substitution",
+          "player_id": "405",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 89,
+          "clock": "03:41:00",
+          "event_type": "substitution",
+          "player_id": "113",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 90,
+          "clock": "03:41:00",
+          "event_type": "substitution",
+          "player_id": "205",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 91,
+          "clock": "03:41:00",
+          "event_type": "substitution",
+          "player_id": "495",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 92,
+          "clock": "03:41:00",
+          "event_type": "substitution",
+          "player_id": "303",
+          "secondary_player_id": ""
+        }
+      ],
+      "bucket": "A"
+    },
+    {
+      "game_id": "1_20222023_0087",
+      "period": 1,
+      "clock": "04:47:00",
+      "team_id": "team_latvijas_universitate",
+      "action_numbers": [
+        75,
+        76,
+        77,
+        78,
+        79,
+        80
+      ],
+      "lineup_before": [
+        "111",
+        "137",
+        "162",
+        "404",
+        "499"
+      ],
+      "outs": [
+        "499",
+        "404",
+        "137"
+      ],
+      "ins": [
+        "426",
+        "255",
+        "552"
+      ],
+      "lineup_after": [
+        "111",
+        "137",
+        "162",
+        "404"
+      ],
+      "lineup_size": 4,
+      "neighbors": [
+        {
+          "action_number": 69,
+          "clock": "05:08:00",
+          "event_type": "assist",
+          "player_id": "162",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 71,
+          "clock": "04:47:00",
+          "event_type": "2pt",
+          "player_id": "366",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 72,
+          "clock": "04:47:00",
+          "event_type": "assist",
+          "player_id": "568",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 73,
+          "clock": "04:47:00",
+          "event_type": "foul",
+          "player_id": "137",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 74,
+          "clock": "04:47:00",
+          "event_type": "foulon",
+          "player_id": "366",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 75,
+          "clock": "04:47:00",
+          "event_type": "substitution",
+          "player_id": "499",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 76,
+          "clock": "04:47:00",
+          "event_type": "substitution",
+          "player_id": "404",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 77,
+          "clock": "04:47:00",
+          "event_type": "substitution",
+          "player_id": "137",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 78,
+          "clock": "04:47:00",
+          "event_type": "substitution",
+          "player_id": "426",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 79,
+          "clock": "04:47:00",
+          "event_type": "substitution",
+          "player_id": "255",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 80,
+          "clock": "04:47:00",
+          "event_type": "substitution",
+          "player_id": "552",
+          "secondary_player_id": ""
+        }
+      ],
+      "bucket": "C"
+    },
+    {
+      "game_id": "1_20222023_0092",
+      "period": 1,
+      "clock": "06:04:00",
+      "team_id": "team_parnu_sadam",
+      "action_numbers": [
+        71,
+        72
+      ],
+      "lineup_before": [
+        "285",
+        "365",
+        "494",
+        "503",
+        "538"
+      ],
+      "outs": [
+        "285"
+      ],
+      "ins": [
+        "354"
+      ],
+      "lineup_after": [
+        "365",
+        "494",
+        "503",
+        "538"
+      ],
+      "lineup_size": 4,
+      "neighbors": [
+        {
+          "action_number": 65,
+          "clock": "06:13:00",
+          "event_type": "2pt",
+          "player_id": "365",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 66,
+          "clock": "06:13:00",
+          "event_type": "assist",
+          "player_id": "494",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 68,
+          "clock": "06:04:00",
+          "event_type": "foul",
+          "player_id": "60",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 69,
+          "clock": "06:04:00",
+          "event_type": "turnover",
+          "player_id": "60",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 70,
+          "clock": "06:04:00",
+          "event_type": "foulon",
+          "player_id": "285",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 71,
+          "clock": "06:04:00",
+          "event_type": "substitution",
+          "player_id": "285",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 72,
+          "clock": "06:04:00",
+          "event_type": "substitution",
+          "player_id": "354",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 73,
+          "clock": "06:04:00",
+          "event_type": "substitution",
+          "player_id": "323",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 74,
+          "clock": "06:04:00",
+          "event_type": "substitution",
+          "player_id": "233",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 76,
+          "clock": "05:52:00",
+          "event_type": "3pt",
+          "player_id": "538",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 77,
+          "clock": "05:49:00",
+          "event_type": "rebound",
+          "player_id": "60",
+          "secondary_player_id": ""
+        }
+      ],
+      "bucket": "C"
+    },
+    {
+      "game_id": "1_20222023_0099",
+      "period": 1,
+      "clock": "06:53:00",
+      "team_id": "team_vef_riga",
+      "action_numbers": [
+        55,
+        56
+      ],
+      "lineup_before": [
+        "2",
+        "28",
+        "156",
+        "320",
+        "399"
+      ],
+      "outs": [
+        "399"
+      ],
+      "ins": [
+        "341"
+      ],
+      "lineup_after": [
+        "2",
+        "28",
+        "156",
+        "320"
+      ],
+      "lineup_size": 4,
+      "neighbors": [
+        {
+          "action_number": 49,
+          "clock": "07:03:00",
+          "event_type": "rebound",
+          "player_id": "399",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 50,
+          "clock": "07:02:00",
+          "event_type": "3pt",
+          "player_id": "156",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 51,
+          "clock": "07:02:00",
+          "event_type": "assist",
+          "player_id": "399",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 53,
+          "clock": "06:53:00",
+          "event_type": "foul",
+          "player_id": "320",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 54,
+          "clock": "06:53:00",
+          "event_type": "foulon",
+          "player_id": "366",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 55,
+          "clock": "06:53:00",
+          "event_type": "substitution",
+          "player_id": "399",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 56,
+          "clock": "06:53:00",
+          "event_type": "substitution",
+          "player_id": "341",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 57,
+          "clock": "06:53:00",
+          "event_type": "substitution",
+          "player_id": "279",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 58,
+          "clock": "06:53:00",
+          "event_type": "substitution",
+          "player_id": "184",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 62,
+          "clock": "06:42:00",
+          "event_type": "2pt",
+          "player_id": "414",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 63,
+          "clock": "06:39:00",
+          "event_type": "rebound",
+          "player_id": "28",
+          "secondary_player_id": ""
+        }
+      ],
+      "bucket": "C"
+    },
+    {
+      "game_id": "1_20222023_0141",
+      "period": 1,
+      "clock": "05:17:00",
+      "team_id": "team_tartu_ulikool_maks_and_moorits",
+      "action_numbers": [
+        52,
+        53
+      ],
+      "lineup_before": [
+        "60",
+        "323",
+        "382",
+        "458",
+        "537"
+      ],
+      "outs": [
+        "537"
+      ],
+      "ins": [
+        "49"
+      ],
+      "lineup_after": [
+        "60",
+        "323",
+        "382",
+        "458"
+      ],
+      "lineup_size": 4,
+      "neighbors": [
+        {
+          "action_number": 45,
+          "clock": "05:23:00",
+          "event_type": "turnover",
+          "player_id": "190",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 46,
+          "clock": "05:23:00",
+          "event_type": "steal",
+          "player_id": "60",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 49,
+          "clock": "05:17:00",
+          "event_type": "foul",
+          "player_id": "60",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 50,
+          "clock": "05:17:00",
+          "event_type": "turnover",
+          "player_id": "60",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 51,
+          "clock": "05:17:00",
+          "event_type": "foulon",
+          "player_id": "327",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 52,
+          "clock": "05:17:00",
+          "event_type": "substitution",
+          "player_id": "537",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 53,
+          "clock": "05:17:00",
+          "event_type": "substitution",
+          "player_id": "49",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 54,
+          "clock": "05:17:00",
+          "event_type": "substitution",
+          "player_id": "289",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 55,
+          "clock": "05:17:00",
+          "event_type": "substitution",
+          "player_id": "169",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 56,
+          "clock": "05:17:00",
+          "event_type": "substitution",
+          "player_id": "3",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 57,
+          "clock": "05:17:00",
+          "event_type": "substitution",
+          "player_id": "37",
+          "secondary_player_id": ""
+        }
+      ],
+      "bucket": "C"
+    },
+    {
+      "game_id": "1_20222023_0144",
+      "period": 1,
+      "clock": "06:06:00",
+      "team_id": "team_bk_ogre",
+      "action_numbers": [
+        55,
+        56,
+        57,
+        58,
+        59,
+        60
+      ],
+      "lineup_before": [
+        "132",
+        "243",
+        "256",
+        "502",
+        "550"
+      ],
+      "outs": [
+        "502",
+        "243",
+        "256"
+      ],
+      "ins": [
+        "251",
+        "328",
+        "470"
+      ],
+      "lineup_after": [
+        "132",
+        "243",
+        "256",
+        "550"
+      ],
+      "lineup_size": 4,
+      "neighbors": [
+        {
+          "action_number": 49,
+          "clock": "06:39:00",
+          "event_type": "steal",
+          "player_id": "256",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 50,
+          "clock": "06:19:00",
+          "event_type": "3pt",
+          "player_id": "550",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 51,
+          "clock": "06:16:00",
+          "event_type": "rebound",
+          "player_id": "184",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 52,
+          "clock": "06:10:00",
+          "event_type": "3pt",
+          "player_id": "339",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 53,
+          "clock": "06:07:00",
+          "event_type": "rebound",
+          "player_id": "19",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 55,
+          "clock": "06:06:00",
+          "event_type": "substitution",
+          "player_id": "502",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 56,
+          "clock": "06:06:00",
+          "event_type": "substitution",
+          "player_id": "243",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 57,
+          "clock": "06:06:00",
+          "event_type": "substitution",
+          "player_id": "256",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 58,
+          "clock": "06:06:00",
+          "event_type": "substitution",
+          "player_id": "251",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 59,
+          "clock": "06:06:00",
+          "event_type": "substitution",
+          "player_id": "328",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 60,
+          "clock": "06:06:00",
+          "event_type": "substitution",
+          "player_id": "470",
+          "secondary_player_id": ""
+        }
+      ],
+      "bucket": "D"
+    },
+    {
+      "game_id": "1_20222023_0146",
+      "period": 1,
+      "clock": "02:56:00",
+      "team_id": "team_bc_tarvas",
+      "action_numbers": [
+        99,
+        100
+      ],
+      "lineup_before": [
+        "25",
+        "127",
+        "161",
+        "246",
+        "481"
+      ],
+      "outs": [
+        "246"
+      ],
+      "ins": [
+        "22"
+      ],
+      "lineup_after": [
+        "25",
+        "127",
+        "161",
+        "481"
+      ],
+      "lineup_size": 4,
+      "neighbors": [
+        {
+          "action_number": 93,
+          "clock": "03:20:00",
+          "event_type": "rebound",
+          "player_id": "25",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 94,
+          "clock": "03:14:00",
+          "event_type": "2pt",
+          "player_id": "25",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 96,
+          "clock": "02:56:00",
+          "event_type": "foul",
+          "player_id": "322",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 97,
+          "clock": "02:56:00",
+          "event_type": "turnover",
+          "player_id": "322",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 98,
+          "clock": "02:56:00",
+          "event_type": "foulon",
+          "player_id": "25",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 99,
+          "clock": "02:56:00",
+          "event_type": "substitution",
+          "player_id": "246",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 100,
+          "clock": "02:56:00",
+          "event_type": "substitution",
+          "player_id": "22",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 101,
+          "clock": "02:56:00",
+          "event_type": "substitution",
+          "player_id": "437",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 103,
+          "clock": "02:56:00",
+          "event_type": "substitution",
+          "player_id": "499",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 104,
+          "clock": "02:56:00",
+          "event_type": "substitution",
+          "player_id": "255",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 107,
+          "clock": "02:42:00",
+          "event_type": "turnover",
+          "player_id": "22",
+          "secondary_player_id": ""
+        }
+      ],
+      "bucket": "C"
+    },
+    {
+      "game_id": "1_20222023_0148",
+      "period": 1,
+      "clock": "03:44:00",
+      "team_id": "team_avis_utilitas_rapla",
+      "action_numbers": [
+        109,
+        110
+      ],
+      "lineup_before": [
+        "311",
+        "421",
+        "462",
+        "523",
+        "535"
+      ],
+      "outs": [
+        "462"
+      ],
+      "ins": [
+        "383"
+      ],
+      "lineup_after": [
+        "311",
+        "421",
+        "523",
+        "535"
+      ],
+      "lineup_size": 4,
+      "neighbors": [
+        {
+          "action_number": 100,
+          "clock": "03:50:00",
+          "event_type": "foulon",
+          "player_id": "2",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 102,
+          "clock": "03:48:00",
+          "event_type": "turnover",
+          "player_id": "156",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 103,
+          "clock": "03:48:00",
+          "event_type": "steal",
+          "player_id": "462",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 105,
+          "clock": "03:45:00",
+          "event_type": "substitution",
+          "player_id": "156",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 106,
+          "clock": "03:45:00",
+          "event_type": "substitution",
+          "player_id": "131",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 109,
+          "clock": "03:44:00",
+          "event_type": "substitution",
+          "player_id": "462",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 110,
+          "clock": "03:44:00",
+          "event_type": "substitution",
+          "player_id": "383",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 112,
+          "clock": "03:39:00",
+          "event_type": "2pt",
+          "player_id": "311",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 113,
+          "clock": "03:32:00",
+          "event_type": "rebound",
+          "player_id": "421",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 114,
+          "clock": "03:32:00",
+          "event_type": "2pt",
+          "player_id": "421",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 115,
+          "clock": "03:24:00",
+          "event_type": "2pt",
+          "player_id": "320",
+          "secondary_player_id": ""
+        }
+      ],
+      "bucket": "C"
+    },
+    {
+      "game_id": "1_20222023_0166",
+      "period": 1,
+      "clock": "06:45:00",
+      "team_id": "team_bk_liepaja",
+      "action_numbers": [
+        47,
+        48
+      ],
+      "lineup_before": [
+        "12",
+        "105",
+        "303",
+        "321",
+        "442"
+      ],
+      "outs": [
+        "442"
+      ],
+      "ins": [
+        "248"
+      ],
+      "lineup_after": [
+        "12",
+        "105",
+        "303",
+        "321"
+      ],
+      "lineup_size": 4,
+      "neighbors": [
+        {
+          "action_number": 40,
+          "clock": "07:03:00",
+          "event_type": "timeout",
+          "player_id": "50",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 42,
+          "clock": "06:50:00",
+          "event_type": "turnover",
+          "player_id": "442",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 43,
+          "clock": "06:50:00",
+          "event_type": "steal",
+          "player_id": "573",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 45,
+          "clock": "06:45:00",
+          "event_type": "foul",
+          "player_id": "442",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 46,
+          "clock": "06:45:00",
+          "event_type": "foulon",
+          "player_id": "573",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 47,
+          "clock": "06:45:00",
+          "event_type": "substitution",
+          "player_id": "442",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 48,
+          "clock": "06:45:00",
+          "event_type": "substitution",
+          "player_id": "248",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 51,
+          "clock": "06:35:00",
+          "event_type": "2pt",
+          "player_id": "573",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 52,
+          "clock": "06:35:00",
+          "event_type": "block",
+          "player_id": "303",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 53,
+          "clock": "06:35:00",
+          "event_type": "rebound",
+          "player_id": "",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 55,
+          "clock": "06:29:00",
+          "event_type": "2pt",
+          "player_id": "184",
+          "secondary_player_id": ""
+        }
+      ],
+      "bucket": "A"
+    },
+    {
+      "game_id": "1_20222023_0174",
+      "period": 1,
+      "clock": "04:41:00",
+      "team_id": "team_bc_prometey",
+      "action_numbers": [
+        86,
+        87,
+        88,
+        89,
+        90,
+        91
+      ],
+      "lineup_before": [
+        "67",
+        "109",
+        "117",
+        "120",
+        "405"
+      ],
+      "outs": [
+        "120",
+        "67",
+        "117"
+      ],
+      "ins": [
+        "154",
+        "202",
+        "205"
+      ],
+      "lineup_after": [
+        "67",
+        "109",
+        "117",
+        "405"
+      ],
+      "lineup_size": 4,
+      "neighbors": [
+        {
+          "action_number": 79,
+          "clock": "05:04:00",
+          "event_type": "assist",
+          "player_id": "414",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 80,
+          "clock": "04:43:00",
+          "event_type": "2pt",
+          "player_id": "67",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 81,
+          "clock": "04:40:00",
+          "event_type": "rebound",
+          "player_id": "414",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 84,
+          "clock": "04:41:00",
+          "event_type": "foul",
+          "player_id": "405",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 85,
+          "clock": "04:41:00",
+          "event_type": "foulon",
+          "player_id": "414",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 86,
+          "clock": "04:41:00",
+          "event_type": "substitution",
+          "player_id": "120",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 87,
+          "clock": "04:41:00",
+          "event_type": "substitution",
+          "player_id": "67",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 88,
+          "clock": "04:41:00",
+          "event_type": "substitution",
+          "player_id": "117",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 89,
+          "clock": "04:41:00",
+          "event_type": "substitution",
+          "player_id": "154",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 90,
+          "clock": "04:41:00",
+          "event_type": "substitution",
+          "player_id": "202",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 91,
+          "clock": "04:41:00",
+          "event_type": "substitution",
+          "player_id": "205",
+          "secondary_player_id": ""
+        }
+      ],
+      "bucket": "C"
+    },
+    {
+      "game_id": "1_20222023_0183",
+      "period": 1,
+      "clock": "06:42:00",
+      "team_id": "team_valmiera_glass_via",
+      "action_numbers": [
+        55,
+        56
+      ],
+      "lineup_before": [
+        "103",
+        "129",
+        "275",
+        "522",
+        "563"
+      ],
+      "outs": [
+        "129"
+      ],
+      "ins": [
+        "232"
+      ],
+      "lineup_after": [
+        "103",
+        "275",
+        "522",
+        "563"
+      ],
+      "lineup_size": 4,
+      "neighbors": [
+        {
+          "action_number": 49,
+          "clock": "07:16:00",
+          "event_type": "steal",
+          "player_id": "522",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 50,
+          "clock": "07:06:00",
+          "event_type": "3pt",
+          "player_id": "563",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 51,
+          "clock": "07:01:00",
+          "event_type": "rebound",
+          "player_id": "568",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 52,
+          "clock": "06:56:00",
+          "event_type": "3pt",
+          "player_id": "414",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 53,
+          "clock": "06:56:00",
+          "event_type": "assist",
+          "player_id": "568",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 55,
+          "clock": "06:42:00",
+          "event_type": "substitution",
+          "player_id": "129",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 56,
+          "clock": "06:42:00",
+          "event_type": "substitution",
+          "player_id": "232",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 57,
+          "clock": "06:42:00",
+          "event_type": "substitution",
+          "player_id": "573",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 58,
+          "clock": "06:42:00",
+          "event_type": "substitution",
+          "player_id": "366",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 60,
+          "clock": "06:32:00",
+          "event_type": "turnover",
+          "player_id": "414",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 61,
+          "clock": "06:32:00",
+          "event_type": "steal",
+          "player_id": "103",
+          "secondary_player_id": ""
+        }
+      ],
+      "bucket": "D"
+    },
+    {
+      "game_id": "1_20222023_0196",
+      "period": 1,
+      "clock": "04:58:00",
+      "team_id": "team_keila_kk",
+      "action_numbers": [
+        63,
+        64
+      ],
+      "lineup_before": [
+        "31",
+        "197",
+        "276",
+        "379",
+        "515"
+      ],
+      "outs": [
+        "515"
+      ],
+      "ins": [
+        "393"
+      ],
+      "lineup_after": [
+        "31",
+        "197",
+        "276",
+        "379"
+      ],
+      "lineup_size": 4,
+      "neighbors": [
+        {
+          "action_number": 57,
+          "clock": "05:12:00",
+          "event_type": "3pt",
+          "player_id": "274",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 58,
+          "clock": "05:12:00",
+          "event_type": "assist",
+          "player_id": "193",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 60,
+          "clock": "04:58:00",
+          "event_type": "foul",
+          "player_id": "274",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 61,
+          "clock": "04:58:00",
+          "event_type": "foulon",
+          "player_id": "276",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 62,
+          "clock": "04:58:00",
+          "event_type": "timeout",
+          "player_id": "",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 63,
+          "clock": "04:58:00",
+          "event_type": "substitution",
+          "player_id": "515",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 64,
+          "clock": "04:58:00",
+          "event_type": "substitution",
+          "player_id": "393",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 65,
+          "clock": "04:58:00",
+          "event_type": "substitution",
+          "player_id": "193",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 66,
+          "clock": "04:58:00",
+          "event_type": "substitution",
+          "player_id": "451",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 67,
+          "clock": "04:58:00",
+          "event_type": "freethrow",
+          "player_id": "276",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 68,
+          "clock": "04:58:00",
+          "event_type": "freethrow",
+          "player_id": "276",
+          "secondary_player_id": ""
+        }
+      ],
+      "bucket": "A"
+    },
+    {
+      "game_id": "1_20222023_0213",
+      "period": 1,
+      "clock": "07:08:00",
+      "team_id": "team_vef_riga",
+      "action_numbers": [
+        51,
+        52
+      ],
+      "lineup_before": [
+        "2",
+        "28",
+        "156",
+        "320",
+        "399"
+      ],
+      "outs": [
+        "399"
+      ],
+      "ins": [
+        "341"
+      ],
+      "lineup_after": [
+        "2",
+        "28",
+        "156",
+        "320"
+      ],
+      "lineup_size": 4,
+      "neighbors": [
+        {
+          "action_number": 45,
+          "clock": "07:12:00",
+          "event_type": "2pt",
+          "player_id": "399",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 47,
+          "clock": "07:12:00",
+          "event_type": "block",
+          "player_id": "130",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 48,
+          "clock": "07:08:00",
+          "event_type": "rebound",
+          "player_id": "130",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 49,
+          "clock": "07:08:00",
+          "event_type": "foul",
+          "player_id": "320",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 50,
+          "clock": "07:08:00",
+          "event_type": "foulon",
+          "player_id": "130",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 51,
+          "clock": "07:08:00",
+          "event_type": "substitution",
+          "player_id": "399",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 52,
+          "clock": "07:08:00",
+          "event_type": "substitution",
+          "player_id": "341",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 54,
+          "clock": "06:57:00",
+          "event_type": "3pt",
+          "player_id": "130",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 55,
+          "clock": "06:54:00",
+          "event_type": "rebound",
+          "player_id": "320",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 56,
+          "clock": "06:47:00",
+          "event_type": "turnover",
+          "player_id": "28",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 57,
+          "clock": "06:47:00",
+          "event_type": "steal",
+          "player_id": "264",
+          "secondary_player_id": ""
+        }
+      ],
+      "bucket": "C"
+    },
+    {
+      "game_id": "1_20222023_0219",
+      "period": 1,
+      "clock": "05:52:00",
+      "team_id": "team_bc_kalev_cramo",
+      "action_numbers": [
+        74,
+        75,
+        76,
+        77
+      ],
+      "lineup_before": [
+        "11",
+        "184",
+        "267",
+        "366",
+        "568"
+      ],
+      "outs": [
+        "184",
+        "366"
+      ],
+      "ins": [
+        "531",
+        "279"
+      ],
+      "lineup_after": [
+        "11",
+        "267",
+        "366",
+        "568"
+      ],
+      "lineup_size": 4,
+      "neighbors": [
+        {
+          "action_number": 68,
+          "clock": "05:56:00",
+          "event_type": "rebound",
+          "player_id": "393",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 70,
+          "clock": "05:52:00",
+          "event_type": "2pt",
+          "player_id": "379",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 71,
+          "clock": "05:52:00",
+          "event_type": "assist",
+          "player_id": "393",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 72,
+          "clock": "05:52:00",
+          "event_type": "foul",
+          "player_id": "366",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 73,
+          "clock": "05:52:00",
+          "event_type": "foulon",
+          "player_id": "379",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 74,
+          "clock": "05:52:00",
+          "event_type": "substitution",
+          "player_id": "184",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 75,
+          "clock": "05:52:00",
+          "event_type": "substitution",
+          "player_id": "366",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 76,
+          "clock": "05:52:00",
+          "event_type": "substitution",
+          "player_id": "531",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 77,
+          "clock": "05:52:00",
+          "event_type": "substitution",
+          "player_id": "279",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 78,
+          "clock": "05:52:00",
+          "event_type": "freethrow",
+          "player_id": "379",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 80,
+          "clock": "05:39:00",
+          "event_type": "2pt",
+          "player_id": "267",
+          "secondary_player_id": ""
+        }
+      ],
+      "bucket": "C"
+    },
+    {
+      "game_id": "1_20222023_0221",
+      "period": 1,
+      "clock": "05:38:00",
+      "team_id": "team_bk_liepaja",
+      "action_numbers": [
+        63,
+        64
+      ],
+      "lineup_before": [
+        "303",
+        "407",
+        "442",
+        "450",
+        "495"
+      ],
+      "outs": [
+        "495"
+      ],
+      "ins": [
+        "290"
+      ],
+      "lineup_after": [
+        "303",
+        "407",
+        "442",
+        "450"
+      ],
+      "lineup_size": 4,
+      "neighbors": [
+        {
+          "action_number": 57,
+          "clock": "05:48:00",
+          "event_type": "2pt",
+          "player_id": "494",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 58,
+          "clock": "05:48:00",
+          "event_type": "block",
+          "player_id": "407",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 59,
+          "clock": "05:45:00",
+          "event_type": "rebound",
+          "player_id": "495",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 60,
+          "clock": "05:41:00",
+          "event_type": "3pt",
+          "player_id": "450",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 61,
+          "clock": "05:41:00",
+          "event_type": "assist",
+          "player_id": "442",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 63,
+          "clock": "05:38:00",
+          "event_type": "substitution",
+          "player_id": "495",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 64,
+          "clock": "05:38:00",
+          "event_type": "substitution",
+          "player_id": "290",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 66,
+          "clock": "05:25:00",
+          "event_type": "turnover",
+          "player_id": "494",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 67,
+          "clock": "05:25:00",
+          "event_type": "steal",
+          "player_id": "442",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 69,
+          "clock": "05:20:00",
+          "event_type": "2pt",
+          "player_id": "407",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 70,
+          "clock": "05:20:00",
+          "event_type": "block",
+          "player_id": "192",
+          "secondary_player_id": ""
+        }
+      ],
+      "bucket": "D"
+    },
+    {
+      "game_id": "1_20222023_0227",
+      "period": 1,
+      "clock": "07:52:00",
+      "team_id": "team_viimsi_sportland",
+      "action_numbers": [
+        29,
+        30
+      ],
+      "lineup_before": [
+        "13",
+        "110",
+        "247",
+        "284",
+        "390"
+      ],
+      "outs": [
+        "247"
+      ],
+      "ins": [
+        "514"
+      ],
+      "lineup_after": [
+        "13",
+        "110",
+        "284",
+        "390"
+      ],
+      "lineup_size": 4,
+      "neighbors": [
+        {
+          "action_number": 22,
+          "clock": "08:12:00",
+          "event_type": "steal",
+          "player_id": "13",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 23,
+          "clock": "08:10:00",
+          "event_type": "foul",
+          "player_id": "131",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 24,
+          "clock": "08:10:00",
+          "event_type": "foulon",
+          "player_id": "110",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 27,
+          "clock": "07:52:00",
+          "event_type": "3pt",
+          "player_id": "13",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 28,
+          "clock": "07:52:00",
+          "event_type": "rebound",
+          "player_id": "",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 29,
+          "clock": "07:52:00",
+          "event_type": "substitution",
+          "player_id": "247",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 30,
+          "clock": "07:52:00",
+          "event_type": "substitution",
+          "player_id": "514",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 32,
+          "clock": "07:43:00",
+          "event_type": "2pt",
+          "player_id": "390",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 33,
+          "clock": "07:40:00",
+          "event_type": "rebound",
+          "player_id": "2",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 34,
+          "clock": "07:24:00",
+          "event_type": "2pt",
+          "player_id": "320",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 35,
+          "clock": "07:12:00",
+          "event_type": "3pt",
+          "player_id": "110",
+          "secondary_player_id": ""
+        }
+      ],
+      "bucket": "C"
+    },
+    {
+      "game_id": "1_20222023_0247",
+      "period": 1,
+      "clock": "06:10:00",
+      "team_id": "team_viimsi_sportland",
+      "action_numbers": [
+        48,
+        49
+      ],
+      "lineup_before": [
+        "110",
+        "122",
+        "284",
+        "390",
+        "500"
+      ],
+      "outs": [
+        "500"
+      ],
+      "ins": [
+        "13"
+      ],
+      "lineup_after": [
+        "110",
+        "122",
+        "284",
+        "390"
+      ],
+      "lineup_size": 4,
+      "neighbors": [
+        {
+          "action_number": 42,
+          "clock": "06:38:00",
+          "event_type": "3pt",
+          "player_id": "122",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 43,
+          "clock": "06:35:00",
+          "event_type": "rebound",
+          "player_id": "154",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 44,
+          "clock": "06:22:00",
+          "event_type": "2pt",
+          "player_id": "405",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 45,
+          "clock": "06:22:00",
+          "event_type": "assist",
+          "player_id": "120",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 47,
+          "clock": "06:10:00",
+          "event_type": "turnover",
+          "player_id": "500",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 48,
+          "clock": "06:10:00",
+          "event_type": "substitution",
+          "player_id": "500",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 49,
+          "clock": "06:10:00",
+          "event_type": "substitution",
+          "player_id": "13",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 51,
+          "clock": "05:58:00",
+          "event_type": "3pt",
+          "player_id": "154",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 52,
+          "clock": "05:56:00",
+          "event_type": "rebound",
+          "player_id": "390",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 53,
+          "clock": "05:53:00",
+          "event_type": "2pt",
+          "player_id": "390",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 54,
+          "clock": "05:53:00",
+          "event_type": "assist",
+          "player_id": "110",
+          "secondary_player_id": ""
+        }
+      ],
+      "bucket": "D"
+    },
+    {
+      "game_id": "1_20222023_0253",
+      "period": 1,
+      "clock": "05:54:00",
+      "team_id": "team_tartu_ulikool_maks_and_moorits",
+      "action_numbers": [
+        79,
+        80
+      ],
+      "lineup_before": [
+        "176",
+        "323",
+        "420",
+        "458",
+        "537"
+      ],
+      "outs": [
+        "537"
+      ],
+      "ins": [
+        "114"
+      ],
+      "lineup_after": [
+        "176",
+        "323",
+        "420",
+        "458"
+      ],
+      "lineup_size": 4,
+      "neighbors": [
+        {
+          "action_number": 74,
+          "clock": "05:54:00",
+          "event_type": "substitution",
+          "player_id": "366",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 75,
+          "clock": "05:54:00",
+          "event_type": "substitution",
+          "player_id": "279",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 76,
+          "clock": "05:54:00",
+          "event_type": "substitution",
+          "player_id": "414",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 77,
+          "clock": "05:54:00",
+          "event_type": "freethrow",
+          "player_id": "537",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 78,
+          "clock": "05:54:00",
+          "event_type": "freethrow",
+          "player_id": "537",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 79,
+          "clock": "05:54:00",
+          "event_type": "substitution",
+          "player_id": "537",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 80,
+          "clock": "05:54:00",
+          "event_type": "substitution",
+          "player_id": "114",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 82,
+          "clock": "05:32:00",
+          "event_type": "3pt",
+          "player_id": "19",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 83,
+          "clock": "05:30:00",
+          "event_type": "rebound",
+          "player_id": "420",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 84,
+          "clock": "05:21:00",
+          "event_type": "3pt",
+          "player_id": "176",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 85,
+          "clock": "05:17:00",
+          "event_type": "rebound",
+          "player_id": "279",
+          "secondary_player_id": ""
+        }
+      ],
+      "bucket": "C"
+    },
+    {
+      "game_id": "1_20232024_0003",
+      "period": 1,
+      "clock": "05:41:00",
+      "team_id": "team_taltech_optibet",
+      "action_numbers": [
+        75,
+        76
+      ],
+      "lineup_before": [
+        "159",
+        "204",
+        "315",
+        "417",
+        "527"
+      ],
+      "outs": [
+        "159"
+      ],
+      "ins": [
+        "317"
+      ],
+      "lineup_after": [
+        "204",
+        "315",
+        "417",
+        "527"
+      ],
+      "lineup_size": 4,
+      "neighbors": [
+        {
+          "action_number": 68,
+          "clock": "06:06:00",
+          "event_type": "substitution",
+          "player_id": "517",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 69,
+          "clock": "06:06:00",
+          "event_type": "substitution",
+          "player_id": "503",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 71,
+          "clock": "05:52:00",
+          "event_type": "2pt",
+          "player_id": "315",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 73,
+          "clock": "05:41:00",
+          "event_type": "foul",
+          "player_id": "527",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 74,
+          "clock": "05:41:00",
+          "event_type": "foulon",
+          "player_id": "192",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 75,
+          "clock": "05:41:00",
+          "event_type": "substitution",
+          "player_id": "159",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 76,
+          "clock": "05:41:00",
+          "event_type": "substitution",
+          "player_id": "317",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 77,
+          "clock": "05:41:00",
+          "event_type": "freethrow",
+          "player_id": "192",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 78,
+          "clock": "05:41:00",
+          "event_type": "freethrow",
+          "player_id": "192",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 80,
+          "clock": "05:24:00",
+          "event_type": "turnover",
+          "player_id": "417",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 81,
+          "clock": "05:24:00",
+          "event_type": "steal",
+          "player_id": "494",
+          "secondary_player_id": ""
+        }
+      ],
+      "bucket": "C"
+    },
+    {
+      "game_id": "1_20232024_0006",
+      "period": 1,
+      "clock": "04:36:00",
+      "team_id": "team_tartu_ulikool_maks_and_moorits",
+      "action_numbers": [
+        74,
+        75
+      ],
+      "lineup_before": [
+        "27",
+        "38",
+        "219",
+        "382",
+        "458"
+      ],
+      "outs": [
+        "27"
+      ],
+      "ins": [
+        "471"
+      ],
+      "lineup_after": [
+        "38",
+        "219",
+        "382",
+        "458"
+      ],
+      "lineup_size": 4,
+      "neighbors": [
+        {
+          "action_number": 68,
+          "clock": "04:37:00",
+          "event_type": "2pt",
+          "player_id": "219",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 70,
+          "clock": "04:36:00",
+          "event_type": "rebound",
+          "player_id": "500",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 71,
+          "clock": "04:36:00",
+          "event_type": "foul",
+          "player_id": "27",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 72,
+          "clock": "04:36:00",
+          "event_type": "foulon",
+          "player_id": "500",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 73,
+          "clock": "04:36:00",
+          "event_type": "timeout",
+          "player_id": "",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 74,
+          "clock": "04:36:00",
+          "event_type": "substitution",
+          "player_id": "27",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 75,
+          "clock": "04:36:00",
+          "event_type": "substitution",
+          "player_id": "471",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 76,
+          "clock": "04:36:00",
+          "event_type": "substitution",
+          "player_id": "137",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 77,
+          "clock": "04:36:00",
+          "event_type": "substitution",
+          "player_id": "548",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 80,
+          "clock": "04:15:00",
+          "event_type": "foul",
+          "player_id": "38",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 81,
+          "clock": "04:15:00",
+          "event_type": "foulon",
+          "player_id": "442",
+          "secondary_player_id": ""
+        }
+      ],
+      "bucket": "A"
+    },
+    {
+      "game_id": "1_20232024_0014",
+      "period": 1,
+      "clock": "04:00:00",
+      "team_id": "team_latvijas_universitate",
+      "action_numbers": [
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93
+      ],
+      "lineup_before": [
+        "12",
+        "106",
+        "134",
+        "371",
+        "410"
+      ],
+      "outs": [
+        "371",
+        "134",
+        "106",
+        "12"
+      ],
+      "ins": [
+        "486",
+        "404",
+        "105",
+        "203"
+      ],
+      "lineup_after": [
+        "12",
+        "106",
+        "134",
+        "410"
+      ],
+      "lineup_size": 4,
+      "neighbors": [
+        {
+          "action_number": 80,
+          "clock": "04:29:00",
+          "event_type": "assist",
+          "player_id": "414",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 81,
+          "clock": "04:03:00",
+          "event_type": "3pt",
+          "player_id": "106",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 82,
+          "clock": "04:00:00",
+          "event_type": "rebound",
+          "player_id": "12",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 84,
+          "clock": "04:00:00",
+          "event_type": "foul",
+          "player_id": "184",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 85,
+          "clock": "04:00:00",
+          "event_type": "foulon",
+          "player_id": "12",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 86,
+          "clock": "04:00:00",
+          "event_type": "substitution",
+          "player_id": "371",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 87,
+          "clock": "04:00:00",
+          "event_type": "substitution",
+          "player_id": "134",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 88,
+          "clock": "04:00:00",
+          "event_type": "substitution",
+          "player_id": "106",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 89,
+          "clock": "04:00:00",
+          "event_type": "substitution",
+          "player_id": "12",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 90,
+          "clock": "04:00:00",
+          "event_type": "substitution",
+          "player_id": "486",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 91,
+          "clock": "04:00:00",
+          "event_type": "substitution",
+          "player_id": "404",
+          "secondary_player_id": ""
+        }
+      ],
+      "bucket": "C"
+    },
+    {
+      "game_id": "1_20232024_0019",
+      "period": 1,
+      "clock": "06:00:00",
+      "team_id": "team_valmiera_glass_via",
+      "action_numbers": [
+        78,
+        79
+      ],
+      "lineup_before": [
+        "120",
+        "169",
+        "186",
+        "396",
+        "509"
+      ],
+      "outs": [
+        "120"
+      ],
+      "ins": [
+        "227"
+      ],
+      "lineup_after": [
+        "169",
+        "186",
+        "396",
+        "509"
+      ],
+      "lineup_size": 4,
+      "neighbors": [
+        {
+          "action_number": 72,
+          "clock": "06:17:00",
+          "event_type": "3pt",
+          "player_id": "373",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 73,
+          "clock": "06:09:00",
+          "event_type": "rebound",
+          "player_id": "535",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 74,
+          "clock": "06:09:00",
+          "event_type": "2pt",
+          "player_id": "535",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 75,
+          "clock": "06:06:00",
+          "event_type": "rebound",
+          "player_id": "186",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 77,
+          "clock": "06:00:00",
+          "event_type": "turnover",
+          "player_id": "169",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 78,
+          "clock": "06:00:00",
+          "event_type": "substitution",
+          "player_id": "120",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 79,
+          "clock": "06:00:00",
+          "event_type": "substitution",
+          "player_id": "227",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 83,
+          "clock": "05:45:00",
+          "event_type": "foul",
+          "player_id": "227",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 84,
+          "clock": "05:45:00",
+          "event_type": "foulon",
+          "player_id": "535",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 86,
+          "clock": "05:08:00",
+          "event_type": "foul",
+          "player_id": "462",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 87,
+          "clock": "05:08:00",
+          "event_type": "turnover",
+          "player_id": "462",
+          "secondary_player_id": ""
+        }
+      ],
+      "bucket": "C"
+    },
+    {
+      "game_id": "1_20232024_0036",
+      "period": 1,
+      "clock": "04:11:00",
+      "team_id": "team_keila_coolbet",
+      "action_numbers": [
+        85,
+        86,
+        87,
+        88
+      ],
+      "lineup_before": [
+        "31",
+        "118",
+        "270",
+        "276",
+        "329"
+      ],
+      "outs": [
+        "276",
+        "31"
+      ],
+      "ins": [
+        "375",
+        "321"
+      ],
+      "lineup_after": [
+        "31",
+        "118",
+        "270",
+        "329"
+      ],
+      "lineup_size": 4,
+      "neighbors": [
+        {
+          "action_number": 78,
+          "clock": "04:17:00",
+          "event_type": "foulon",
+          "player_id": "31",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 80,
+          "clock": "04:17:00",
+          "event_type": "2pt",
+          "player_id": "276",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 81,
+          "clock": "04:17:00",
+          "event_type": "assist",
+          "player_id": "329",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 83,
+          "clock": "04:11:00",
+          "event_type": "foul",
+          "player_id": "276",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 84,
+          "clock": "04:11:00",
+          "event_type": "foulon",
+          "player_id": "251",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 85,
+          "clock": "04:11:00",
+          "event_type": "substitution",
+          "player_id": "276",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 86,
+          "clock": "04:11:00",
+          "event_type": "substitution",
+          "player_id": "31",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 87,
+          "clock": "04:11:00",
+          "event_type": "substitution",
+          "player_id": "375",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 88,
+          "clock": "04:11:00",
+          "event_type": "substitution",
+          "player_id": "321",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 89,
+          "clock": "04:11:00",
+          "event_type": "substitution",
+          "player_id": "251",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 90,
+          "clock": "04:11:00",
+          "event_type": "substitution",
+          "player_id": "289",
+          "secondary_player_id": ""
+        }
+      ],
+      "bucket": "C"
+    },
+    {
+      "game_id": "1_20232024_0053",
+      "period": 1,
+      "clock": "07:08:00",
+      "team_id": "12",
+      "action_numbers": [
+        46,
+        47
+      ],
+      "lineup_before": [
+        "111",
+        "145",
+        "248",
+        "550",
+        "573"
+      ],
+      "outs": [
+        "248"
+      ],
+      "ins": [
+        "545"
+      ],
+      "lineup_after": [
+        "111",
+        "145",
+        "550",
+        "573"
+      ],
+      "lineup_size": 4,
+      "neighbors": [
+        {
+          "action_number": 39,
+          "clock": "07:14:00",
+          "event_type": "foulon",
+          "player_id": "189",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 40,
+          "clock": "07:14:00",
+          "event_type": "substitution",
+          "player_id": "500",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 41,
+          "clock": "07:14:00",
+          "event_type": "substitution",
+          "player_id": "137",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 44,
+          "clock": "07:08:00",
+          "event_type": "foul",
+          "player_id": "248",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 45,
+          "clock": "07:08:00",
+          "event_type": "foulon",
+          "player_id": "189",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 46,
+          "clock": "07:08:00",
+          "event_type": "substitution",
+          "player_id": "248",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 47,
+          "clock": "07:08:00",
+          "event_type": "substitution",
+          "player_id": "545",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 48,
+          "clock": "07:08:00",
+          "event_type": "freethrow",
+          "player_id": "189",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 49,
+          "clock": "07:08:00",
+          "event_type": "freethrow",
+          "player_id": "189",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 51,
+          "clock": "06:46:00",
+          "event_type": "2pt",
+          "player_id": "573",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 52,
+          "clock": "06:46:00",
+          "event_type": "assist",
+          "player_id": "545",
+          "secondary_player_id": ""
+        }
+      ],
+      "bucket": "C"
+    },
+    {
+      "game_id": "1_20232024_0059",
+      "period": 1,
+      "clock": "04:46:00",
+      "team_id": "5",
+      "action_numbers": [
+        54,
+        55
+      ],
+      "lineup_before": [
+        "137",
+        "143",
+        "189",
+        "327",
+        "500"
+      ],
+      "outs": [
+        "137"
+      ],
+      "ins": [
+        "548"
+      ],
+      "lineup_after": [
+        "143",
+        "189",
+        "327",
+        "500"
+      ],
+      "lineup_size": 4,
+      "neighbors": [
+        {
+          "action_number": 46,
+          "clock": "05:28:00",
+          "event_type": "rebound",
+          "player_id": "",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 49,
+          "clock": "05:17:00",
+          "event_type": "2pt",
+          "player_id": "143",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 50,
+          "clock": "04:57:00",
+          "event_type": "2pt",
+          "player_id": "373",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 51,
+          "clock": "04:48:00",
+          "event_type": "foul",
+          "player_id": "421",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 53,
+          "clock": "04:48:00",
+          "event_type": "foulon",
+          "player_id": "500",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 54,
+          "clock": "04:46:00",
+          "event_type": "substitution",
+          "player_id": "137",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 55,
+          "clock": "04:46:00",
+          "event_type": "substitution",
+          "player_id": "548",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 56,
+          "clock": "04:46:00",
+          "event_type": "substitution",
+          "player_id": "462",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 57,
+          "clock": "04:46:00",
+          "event_type": "substitution",
+          "player_id": "124",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 62,
+          "clock": "04:41:00",
+          "event_type": "foul",
+          "player_id": "124",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 63,
+          "clock": "04:41:00",
+          "event_type": "foulon",
+          "player_id": "143",
+          "secondary_player_id": ""
+        }
+      ],
+      "bucket": "C"
+    },
+    {
+      "game_id": "1_20232024_0111",
+      "period": 1,
+      "clock": "05:24:00",
+      "team_id": "3",
+      "action_numbers": [
+        71,
+        72
+      ],
+      "lineup_before": [
+        "131",
+        "258",
+        "278",
+        "290",
+        "450"
+      ],
+      "outs": [
+        "278"
+      ],
+      "ins": [
+        "407"
+      ],
+      "lineup_after": [
+        "131",
+        "258",
+        "290",
+        "450"
+      ],
+      "lineup_size": 4,
+      "neighbors": [
+        {
+          "action_number": 65,
+          "clock": "05:45:00",
+          "event_type": "rebound",
+          "player_id": "111",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 66,
+          "clock": "05:41:00",
+          "event_type": "3pt",
+          "player_id": "145",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 67,
+          "clock": "05:41:00",
+          "event_type": "assist",
+          "player_id": "111",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 69,
+          "clock": "05:24:00",
+          "event_type": "foul",
+          "player_id": "145",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 70,
+          "clock": "05:24:00",
+          "event_type": "foulon",
+          "player_id": "278",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 71,
+          "clock": "05:24:00",
+          "event_type": "substitution",
+          "player_id": "278",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 72,
+          "clock": "05:24:00",
+          "event_type": "substitution",
+          "player_id": "407",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 73,
+          "clock": "05:24:00",
+          "event_type": "substitution",
+          "player_id": "438",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 74,
+          "clock": "05:24:00",
+          "event_type": "substitution",
+          "player_id": "550",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 75,
+          "clock": "05:24:00",
+          "event_type": "substitution",
+          "player_id": "199",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 76,
+          "clock": "05:24:00",
+          "event_type": "substitution",
+          "player_id": "83",
+          "secondary_player_id": ""
+        }
+      ],
+      "bucket": "C"
+    },
+    {
+      "game_id": "1_20232024_0121",
+      "period": 1,
+      "clock": "04:47:00",
+      "team_id": "11",
+      "action_numbers": [
+        77,
+        78,
+        79,
+        80,
+        85,
+        86
+      ],
+      "lineup_before": [
+        "124",
+        "373",
+        "383",
+        "421",
+        "560"
+      ],
+      "outs": [
+        "124",
+        "421",
+        "383"
+      ],
+      "ins": [
+        "378",
+        "462",
+        "245"
+      ],
+      "lineup_after": [
+        "373",
+        "383",
+        "421",
+        "560"
+      ],
+      "lineup_size": 4,
+      "neighbors": [
+        {
+          "action_number": 71,
+          "clock": "04:50:00",
+          "event_type": "turnover",
+          "player_id": "421",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 72,
+          "clock": "04:50:00",
+          "event_type": "steal",
+          "player_id": "527",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 74,
+          "clock": "04:47:00",
+          "event_type": "foul",
+          "player_id": "124",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 75,
+          "clock": "04:47:00",
+          "event_type": "foulon",
+          "player_id": "315",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 76,
+          "clock": "04:47:00",
+          "event_type": "timeout",
+          "player_id": "",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 77,
+          "clock": "04:47:00",
+          "event_type": "substitution",
+          "player_id": "124",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 78,
+          "clock": "04:47:00",
+          "event_type": "substitution",
+          "player_id": "421",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 79,
+          "clock": "04:47:00",
+          "event_type": "substitution",
+          "player_id": "378",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 80,
+          "clock": "04:47:00",
+          "event_type": "substitution",
+          "player_id": "462",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 81,
+          "clock": "04:47:00",
+          "event_type": "substitution",
+          "player_id": "204",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 82,
+          "clock": "04:47:00",
+          "event_type": "substitution",
+          "player_id": "433",
+          "secondary_player_id": ""
+        }
+      ],
+      "bucket": "A"
+    },
+    {
+      "game_id": "1_20232024_0145",
+      "period": 1,
+      "clock": "05:00:00",
+      "team_id": "4",
+      "action_numbers": [
+        86,
+        87,
+        88,
+        89
+      ],
+      "lineup_before": [
+        "162",
+        "251",
+        "256",
+        "289",
+        "349"
+      ],
+      "outs": [
+        "289",
+        "349"
+      ],
+      "ins": [
+        "360",
+        "7"
+      ],
+      "lineup_after": [
+        "162",
+        "251",
+        "256",
+        "349"
+      ],
+      "lineup_size": 4,
+      "neighbors": [
+        {
+          "action_number": 80,
+          "clock": "05:34:00",
+          "event_type": "2pt",
+          "player_id": "354",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 81,
+          "clock": "05:12:00",
+          "event_type": "2pt",
+          "player_id": "162",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 82,
+          "clock": "05:12:00",
+          "event_type": "assist",
+          "player_id": "349",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 84,
+          "clock": "05:00:00",
+          "event_type": "foul",
+          "player_id": "251",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 85,
+          "clock": "05:00:00",
+          "event_type": "foulon",
+          "player_id": "354",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 86,
+          "clock": "05:00:00",
+          "event_type": "substitution",
+          "player_id": "289",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 87,
+          "clock": "05:00:00",
+          "event_type": "substitution",
+          "player_id": "349",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 88,
+          "clock": "05:00:00",
+          "event_type": "substitution",
+          "player_id": "360",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 89,
+          "clock": "05:00:00",
+          "event_type": "substitution",
+          "player_id": "7",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 90,
+          "clock": "05:00:00",
+          "event_type": "substitution",
+          "player_id": "323",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 91,
+          "clock": "05:00:00",
+          "event_type": "substitution",
+          "player_id": "389",
+          "secondary_player_id": ""
+        }
+      ],
+      "bucket": "C"
+    },
+    {
+      "game_id": "1_20232024_0165",
+      "period": 1,
+      "clock": "06:09:00",
+      "team_id": "11",
+      "action_numbers": [
+        77,
+        78
+      ],
+      "lineup_before": [
+        "373",
+        "421",
+        "462",
+        "535",
+        "560"
+      ],
+      "outs": [
+        "462"
+      ],
+      "ins": [
+        "124"
+      ],
+      "lineup_after": [
+        "373",
+        "421",
+        "535",
+        "560"
+      ],
+      "lineup_size": 4,
+      "neighbors": [
+        {
+          "action_number": 66,
+          "clock": "06:54:00",
+          "event_type": "freethrow",
+          "player_id": "373",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 71,
+          "clock": "06:49:00",
+          "event_type": "foul",
+          "player_id": "437",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 72,
+          "clock": "06:49:00",
+          "event_type": "turnover",
+          "player_id": "437",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 73,
+          "clock": "06:49:00",
+          "event_type": "foulon",
+          "player_id": "560",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 75,
+          "clock": "06:33:00",
+          "event_type": "2pt",
+          "player_id": "535",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 77,
+          "clock": "06:09:00",
+          "event_type": "substitution",
+          "player_id": "462",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 78,
+          "clock": "06:09:00",
+          "event_type": "substitution",
+          "player_id": "124",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 79,
+          "clock": "06:09:00",
+          "event_type": "substitution",
+          "player_id": "131",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 80,
+          "clock": "06:09:00",
+          "event_type": "substitution",
+          "player_id": "499",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 82,
+          "clock": "06:08:00",
+          "event_type": "turnover",
+          "player_id": "290",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 83,
+          "clock": "06:08:00",
+          "event_type": "steal",
+          "player_id": "421",
+          "secondary_player_id": ""
+        }
+      ],
+      "bucket": "C"
+    },
+    {
+      "game_id": "1_20232024_0222",
+      "period": 1,
+      "clock": "06:09:00",
+      "team_id": "16",
+      "action_numbers": [
+        55,
+        56,
+        57,
+        58,
+        59,
+        60
+      ],
+      "lineup_before": [
+        "45",
+        "101",
+        "172",
+        "231",
+        "513"
+      ],
+      "outs": [
+        "513",
+        "231",
+        "45"
+      ],
+      "ins": [
+        "444",
+        "341",
+        "443"
+      ],
+      "lineup_after": [
+        "45",
+        "101",
+        "172",
+        "231"
+      ],
+      "lineup_size": 4,
+      "neighbors": [
+        {
+          "action_number": 49,
+          "clock": "06:15:00",
+          "event_type": "turnover",
+          "player_id": "513",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 50,
+          "clock": "06:15:00",
+          "event_type": "steal",
+          "player_id": "350",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 51,
+          "clock": "06:10:00",
+          "event_type": "2pt",
+          "player_id": "339",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 53,
+          "clock": "06:10:00",
+          "event_type": "assist",
+          "player_id": "350",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 54,
+          "clock": "06:09:00",
+          "event_type": "timeout",
+          "player_id": "",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 55,
+          "clock": "06:09:00",
+          "event_type": "substitution",
+          "player_id": "513",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 56,
+          "clock": "06:09:00",
+          "event_type": "substitution",
+          "player_id": "231",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 57,
+          "clock": "06:09:00",
+          "event_type": "substitution",
+          "player_id": "45",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 58,
+          "clock": "06:09:00",
+          "event_type": "substitution",
+          "player_id": "444",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 59,
+          "clock": "06:09:00",
+          "event_type": "substitution",
+          "player_id": "341",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 60,
+          "clock": "06:09:00",
+          "event_type": "substitution",
+          "player_id": "443",
+          "secondary_player_id": ""
+        }
+      ],
+      "bucket": "A"
+    },
+    {
+      "game_id": "1_20232024_0256",
+      "period": 1,
+      "clock": "06:46:00",
+      "team_id": "6",
+      "action_numbers": [
+        35,
+        36
+      ],
+      "lineup_before": [
+        "65",
+        "267",
+        "323",
+        "350",
+        "389"
+      ],
+      "outs": [
+        "389"
+      ],
+      "ins": [
+        "476"
+      ],
+      "lineup_after": [
+        "65",
+        "267",
+        "323",
+        "350"
+      ],
+      "lineup_size": 4,
+      "neighbors": [
+        {
+          "action_number": 29,
+          "clock": "07:38:00",
+          "event_type": "2pt",
+          "player_id": "117",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 30,
+          "clock": "07:17:00",
+          "event_type": "2pt",
+          "player_id": "350",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 31,
+          "clock": "06:56:00",
+          "event_type": "3pt",
+          "player_id": "120",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 32,
+          "clock": "06:56:00",
+          "event_type": "assist",
+          "player_id": "472",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 34,
+          "clock": "06:46:00",
+          "event_type": "turnover",
+          "player_id": "323",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 35,
+          "clock": "06:46:00",
+          "event_type": "substitution",
+          "player_id": "389",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 36,
+          "clock": "06:46:00",
+          "event_type": "substitution",
+          "player_id": "476",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 38,
+          "clock": "06:29:00",
+          "event_type": "2pt",
+          "player_id": "472",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 39,
+          "clock": "06:26:00",
+          "event_type": "rebound",
+          "player_id": "472",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 40,
+          "clock": "06:25:00",
+          "event_type": "2pt",
+          "player_id": "472",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 41,
+          "clock": "06:22:00",
+          "event_type": "rebound",
+          "player_id": "476",
+          "secondary_player_id": ""
+        }
+      ],
+      "bucket": "D"
+    },
+    {
+      "game_id": "1_20242025_0018",
+      "period": 1,
+      "clock": "05:45:00",
+      "team_id": "10",
+      "action_numbers": [
+        58,
+        59,
+        60,
+        61
+      ],
+      "lineup_before": [
+        "14",
+        "69",
+        "331",
+        "494",
+        "503"
+      ],
+      "outs": [
+        "503",
+        "331"
+      ],
+      "ins": [
+        "413",
+        "206"
+      ],
+      "lineup_after": [
+        "14",
+        "69",
+        "331",
+        "494"
+      ],
+      "lineup_size": 4,
+      "neighbors": [
+        {
+          "action_number": 52,
+          "clock": "06:33:00",
+          "event_type": "assist",
+          "player_id": "69",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 53,
+          "clock": "06:05:00",
+          "event_type": "2pt",
+          "player_id": "12",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 54,
+          "clock": "06:05:00",
+          "event_type": "assist",
+          "player_id": "432",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 56,
+          "clock": "05:45:00",
+          "event_type": "foul",
+          "player_id": "432",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 57,
+          "clock": "05:45:00",
+          "event_type": "foulon",
+          "player_id": "331",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 58,
+          "clock": "05:45:00",
+          "event_type": "substitution",
+          "player_id": "503",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 59,
+          "clock": "05:45:00",
+          "event_type": "substitution",
+          "player_id": "331",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 60,
+          "clock": "05:45:00",
+          "event_type": "substitution",
+          "player_id": "413",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 61,
+          "clock": "05:45:00",
+          "event_type": "substitution",
+          "player_id": "206",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 62,
+          "clock": "05:45:00",
+          "event_type": "substitution",
+          "player_id": "432",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 63,
+          "clock": "05:45:00",
+          "event_type": "substitution",
+          "player_id": "299",
+          "secondary_player_id": ""
+        }
+      ],
+      "bucket": "C"
+    },
+    {
+      "game_id": "1_20242025_0024",
+      "period": 1,
+      "clock": "07:06:00",
+      "team_id": "17",
+      "action_numbers": [
+        49,
+        50
+      ],
+      "lineup_before": [
+        "2",
+        "107",
+        "275",
+        "310",
+        "396"
+      ],
+      "outs": [
+        "275"
+      ],
+      "ins": [
+        "120"
+      ],
+      "lineup_after": [
+        "2",
+        "107",
+        "310",
+        "396"
+      ],
+      "lineup_size": 4,
+      "neighbors": [
+        {
+          "action_number": 42,
+          "clock": "07:22:00",
+          "event_type": "rebound",
+          "player_id": "2",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 43,
+          "clock": "07:17:00",
+          "event_type": "2pt",
+          "player_id": "310",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 44,
+          "clock": "07:17:00",
+          "event_type": "assist",
+          "player_id": "2",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 47,
+          "clock": "07:06:00",
+          "event_type": "foul",
+          "player_id": "396",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 48,
+          "clock": "07:06:00",
+          "event_type": "foulon",
+          "player_id": "409",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 49,
+          "clock": "07:06:00",
+          "event_type": "substitution",
+          "player_id": "275",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 50,
+          "clock": "07:06:00",
+          "event_type": "substitution",
+          "player_id": "120",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 51,
+          "clock": "07:06:00",
+          "event_type": "freethrow",
+          "player_id": "409",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 52,
+          "clock": "07:06:00",
+          "event_type": "assist",
+          "player_id": "335",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 53,
+          "clock": "07:06:00",
+          "event_type": "freethrow",
+          "player_id": "409",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 55,
+          "clock": "06:44:00",
+          "event_type": "3pt",
+          "player_id": "120",
+          "secondary_player_id": ""
+        }
+      ],
+      "bucket": "C"
+    },
+    {
+      "game_id": "1_20242025_0029",
+      "period": 1,
+      "clock": "05:39:00",
+      "team_id": "8",
+      "action_numbers": [
+        69,
+        70,
+        71,
+        72
+      ],
+      "lineup_before": [
+        "122",
+        "481",
+        "491",
+        "507",
+        "561"
+      ],
+      "outs": [
+        "481",
+        "561"
+      ],
+      "ins": [
+        "285",
+        "427"
+      ],
+      "lineup_after": [
+        "122",
+        "491",
+        "507",
+        "561"
+      ],
+      "lineup_size": 4,
+      "neighbors": [
+        {
+          "action_number": 63,
+          "clock": "05:56:00",
+          "event_type": "turnover",
+          "player_id": "514",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 64,
+          "clock": "05:56:00",
+          "event_type": "steal",
+          "player_id": "481",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 65,
+          "clock": "05:51:00",
+          "event_type": "3pt",
+          "player_id": "507",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 66,
+          "clock": "05:48:00",
+          "event_type": "rebound",
+          "player_id": "514",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 68,
+          "clock": "05:39:00",
+          "event_type": "turnover",
+          "player_id": "514",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 69,
+          "clock": "05:39:00",
+          "event_type": "substitution",
+          "player_id": "481",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 70,
+          "clock": "05:39:00",
+          "event_type": "substitution",
+          "player_id": "561",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 71,
+          "clock": "05:39:00",
+          "event_type": "substitution",
+          "player_id": "285",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 72,
+          "clock": "05:39:00",
+          "event_type": "substitution",
+          "player_id": "427",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 74,
+          "clock": "05:32:00",
+          "event_type": "2pt",
+          "player_id": "285",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 75,
+          "clock": "05:32:00",
+          "event_type": "assist",
+          "player_id": "427",
+          "secondary_player_id": ""
+        }
+      ],
+      "bucket": "D"
+    },
+    {
+      "game_id": "1_20242025_0041",
+      "period": 1,
+      "clock": "05:59:00",
+      "team_id": "18",
+      "action_numbers": [
+        60,
+        61
+      ],
+      "lineup_before": [
+        "247",
+        "281",
+        "314",
+        "346",
+        "418"
+      ],
+      "outs": [
+        "314"
+      ],
+      "ins": [
+        "13"
+      ],
+      "lineup_after": [
+        "247",
+        "281",
+        "346",
+        "418"
+      ],
+      "lineup_size": 4,
+      "neighbors": [
+        {
+          "action_number": 55,
+          "clock": "05:59:00",
+          "event_type": "2pt",
+          "player_id": "418",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 56,
+          "clock": "05:59:00",
+          "event_type": "block",
+          "player_id": "21",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 57,
+          "clock": "05:59:00",
+          "event_type": "rebound",
+          "player_id": "418",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 58,
+          "clock": "05:59:00",
+          "event_type": "foul",
+          "player_id": "21",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 59,
+          "clock": "05:59:00",
+          "event_type": "foulon",
+          "player_id": "418",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 60,
+          "clock": "05:59:00",
+          "event_type": "substitution",
+          "player_id": "314",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 61,
+          "clock": "05:59:00",
+          "event_type": "substitution",
+          "player_id": "13",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 62,
+          "clock": "05:59:00",
+          "event_type": "freethrow",
+          "player_id": "418",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 63,
+          "clock": "05:59:00",
+          "event_type": "freethrow",
+          "player_id": "418",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 65,
+          "clock": "05:59:00",
+          "event_type": "rebound",
+          "player_id": "21",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 66,
+          "clock": "05:48:00",
+          "event_type": "3pt",
+          "player_id": "530",
+          "secondary_player_id": ""
+        }
+      ],
+      "bucket": "C"
+    },
+    {
+      "game_id": "1_20242025_0052",
+      "period": 1,
+      "clock": "05:24:00",
+      "team_id": "11",
+      "action_numbers": [
+        68,
+        69
+      ],
+      "lineup_before": [
+        "63",
+        "131",
+        "234",
+        "383",
+        "535"
+      ],
+      "outs": [
+        "63"
+      ],
+      "ins": [
+        "176"
+      ],
+      "lineup_after": [
+        "131",
+        "234",
+        "383",
+        "535"
+      ],
+      "lineup_size": 4,
+      "neighbors": [
+        {
+          "action_number": 62,
+          "clock": "06:07:00",
+          "event_type": "steal",
+          "player_id": "131",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 63,
+          "clock": "06:03:00",
+          "event_type": "3pt",
+          "player_id": "383",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 64,
+          "clock": "05:59:00",
+          "event_type": "rebound",
+          "player_id": "137",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 65,
+          "clock": "05:44:00",
+          "event_type": "2pt",
+          "player_id": "500",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 67,
+          "clock": "05:24:00",
+          "event_type": "turnover",
+          "player_id": "131",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 68,
+          "clock": "05:24:00",
+          "event_type": "substitution",
+          "player_id": "63",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 69,
+          "clock": "05:24:00",
+          "event_type": "substitution",
+          "player_id": "176",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 70,
+          "clock": "05:24:00",
+          "event_type": "substitution",
+          "player_id": "3",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 71,
+          "clock": "05:24:00",
+          "event_type": "substitution",
+          "player_id": "500",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 72,
+          "clock": "05:24:00",
+          "event_type": "substitution",
+          "player_id": "448",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 73,
+          "clock": "05:24:00",
+          "event_type": "substitution",
+          "player_id": "123",
+          "secondary_player_id": ""
+        }
+      ],
+      "bucket": "D"
+    },
+    {
+      "game_id": "1_20242025_0061",
+      "period": 1,
+      "clock": "03:38:00",
+      "team_id": "15",
+      "action_numbers": [
+        101,
+        102,
+        103,
+        104
+      ],
+      "lineup_before": [
+        "218",
+        "284",
+        "335",
+        "373",
+        "409"
+      ],
+      "outs": [
+        "218",
+        "335"
+      ],
+      "ins": [
+        "496",
+        "271"
+      ],
+      "lineup_after": [
+        "284",
+        "335",
+        "373",
+        "409"
+      ],
+      "lineup_size": 4,
+      "neighbors": [
+        {
+          "action_number": 95,
+          "clock": "03:52:00",
+          "event_type": "2pt",
+          "player_id": "218",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 96,
+          "clock": "03:52:00",
+          "event_type": "assist",
+          "player_id": "284",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 98,
+          "clock": "03:38:00",
+          "event_type": "foul",
+          "player_id": "373",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 99,
+          "clock": "03:38:00",
+          "event_type": "foulon",
+          "player_id": "535",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 100,
+          "clock": "03:38:00",
+          "event_type": "timeout",
+          "player_id": "",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 101,
+          "clock": "03:38:00",
+          "event_type": "substitution",
+          "player_id": "218",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 102,
+          "clock": "03:38:00",
+          "event_type": "substitution",
+          "player_id": "335",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 103,
+          "clock": "03:38:00",
+          "event_type": "substitution",
+          "player_id": "496",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 104,
+          "clock": "03:38:00",
+          "event_type": "substitution",
+          "player_id": "271",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 105,
+          "clock": "03:38:00",
+          "event_type": "substitution",
+          "player_id": "131",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 106,
+          "clock": "03:38:00",
+          "event_type": "substitution",
+          "player_id": "462",
+          "secondary_player_id": ""
+        }
+      ],
+      "bucket": "A"
+    },
+    {
+      "game_id": "1_20242025_0074",
+      "period": 1,
+      "clock": "06:09:00",
+      "team_id": "10",
+      "action_numbers": [
+        57,
+        58,
+        59,
+        60
+      ],
+      "lineup_before": [
+        "14",
+        "69",
+        "206",
+        "494",
+        "503"
+      ],
+      "outs": [
+        "503",
+        "69"
+      ],
+      "ins": [
+        "413",
+        "420"
+      ],
+      "lineup_after": [
+        "14",
+        "69",
+        "206",
+        "494"
+      ],
+      "lineup_size": 4,
+      "neighbors": [
+        {
+          "action_number": 49,
+          "clock": "06:35:00",
+          "event_type": "rebound",
+          "player_id": "206",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 50,
+          "clock": "06:21:00",
+          "event_type": "2pt",
+          "player_id": "206",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 54,
+          "clock": "06:09:00",
+          "event_type": "foul",
+          "player_id": "69",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 55,
+          "clock": "06:09:00",
+          "event_type": "foulon",
+          "player_id": "247",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 56,
+          "clock": "06:09:00",
+          "event_type": "timeout",
+          "player_id": "",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 57,
+          "clock": "06:09:00",
+          "event_type": "substitution",
+          "player_id": "503",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 58,
+          "clock": "06:09:00",
+          "event_type": "substitution",
+          "player_id": "69",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 59,
+          "clock": "06:09:00",
+          "event_type": "substitution",
+          "player_id": "413",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 60,
+          "clock": "06:09:00",
+          "event_type": "substitution",
+          "player_id": "420",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 61,
+          "clock": "06:09:00",
+          "event_type": "substitution",
+          "player_id": "281",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 62,
+          "clock": "06:09:00",
+          "event_type": "substitution",
+          "player_id": "296",
+          "secondary_player_id": ""
+        }
+      ],
+      "bucket": "A"
+    },
+    {
+      "game_id": "1_20242025_0091",
+      "period": 1,
+      "clock": "05:36:00",
+      "team_id": "18",
+      "action_numbers": [
+        73,
+        74
+      ],
+      "lineup_before": [
+        "13",
+        "247",
+        "281",
+        "314",
+        "418"
+      ],
+      "outs": [
+        "314"
+      ],
+      "ins": [
+        "346"
+      ],
+      "lineup_after": [
+        "13",
+        "247",
+        "281",
+        "418"
+      ],
+      "lineup_size": 4,
+      "neighbors": [
+        {
+          "action_number": 63,
+          "clock": "06:11:00",
+          "event_type": "assist",
+          "player_id": "13",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 64,
+          "clock": "05:51:00",
+          "event_type": "turnover",
+          "player_id": "486",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 65,
+          "clock": "05:51:00",
+          "event_type": "steal",
+          "player_id": "13",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 71,
+          "clock": "05:36:00",
+          "event_type": "foul",
+          "player_id": "119",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 72,
+          "clock": "05:36:00",
+          "event_type": "foulon",
+          "player_id": "418",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 73,
+          "clock": "05:36:00",
+          "event_type": "substitution",
+          "player_id": "314",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 74,
+          "clock": "05:36:00",
+          "event_type": "substitution",
+          "player_id": "346",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 75,
+          "clock": "05:36:00",
+          "event_type": "substitution",
+          "player_id": "119",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 76,
+          "clock": "05:36:00",
+          "event_type": "substitution",
+          "player_id": "486",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 77,
+          "clock": "05:36:00",
+          "event_type": "substitution",
+          "player_id": "552",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 78,
+          "clock": "05:36:00",
+          "event_type": "substitution",
+          "player_id": "147",
+          "secondary_player_id": ""
+        }
+      ],
+      "bucket": "C"
+    },
+    {
+      "game_id": "1_20242025_0130",
+      "period": 1,
+      "clock": "06:22:00",
+      "team_id": "8",
+      "action_numbers": [
+        68,
+        69
+      ],
+      "lineup_before": [
+        "122",
+        "285",
+        "481",
+        "491",
+        "561"
+      ],
+      "outs": [
+        "122"
+      ],
+      "ins": [
+        "507"
+      ],
+      "lineup_after": [
+        "285",
+        "481",
+        "491",
+        "561"
+      ],
+      "lineup_size": 4,
+      "neighbors": [
+        {
+          "action_number": 62,
+          "clock": "06:39:00",
+          "event_type": "2pt",
+          "player_id": "481",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 63,
+          "clock": "06:39:00",
+          "event_type": "block",
+          "player_id": "148",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 64,
+          "clock": "06:34:00",
+          "event_type": "rebound",
+          "player_id": "29",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 66,
+          "clock": "06:22:00",
+          "event_type": "foul",
+          "player_id": "491",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 67,
+          "clock": "06:22:00",
+          "event_type": "foulon",
+          "player_id": "267",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 68,
+          "clock": "06:22:00",
+          "event_type": "substitution",
+          "player_id": "122",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 69,
+          "clock": "06:22:00",
+          "event_type": "substitution",
+          "player_id": "507",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 70,
+          "clock": "06:22:00",
+          "event_type": "substitution",
+          "player_id": "508",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 71,
+          "clock": "06:22:00",
+          "event_type": "substitution",
+          "player_id": "339",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 72,
+          "clock": "06:22:00",
+          "event_type": "freethrow",
+          "player_id": "267",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 73,
+          "clock": "06:22:00",
+          "event_type": "freethrow",
+          "player_id": "267",
+          "secondary_player_id": ""
+        }
+      ],
+      "bucket": "C"
+    },
+    {
+      "game_id": "1_20242025_0131",
+      "period": 1,
+      "clock": "04:50:00",
+      "team_id": "10",
+      "action_numbers": [
+        75,
+        76
+      ],
+      "lineup_before": [
+        "14",
+        "69",
+        "206",
+        "413",
+        "494"
+      ],
+      "outs": [
+        "413"
+      ],
+      "ins": [
+        "503"
+      ],
+      "lineup_after": [
+        "14",
+        "69",
+        "206",
+        "494"
+      ],
+      "lineup_size": 4,
+      "neighbors": [
+        {
+          "action_number": 69,
+          "clock": "05:13:00",
+          "event_type": "rebound",
+          "player_id": "218",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 70,
+          "clock": "05:10:00",
+          "event_type": "2pt",
+          "player_id": "284",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 71,
+          "clock": "05:10:00",
+          "event_type": "assist",
+          "player_id": "373",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 73,
+          "clock": "04:50:00",
+          "event_type": "foul",
+          "player_id": "373",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 74,
+          "clock": "04:50:00",
+          "event_type": "foulon",
+          "player_id": "494",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 75,
+          "clock": "04:50:00",
+          "event_type": "substitution",
+          "player_id": "413",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 76,
+          "clock": "04:50:00",
+          "event_type": "substitution",
+          "player_id": "503",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 77,
+          "clock": "04:50:00",
+          "event_type": "freethrow",
+          "player_id": "494",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 78,
+          "clock": "04:50:00",
+          "event_type": "freethrow",
+          "player_id": "494",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 79,
+          "clock": "04:50:00",
+          "event_type": "freethrow",
+          "player_id": "494",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 81,
+          "clock": "04:37:00",
+          "event_type": "3pt",
+          "player_id": "216",
+          "secondary_player_id": ""
+        }
+      ],
+      "bucket": "C"
+    },
+    {
+      "game_id": "1_20242025_0138",
+      "period": 1,
+      "clock": "04:22:00",
+      "team_id": "8",
+      "action_numbers": [
+        98,
+        99
+      ],
+      "lineup_before": [
+        "122",
+        "223",
+        "481",
+        "491",
+        "561"
+      ],
+      "outs": [
+        "481"
+      ],
+      "ins": [
+        "507"
+      ],
+      "lineup_after": [
+        "122",
+        "223",
+        "491",
+        "561"
+      ],
+      "lineup_size": 4,
+      "neighbors": [
+        {
+          "action_number": 92,
+          "clock": "04:35:00",
+          "event_type": "2pt",
+          "player_id": "530",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 93,
+          "clock": "04:33:00",
+          "event_type": "rebound",
+          "player_id": "122",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 95,
+          "clock": "04:22:00",
+          "event_type": "2pt",
+          "player_id": "223",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 96,
+          "clock": "04:22:00",
+          "event_type": "foul",
+          "player_id": "530",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 97,
+          "clock": "04:22:00",
+          "event_type": "foulon",
+          "player_id": "223",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 98,
+          "clock": "04:22:00",
+          "event_type": "substitution",
+          "player_id": "481",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 99,
+          "clock": "04:22:00",
+          "event_type": "substitution",
+          "player_id": "507",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 100,
+          "clock": "04:22:00",
+          "event_type": "freethrow",
+          "player_id": "223",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 102,
+          "clock": "04:09:00",
+          "event_type": "3pt",
+          "player_id": "530",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 104,
+          "clock": "03:55:00",
+          "event_type": "foul",
+          "player_id": "530",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 105,
+          "clock": "03:55:00",
+          "event_type": "foulon",
+          "player_id": "561",
+          "secondary_player_id": ""
+        }
+      ],
+      "bucket": "B"
+    },
+    {
+      "game_id": "1_20242025_0141",
+      "period": 1,
+      "clock": "04:28:00",
+      "team_id": "3",
+      "action_numbers": [
+        83,
+        84,
+        85,
+        86
+      ],
+      "lineup_before": [
+        "132",
+        "258",
+        "278",
+        "460",
+        "469"
+      ],
+      "outs": [
+        "132",
+        "460"
+      ],
+      "ins": [
+        "499",
+        "290"
+      ],
+      "lineup_after": [
+        "258",
+        "278",
+        "460",
+        "469"
+      ],
+      "lineup_size": 4,
+      "neighbors": [
+        {
+          "action_number": 77,
+          "clock": "04:34:00",
+          "event_type": "assist",
+          "player_id": "514",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 79,
+          "clock": "04:28:00",
+          "event_type": "foul",
+          "player_id": "433",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 80,
+          "clock": "04:28:00",
+          "event_type": "foulon",
+          "player_id": "132",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 81,
+          "clock": "04:28:00",
+          "event_type": "substitution",
+          "player_id": "429",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 82,
+          "clock": "04:28:00",
+          "event_type": "substitution",
+          "player_id": "279",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 83,
+          "clock": "04:28:00",
+          "event_type": "substitution",
+          "player_id": "132",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 84,
+          "clock": "04:28:00",
+          "event_type": "substitution",
+          "player_id": "460",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 85,
+          "clock": "04:28:00",
+          "event_type": "substitution",
+          "player_id": "499",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 86,
+          "clock": "04:28:00",
+          "event_type": "substitution",
+          "player_id": "290",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 88,
+          "clock": "04:10:00",
+          "event_type": "3pt",
+          "player_id": "278",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 89,
+          "clock": "04:07:00",
+          "event_type": "rebound",
+          "player_id": "279",
+          "secondary_player_id": ""
+        }
+      ],
+      "bucket": "C"
+    },
+    {
+      "game_id": "1_20242025_0153",
+      "period": 1,
+      "clock": "05:00:00",
+      "team_id": "11",
+      "action_numbers": [
+        84,
+        85,
+        86,
+        87
+      ],
+      "lineup_before": [
+        "63",
+        "131",
+        "176",
+        "234",
+        "535"
+      ],
+      "outs": [
+        "63",
+        "131"
+      ],
+      "ins": [
+        "462",
+        "383"
+      ],
+      "lineup_after": [
+        "131",
+        "176",
+        "234",
+        "535"
+      ],
+      "lineup_size": 4,
+      "neighbors": [
+        {
+          "action_number": 77,
+          "clock": "05:23:00",
+          "event_type": "foulon",
+          "player_id": "469",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 79,
+          "clock": "05:16:00",
+          "event_type": "3pt",
+          "player_id": "132",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 80,
+          "clock": "05:16:00",
+          "event_type": "assist",
+          "player_id": "278",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 82,
+          "clock": "05:00:00",
+          "event_type": "foul",
+          "player_id": "278",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 83,
+          "clock": "05:00:00",
+          "event_type": "foulon",
+          "player_id": "176",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 84,
+          "clock": "05:00:00",
+          "event_type": "substitution",
+          "player_id": "63",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 85,
+          "clock": "05:00:00",
+          "event_type": "substitution",
+          "player_id": "131",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 86,
+          "clock": "05:00:00",
+          "event_type": "substitution",
+          "player_id": "462",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 87,
+          "clock": "05:00:00",
+          "event_type": "substitution",
+          "player_id": "383",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 88,
+          "clock": "05:00:00",
+          "event_type": "substitution",
+          "player_id": "278",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 89,
+          "clock": "05:00:00",
+          "event_type": "substitution",
+          "player_id": "499",
+          "secondary_player_id": ""
+        }
+      ],
+      "bucket": "C"
+    },
+    {
+      "game_id": "1_20242025_0157",
+      "period": 1,
+      "clock": "05:51:00",
+      "team_id": "8",
+      "action_numbers": [
+        77,
+        78,
+        79,
+        80
+      ],
+      "lineup_before": [
+        "122",
+        "223",
+        "412",
+        "481",
+        "491"
+      ],
+      "outs": [
+        "412",
+        "122"
+      ],
+      "ins": [
+        "561",
+        "135"
+      ],
+      "lineup_after": [
+        "122",
+        "223",
+        "481",
+        "491"
+      ],
+      "lineup_size": 4,
+      "neighbors": [
+        {
+          "action_number": 71,
+          "clock": "06:02:00",
+          "event_type": "3pt",
+          "player_id": "412",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 72,
+          "clock": "06:00:00",
+          "event_type": "rebound",
+          "player_id": "460",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 73,
+          "clock": "05:54:00",
+          "event_type": "2pt",
+          "player_id": "450",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 75,
+          "clock": "05:54:00",
+          "event_type": "assist",
+          "player_id": "132",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 76,
+          "clock": "05:51:00",
+          "event_type": "timeout",
+          "player_id": "163",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 77,
+          "clock": "05:51:00",
+          "event_type": "substitution",
+          "player_id": "412",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 78,
+          "clock": "05:51:00",
+          "event_type": "substitution",
+          "player_id": "122",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 79,
+          "clock": "05:51:00",
+          "event_type": "substitution",
+          "player_id": "561",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 80,
+          "clock": "05:51:00",
+          "event_type": "substitution",
+          "player_id": "135",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 82,
+          "clock": "05:39:00",
+          "event_type": "2pt",
+          "player_id": "223",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 83,
+          "clock": "05:24:00",
+          "event_type": "2pt",
+          "player_id": "278",
+          "secondary_player_id": ""
+        }
+      ],
+      "bucket": "A"
+    },
+    {
+      "game_id": "1_20242025_0181",
+      "period": 1,
+      "clock": "06:02:00",
+      "team_id": "4",
+      "action_numbers": [
+        107,
+        108
+      ],
+      "lineup_before": [
+        "162",
+        "169",
+        "256",
+        "381",
+        "502"
+      ],
+      "outs": [
+        "162"
+      ],
+      "ins": [
+        "289"
+      ],
+      "lineup_after": [
+        "169",
+        "256",
+        "381",
+        "502"
+      ],
+      "lineup_size": 4,
+      "neighbors": [
+        {
+          "action_number": 101,
+          "clock": "06:13:00",
+          "event_type": "3pt",
+          "player_id": "162",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 102,
+          "clock": "06:08:00",
+          "event_type": "rebound",
+          "player_id": "469",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 104,
+          "clock": "06:02:00",
+          "event_type": "foul",
+          "player_id": "258",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 105,
+          "clock": "06:02:00",
+          "event_type": "turnover",
+          "player_id": "258",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 106,
+          "clock": "06:02:00",
+          "event_type": "foulon",
+          "player_id": "256",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 107,
+          "clock": "06:02:00",
+          "event_type": "substitution",
+          "player_id": "162",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 108,
+          "clock": "06:02:00",
+          "event_type": "substitution",
+          "player_id": "289",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 112,
+          "clock": "05:45:00",
+          "event_type": "2pt",
+          "player_id": "381",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 113,
+          "clock": "05:37:00",
+          "event_type": "3pt",
+          "player_id": "132",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 115,
+          "clock": "05:24:00",
+          "event_type": "foul",
+          "player_id": "278",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 116,
+          "clock": "05:24:00",
+          "event_type": "foulon",
+          "player_id": "289",
+          "secondary_player_id": ""
+        }
+      ],
+      "bucket": "C"
+    },
+    {
+      "game_id": "1_20242025_0206",
+      "period": 1,
+      "clock": "07:36:00",
+      "team_id": "9",
+      "action_numbers": [
+        45,
+        46
+      ],
+      "lineup_before": [
+        "12",
+        "106",
+        "119",
+        "134",
+        "486"
+      ],
+      "outs": [
+        "106"
+      ],
+      "ins": [
+        "177"
+      ],
+      "lineup_after": [
+        "12",
+        "119",
+        "134",
+        "486"
+      ],
+      "lineup_size": 4,
+      "neighbors": [
+        {
+          "action_number": 39,
+          "clock": "07:45:00",
+          "event_type": "3pt",
+          "player_id": "486",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 40,
+          "clock": "07:41:00",
+          "event_type": "rebound",
+          "player_id": "476",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 42,
+          "clock": "07:36:00",
+          "event_type": "foul",
+          "player_id": "476",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 43,
+          "clock": "07:36:00",
+          "event_type": "turnover",
+          "player_id": "476",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 44,
+          "clock": "07:36:00",
+          "event_type": "foulon",
+          "player_id": "134",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 45,
+          "clock": "07:36:00",
+          "event_type": "substitution",
+          "player_id": "106",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 46,
+          "clock": "07:36:00",
+          "event_type": "substitution",
+          "player_id": "177",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 49,
+          "clock": "07:20:00",
+          "event_type": "foul",
+          "player_id": "476",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 50,
+          "clock": "07:20:00",
+          "event_type": "foulon",
+          "player_id": "119",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 51,
+          "clock": "07:20:00",
+          "event_type": "freethrow",
+          "player_id": "119",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 52,
+          "clock": "07:20:00",
+          "event_type": "freethrow",
+          "player_id": "119",
+          "secondary_player_id": ""
+        }
+      ],
+      "bucket": "C"
+    },
+    {
+      "game_id": "1_20242025_0207",
+      "period": 1,
+      "clock": "05:53:00",
+      "team_id": "5",
+      "action_numbers": [
+        53,
+        54,
+        55,
+        56,
+        57,
+        58
+      ],
+      "lineup_before": [
+        "380",
+        "422",
+        "439",
+        "534",
+        "575"
+      ],
+      "outs": [
+        "422",
+        "534",
+        "575"
+      ],
+      "ins": [
+        "500",
+        "137",
+        "213"
+      ],
+      "lineup_after": [
+        "380",
+        "439",
+        "534",
+        "575"
+      ],
+      "lineup_size": 4,
+      "neighbors": [
+        {
+          "action_number": 47,
+          "clock": "06:05:00",
+          "event_type": "steal",
+          "player_id": "444",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 48,
+          "clock": "05:58:00",
+          "event_type": "turnover",
+          "player_id": "101",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 49,
+          "clock": "05:58:00",
+          "event_type": "steal",
+          "player_id": "534",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 51,
+          "clock": "05:53:00",
+          "event_type": "foul",
+          "player_id": "444",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 52,
+          "clock": "05:53:00",
+          "event_type": "foulon",
+          "player_id": "380",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 53,
+          "clock": "05:53:00",
+          "event_type": "substitution",
+          "player_id": "422",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 54,
+          "clock": "05:53:00",
+          "event_type": "substitution",
+          "player_id": "534",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 55,
+          "clock": "05:53:00",
+          "event_type": "substitution",
+          "player_id": "575",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 56,
+          "clock": "05:53:00",
+          "event_type": "substitution",
+          "player_id": "500",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 57,
+          "clock": "05:53:00",
+          "event_type": "substitution",
+          "player_id": "137",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 58,
+          "clock": "05:53:00",
+          "event_type": "substitution",
+          "player_id": "213",
+          "secondary_player_id": ""
+        }
+      ],
+      "bucket": "C"
+    },
+    {
+      "game_id": "1_20242025_0208",
+      "period": 1,
+      "clock": "04:22:00",
+      "team_id": "12",
+      "action_numbers": [
+        110,
+        111,
+        112,
+        113
+      ],
+      "lineup_before": [
+        "111",
+        "265",
+        "441",
+        "450",
+        "545"
+      ],
+      "outs": [
+        "441",
+        "450"
+      ],
+      "ins": [
+        "573",
+        "449"
+      ],
+      "lineup_after": [
+        "111",
+        "265",
+        "450",
+        "545"
+      ],
+      "lineup_size": 4,
+      "neighbors": [
+        {
+          "action_number": 102,
+          "clock": "04:45:00",
+          "event_type": "rebound",
+          "player_id": "265",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 103,
+          "clock": "04:44:00",
+          "event_type": "3pt",
+          "player_id": "545",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 104,
+          "clock": "04:44:00",
+          "event_type": "assist",
+          "player_id": "265",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 108,
+          "clock": "04:22:00",
+          "event_type": "foul",
+          "player_id": "545",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 109,
+          "clock": "04:22:00",
+          "event_type": "foulon",
+          "player_id": "258",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 110,
+          "clock": "04:22:00",
+          "event_type": "substitution",
+          "player_id": "441",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 111,
+          "clock": "04:22:00",
+          "event_type": "substitution",
+          "player_id": "450",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 112,
+          "clock": "04:22:00",
+          "event_type": "substitution",
+          "player_id": "573",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 113,
+          "clock": "04:22:00",
+          "event_type": "substitution",
+          "player_id": "449",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 114,
+          "clock": "04:22:00",
+          "event_type": "substitution",
+          "player_id": "132",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 115,
+          "clock": "04:22:00",
+          "event_type": "substitution",
+          "player_id": "499",
+          "secondary_player_id": ""
+        }
+      ],
+      "bucket": "C"
+    },
+    {
+      "game_id": "1_20252026_0011",
+      "period": 1,
+      "clock": "05:29:00",
+      "team_id": "3",
+      "action_numbers": [
+        67,
+        68
+      ],
+      "lineup_before": [
+        "131",
+        "195",
+        "313",
+        "561",
+        "569"
+      ],
+      "outs": [
+        "131"
+      ],
+      "ins": [
+        "119"
+      ],
+      "lineup_after": [
+        "195",
+        "313",
+        "561",
+        "569"
+      ],
+      "lineup_size": 4,
+      "neighbors": [
+        {
+          "action_number": 59,
+          "clock": "06:07:00",
+          "event_type": "turnover",
+          "player_id": "195",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 60,
+          "clock": "06:07:00",
+          "event_type": "foulon",
+          "player_id": "180",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 63,
+          "clock": "05:52:00",
+          "event_type": "2pt",
+          "player_id": "284",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 64,
+          "clock": "05:49:00",
+          "event_type": "rebound",
+          "player_id": "195",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 65,
+          "clock": "05:36:00",
+          "event_type": "2pt",
+          "player_id": "131",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 67,
+          "clock": "05:29:00",
+          "event_type": "substitution",
+          "player_id": "131",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 68,
+          "clock": "05:29:00",
+          "event_type": "substitution",
+          "player_id": "119",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 69,
+          "clock": "05:30:00",
+          "event_type": "timeout",
+          "player_id": "",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 71,
+          "clock": "05:23:00",
+          "event_type": "2pt",
+          "player_id": "334",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 72,
+          "clock": "05:21:00",
+          "event_type": "rebound",
+          "player_id": "195",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 73,
+          "clock": "05:03:00",
+          "event_type": "3pt",
+          "player_id": "119",
+          "secondary_player_id": ""
+        }
+      ],
+      "bucket": "A"
+    },
+    {
+      "game_id": "1_20252026_0031",
+      "period": 1,
+      "clock": "03:58:00",
+      "team_id": "12",
+      "action_numbers": [
+        91,
+        92,
+        93,
+        94
+      ],
+      "lineup_before": [
+        "118",
+        "144",
+        "441",
+        "469",
+        "545"
+      ],
+      "outs": [
+        "441",
+        "118"
+      ],
+      "ins": [
+        "484",
+        "212"
+      ],
+      "lineup_after": [
+        "118",
+        "144",
+        "469",
+        "545"
+      ],
+      "lineup_size": 4,
+      "neighbors": [
+        {
+          "action_number": 84,
+          "clock": "04:08:00",
+          "event_type": "freethrow",
+          "player_id": "469",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 86,
+          "clock": "04:08:00",
+          "event_type": "rebound",
+          "player_id": "441",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 88,
+          "clock": "03:58:00",
+          "event_type": "2pt",
+          "player_id": "469",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 89,
+          "clock": "03:58:00",
+          "event_type": "foul",
+          "player_id": "174",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 90,
+          "clock": "03:58:00",
+          "event_type": "foulon",
+          "player_id": "469",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 91,
+          "clock": "03:58:00",
+          "event_type": "substitution",
+          "player_id": "441",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 92,
+          "clock": "03:58:00",
+          "event_type": "substitution",
+          "player_id": "118",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 93,
+          "clock": "03:58:00",
+          "event_type": "substitution",
+          "player_id": "484",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 94,
+          "clock": "03:58:00",
+          "event_type": "substitution",
+          "player_id": "212",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 95,
+          "clock": "03:58:00",
+          "event_type": "freethrow",
+          "player_id": "469",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 97,
+          "clock": "03:58:00",
+          "event_type": "rebound",
+          "player_id": "174",
+          "secondary_player_id": ""
+        }
+      ],
+      "bucket": "C"
+    },
+    {
+      "game_id": "1_20252026_0074",
+      "period": 1,
+      "clock": "07:34:00",
+      "team_id": "6",
+      "action_numbers": [
+        35,
+        36
+      ],
+      "lineup_before": [
+        "29",
+        "136",
+        "164",
+        "184",
+        "508"
+      ],
+      "outs": [
+        "136"
+      ],
+      "ins": [
+        "382"
+      ],
+      "lineup_after": [
+        "29",
+        "164",
+        "184",
+        "508"
+      ],
+      "lineup_size": 4,
+      "neighbors": [
+        {
+          "action_number": 28,
+          "clock": "07:59:00",
+          "event_type": "turnover",
+          "player_id": "508",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 30,
+          "clock": "07:49:00",
+          "event_type": "3pt",
+          "player_id": "3",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 31,
+          "clock": "07:49:00",
+          "event_type": "assist",
+          "player_id": "442",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 33,
+          "clock": "07:34:00",
+          "event_type": "foul",
+          "player_id": "442",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 34,
+          "clock": "07:34:00",
+          "event_type": "foulon",
+          "player_id": "508",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 35,
+          "clock": "07:34:00",
+          "event_type": "substitution",
+          "player_id": "136",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 36,
+          "clock": "07:34:00",
+          "event_type": "substitution",
+          "player_id": "382",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 38,
+          "clock": "07:28:00",
+          "event_type": "3pt",
+          "player_id": "508",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 39,
+          "clock": "07:06:00",
+          "event_type": "2pt",
+          "player_id": "442",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 40,
+          "clock": "07:03:00",
+          "event_type": "rebound",
+          "player_id": "382",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 41,
+          "clock": "06:58:00",
+          "event_type": "2pt",
+          "player_id": "184",
+          "secondary_player_id": ""
+        }
+      ],
+      "bucket": "C"
+    },
+    {
+      "game_id": "1_20252026_0084",
+      "period": 1,
+      "clock": "06:34:00",
+      "team_id": "4",
+      "action_numbers": [
+        41,
+        42,
+        43,
+        44
+      ],
+      "lineup_before": [
+        "32",
+        "162",
+        "238",
+        "256",
+        "437"
+      ],
+      "outs": [
+        "32",
+        "162"
+      ],
+      "ins": [
+        "38",
+        "251"
+      ],
+      "lineup_after": [
+        "162",
+        "238",
+        "256",
+        "437"
+      ],
+      "lineup_size": 4,
+      "neighbors": [
+        {
+          "action_number": 35,
+          "clock": "06:49:00",
+          "event_type": "rebound",
+          "player_id": "238",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 36,
+          "clock": "06:35:00",
+          "event_type": "turnover",
+          "player_id": "162",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 38,
+          "clock": "06:35:00",
+          "event_type": "steal",
+          "player_id": "267",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 39,
+          "clock": "06:34:00",
+          "event_type": "foul",
+          "player_id": "256",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 40,
+          "clock": "06:34:00",
+          "event_type": "foulon",
+          "player_id": "267",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 41,
+          "clock": "06:34:00",
+          "event_type": "substitution",
+          "player_id": "32",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 42,
+          "clock": "06:34:00",
+          "event_type": "substitution",
+          "player_id": "162",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 43,
+          "clock": "06:34:00",
+          "event_type": "substitution",
+          "player_id": "38",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 44,
+          "clock": "06:34:00",
+          "event_type": "substitution",
+          "player_id": "251",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 46,
+          "clock": "06:21:00",
+          "event_type": "2pt",
+          "player_id": "184",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 47,
+          "clock": "06:21:00",
+          "event_type": "assist",
+          "player_id": "267",
+          "secondary_player_id": ""
+        }
+      ],
+      "bucket": "C"
+    },
+    {
+      "game_id": "1_20252026_0101",
+      "period": 1,
+      "clock": "06:43:00",
+      "team_id": "15",
+      "action_numbers": [
+        58,
+        59
+      ],
+      "lineup_before": [
+        "101",
+        "284",
+        "334",
+        "373",
+        "494"
+      ],
+      "outs": [
+        "101"
+      ],
+      "ins": [
+        "345"
+      ],
+      "lineup_after": [
+        "284",
+        "334",
+        "373",
+        "494"
+      ],
+      "lineup_size": 4,
+      "neighbors": [
+        {
+          "action_number": 52,
+          "clock": "07:18:00",
+          "event_type": "2pt",
+          "player_id": "101",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 53,
+          "clock": "07:18:00",
+          "event_type": "block",
+          "player_id": "252",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 54,
+          "clock": "07:13:00",
+          "event_type": "rebound",
+          "player_id": "282",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 55,
+          "clock": "07:05:00",
+          "event_type": "2pt",
+          "player_id": "252",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 56,
+          "clock": "07:05:00",
+          "event_type": "assist",
+          "player_id": "277",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 58,
+          "clock": "06:43:00",
+          "event_type": "substitution",
+          "player_id": "101",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 59,
+          "clock": "06:43:00",
+          "event_type": "substitution",
+          "player_id": "345",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 61,
+          "clock": "06:41:00",
+          "event_type": "2pt",
+          "player_id": "494",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 62,
+          "clock": "06:41:00",
+          "event_type": "assist",
+          "player_id": "373",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 63,
+          "clock": "06:20:00",
+          "event_type": "2pt",
+          "player_id": "281",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 64,
+          "clock": "06:17:00",
+          "event_type": "rebound",
+          "player_id": "345",
+          "secondary_player_id": ""
+        }
+      ],
+      "bucket": "D"
+    },
+    {
+      "game_id": "1_20252026_0109",
+      "period": 1,
+      "clock": "06:12:00",
+      "team_id": "9",
+      "action_numbers": [
+        58,
+        59,
+        63,
+        64
+      ],
+      "lineup_before": [
+        "18",
+        "106",
+        "147",
+        "448",
+        "504"
+      ],
+      "outs": [
+        "147",
+        "448"
+      ],
+      "ins": [
+        "406",
+        "377"
+      ],
+      "lineup_after": [
+        "18",
+        "106",
+        "448",
+        "504"
+      ],
+      "lineup_size": 4,
+      "neighbors": [
+        {
+          "action_number": 52,
+          "clock": "06:29:00",
+          "event_type": "assist",
+          "player_id": "417",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 54,
+          "clock": "06:12:00",
+          "event_type": "2pt",
+          "player_id": "448",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 55,
+          "clock": "06:12:00",
+          "event_type": "assist",
+          "player_id": "106",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 56,
+          "clock": "06:12:00",
+          "event_type": "foul",
+          "player_id": "417",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 57,
+          "clock": "06:12:00",
+          "event_type": "foulon",
+          "player_id": "448",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 58,
+          "clock": "06:12:00",
+          "event_type": "substitution",
+          "player_id": "147",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 59,
+          "clock": "06:12:00",
+          "event_type": "substitution",
+          "player_id": "406",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 60,
+          "clock": "06:12:00",
+          "event_type": "substitution",
+          "player_id": "477",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 61,
+          "clock": "06:12:00",
+          "event_type": "substitution",
+          "player_id": "317",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 62,
+          "clock": "06:12:00",
+          "event_type": "freethrow",
+          "player_id": "448",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 63,
+          "clock": "06:12:00",
+          "event_type": "substitution",
+          "player_id": "448",
+          "secondary_player_id": ""
+        }
+      ],
+      "bucket": "C"
+    },
+    {
+      "game_id": "1_20252026_0165",
+      "period": 1,
+      "clock": "03:45:00",
+      "team_id": "8",
+      "action_numbers": [
+        108,
+        109
+      ],
+      "lineup_before": [
+        "139",
+        "240",
+        "411",
+        "427",
+        "481"
+      ],
+      "outs": [
+        "481"
+      ],
+      "ins": [
+        "124"
+      ],
+      "lineup_after": [
+        "139",
+        "240",
+        "411",
+        "427"
+      ],
+      "lineup_size": 4,
+      "neighbors": [
+        {
+          "action_number": 102,
+          "clock": "04:10:00",
+          "event_type": "2pt",
+          "player_id": "236",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 103,
+          "clock": "03:54:00",
+          "event_type": "2pt",
+          "player_id": "481",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 104,
+          "clock": "03:51:00",
+          "event_type": "rebound",
+          "player_id": "504",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 106,
+          "clock": "03:45:00",
+          "event_type": "foul",
+          "player_id": "481",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 107,
+          "clock": "03:45:00",
+          "event_type": "foulon",
+          "player_id": "504",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 108,
+          "clock": "03:45:00",
+          "event_type": "substitution",
+          "player_id": "481",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 109,
+          "clock": "03:45:00",
+          "event_type": "substitution",
+          "player_id": "124",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 111,
+          "clock": "03:41:00",
+          "event_type": "3pt",
+          "player_id": "519",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 112,
+          "clock": "03:38:00",
+          "event_type": "rebound",
+          "player_id": "427",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 113,
+          "clock": "03:30:00",
+          "event_type": "3pt",
+          "player_id": "240",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 114,
+          "clock": "03:27:00",
+          "event_type": "rebound",
+          "player_id": "519",
+          "secondary_player_id": ""
+        }
+      ],
+      "bucket": "C"
+    },
+    {
+      "game_id": "1_20252026_0190",
+      "period": 1,
+      "clock": "05:55:00",
+      "team_id": "10",
+      "action_numbers": [
+        68,
+        69
+      ],
+      "lineup_before": [
+        "13",
+        "14",
+        "110",
+        "159",
+        "176"
+      ],
+      "outs": [
+        "13"
+      ],
+      "ins": [
+        "115"
+      ],
+      "lineup_after": [
+        "14",
+        "110",
+        "159",
+        "176"
+      ],
+      "lineup_size": 4,
+      "neighbors": [
+        {
+          "action_number": 60,
+          "clock": "06:34:00",
+          "event_type": "assist",
+          "player_id": "334",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 61,
+          "clock": "06:19:00",
+          "event_type": "3pt",
+          "player_id": "110",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 62,
+          "clock": "06:19:00",
+          "event_type": "assist",
+          "player_id": "14",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 66,
+          "clock": "05:55:00",
+          "event_type": "foul",
+          "player_id": "13",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 67,
+          "clock": "05:55:00",
+          "event_type": "foulon",
+          "player_id": "284",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 68,
+          "clock": "05:55:00",
+          "event_type": "substitution",
+          "player_id": "13",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 69,
+          "clock": "05:55:00",
+          "event_type": "substitution",
+          "player_id": "115",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 70,
+          "clock": "05:55:00",
+          "event_type": "substitution",
+          "player_id": "373",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 71,
+          "clock": "05:55:00",
+          "event_type": "substitution",
+          "player_id": "180",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 75,
+          "clock": "05:49:00",
+          "event_type": "3pt",
+          "player_id": "334",
+          "secondary_player_id": ""
+        },
+        {
+          "action_number": 77,
+          "clock": "05:47:00",
+          "event_type": "rebound",
+          "player_id": "547",
+          "secondary_player_id": ""
+        }
+      ],
+      "bucket": "C"
+    }
+  ],
+  "bucket_counts": {
+    "A": 10,
+    "B": 1,
+    "C": 42,
+    "D": 8
+  },
+  "method_comparison": {
+    "games_where_A_fails_and_B_succeeds": 17,
+    "games_where_B_fails_and_A_succeeds": 0,
+    "games_where_both_fail": 44,
+    "games_where_both_succeed": 0
+  }
+}

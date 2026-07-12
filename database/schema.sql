@@ -184,6 +184,7 @@ CREATE TABLE IF NOT EXISTS lineup_segments (
     end_action_number INTEGER,
     start_clock TEXT,
     end_clock TEXT,
+    duration_seconds INTEGER,
     FOREIGN KEY (game_id) REFERENCES games(game_id),
     FOREIGN KEY (lineup_id) REFERENCES lineups(lineup_id),
     FOREIGN KEY (team_id) REFERENCES teams(team_id)
