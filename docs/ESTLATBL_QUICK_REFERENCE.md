@@ -3,14 +3,14 @@
 ## One-Time Setup
 ```bash
 cd C:\path\to\ARC
-node scripts\setup_estlatbl.mjs
+node scripts\import\init_database.mjs
 ```
 
 ## Manual Execution
 
 ### Daily Update (Recommended)
 ```bash
-node scripts\update_estlatbl.mjs
+node scripts\import\update_estlatbl.mjs
 ```
 - Collects last 2 seasons
 - Imports up to 5 games
@@ -18,7 +18,7 @@ node scripts\update_estlatbl.mjs
 
 ### Full Refresh
 ```bash
-node scripts\update_estlatbl.mjs --all-seasons --import-all
+node scripts\import\update_estlatbl.mjs --all-seasons --import-all
 ```
 - Collects all seasons
 - Imports all pending games
@@ -27,20 +27,20 @@ node scripts\update_estlatbl.mjs --all-seasons --import-all
 ### Custom Configuration
 ```bash
 # Collect 3 seasons, import 10 games
-node scripts\update_estlatbl.mjs --recent-count 3 --import-limit 10
+node scripts\import\update_estlatbl.mjs --recent-count 3 --import-limit 10
 
 # Collect all, import 20 games
-node scripts\update_estlatbl.mjs --all-seasons --import-limit 20
+node scripts\import\update_estlatbl.mjs --all-seasons --import-limit 20
 
 # Collect recent, import all
-node scripts\update_estlatbl.mjs --import-all
+node scripts\import\update_estlatbl.mjs --import-all
 ```
 
 ## Windows Task Scheduler Setup (PowerShell - Run as Admin)
 
 ```powershell
 $taskName = "EstLat Daily Update"
-$scriptPath = "C:\path\to\ARC\scripts\update_estlatbl.mjs"
+$scriptPath = "C:\path\to\ARC\scripts\import\update_estlatbl.mjs"
 $workingDir = "C:\path\to\ARC"
 
 $trigger = New-ScheduledTaskTrigger -Daily -At 00:00
@@ -72,7 +72,7 @@ grep "ERROR\|✗" logs/estlatbl-update.log
 
 ### Check Failed Imports (DLQ)
 ```bash
-sqlite3 data/arc.db
+sqlite3 data/arc2.db
 > SELECT COUNT(*) as pending FROM failed_imports WHERE status='pending';
 > SELECT game_id, error_type, retry_count FROM failed_imports 
   WHERE status='pending' ORDER BY failed_at DESC LIMIT 5;
@@ -107,12 +107,12 @@ Get-EventLog -LogName "System" -Source "TaskScheduler" |
 
 | File | Purpose |
 |------|---------|
-| `scripts/update_estlatbl.mjs` | Main orchestrator |
-| `scripts/collect_estlatbl_seasons.mjs` | Collection (modified) |
-| `scripts/import_livestats_games.mjs` | Import (modified) |
+| `scripts/import/update_estlatbl.mjs` | Main orchestrator |
+| `scripts/import/collect_estlatbl_seasons.mjs` | Collection (modified) |
+| `scripts/import/import_livestats_games.mjs` | Import (modified) |
 | `scripts/lib/estlatbl-utils.mjs` | Utilities (Logger, DLQ) |
 | `logs/estlatbl-update.log` | Update log |
-| `data/arc.db` | Database with DLQ table |
+| `data/arc2.db` | Database with DLQ table |
 | `UPDATE_ESTLATBL_GUIDE.md` | Comprehensive guide |
 | `IMPLEMENTATION_REPORT.md` | Full technical report |
 

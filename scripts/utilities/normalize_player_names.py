@@ -6,7 +6,7 @@ from typing import Optional, List, Dict
 
 import requests
 
-DB_PATH = Path("c:/Users/kasutaja/OneDrive/Töölaud/ARC/data/arc2.db")
+DB_PATH = Path(__file__).resolve().parents[2] / "data" / "arc2.db"
 
 
 def normalize_key(value: Optional[str]) -> str:

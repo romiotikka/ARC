@@ -15,10 +15,10 @@
  * - Individual game error recovery (continues on failure)
  * 
  * Usage:
- *   node scripts/update_estlatbl.mjs                    # Default: recent 2 seasons, limit import to 5
- *   node scripts/update_estlatbl.mjs --all-seasons      # Collect all 4 seasons
- *   node scripts/update_estlatbl.mjs --import-all       # Import all pending games
- *   node scripts/update_estlatbl.mjs --recent-count 3 --import-limit 10  # Custom limits
+ *   node scripts/import/update_estlatbl.mjs                    # Default: recent 2 seasons, limit import to 5
+ *   node scripts/import/update_estlatbl.mjs --all-seasons      # Collect all 4 seasons
+ *   node scripts/import/update_estlatbl.mjs --import-all       # Import all pending games
+ *   node scripts/import/update_estlatbl.mjs --recent-count 3 --import-limit 10  # Custom limits
  * 
  * Exit codes:
  *   0 - Success (some or all games processed)
@@ -30,7 +30,7 @@ import { spawn } from "node:child_process";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { DatabaseSync } from "node:sqlite";
-import { Logger, initializeDatabase, getDatabasePath } from "./lib/estlatbl-utils.mjs";
+import { Logger, initializeDatabase, getDatabasePath } from "../lib/estlatbl-utils.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 

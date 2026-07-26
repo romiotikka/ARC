@@ -20,19 +20,19 @@ A production-ready, long-term automatic update pipeline for EstLat basketball da
 ## Files Changed
 
 ### Modified (Minimal Changes)
-1. **`scripts/collect_estlatbl_seasons.mjs`**
+1. **`scripts/import/collect_estlatbl_seasons.mjs`**
    - Added: `parseArgs()` and `selectSeasons()` functions
    - New flags: `--recent`, `--recent-count`
    - Backward compatible (unchanged behavior without flags)
 
-2. **`scripts/import_livestats_games.mjs`**
+2. **`scripts/import/import_livestats_games.mjs`**
    - Added: `DeadLetterQueue` import
    - Added: Error categorization and DLQ recording
    - Added: Better error reporting
    - Preserved: All existing safety mechanisms
 
 ### Created (New)
-1. **`scripts/update_estlatbl.mjs`** — Main orchestrator
+1. **`scripts/import/update_estlatbl.mjs`** — Main orchestrator
    - Database initialization
    - Collection/import coordination
    - Structured logging
@@ -43,7 +43,7 @@ A production-ready, long-term automatic update pipeline for EstLat basketball da
    - `DeadLetterQueue` class (failure tracking)
    - Database initialization utilities
 
-3. **`scripts/setup_estlatbl.mjs`** — Setup script
+3. **`scripts/import/init_database.mjs`** — Setup script
    - One-time initialization
    - Directory creation
    - Database migration
@@ -64,7 +64,7 @@ A production-ready, long-term automatic update pipeline for EstLat basketball da
 ### Step 1: Initial Setup (One-Time)
 ```bash
 cd C:\path\to\ARC
-node scripts\setup_estlatbl.mjs
+node scripts\import\init_database.mjs
 ```
 
 Expected output:
@@ -72,14 +72,14 @@ Expected output:
 ✓ Node.js version: v18.x.x
 ✓ Logs directory: C:\path\to\ARC\logs
 ✓ Scripts/lib directory: C:\path\to\ARC\scripts\lib
-✓ Database initialized: C:\path\to\ARC\data\arc.db
+✓ Database initialized: C:\path\to\ARC\data\arc2.db
 
 Setup Complete ✓
 ```
 
 ### Step 2: Test Manually
 ```bash
-node scripts\update_estlatbl.mjs
+node scripts\import\update_estlatbl.mjs
 ```
 
 Expected duration: 2-5 minutes  
@@ -88,7 +88,7 @@ Check: `logs/estlatbl-update.log` for output
 ### Step 3: Configure Windows Task Scheduler (PowerShell - Run as Admin)
 ```powershell
 $taskName = "EstLat Daily Update"
-$scriptPath = "C:\path\to\ARC\scripts\update_estlatbl.mjs"
+$scriptPath = "C:\path\to\ARC\scripts\import\update_estlatbl.mjs"
 $workingDir = "C:\path\to\ARC"
 
 $trigger = New-ScheduledTaskTrigger -Daily -At 00:00
@@ -142,7 +142,7 @@ Start-ScheduledTask -TaskName "EstLat Daily Update"
 
 ### Daily Automation (Recommended)
 ```bash
-node scripts\update_estlatbl.mjs
+node scripts\import\update_estlatbl.mjs
 ```
 - Collects last 2 seasons
 - Imports up to 5 games
@@ -151,7 +151,7 @@ node scripts\update_estlatbl.mjs
 
 ### Full Refresh (First Time or Rebuild)
 ```bash
-node scripts\update_estlatbl.mjs --all-seasons --import-all
+node scripts\import\update_estlatbl.mjs --all-seasons --import-all
 ```
 - Collects all 4 seasons
 - Imports all pending games
@@ -161,13 +161,13 @@ node scripts\update_estlatbl.mjs --all-seasons --import-all
 ### Custom Configuration
 ```bash
 # Different import limits
-node scripts\update_estlatbl.mjs --recent-count 3 --import-limit 10
+node scripts\import\update_estlatbl.mjs --recent-count 3 --import-limit 10
 
 # All seasons, limited imports
-node scripts\update_estlatbl.mjs --all-seasons --import-limit 3
+node scripts\import\update_estlatbl.mjs --all-seasons --import-limit 3
 
 # Recent collection, all imports
-node scripts\update_estlatbl.mjs --import-all
+node scripts\import\update_estlatbl.mjs --import-all
 ```
 
 ---
@@ -188,7 +188,7 @@ Select-String "2026-06-24" logs\estlatbl-update.log
 
 ### Check Failed Imports
 ```bash
-sqlite3 data\arc.db
+sqlite3 data\arc2.db
 > SELECT COUNT(*) FROM failed_imports WHERE status='pending';
 > SELECT game_id, error_type, retry_count FROM failed_imports 
   WHERE status='pending' ORDER BY failed_at DESC LIMIT 10;
@@ -280,12 +280,12 @@ Enable-ScheduledTask -TaskName "EstLat Daily Update"
 
 ### Issue: No Games Imported
 **Cause**: Collection may have found no new games (normal)  
-**Solution**: Run collection manually to verify: `node scripts\collect_estlatbl_seasons.mjs --recent`
+**Solution**: Run collection manually to verify: `node scripts\import\collect_estlatbl_seasons.mjs --recent`
 
 ### Issue: Node Not Found
 **Solution**: Use full path in Task Scheduler
 - Program: `C:\Program Files\nodejs\node.exe`
-- Argument: `C:\path\to\ARC\scripts\update_estlatbl.mjs`
+- Argument: `C:\path\to\ARC\scripts\import\update_estlatbl.mjs`
 
 ---
 
@@ -356,10 +356,10 @@ Enable-ScheduledTask -TaskName "EstLat Daily Update"
 
 ## Deployment Checklist
 
-- [ ] Run `node scripts\setup_estlatbl.mjs`
-- [ ] Test manually: `node scripts\update_estlatbl.mjs`
+- [ ] Run `node scripts\import\init_database.mjs`
+- [ ] Test manually: `node scripts\import\update_estlatbl.mjs`
 - [ ] Verify log created: `logs\estlatbl-update.log`
-- [ ] Check DLQ table: `sqlite3 data/arc.db "SELECT COUNT(*) FROM failed_imports;"`
+- [ ] Check DLQ table: `sqlite3 data/arc2.db "SELECT COUNT(*) FROM failed_imports;"`
 - [ ] Set up Task Scheduler (PowerShell script provided)
 - [ ] Test Task Scheduler execution
 - [ ] Monitor first automated run

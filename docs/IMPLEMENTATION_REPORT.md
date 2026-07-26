@@ -22,7 +22,7 @@ A production-ready automatic update pipeline for EstLat basketball data has been
 ## What Was Implemented
 
 ### 1. Orchestrator Script
-**File**: `scripts/update_estlatbl.mjs`
+**File**: `scripts/import/update_estlatbl.mjs`
 
 **Purpose**: Central coordinator that orchestrates the entire update pipeline.
 
@@ -43,17 +43,17 @@ A production-ready automatic update pipeline for EstLat basketball data has been
 **Usage Examples**:
 ```bash
 # Default: recent 2 seasons, limit 5 imports (daily schedule)
-node scripts/update_estlatbl.mjs
+node scripts/import/update_estlatbl.mjs
 
 # Full refresh
-node scripts/update_estlatbl.mjs --all-seasons --import-all
+node scripts/import/update_estlatbl.mjs --all-seasons --import-all
 
 # Custom configuration
-node scripts/update_estlatbl.mjs --recent-count 3 --import-limit 10
+node scripts/import/update_estlatbl.mjs --recent-count 3 --import-limit 10
 ```
 
 ### 2. Collection Script Enhancement
-**File**: `scripts/collect_estlatbl_seasons.mjs` (modified)
+**File**: `scripts/import/collect_estlatbl_seasons.mjs` (modified)
 
 **Changes**:
 - Added `parseArgs()` function
@@ -67,7 +67,7 @@ node scripts/update_estlatbl.mjs --recent-count 3 --import-limit 10
 **Backward Compatible**: Works unchanged without flags (collects all seasons).
 
 ### 3. Import Script Enhancement
-**File**: `scripts/import_livestats_games.mjs` (modified)
+**File**: `scripts/import/import_livestats_games.mjs` (modified)
 
 **Changes**:
 - Added `DeadLetterQueue` import
@@ -125,7 +125,7 @@ const path = getDatabasePath();
 - Consistent database path handling
 
 ### 5. Setup Script
-**File**: `scripts/setup_estlatbl.mjs` (new)
+**File**: `scripts/import/init_database.mjs` (new)
 
 **Purpose**: One-time initialization of pipeline environment.
 
@@ -138,7 +138,7 @@ const path = getDatabasePath();
 
 **Usage**:
 ```bash
-node scripts/setup_estlatbl.mjs
+node scripts/import/init_database.mjs
 ```
 
 ### 6. Database Migration
@@ -262,12 +262,12 @@ WHERE tg.team_game_id IS NULL  -- Only unimported games
 ### Initial Setup
 ```bash
 cd C:\path\to\ARC
-node scripts\setup_estlatbl.mjs
+node scripts\import\init_database.mjs
 ```
 
 ### Daily Run (Default)
 ```bash
-node scripts\update_estlatbl.mjs
+node scripts\import\update_estlatbl.mjs
 ```
 
 **Expected output**:
@@ -301,7 +301,7 @@ Configuration: recent_seasons=true, import_limit=5
 ```powershell
 # Run as Administrator
 $taskName = "EstLat Daily Update"
-$scriptPath = "C:\path\to\ARC\scripts\update_estlatbl.mjs"
+$scriptPath = "C:\path\to\ARC\scripts\import\update_estlatbl.mjs"
 $workingDir = "C:\path\to\ARC"
 
 # Create trigger: daily at 00:00
@@ -334,7 +334,7 @@ Get-ScheduledTaskInfo -TaskName $taskName
 4. Schedule: Daily at 00:00
 5. Action: Start program
    - Program: `node`
-   - Arguments: `C:\path\to\ARC\scripts\update_estlatbl.mjs`
+   - Arguments: `C:\path\to\ARC\scripts\import\update_estlatbl.mjs`
    - Start in: `C:\path\to\ARC`
 6. Settings:
    - ✓ Run whether user is logged in or not
@@ -365,7 +365,7 @@ grep "2026-06-24" logs/estlatbl-update.log
 ### Query Database
 ```bash
 # Check failed imports
-sqlite3 data/arc.db
+sqlite3 data/arc2.db
 > SELECT COUNT(*) FROM failed_imports WHERE status='pending';
 > SELECT game_id, error_type, error_message, retry_count, failed_at
   FROM failed_imports WHERE status='pending'
@@ -436,7 +436,7 @@ sqlite3 data/arc.db
 
 ## Performance & Capacity
 
-### Default Configuration (`node scripts/update_estlatbl.mjs`)
+### Default Configuration (`node scripts/import/update_estlatbl.mjs`)
 - **Duration**: 2-5 minutes (network-dependent)
 - **Seasons collected**: 2 most recent
 - **Games imported**: Up to 5
@@ -493,7 +493,7 @@ sqlite3 data/arc.db
 
 ### Database Corruption
 **Risk**: Extremely rare but possible if database file is corrupted.  
-**Mitigation**: Regular backups of `data/arc.db` recommended.  
+**Mitigation**: Regular backups of `data/arc2.db` recommended.
 **Future**: Add backup/restore automation.
 
 ---
@@ -513,13 +513,13 @@ sqlite3 data/arc.db
 ## Files Modified/Created
 
 ### Modified
-- `scripts/collect_estlatbl_seasons.mjs` — Added CLI args for recent seasons
-- `scripts/import_livestats_games.mjs` — Added DLQ tracking
+- `scripts/import/collect_estlatbl_seasons.mjs` — Added CLI args for recent seasons
+- `scripts/import/import_livestats_games.mjs` — Added DLQ tracking
 
 ### Created
-- `scripts/update_estlatbl.mjs` — Orchestrator
+- `scripts/import/update_estlatbl.mjs` — Orchestrator
 - `scripts/lib/estlatbl-utils.mjs` — Utilities (Logger, DLQ)
-- `scripts/setup_estlatbl.mjs` — Setup script
+- `scripts/import/init_database.mjs` — Setup script
 - `database/migrations/001_add_failed_imports_dlq.sql` — DLQ schema
 - `UPDATE_ESTLATBL_GUIDE.md` — Comprehensive guide
 - `IMPLEMENTATION_REPORT.md` — This file
@@ -528,10 +528,10 @@ sqlite3 data/arc.db
 
 ## Deployment Checklist
 
-- [ ] Run `node scripts/setup_estlatbl.mjs` (one-time setup)
-- [ ] Test manually: `node scripts/update_estlatbl.mjs`
+- [ ] Run `node scripts/import/init_database.mjs` (one-time setup)
+- [ ] Test manually: `node scripts/import/update_estlatbl.mjs`
 - [ ] Verify log file created: `logs/estlatbl-update.log`
-- [ ] Check DLQ table created: `sqlite3 data/arc.db "SELECT COUNT(*) FROM failed_imports;"`
+- [ ] Check DLQ table created: `sqlite3 data/arc2.db "SELECT COUNT(*) FROM failed_imports;"`
 - [ ] Set up Windows Task Scheduler
 - [ ] Test Task Scheduler execution
 - [ ] Verify first automated run via logs

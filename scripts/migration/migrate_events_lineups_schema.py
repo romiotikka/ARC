@@ -4,7 +4,7 @@ import sqlite3
 from pathlib import Path
 
 
-ROOT_DIR = Path(__file__).resolve().parents[1]
+ROOT_DIR = Path(__file__).resolve().parents[2]
 DATABASE_PATHS = [
     ROOT_DIR / "data" / "arc.db",
     ROOT_DIR / "data" / "arc2.db",

@@ -4,11 +4,11 @@ import { fileURLToPath } from "node:url";
 import { DatabaseSync } from "node:sqlite";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const rootDir = join(__dirname, "..");
+const rootDir = join(__dirname, "..", "..");
 const databaseDir = join(rootDir, "data");
-const databasePath = join(databaseDir, "arc.db");
+const databasePath = join(databaseDir, "arc2.db");
 const schemaPath = join(rootDir, "database", "schema.sql");
-const estlatblGamesCsv = join(rootDir, "estlatbl_2026_games.csv");
+const estlatblGamesCsv = join(rootDir, "data", "estlatbl", "estlatbl_2026_games.csv");
 
 const ESTLATBL_LEAGUE_ID = "estlatbl";
 const ESTLATBL_SEASON_ID = 20252026;
@@ -149,4 +149,3 @@ try {
 } finally {
   database.close();
 }
-

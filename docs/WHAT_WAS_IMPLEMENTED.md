@@ -8,7 +8,7 @@
 
 ## EXACTLY WHAT WAS CHANGED
 
-### 1. `scripts/collect_estlatbl_seasons.mjs` (MODIFIED)
+### 1. `scripts/import/collect_estlatbl_seasons.mjs` (MODIFIED)
 **Lines added**: ~35 lines (parseArgs function + selectSeasons function + argument usage)
 
 ```javascript
@@ -37,12 +37,12 @@ for (const season of seasons) { ... }  // Loop uses filtered seasons now
 
 ---
 
-### 2. `scripts/import_livestats_games.mjs` (MODIFIED)
+### 2. `scripts/import/import_livestats_games.mjs` (MODIFIED)
 **Lines changed**: ~5 added lines (import), ~40 lines modified (error handling)
 
 ```javascript
 // Added import at top
-import { DeadLetterQueue } from "./lib/estlatbl-utils.mjs";
+import { DeadLetterQueue } from "../lib/estlatbl-utils.mjs";
 
 // In main function, initialize DLQ
 const dlq = new DeadLetterQueue(database);
@@ -59,7 +59,7 @@ const dlqStats = dlq.getFailureStats();
 
 ---
 
-### 3. `scripts/update_estlatbl.mjs` (NEW - 250 lines)
+### 3. `scripts/import/update_estlatbl.mjs` (NEW - 250 lines)
 **Purpose**: Orchestrator that coordinates collection and import
 
 **Key responsibilities**:
@@ -99,7 +99,7 @@ const dlqStats = dlq.getFailureStats();
 
 ---
 
-### 5. `scripts/setup_estlatbl.mjs` (NEW - 110 lines)
+### 5. `scripts/import/init_database.mjs` (NEW - 110 lines)
 **Purpose**: One-time initialization script
 
 **Responsibilities**:
@@ -109,7 +109,7 @@ const dlqStats = dlq.getFailureStats();
 - Initialize database (create DLQ table)
 - Print success message
 
-**Usage**: `node scripts/setup_estlatbl.mjs`
+**Usage**: `node scripts/import/init_database.mjs`
 
 ---
 
@@ -156,7 +156,7 @@ failed_imports (
 ### First Time Only
 ```bash
 cd C:\path\to\ARC
-node scripts\setup_estlatbl.mjs
+node scripts\import\init_database.mjs
 ```
 
 Expected output:
@@ -164,14 +164,14 @@ Expected output:
 ✓ Node.js version: v18.x.x
 ✓ Logs directory: C:\path\to\ARC\logs
 ✓ Scripts/lib directory: C:\path\to\ARC\scripts\lib
-✓ Database initialized: C:\path\to\ARC\data\arc.db
+✓ Database initialized: C:\path\to\ARC\data\arc2.db
 
 Setup Complete ✓
 ```
 
 ### Manual Test Run
 ```bash
-node scripts\update_estlatbl.mjs
+node scripts\import\update_estlatbl.mjs
 ```
 
 Expected duration: 2-5 minutes  
@@ -184,7 +184,7 @@ Log file: `logs/estlatbl-update.log`
 # Run as Administrator
 
 $taskName = "EstLat Daily Update"
-$scriptPath = "C:\path\to\ARC\scripts\update_estlatbl.mjs"
+$scriptPath = "C:\path\to\ARC\scripts\import\update_estlatbl.mjs"
 $workingDir = "C:\path\to\ARC"
 
 $trigger = New-ScheduledTaskTrigger -Daily -At 00:00
@@ -209,7 +209,7 @@ Start-ScheduledTask -TaskName $taskName
 3. Trigger: Daily at 00:00
 4. Action: Start program
    - Program: `node`
-   - Arguments: `C:\path\to\ARC\scripts\update_estlatbl.mjs`
+   - Arguments: `C:\path\to\ARC\scripts\import\update_estlatbl.mjs`
    - Start in: `C:\path\to\ARC`
 5. Settings: ✓ Run whether user is logged in or not, ✓ Do not start new instance
 
@@ -253,7 +253,7 @@ When an import fails:
 
 ### Query Failed Imports
 ```bash
-sqlite3 data/arc.db
+sqlite3 data/arc2.db
 
 # Count pending
 SELECT COUNT(*) FROM failed_imports WHERE status='pending';
@@ -323,7 +323,7 @@ update_estlatbl.mjs (orchestrator)
 
 ### Default (Recommended for Daily)
 ```bash
-node scripts\update_estlatbl.mjs
+node scripts\import\update_estlatbl.mjs
 ```
 - Collects: Last 2 seasons
 - Imports: Up to 5 games
@@ -332,7 +332,7 @@ node scripts\update_estlatbl.mjs
 
 ### Full Refresh (Initial or Rebuild)
 ```bash
-node scripts\update_estlatbl.mjs --all-seasons --import-all
+node scripts\import\update_estlatbl.mjs --all-seasons --import-all
 ```
 - Collects: All 4 seasons
 - Imports: All pending games (no limit)
@@ -342,13 +342,13 @@ node scripts\update_estlatbl.mjs --all-seasons --import-all
 ### Custom Examples
 ```bash
 # Collect 3 seasons, import 10 games
-node scripts\update_estlatbl.mjs --recent-count 3 --import-limit 10
+node scripts\import\update_estlatbl.mjs --recent-count 3 --import-limit 10
 
 # Collect all, import 3 games
-node scripts\update_estlatbl.mjs --all-seasons --import-limit 3
+node scripts\import\update_estlatbl.mjs --all-seasons --import-limit 3
 
 # Collect recent, import all
-node scripts\update_estlatbl.mjs --import-all
+node scripts\import\update_estlatbl.mjs --import-all
 ```
 
 ---
@@ -377,8 +377,8 @@ node scripts\update_estlatbl.mjs --import-all
 
 ### Monthly
 - [ ] Review logs for patterns
-- [ ] Monitor database size: `ls -lh data/arc.db`
-- [ ] Test manual run: `node scripts/update_estlatbl.mjs`
+- [ ] Monitor database size: `ls -lh data/arc2.db`
+- [ ] Test manual run: `node scripts/import/update_estlatbl.mjs`
 
 ---
 
@@ -412,7 +412,7 @@ Get-EventLog -LogName "System" -Source "TaskScheduler" |
 
 ### No Games Imported (Normal)
 - Collection found no new games (happens when game list unchanged)
-- Run collection manually to verify: `node scripts/collect_estlatbl_seasons.mjs --recent`
+- Run collection manually to verify: `node scripts/import/collect_estlatbl_seasons.mjs --recent`
 
 ---
 
@@ -431,8 +431,8 @@ Get-EventLog -LogName "System" -Source "TaskScheduler" |
 ## NEXT STEPS
 
 ### 1. Immediate (Today)
-- [ ] Run setup: `node scripts/setup_estlatbl.mjs`
-- [ ] Test manual run: `node scripts/update_estlatbl.mjs`
+- [ ] Run setup: `node scripts/import/init_database.mjs`
+- [ ] Test manual run: `node scripts/import/update_estlatbl.mjs`
 - [ ] Verify log created: `logs/estlatbl-update.log`
 - [ ] Configure Task Scheduler (PowerShell script above)
 
@@ -453,12 +453,12 @@ Get-EventLog -LogName "System" -Source "TaskScheduler" |
 ## COMPLETE FILE LIST
 
 ### Modified
-- `scripts/collect_estlatbl_seasons.mjs` — Added CLI arg parsing
+- `scripts/import/collect_estlatbl_seasons.mjs` — Added CLI arg parsing
 
 ### Created
-- `scripts/update_estlatbl.mjs` — Main orchestrator (250 lines)
+- `scripts/import/update_estlatbl.mjs` — Main orchestrator (250 lines)
 - `scripts/lib/estlatbl-utils.mjs` — Utilities (160 lines)
-- `scripts/setup_estlatbl.mjs` — Setup script (110 lines)
+- `scripts/import/init_database.mjs` — Setup script (110 lines)
 - `database/migrations/001_add_failed_imports_dlq.sql` — Schema
 - `logs/` — Directory (auto-created)
 

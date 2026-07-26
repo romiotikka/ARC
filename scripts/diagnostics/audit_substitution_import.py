@@ -7,14 +7,14 @@ from pathlib import Path
 from urllib.error import HTTPError
 from urllib.request import Request, urlopen
 
-from lineup_segment_generator import build_player_lookup
-from lineup_segment_generator import connect
-from lineup_segment_generator import load_game_rows
-from lineup_segment_generator import normalize_text
-from lineup_segment_generator import resolve_player_id
+from lineup_reconstructor import build_player_lookup
+from lineup_reconstructor import connect
+from lineup_reconstructor import load_game_rows
+from lineup_reconstructor import normalize_text
+from lineup_reconstructor import resolve_player_id
 
 
-ROOT_DIR = Path(__file__).resolve().parents[1]
+ROOT_DIR = Path(__file__).resolve().parents[2]
 DEFAULT_DATABASE_PATH = ROOT_DIR / "data" / "arc2.db"
 FETCH_TIMEOUT_SECONDS = 30
 

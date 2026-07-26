@@ -8,7 +8,7 @@ The pipeline is **idempotent** — running it multiple times produces no duplica
 
 ## What Was Changed
 
-### 1. Collection Script: `scripts/collect_estlatbl_seasons.mjs`
+### 1. Collection Script: `scripts/import/collect_estlatbl_seasons.mjs`
 **Changes**: Added CLI parameter support for incremental collection
 
 - `--recent` — collect only the most recent 2 seasons (default: all 4)
@@ -18,7 +18,7 @@ The pipeline is **idempotent** — running it multiple times produces no duplica
 
 **Backward compatible**: Script works unchanged when called without flags.
 
-### 2. Import Script: `scripts/import_livestats_games.mjs`
+### 2. Import Script: `scripts/import/import_livestats_games.mjs`
 **Changes**: Minimal enhancement to track failures in Dead Letter Queue
 
 - Added import of `DeadLetterQueue` utility
@@ -34,7 +34,7 @@ The pipeline is **idempotent** — running it multiple times produces no duplica
 
 **Why**: Failures are now tracked for analysis and retry, not just logged.
 
-### 3. New: Orchestrator Script `scripts/update_estlatbl.mjs`
+### 3. New: Orchestrator Script `scripts/import/update_estlatbl.mjs`
 **Purpose**: Coordinates entire update pipeline
 
 **Responsibilities**:
@@ -45,10 +45,10 @@ The pipeline is **idempotent** — running it multiple times produces no duplica
 - Log all activity to file
 
 **Configuration**: CLI flags for different scenarios
-- Default: `node scripts/update_estlatbl.mjs`
-- Collect all seasons: `node scripts/update_estlatbl.mjs --all-seasons`
-- Import all pending: `node scripts/update_estlatbl.mjs --import-all`
-- Custom: `node scripts/update_estlatbl.mjs --recent-count 3 --import-limit 10`
+- Default: `node scripts/import/update_estlatbl.mjs`
+- Collect all seasons: `node scripts/import/update_estlatbl.mjs --all-seasons`
+- Import all pending: `node scripts/import/update_estlatbl.mjs --import-all`
+- Custom: `node scripts/import/update_estlatbl.mjs --recent-count 3 --import-limit 10`
 
 **Exit codes**:
 - `0` — Success
@@ -114,7 +114,7 @@ The pipeline is **idempotent** — running it multiple times produces no duplica
 ### Default (Recommended for daily automation)
 ```bash
 cd C:\path\to\ARC
-node scripts\update_estlatbl.mjs
+node scripts\import\update_estlatbl.mjs
 ```
 
 **Behavior**:
@@ -148,7 +148,7 @@ Configuration: recent_seasons=true, import_limit=5
 
 ### Full Refresh (Initial setup or rebuild)
 ```bash
-node scripts\update_estlatbl.mjs --all-seasons --import-all
+node scripts\import\update_estlatbl.mjs --all-seasons --import-all
 ```
 
 **Behavior**:
@@ -160,13 +160,13 @@ node scripts\update_estlatbl.mjs --all-seasons --import-all
 ### Custom Configuration
 ```bash
 # Collect 3 most recent seasons, import up to 10 games
-node scripts\update_estlatbl.mjs --recent-count 3 --import-limit 10
+node scripts\import\update_estlatbl.mjs --recent-count 3 --import-limit 10
 
 # Collect all seasons, import only 3 games
-node scripts\update_estlatbl.mjs --all-seasons --import-limit 3
+node scripts\import\update_estlatbl.mjs --all-seasons --import-limit 3
 
 # Collect recent, import all pending (no limit)
-node scripts\update_estlatbl.mjs --import-all
+node scripts\import\update_estlatbl.mjs --import-all
 ```
 
 ---
@@ -195,7 +195,7 @@ node scripts\update_estlatbl.mjs --import-all
 4. **Set Action**
    - Action: "Start a program"
    - Program/script: `node`
-   - Add arguments: `C:\path\to\ARC\scripts\update_estlatbl.mjs`
+   - Add arguments: `C:\path\to\ARC\scripts\import\update_estlatbl.mjs`
    - Start in: `C:\path\to\ARC`
    - Click "Next >"
 
@@ -253,7 +253,7 @@ grep "2026-06-24" logs/estlatbl-update.log
 
 ```bash
 # From database CLI (sqlite3)
-sqlite3 data/arc.db
+sqlite3 data/arc2.db
 
 > SELECT COUNT(*) FROM failed_imports WHERE status='pending';
 > SELECT game_id, match_id, error_type, failed_at, retry_count 
@@ -280,7 +280,7 @@ To retry:
 ```bash
 # Manual re-run of import will retry pending games
 # Failed games stay in queue and are retried next update
-node scripts/update_estlatbl.mjs --import-all
+node scripts/import/update_estlatbl.mjs --import-all
 ```
 
 ---

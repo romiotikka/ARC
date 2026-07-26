@@ -5,7 +5,7 @@ ARC currently uses SQLite for the first local database layer.
 Database file:
 
 ```text
-data/arc.db
+data/arc2.db
 ```
 
 Schema:
@@ -17,10 +17,10 @@ database/schema.sql
 ## Initialize Database
 
 Create the database, apply schema, seed EstLatBL league/season, and import
-LiveStats game mappings from `estlatbl_2026_games.csv`:
+LiveStats game mappings from `data/estlatbl/estlatbl_2026_games.csv`:
 
 ```bash
-node --no-warnings scripts/init_database.mjs
+node --no-warnings scripts/import/init_database.mjs
 ```
 
 ## Import LiveStats Boxscores
@@ -29,25 +29,25 @@ Collect the latest four EstLatBL seasons into `games` and
 `source_livestats_games`:
 
 ```bash
-node --no-warnings scripts/collect_estlatbl_seasons.mjs
+node --no-warnings scripts/import/collect_estlatbl_seasons.mjs
 ```
 
 Import one not-yet-imported LiveStats game:
 
 ```bash
-node --no-warnings scripts/import_livestats_games.mjs --limit 1
+node --no-warnings scripts/import/import_livestats_games.mjs --limit 1
 ```
 
 Import all not-yet-imported LiveStats games:
 
 ```bash
-node --no-warnings scripts/import_livestats_games.mjs --all
+node --no-warnings scripts/import/import_livestats_games.mjs --all
 ```
 
 Import a specific LiveStats match:
 
 ```bash
-node --no-warnings scripts/import_livestats_games.mjs --match-id 2836380
+node --no-warnings scripts/import/import_livestats_games.mjs --match-id 2836380
 ```
 
 ## Current Fact Tables

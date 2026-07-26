@@ -8,11 +8,11 @@ from datetime import datetime
 from pathlib import Path
 
 
-ROOT_DIR = Path(__file__).resolve().parents[1]
+ROOT_DIR = Path(__file__).resolve().parents[2]
 DATABASE_DIR = ROOT_DIR / "data"
-DATABASE_PATH = DATABASE_DIR / "arc.db"
+DATABASE_PATH = DATABASE_DIR / "arc2.db"
 SCHEMA_PATH = ROOT_DIR / "database" / "schema.sql"
-ESTLATBL_GAMES_CSV = ROOT_DIR / "estlatbl_2026_games.csv"
+ESTLATBL_GAMES_CSV = ROOT_DIR / "data" / "estlatbl" / "estlatbl_2026_games.csv"
 
 ESTLATBL_LEAGUE_ID = 1
 ESTLATBL_SEASON_ID = 20252026
@@ -202,4 +202,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

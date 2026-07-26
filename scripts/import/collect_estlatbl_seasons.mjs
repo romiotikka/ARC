@@ -3,7 +3,7 @@ import { fileURLToPath } from "node:url";
 import { DatabaseSync } from "node:sqlite";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const rootDir = join(__dirname, "..");
+const rootDir = join(__dirname, "..", "..");
 const databasePath = join(rootDir, "data", "arc2.db");
 
 const LEAGUE_KEY = "estlatbl";
@@ -229,4 +229,3 @@ try {
 } finally {
   database.close();
 }
-

@@ -11,7 +11,7 @@ import re
 from datetime import datetime
 import time
 
-DATA_DIR = Path("c:/Users/kasutaja/OneDrive/Töölaud/ARC/data")
+DATA_DIR = Path(__file__).resolve().parents[2] / "data"
 LIVE_STATS_URL = "https://www.estlatbl.com/et/tulemused/{}/live-stats"
 GAME_DATE_PATTERN = re.compile(r"(\d{1,2})\.(\d{1,2})\.(\d{2,4})")
 
