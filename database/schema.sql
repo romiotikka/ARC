@@ -39,11 +39,17 @@ CREATE TABLE IF NOT EXISTS team_aliases (
 
 CREATE TABLE IF NOT EXISTS players (
     player_id TEXT PRIMARY KEY,
+    first_name TEXT,
+    last_name TEXT,
     canonical_name TEXT NOT NULL,
     birth_date TEXT,
     nationality TEXT,
     height_cm INTEGER,
-    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+    position TEXT CHECK (position IS NULL OR position IN ('G', 'F', 'C', 'G-F', 'F-C')),
+    identity_status TEXT NOT NULL DEFAULT 'unverified'
+        CHECK (identity_status IN ('unverified', 'conflicted', 'verified')),
+    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE TABLE IF NOT EXISTS player_aliases (
@@ -54,6 +60,16 @@ CREATE TABLE IF NOT EXISTS player_aliases (
     created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (player_id) REFERENCES players(player_id),
     UNIQUE (player_id, alias_name)
+);
+
+CREATE TABLE IF NOT EXISTS player_external_ids (
+    player_id TEXT NOT NULL,
+    provider TEXT NOT NULL,
+    external_player_id TEXT NOT NULL,
+    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (player_id) REFERENCES players(player_id),
+    PRIMARY KEY (player_id, provider, external_player_id),
+    UNIQUE (provider, external_player_id)
 );
 
 CREATE TABLE IF NOT EXISTS games (
@@ -213,6 +229,57 @@ CREATE INDEX IF NOT EXISTS idx_player_games_game
 CREATE INDEX IF NOT EXISTS idx_player_games_player
     ON player_games (player_id);
 
+CREATE TABLE IF NOT EXISTS team_external_ids (
+    team_id          TEXT    NOT NULL,
+    provider         TEXT    NOT NULL,
+    external_team_id TEXT    NOT NULL,
+    created_at       TEXT    NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (team_id) REFERENCES teams(team_id),
+    PRIMARY KEY (team_id, provider),
+    UNIQUE (provider, external_team_id)
+);
+
+CREATE TABLE IF NOT EXISTS season_external_ids (
+    season_id          INTEGER NOT NULL,
+    provider           TEXT    NOT NULL,
+    external_season_id TEXT    NOT NULL,
+    created_at         TEXT    NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (season_id) REFERENCES seasons(season_id),
+    PRIMARY KEY (season_id, provider),
+    UNIQUE (provider, external_season_id)
+);
+
+CREATE TABLE IF NOT EXISTS league_external_ids (
+    league_id          INTEGER NOT NULL,
+    provider           TEXT    NOT NULL,
+    external_league_id TEXT    NOT NULL,
+    created_at         TEXT    NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (league_id) REFERENCES leagues(league_id),
+    PRIMARY KEY (league_id, provider),
+    UNIQUE (provider, external_league_id)
+);
+
+CREATE INDEX IF NOT EXISTS idx_team_external_ids_provider
+    ON team_external_ids (provider, team_id);
+
+CREATE INDEX IF NOT EXISTS idx_season_external_ids_provider
+    ON season_external_ids (provider, season_id);
+
+CREATE INDEX IF NOT EXISTS idx_league_external_ids_provider
+    ON league_external_ids (provider, league_id);
+
+CREATE INDEX IF NOT EXISTS idx_players_canonical_name
+    ON players (canonical_name);
+
+CREATE INDEX IF NOT EXISTS idx_players_last_first_name
+    ON players (last_name, first_name);
+
+CREATE INDEX IF NOT EXISTS idx_player_aliases_alias_name
+    ON player_aliases (alias_name);
+
+CREATE INDEX IF NOT EXISTS idx_players_identity_status
+    ON players (identity_status);
+
 CREATE INDEX IF NOT EXISTS idx_events_game
     ON events (game_id);
 
@@ -242,4 +309,3 @@ CREATE INDEX IF NOT EXISTS idx_lineup_segments_game_lineup
 
 CREATE INDEX IF NOT EXISTS idx_lineup_segments_lineup
     ON lineup_segments (lineup_id);
-

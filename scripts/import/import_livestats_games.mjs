@@ -1,11 +1,14 @@
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
+import { spawnSync } from "node:child_process";
 import { DatabaseSync } from "node:sqlite";
 import { DeadLetterQueue } from "../lib/estlatbl-utils.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const rootDir = join(__dirname, "..", "..");
-const databasePath = join(rootDir, "data", "arc2.db");
+const databasePath = process.env.ARC_DATABASE_PATH ?? join(rootDir, "data", "arc2.db");
+const identityBridgePath = join(rootDir, "scripts", "identity", "resolve_livestats_players.py");
+const identityPython = process.env.ARC_PYTHON ?? process.env.PYTHON ?? "python";
 
 function parseArgs(argv) {
   const args = {
@@ -110,108 +113,104 @@ function normalizePlayerKey(value) {
     .trim();
 }
 
-let playerAliasCache = null;
 let playerGamesColumnsCache = null;
 
-function loadPlayerAliasCache(database) {
-  if (playerAliasCache) {
-    return playerAliasCache;
-  }
-
-  playerAliasCache = new Map();
-
-  for (const row of database.prepare("SELECT player_id, canonical_name FROM players").all()) {
-    const key = normalizePlayerKey(row.canonical_name);
-    if (key) playerAliasCache.set(key, row.player_id);
-  }
-
-  for (const row of database.prepare("SELECT player_id, alias_name FROM player_aliases").all()) {
-    const key = normalizePlayerKey(row.alias_name);
-    if (key) playerAliasCache.set(key, row.player_id);
-  }
-
-  return playerAliasCache;
+function occurrenceKey(teamNumber, playerName, externalPlayerId = null) {
+  return `${teamNumber}|${normalizePlayerKey(playerName)}|${externalPlayerId ?? ""}`;
 }
 
-function getPlayerId(database, playerName) {
-  const exact = database
-    .prepare(
-      `
-      SELECT player_id
-      FROM players
-      WHERE canonical_name = ? COLLATE NOCASE
-      UNION
-      SELECT player_id
-      FROM player_aliases
-      WHERE alias_name = ? COLLATE NOCASE
-      LIMIT 1
-      `,
-    )
-    .get(playerName, playerName);
+function resolveLiveStatsPlayerOccurrences(mapping, data, teamIdsByLiveStatsNumber) {
+  const playerLookupByTeam = buildLiveStatsPlayerLookup(data);
+  const occurrences = new Map();
+  const rosterKeys = new Map();
 
-  if (exact) {
-    return exact.player_id;
+  const addOccurrence = (teamNumber, playerName, details = {}) => {
+    const rawName = normalizeText(playerName);
+    const teamId = teamIdsByLiveStatsNumber.get(String(teamNumber));
+    if (!rawName || !teamId) return null;
+
+    const key = occurrenceKey(teamNumber, rawName, details.externalPlayerId);
+    if (!occurrences.has(key)) {
+      occurrences.set(key, {
+        key,
+        raw_name: rawName,
+        team_id: teamId,
+        season_id: mapping.season_id,
+        league_id: mapping.league_id,
+        game_id: mapping.game_id,
+        provider: "fiba_livestats",
+        jersey_number: normalizeText(details.jerseyNumber),
+        position: normalizeText(details.position),
+        external_player_id: normalizeText(details.externalPlayerId),
+      });
+    }
+    return key;
+  };
+
+  for (const [teamNumber, team] of Object.entries(data.tm ?? {})) {
+    for (const player of Object.values(team.pl ?? {})) {
+      const key = addOccurrence(teamNumber, player.name ?? player.scoreboardName, {
+        externalPlayerId: player.playerId,
+        jerseyNumber: player.shirtNumber,
+        position: player.playingPosition,
+      });
+      if (key) {
+        rosterKeys.set(`${teamNumber}|${normalizePlayerKey(player.name ?? player.scoreboardName)}`, key);
+      }
+    }
   }
 
-  const normalized = normalizePlayerKey(playerName);
-  if (!normalized) {
-    return null;
+  const eventKeys = new Map();
+  for (const action of parseJsonArray(data.pbp)) {
+    const teamNumber = String(action.tno ?? "");
+    for (const playerName of [
+      resolvePlayerNameFromAction(action, playerLookupByTeam),
+      resolveSecondaryPlayerName(action, playerLookupByTeam),
+    ]) {
+      const rawName = normalizeText(playerName);
+      if (!rawName) continue;
+      const rosterKey = rosterKeys.get(`${teamNumber}|${normalizePlayerKey(rawName)}`);
+      const key = rosterKey ?? addOccurrence(teamNumber, rawName);
+      if (key) eventKeys.set(`${teamNumber}|${normalizePlayerKey(rawName)}`, key);
+    }
   }
 
-  const cache = loadPlayerAliasCache(database);
-  return cache.get(normalized) ?? null;
-}
-
-function insertPlayerAlias(database, playerId, aliasName) {
-  database
-    .prepare(
-      `
-      INSERT INTO player_aliases (player_id, alias_name, source)
-      VALUES (?, ?, ?)
-      ON CONFLICT (player_id, alias_name) DO NOTHING
-      `,
-    )
-    .run(playerId, aliasName, "fiba_livestats");
-}
-
-function createPlayer(database, playerName) {
-  const row = database
-    .prepare("SELECT MAX(CAST(player_id AS INTEGER)) AS max_id FROM players")
-    .get();
-  const newId = String((row.max_id ?? 0) + 1);
-
-  database
-    .prepare(
-      `
-      INSERT INTO players (player_id, canonical_name)
-      VALUES (?, ?)
-      `,
-    )
-    .run(newId, playerName);
-
-  insertPlayerAlias(database, newId, playerName);
-  loadPlayerAliasCache(database).set(normalizePlayerKey(playerName), newId);
-
-  return newId;
-}
-
-function findOrCreatePlayer(database, playerName) {
-  const existing = getPlayerId(database, playerName);
-  if (existing) {
-    insertPlayerAlias(database, existing, playerName);
-    return existing;
+  const process = spawnSync(identityPython, [identityBridgePath, "--database", databasePath], {
+    input: JSON.stringify({ occurrences: [...occurrences.values()] }),
+    encoding: "utf8",
+    windowsHide: true,
+  });
+  if (process.error) {
+    throw new Error(`IdentityResolver bridge could not start (${identityPython}): ${process.error.message}`);
+  }
+  if (process.status !== 0) {
+    throw new Error(`IdentityResolver bridge failed: ${process.stderr.trim() || process.stdout.trim()}`);
   }
 
-  return createPlayer(database, playerName);
-}
-
-function resolvePlayerId(database, playerName) {
-  const normalizedName = normalizeText(playerName);
-  if (!normalizedName) {
-    return null;
+  let output;
+  try {
+    output = JSON.parse(process.stdout);
+  } catch (error) {
+    throw new Error(`IdentityResolver bridge returned invalid JSON: ${error.message}`);
   }
 
-  return findOrCreatePlayer(database, normalizedName);
+  const resolved = output.resolved ?? {};
+  const playerIdForKey = (key) => {
+    const playerId = resolved[key]?.player_id;
+    if (!playerId) throw new Error(`IdentityResolver returned no player_id for ${key}`);
+    return playerId;
+  };
+
+  return {
+    playerIdForRoster(teamNumber, player) {
+      const name = player.name ?? player.scoreboardName;
+      return playerIdForKey(occurrenceKey(teamNumber, name, player.playerId));
+    },
+    playerIdForEvent(teamNumber, playerName) {
+      const key = eventKeys.get(`${teamNumber}|${normalizePlayerKey(playerName)}`);
+      return key ? playerIdForKey(key) : null;
+    },
+  };
 }
 
 function buildLiveStatsPlayerLookup(data) {
@@ -470,7 +469,7 @@ function eventMetadata(action) {
   return Object.keys(metadata).length > 0 ? JSON.stringify(metadata) : null;
 }
 
-function importEvents(database, gameId, data, teamIdsByLiveStatsNumber) {
+function importEvents(database, gameId, data, teamIdsByLiveStatsNumber, playerResolver) {
   const pbp = parseJsonArray(data.pbp);
   const playerLookupByTeam = buildLiveStatsPlayerLookup(data);
 
@@ -533,9 +532,13 @@ function importEvents(database, gameId, data, teamIdsByLiveStatsNumber) {
     const playerName = resolvePlayerNameFromAction(action, playerLookupByTeam);
     const secondaryName = resolveSecondaryPlayerName(action, playerLookupByTeam);
 
-    const playerId = resolvePlayerId(database, playerName);
+    const playerId = playerName
+      ? playerResolver.playerIdForEvent(String(action.tno ?? ""), playerName)
+      : null;
     const secondaryPlayerId =
-      secondaryName && secondaryName !== playerName ? resolvePlayerId(database, secondaryName) : null;
+      secondaryName && secondaryName !== playerName
+        ? playerResolver.playerIdForEvent(String(action.tno ?? ""), secondaryName)
+        : null;
 
     const pointsFromScoring = toInteger(action.scoring);
     const points =
@@ -728,7 +731,7 @@ function importTeamGames(database, gameId, homeTeamId, awayTeamId, homeTeam, awa
   insert.run(gameId, awayTeamId, homeTeamId, 0, toInteger(awayTeam.score));
 }
 
-function importPlayerGames(database, gameId, data, teamIdsByLiveStatsNumber) {
+function importPlayerGames(database, gameId, data, teamIdsByLiveStatsNumber, playerResolver) {
   if (!playerGamesColumnsCache) {
     const columns = database.prepare("PRAGMA table_info(player_games)").all();
     playerGamesColumnsCache = new Set(columns.map((column) => column.name));
@@ -849,7 +852,7 @@ function importPlayerGames(database, gameId, data, teamIdsByLiveStatsNumber) {
     const teamName = team.name;
 
     for (const player of Object.values(team.pl ?? {})) {
-      const playerId = findOrCreatePlayer(database, player.name);
+      const playerId = playerResolver.playerIdForRoster(teamNumber, player);
 
       const commonValues = [
         gameId,
@@ -925,7 +928,7 @@ function selectGamesForEventsImport(database) {
   return database
     .prepare(
       `
-      SELECT s.game_id, s.match_id, s.json_url, g.home_team_id, g.away_team_id
+      SELECT s.*, g.home_team_id, g.away_team_id
       FROM source_livestats_games s
       JOIN games g ON g.game_id = s.game_id
       WHERE g.home_team_id IS NOT NULL
@@ -939,7 +942,7 @@ function selectGamesForEventsImport(database) {
     .all();
 }
 
-async function importEventsForGame(database, gameRow) {
+async function prepareEventsForGame(gameRow) {
   const data = await fetchJson(gameRow.json_url);
   const homeTeam = data.tm?.["1"];
   const awayTeam = data.tm?.["2"];
@@ -953,7 +956,19 @@ async function importEventsForGame(database, gameRow) {
     ["2", gameRow.away_team_id],
   ]);
 
-  const result = importEvents(database, gameRow.game_id, data, teamIdsByLiveStatsNumber);
+  const playerResolver = resolveLiveStatsPlayerOccurrences(gameRow, data, teamIdsByLiveStatsNumber);
+  return { data, teamIdsByLiveStatsNumber, playerResolver };
+}
+
+async function importEventsForGame(database, gameRow, prepared = null) {
+  const source = prepared ?? await prepareEventsForGame(gameRow);
+  const result = importEvents(
+    database,
+    gameRow.game_id,
+    source.data,
+    source.teamIdsByLiveStatsNumber,
+    source.playerResolver,
+  );
   return result.imported;
 }
 
@@ -966,28 +981,51 @@ async function importMapping(database, mapping) {
     throw new Error(`Missing home/away team data for match_id ${mapping.match_id}`);
   }
 
-  const homeTeamId = upsertTeam(database, homeTeam.name);
-  const awayTeamId = upsertTeam(database, awayTeam.name);
+  const homeTeamId = teamIdFromName(homeTeam.name);
+  const awayTeamId = teamIdFromName(awayTeam.name);
 
   const teamIdsByLiveStatsNumber = new Map([
     ["1", homeTeamId],
     ["2", awayTeamId],
   ]);
 
-  updateGame(database, mapping, homeTeamId, awayTeamId, homeTeam, awayTeam);
-  importTeamGames(database, mapping.game_id, homeTeamId, awayTeamId, homeTeam, awayTeam);
-  const playerGames = importPlayerGames(database, mapping.game_id, data, teamIdsByLiveStatsNumber);
-  const events = importEvents(database, mapping.game_id, data, teamIdsByLiveStatsNumber);
+  const playerResolver = resolveLiveStatsPlayerOccurrences(mapping, data, teamIdsByLiveStatsNumber);
 
-  return {
-    gameId: mapping.game_id,
-    matchId: mapping.match_id,
-    homeTeam: homeTeam.name,
-    awayTeam: awayTeam.name,
-    playerGames,
-    events: events.imported,
-    eventTypesHandled: events.eventTypesHandled,
-  };
+  database.exec("BEGIN;");
+  try {
+    upsertTeam(database, homeTeam.name);
+    upsertTeam(database, awayTeam.name);
+    updateGame(database, mapping, homeTeamId, awayTeamId, homeTeam, awayTeam);
+    importTeamGames(database, mapping.game_id, homeTeamId, awayTeamId, homeTeam, awayTeam);
+    const playerGames = importPlayerGames(
+      database,
+      mapping.game_id,
+      data,
+      teamIdsByLiveStatsNumber,
+      playerResolver,
+    );
+    const events = importEvents(
+      database,
+      mapping.game_id,
+      data,
+      teamIdsByLiveStatsNumber,
+      playerResolver,
+    );
+    database.exec("COMMIT;");
+
+    return {
+      gameId: mapping.game_id,
+      matchId: mapping.match_id,
+      homeTeam: homeTeam.name,
+      awayTeam: awayTeam.name,
+      playerGames,
+      events: events.imported,
+      eventTypesHandled: events.eventTypesHandled,
+    };
+  } catch (error) {
+    database.exec("ROLLBACK;");
+    throw error;
+  }
 }
 
 (async function main() {
@@ -1013,9 +1051,12 @@ async function importMapping(database, mapping) {
       let validationPassed = false;
       let validationEvents = 0;
 
-      database.exec("BEGIN;");
+      let validationTransactionStarted = false;
       try {
-        validationEvents = await importEventsForGame(database, validationGame);
+        const validationPrepared = await prepareEventsForGame(validationGame);
+        database.exec("BEGIN;");
+        validationTransactionStarted = true;
+        validationEvents = await importEventsForGame(database, validationGame, validationPrepared);
         const newViolations = database
           .prepare(
             `SELECT COUNT(*) AS cnt FROM pragma_foreign_key_check WHERE \"table\" = 'events'`,
@@ -1024,11 +1065,13 @@ async function importMapping(database, mapping) {
         if (validationEvents > 0 && newViolations === 0) {
           validationPassed = true;
           database.exec("COMMIT;");
+          validationTransactionStarted = false;
         } else {
           database.exec("ROLLBACK;");
+          validationTransactionStarted = false;
         }
       } catch (validationError) {
-        database.exec("ROLLBACK;");
+        if (validationTransactionStarted) database.exec("ROLLBACK;");
         console.error(`validation error: ${validationError.message}`);
       }
 
@@ -1049,14 +1092,18 @@ async function importMapping(database, mapping) {
 
       for (const gameRow of gameRows.slice(1)) {
         gamesProcessed += 1;
-        database.exec("BEGIN;");
+        let transactionStarted = false;
         try {
-          const inserted = await importEventsForGame(database, gameRow);
+          const prepared = await prepareEventsForGame(gameRow);
+          database.exec("BEGIN;");
+          transactionStarted = true;
+          const inserted = await importEventsForGame(database, gameRow, prepared);
           database.exec("COMMIT;");
+          transactionStarted = false;
           gamesSucceeded += 1;
           totalEventsInserted += inserted;
         } catch (gameError) {
-          database.exec("ROLLBACK;");
+          if (transactionStarted) database.exec("ROLLBACK;");
           gamesFailed += 1;
           runtimeErrorCount += 1;
           console.error(`failed ${gameRow.game_id} (${gameRow.match_id}): ${gameError.message}`);
@@ -1087,11 +1134,8 @@ async function importMapping(database, mapping) {
     let failureCount = 0;
 
     for (const mapping of mappings) {
-      database.exec("BEGIN;");
-
       try {
         const result = await importMapping(database, mapping);
-        database.exec("COMMIT;");
         totalPlayerGames += result.playerGames;
         totalEvents += result.events;
         maxEventTypesHandled = Math.max(maxEventTypesHandled, result.eventTypesHandled);
@@ -1100,7 +1144,6 @@ async function importMapping(database, mapping) {
           `Imported ${result.gameId} (${result.matchId}): ${result.homeTeam} vs ${result.awayTeam}, player_games=${result.playerGames}, events=${result.events}, event_types=${result.eventTypesHandled}`,
         );
       } catch (error) {
-        database.exec("ROLLBACK;");
         failureCount += 1;
 
         // Determine error type for DLQ categorization

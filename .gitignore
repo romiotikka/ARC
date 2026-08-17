@@ -9,4 +9,4 @@ data/data_backup/
 
 __pycache__/
 *.pyc
-
+.env
