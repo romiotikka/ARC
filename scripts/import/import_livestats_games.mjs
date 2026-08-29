@@ -1,8 +1,7 @@
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { spawnSync } from "node:child_process";
-import { DatabaseSync } from "node:sqlite";
-import { DeadLetterQueue } from "../lib/estlatbl-utils.mjs";
+import { DeadLetterQueue, initializeDatabase } from "../lib/estlatbl-utils.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const rootDir = join(__dirname, "..", "..");
@@ -35,16 +34,6 @@ function parseArgs(argv) {
   }
 
   return args;
-}
-
-function slugify(value) {
-  return value
-    .toLowerCase()
-    .normalize("NFKD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .replace(/&/g, " and ")
-    .replace(/[^a-z0-9]+/g, "_")
-    .replace(/^_+|_+$/g, "");
 }
 
 function toInteger(value) {
@@ -142,6 +131,9 @@ function resolveLiveStatsPlayerOccurrences(mapping, data, teamIdsByLiveStatsNumb
         jersey_number: normalizeText(details.jerseyNumber),
         position: normalizeText(details.position),
         external_player_id: normalizeText(details.externalPlayerId),
+        canonical_name_hint: normalizeText(details.canonicalNameHint),
+        first_name: normalizeText(details.firstName),
+        last_name: normalizeText(details.lastName),
       });
     }
     return key;
@@ -153,6 +145,9 @@ function resolveLiveStatsPlayerOccurrences(mapping, data, teamIdsByLiveStatsNumb
         externalPlayerId: player.playerId,
         jerseyNumber: player.shirtNumber,
         position: player.playingPosition,
+        canonicalNameHint: buildCanonicalPlayerName(player),
+        firstName: player.internationalFirstName ?? player.firstName,
+        lastName: player.internationalFamilyName ?? player.familyName,
       });
       if (key) {
         rosterKeys.set(`${teamNumber}|${normalizePlayerKey(player.name ?? player.scoreboardName)}`, key);
@@ -638,8 +633,18 @@ function importEvents(database, gameId, data, teamIdsByLiveStatsNumber, playerRe
   };
 }
 
-function teamIdFromName(teamName) {
-  return `team_${slugify(teamName)}`;
+function buildCanonicalPlayerName(player) {
+  const firstName = normalizeText(player.internationalFirstName ?? player.firstName);
+  const lastName = normalizeText(player.internationalFamilyName ?? player.familyName);
+
+  if (firstName && lastName) {
+    return `${firstName} ${lastName}`;
+  }
+
+  const displayName = normalizeText(player.name ?? player.scoreboardName);
+  return displayName && !displayName.includes(".") && displayName.split(/\s+/).length >= 2
+    ? displayName
+    : null;
 }
 
 function selectMappings(database, args) {
@@ -682,29 +687,82 @@ async function fetchJson(url) {
   return response.json();
 }
 
-function upsertTeam(database, teamName) {
-  const teamId = teamIdFromName(teamName);
+function upsertTeam(database, teamName, provider, externalTeamId = null) {
+  const canonicalName = normalizeText(teamName);
+  if (!canonicalName) {
+    throw new Error("Team name is required for ARC team resolution");
+  }
 
-  database
-    .prepare(
-      `
-      INSERT INTO teams (team_id, canonical_name)
-      VALUES (?, ?)
-      ON CONFLICT (team_id) DO UPDATE SET
-        canonical_name = excluded.canonical_name
-      `,
-    )
-    .run(teamId, teamName);
+  let teamId = null;
 
-  database
-    .prepare(
-      `
-      INSERT INTO team_aliases (team_id, alias_name, source)
-      VALUES (?, ?, ?)
-      ON CONFLICT (team_id, alias_name) DO NOTHING
-      `,
-    )
-    .run(teamId, teamName, "fiba_livestats");
+  if (externalTeamId) {
+    const existingByExternalId = database
+      .prepare(
+        `
+        SELECT team_id
+        FROM team_external_ids
+        WHERE provider = ? AND external_team_id = ?
+        `,
+      )
+      .get(provider, String(externalTeamId));
+    if (existingByExternalId) {
+      teamId = Number(existingByExternalId.team_id);
+    }
+  }
+
+  if (teamId === null) {
+    const existingByName = database
+      .prepare(
+        `
+        SELECT t.team_id, t.canonical_name
+        FROM teams t
+        LEFT JOIN team_aliases ta ON ta.team_id = t.team_id
+        WHERE t.canonical_name = ? COLLATE NOCASE
+           OR ta.alias_name = ? COLLATE NOCASE
+        ORDER BY t.team_id
+        LIMIT 1
+        `,
+      )
+      .get(canonicalName, canonicalName);
+    if (existingByName) {
+      teamId = Number(existingByName.team_id);
+    }
+  }
+
+  if (teamId === null) {
+    const insertResult = database
+      .prepare(
+        `
+        INSERT INTO teams (canonical_name)
+        VALUES (?)
+        `,
+      )
+      .run(canonicalName);
+    teamId = Number(insertResult.lastInsertRowid);
+  }
+
+  if (externalTeamId) {
+    database
+      .prepare(
+        `
+        INSERT OR IGNORE INTO team_external_ids (team_id, provider, external_team_id)
+        VALUES (?, ?, ?)
+        `,
+      )
+      .run(teamId, provider, String(externalTeamId));
+  }
+
+  const existing = database.prepare("SELECT canonical_name FROM teams WHERE team_id = ?").get(teamId);
+  if (existing && normalizeText(existing.canonical_name)?.toLowerCase() !== canonicalName.toLowerCase()) {
+    database
+      .prepare(
+        `
+        INSERT OR IGNORE INTO team_aliases (team_id, alias_name, source)
+        VALUES (?, ?, ?)
+        `,
+      )
+      .run(teamId, canonicalName, provider);
+  }
 
   return teamId;
 }
@@ -717,18 +775,20 @@ function importTeamGames(database, gameId, homeTeamId, awayTeamId, homeTeam, awa
       team_id,
       opponent_team_id,
       is_home,
-      points
+      points,
+      provider_team_id
     )
-    VALUES (?, ?, ?, ?, ?)
+    VALUES (?, ?, ?, ?, ?, ?)
     ON CONFLICT (game_id, team_id) DO UPDATE SET
       opponent_team_id = excluded.opponent_team_id,
       is_home = excluded.is_home,
-      points = excluded.points
+      points = excluded.points,
+      provider_team_id = excluded.provider_team_id
     `,
   );
 
-  insert.run(gameId, homeTeamId, awayTeamId, 1, toInteger(homeTeam.score));
-  insert.run(gameId, awayTeamId, homeTeamId, 0, toInteger(awayTeam.score));
+  insert.run(gameId, homeTeamId, awayTeamId, 1, toInteger(homeTeam.score), normalizeText(homeTeam.teamId));
+  insert.run(gameId, awayTeamId, homeTeamId, 0, toInteger(awayTeam.score), normalizeText(awayTeam.teamId));
 }
 
 function importPlayerGames(database, gameId, data, teamIdsByLiveStatsNumber, playerResolver) {
@@ -981,8 +1041,8 @@ async function importMapping(database, mapping) {
     throw new Error(`Missing home/away team data for match_id ${mapping.match_id}`);
   }
 
-  const homeTeamId = teamIdFromName(homeTeam.name);
-  const awayTeamId = teamIdFromName(awayTeam.name);
+  const homeTeamId = upsertTeam(database, homeTeam.name, "fiba_livestats", homeTeam.teamId ?? null);
+  const awayTeamId = upsertTeam(database, awayTeam.name, "fiba_livestats", awayTeam.teamId ?? null);
 
   const teamIdsByLiveStatsNumber = new Map([
     ["1", homeTeamId],
@@ -993,8 +1053,6 @@ async function importMapping(database, mapping) {
 
   database.exec("BEGIN;");
   try {
-    upsertTeam(database, homeTeam.name);
-    upsertTeam(database, awayTeam.name);
     updateGame(database, mapping, homeTeamId, awayTeamId, homeTeam, awayTeam);
     importTeamGames(database, mapping.game_id, homeTeamId, awayTeamId, homeTeam, awayTeam);
     const playerGames = importPlayerGames(
@@ -1030,8 +1088,7 @@ async function importMapping(database, mapping) {
 
 (async function main() {
   const args = parseArgs(process.argv);
-  const database = new DatabaseSync(databasePath);
-  database.exec("PRAGMA foreign_keys = ON;");
+  const database = initializeDatabase(databasePath);
 
   // Initialize DLQ for tracking failed imports
   const dlq = new DeadLetterQueue(database);
@@ -1159,7 +1216,16 @@ async function importMapping(database, mapping) {
         // Record failure in DLQ for later analysis/retry.
         // DLQ issues must not abort processing of remaining games.
         try {
-          dlq.recordFailure(mapping, errorType, error.message);
+          dlq.recordFailure(mapping, errorType, error.message, {
+            provider: "fiba_livestats",
+            context: {
+              game_id: mapping.game_id,
+              league_id: mapping.league_id,
+              season_id: mapping.season_id,
+              match_id: mapping.match_id,
+              provider_game_id: mapping.provider_game_id,
+            },
+          });
         } catch (dlqError) {
           console.error(
             `DLQ record failed for ${mapping.game_id} (${mapping.match_id}): ${dlqError.message}`,

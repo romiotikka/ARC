@@ -17,14 +17,13 @@ const databasePath = join(tempDir, "arc.db");
 try {
   const database = new DatabaseSync(databasePath);
   database.exec(readFileSync(join(root, "database", "schema.sql"), "utf8"));
-  database.exec("CREATE TABLE failed_imports (status TEXT, retry_count INTEGER, failed_at TEXT)");
   database.prepare("INSERT INTO leagues (league_id, name) VALUES (?, ?)").run(1, "Test League");
   database.prepare("INSERT INTO seasons (season_id, label, start_year, end_year) VALUES (?, ?, ?, ?)").run(20252026, "2025-26", 2025, 2026);
   database.prepare("INSERT INTO games (game_id, league_id, season_id, status) VALUES (?, ?, ?, ?)").run("game-1", 1, 20252026, "pending");
 
   const payload = {
     tm: {
-      "1": { name: "Home", score: 2, pl: { a: { name: "K. Kitsing", playerId: "live-42", shirtNumber: "7", playingPosition: "F", sPoints: 2, starter: 1 } } },
+      "1": { name: "Home", score: 2, pl: { a: { name: "K. Kitsing", scoreboardName: "K. Kitsing", firstName: "Kristjan", familyName: "Kitsing", playerId: "live-42", shirtNumber: "7", playingPosition: "F", sPoints: 2, starter: 1 } } },
       "2": { name: "Away", score: 0, pl: { b: { name: "Other Player", playerId: "live-99", shirtNumber: "8", playingPosition: "G", sPoints: 0, starter: 1 } } },
     },
     pbp: [
@@ -45,6 +44,13 @@ try {
 
   const result = new DatabaseSync(databasePath, { readOnly: true });
   assert.equal(result.prepare("SELECT COUNT(*) AS count FROM players").get().count, 2);
+  const players = result.prepare("SELECT player_id, canonical_name FROM players ORDER BY player_id").all();
+  assert.deepEqual(players.map((row) => typeof row.player_id), ["number", "number"]);
+  assert.equal(players[0].player_id, 1);
+  assert.equal(players[0].canonical_name, "Kristjan Kitsing");
+  const teams = result.prepare("SELECT team_id, canonical_name FROM teams ORDER BY team_id").all();
+  assert.deepEqual(teams.map((row) => typeof row.team_id), ["number", "number"]);
+  assert.equal(teams[0].team_id, 1);
   assert.equal(result.prepare("SELECT COUNT(*) AS count FROM player_games WHERE player_id IS NOT NULL").get().count, 2);
   assert.equal(result.prepare("SELECT COUNT(*) AS count FROM events WHERE player_id IS NULL").get().count, 1);
   assert.equal(result.prepare("SELECT COUNT(*) AS count FROM events WHERE player_id IS NOT NULL").get().count, 1);

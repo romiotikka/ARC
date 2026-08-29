@@ -10,7 +10,8 @@ const databasePath = join(databaseDir, "arc2.db");
 const schemaPath = join(rootDir, "database", "schema.sql");
 const estlatblGamesCsv = join(rootDir, "data", "estlatbl", "estlatbl_2026_games.csv");
 
-const ESTLATBL_LEAGUE_ID = "estlatbl";
+const ESTLATBL_LEAGUE_KEY = "estlatbl";
+const ESTLATBL_LEAGUE_ID = 1;
 const ESTLATBL_SEASON_ID = 20252026;
 
 function parseCsv(text) {
@@ -101,7 +102,7 @@ try {
 
   for (const row of rows) {
     const providerGameId = row.game_id;
-    const gameId = `${ESTLATBL_LEAGUE_ID}_${providerGameId}`;
+    const gameId = `${ESTLATBL_LEAGUE_KEY}_${providerGameId}`;
 
     insertGame.run(
       gameId,

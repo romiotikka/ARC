@@ -51,13 +51,16 @@ def main() -> int:
 
             context = IdentityContext(
                 raw_name=raw_name,
-                team_id=str(occurrence["team_id"]),
+                team_id=int(occurrence["team_id"]),
                 season_id=int(occurrence["season_id"]),
                 league_id=int(occurrence["league_id"]),
                 jersey_number=_optional_text(occurrence.get("jersey_number")),
                 game_id=_optional_text(occurrence.get("game_id")),
                 provider=_optional_text(occurrence.get("provider")) or "fiba_livestats",
                 external_player_id=_optional_text(occurrence.get("external_player_id")),
+                canonical_name_hint=_optional_text(occurrence.get("canonical_name_hint")),
+                first_name=_optional_text(occurrence.get("first_name")),
+                last_name=_optional_text(occurrence.get("last_name")),
                 position=normalize_position(_optional_text(occurrence.get("position"))),
             )
             result = resolver.resolve(context)

@@ -2,7 +2,6 @@ from __future__ import annotations
 
 import sqlite3
 import re
-import uuid
 from collections.abc import Sequence
 from datetime import datetime, timezone
 
@@ -145,7 +144,7 @@ class IdentityResolver:
 
     def resolve_by_external_id(
         self, provider: str, external_player_id: str
-    ) -> str | None:
+    ) -> int | None:
         """Return the ARC player_id for a confirmed provider external ID, or None.
 
         Once an external ID is stored, this is the strongest and cheapest resolution
@@ -154,7 +153,7 @@ class IdentityResolver:
         return self._find_by_external_id(provider, external_player_id)
 
     def store_external_id(
-        self, player_id: str, provider: str, external_player_id: str
+        self, player_id: int, provider: str, external_player_id: str
     ) -> None:
         """Persist a provider → ARC player_id mapping in player_external_ids.
 
@@ -182,7 +181,7 @@ class IdentityResolver:
             )
 
     def update_player_metadata(
-        self, player_id: str, candidate: PlayerCandidate
+        self, player_id: int, candidate: PlayerCandidate
     ) -> None:
         """Fill NULL metadata fields from a confirmed provider candidate.
 
@@ -212,7 +211,7 @@ class IdentityResolver:
             )
 
     def store_team_external_id(
-        self, arc_team_id: str, provider: str, external_team_id: str
+        self, arc_team_id: int, provider: str, external_team_id: str
     ) -> None:
         """Map an ARC team_id to a provider-native external team ID.
 
@@ -451,7 +450,7 @@ class IdentityResolver:
 
     def _find_by_external_id(
         self, provider: str, external_player_id: str
-    ) -> str | None:
+    ) -> int | None:
         row = self._db.execute(
             """
             SELECT player_id FROM player_external_ids
@@ -462,7 +461,7 @@ class IdentityResolver:
         return row["player_id"] if row else None
 
     def _lookup_team_external_id(
-        self, provider: str, arc_team_id: str
+        self, provider: str, arc_team_id: int
     ) -> str | None:
         """Return the provider's external team ID for an ARC team, or None."""
         row = self._db.execute(
@@ -660,7 +659,7 @@ class IdentityResolver:
         search_name = candidate.canonical_name or context.raw_name
         arc_candidates = self._search_candidates(search_name, context)
 
-        player_id: str | None = None
+        player_id: int | None = None
         if arc_candidates:
             top = arc_candidates[0]
             top_score = top["_score"]
@@ -700,14 +699,14 @@ class IdentityResolver:
 
     def _create_player_from_candidate(
         self, candidate: PlayerCandidate, context: IdentityContext
-    ) -> str:
+    ) -> int:
         """Create a new ARC player using the provider's richer identity data.
 
         Prefers the provider's canonical name and structured fields over the
         LiveStats raw_name, which may be an abbreviated form.
         """
-        player_id = _new_player_id()
-        canonical = candidate.canonical_name or context.raw_name
+        player_id = self._next_player_id()
+        canonical = _preferred_canonical_name(context, candidate.canonical_name)
         first_name = candidate.first_name or _split_display_name(canonical)[0]
         last_name  = candidate.last_name  or _split_display_name(canonical)[1]
         now = _utcnow()
@@ -731,18 +730,16 @@ class IdentityResolver:
 
     # ── Write operations ──────────────────────────────────────────────────────
 
-    def _create_player(self, context: IdentityContext) -> str:
+    def _create_player(self, context: IdentityContext) -> int:
         """Insert a new unverified player row and return the generated player_id."""
-        player_id = _new_player_id()
-        # An observed source name is evidence, not reliable structured metadata.
-        # Only an explicit comma supplies unambiguous `Last, First` ordering;
-        # otherwise retain the raw canonical label and leave split fields NULL
-        # until a provider or review supplies trustworthy structure.
-        first_name, last_name = (
-            _split_display_name(context.raw_name)
-            if "," in context.raw_name
-            else (None, None)
-        )
+        player_id = self._next_player_id()
+        canonical_name = _preferred_canonical_name(context)
+        if context.first_name and context.last_name:
+            first_name, last_name = context.first_name, context.last_name
+        elif "," in canonical_name:
+            first_name, last_name = _split_display_name(canonical_name)
+        else:
+            first_name, last_name = None, None
         now = _utcnow()
         with self._db:
             self._db.execute(
@@ -754,7 +751,7 @@ class IdentityResolver:
                 """,
                 (
                     player_id,
-                    context.raw_name,
+                    canonical_name,
                     first_name,
                     last_name,
                     context.position,
@@ -764,8 +761,14 @@ class IdentityResolver:
             )
         return player_id
 
+    def _next_player_id(self) -> int:
+        row = self._db.execute(
+            "SELECT COALESCE(MAX(CAST(player_id AS INTEGER)), 0) + 1 AS next_id FROM players"
+        ).fetchone()
+        return int(row["next_id"])
+
     def _store_context_external_id(
-        self, player_id: str | None, context: IdentityContext
+        self, player_id: int | None, context: IdentityContext
     ) -> None:
         """Persist a confirmed source identifier after a successful resolution."""
         if player_id and context.external_player_id:
@@ -774,7 +777,7 @@ class IdentityResolver:
             )
 
     def _maybe_add_alias(
-        self, player_id: str, raw_name: str, source: str
+        self, player_id: int, raw_name: str, source: str
     ) -> None:
         """Store *raw_name* as an alias for *player_id* if it is not already the
         canonical name and has not been stored before.
@@ -1098,8 +1101,38 @@ def _split_display_name(raw_name: str) -> tuple[str | None, str | None]:
     return " ".join(tokens[:-1]), tokens[-1]
 
 
-def _new_player_id() -> str:
-    return uuid.uuid4().hex
+def _preferred_canonical_name(
+    context: IdentityContext,
+    fallback: str | None = None,
+) -> str:
+    if context.canonical_name_hint and _looks_like_full_name(context.canonical_name_hint):
+        return context.canonical_name_hint
+    if context.first_name and context.last_name:
+        full_name = f"{context.first_name} {context.last_name}".strip()
+        if _looks_like_full_name(full_name):
+            return full_name
+    if fallback and _looks_like_full_name(fallback):
+        return fallback
+    return context.raw_name
+
+
+def _looks_like_full_name(value: str | None) -> bool:
+    if value is None:
+        return False
+    cleaned = value.strip()
+    if not cleaned or "." in cleaned:
+        return False
+    parts = cleaned.split()
+    return len(parts) >= 2 and all(not _is_initial_like(part) for part in parts)
+
+
+def _is_initial_like(value: str | None) -> bool:
+    if value is None:
+        return True
+    stripped = value.strip()
+    if not stripped:
+        return True
+    return bool(re.fullmatch(r"[A-Za-zÄÖÜÕŠŽäöüõšž]\.?,?", stripped))
 
 
 def _utcnow() -> str:

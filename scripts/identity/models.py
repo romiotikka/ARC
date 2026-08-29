@@ -25,13 +25,16 @@ class IdentityContext:
     """Identity information supplied by a parser for one player occurrence."""
 
     raw_name: str
-    team_id: str
+    team_id: int
     season_id: int
     league_id: int
     jersey_number: str | None = None
     game_id: str | None = None
     provider: str = "livestats"
     external_player_id: str | None = None
+    canonical_name_hint: str | None = None
+    first_name: str | None = None
+    last_name: str | None = None
     position: str | None = None
 
 
@@ -39,7 +42,7 @@ class IdentityContext:
 class PlayerIdentity:
     """Normalized ARC player identity matching the Identity v2 player model."""
 
-    player_id: str
+    player_id: int
     canonical_name: str
     identity_status: IdentityStatus = IdentityStatus.UNVERIFIED
     first_name: str | None = None
@@ -74,7 +77,7 @@ class ResolverResult:
     """Resolver outcome returned to the future parser integration point."""
 
     status: ResolverStatus
-    player_id: str | None = None
+    player_id: int | None = None
     confidence: float = 0.0
     provider: str | None = None
     requires_manual_review: bool = False

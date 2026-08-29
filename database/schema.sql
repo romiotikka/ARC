@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS seasons (
 );
 
 CREATE TABLE IF NOT EXISTS teams (
-    team_id TEXT PRIMARY KEY,
+    team_id INTEGER PRIMARY KEY AUTOINCREMENT,
     canonical_name TEXT NOT NULL,
     country TEXT,
     created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS teams (
 
 CREATE TABLE IF NOT EXISTS team_aliases (
     alias_id INTEGER PRIMARY KEY AUTOINCREMENT,
-    team_id TEXT NOT NULL,
+    team_id INTEGER NOT NULL,
     alias_name TEXT NOT NULL,
     valid_from_season_id INTEGER,
     valid_to_season_id INTEGER,
@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS team_aliases (
 );
 
 CREATE TABLE IF NOT EXISTS players (
-    player_id TEXT PRIMARY KEY,
+    player_id INTEGER PRIMARY KEY AUTOINCREMENT,
     first_name TEXT,
     last_name TEXT,
     canonical_name TEXT NOT NULL,
@@ -54,7 +54,7 @@ CREATE TABLE IF NOT EXISTS players (
 
 CREATE TABLE IF NOT EXISTS player_aliases (
     alias_id INTEGER PRIMARY KEY AUTOINCREMENT,
-    player_id TEXT NOT NULL,
+    player_id INTEGER NOT NULL,
     alias_name TEXT NOT NULL,
     source TEXT,
     created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -63,7 +63,7 @@ CREATE TABLE IF NOT EXISTS player_aliases (
 );
 
 CREATE TABLE IF NOT EXISTS player_external_ids (
-    player_id TEXT NOT NULL,
+    player_id INTEGER NOT NULL,
     provider TEXT NOT NULL,
     external_player_id TEXT NOT NULL,
     created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -77,8 +77,8 @@ CREATE TABLE IF NOT EXISTS games (
     league_id INTEGER NOT NULL,
     season_id INTEGER NOT NULL,
     game_date TEXT,
-    home_team_id TEXT,
-    away_team_id TEXT,
+    home_team_id INTEGER,
+    away_team_id INTEGER,
     venue TEXT,
     attendance INTEGER,
     home_score INTEGER,
@@ -95,8 +95,8 @@ CREATE TABLE IF NOT EXISTS games (
 CREATE TABLE IF NOT EXISTS team_games (
     team_game_id INTEGER PRIMARY KEY AUTOINCREMENT,
     game_id TEXT NOT NULL,
-    team_id TEXT NOT NULL,
-    opponent_team_id TEXT,
+    team_id INTEGER NOT NULL,
+    opponent_team_id INTEGER,
     is_home INTEGER,
     points INTEGER,
     provider_team_id TEXT, -- Original ID from the data provider
@@ -110,8 +110,8 @@ CREATE TABLE IF NOT EXISTS team_games (
 CREATE TABLE IF NOT EXISTS player_games (
     player_game_id INTEGER PRIMARY KEY AUTOINCREMENT,
     game_id TEXT NOT NULL,
-    player_id TEXT, -- ARC persistent player identity
-    team_id TEXT,   -- ARC persistent team identity
+    player_id INTEGER, -- ARC persistent player identity
+    team_id INTEGER,   -- ARC persistent team identity
     provider_player_id TEXT, -- Original player ID from provider
     provider_team_id TEXT,   -- Original team ID from provider
     player_name TEXT NOT NULL,
@@ -149,9 +149,9 @@ CREATE TABLE IF NOT EXISTS events (
     action_number INTEGER,
     period INTEGER,
     clock TEXT,
-    team_id TEXT,
-    player_id TEXT,
-    event_secondary_player_id TEXT,
+    team_id INTEGER,
+    player_id INTEGER,
+    event_secondary_player_id INTEGER,
     event_type TEXT,
     event_result TEXT,
     shot_type TEXT,
@@ -159,7 +159,7 @@ CREATE TABLE IF NOT EXISTS events (
     points INTEGER,
     x REAL,
     y REAL,
-    possession_team_id_after TEXT,
+    possession_team_id_after INTEGER,
     shot_clock REAL,
     contested INTEGER,
     distance REAL,
@@ -174,12 +174,12 @@ CREATE TABLE IF NOT EXISTS events (
 
 CREATE TABLE IF NOT EXISTS lineups (
     lineup_id INTEGER PRIMARY KEY AUTOINCREMENT,
-    team_id TEXT NOT NULL,
-    player_1 TEXT NOT NULL,
-    player_2 TEXT NOT NULL,
-    player_3 TEXT NOT NULL,
-    player_4 TEXT NOT NULL,
-    player_5 TEXT NOT NULL,
+    team_id INTEGER NOT NULL,
+    player_1 INTEGER NOT NULL,
+    player_2 INTEGER NOT NULL,
+    player_3 INTEGER NOT NULL,
+    player_4 INTEGER NOT NULL,
+    player_5 INTEGER NOT NULL,
     lineup_hash TEXT NOT NULL,
     FOREIGN KEY (team_id) REFERENCES teams(team_id),
     FOREIGN KEY (player_1) REFERENCES players(player_id),
@@ -194,7 +194,7 @@ CREATE TABLE IF NOT EXISTS lineup_segments (
     lineup_segment_id INTEGER PRIMARY KEY AUTOINCREMENT,
     game_id TEXT NOT NULL,
     lineup_id INTEGER NOT NULL,
-    team_id TEXT NOT NULL,
+    team_id INTEGER NOT NULL,
     period INTEGER,
     start_action_number INTEGER,
     end_action_number INTEGER,
@@ -230,7 +230,7 @@ CREATE INDEX IF NOT EXISTS idx_player_games_player
     ON player_games (player_id);
 
 CREATE TABLE IF NOT EXISTS team_external_ids (
-    team_id          TEXT    NOT NULL,
+    team_id          INTEGER NOT NULL,
     provider         TEXT    NOT NULL,
     external_team_id TEXT    NOT NULL,
     created_at       TEXT    NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -309,3 +309,38 @@ CREATE INDEX IF NOT EXISTS idx_lineup_segments_game_lineup
 
 CREATE INDEX IF NOT EXISTS idx_lineup_segments_lineup
     ON lineup_segments (lineup_id);
+
+CREATE TABLE IF NOT EXISTS failed_imports (
+    failed_import_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    game_id TEXT NOT NULL,
+    league_id INTEGER NOT NULL,
+    season_id INTEGER NOT NULL,
+    provider TEXT NOT NULL,
+    match_id TEXT NOT NULL,
+    provider_game_id TEXT,
+    entity_type TEXT,
+    entity_key TEXT,
+    error_type TEXT NOT NULL,
+    error_message TEXT NOT NULL,
+    context_json TEXT,
+    failed_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    last_error_at TEXT,
+    retry_count INTEGER NOT NULL DEFAULT 0,
+    status TEXT NOT NULL DEFAULT 'pending',
+    notes TEXT,
+    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (game_id) REFERENCES games(game_id),
+    FOREIGN KEY (league_id) REFERENCES leagues(league_id),
+    FOREIGN KEY (season_id) REFERENCES seasons(season_id),
+    UNIQUE (game_id, match_id)
+);
+
+CREATE INDEX IF NOT EXISTS idx_failed_imports_status
+    ON failed_imports (status);
+
+CREATE INDEX IF NOT EXISTS idx_failed_imports_failed_at
+    ON failed_imports (failed_at);
+
+CREATE INDEX IF NOT EXISTS idx_failed_imports_retry_count
+    ON failed_imports (retry_count);

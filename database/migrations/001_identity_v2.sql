@@ -17,7 +17,7 @@ SET updated_at = created_at
 WHERE updated_at IS NULL;
 
 CREATE TABLE IF NOT EXISTS player_external_ids (
-    player_id TEXT NOT NULL,
+    player_id INTEGER NOT NULL,
     provider TEXT NOT NULL,
     external_player_id TEXT NOT NULL,
     created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,

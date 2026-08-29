@@ -4,7 +4,7 @@
 BEGIN;
 
 CREATE TABLE IF NOT EXISTS team_external_ids (
-    team_id          TEXT    NOT NULL,
+    team_id          INTEGER NOT NULL,
     provider         TEXT    NOT NULL,
     external_team_id TEXT    NOT NULL,
     created_at       TEXT    NOT NULL DEFAULT CURRENT_TIMESTAMP,

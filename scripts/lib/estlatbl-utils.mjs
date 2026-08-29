@@ -63,7 +63,12 @@ export class DeadLetterQueue {
     this.database = database;
   }
 
-  recordFailure(mapping, errorType, errorMessage) {
+  recordFailure(mapping, errorType, errorMessage, details = {}) {
+    const provider = details.provider ?? "unknown";
+    const entityType = details.entityType ?? null;
+    const entityKey = details.entityKey ?? null;
+    const contextJson = JSON.stringify(details.context ?? mapping ?? {});
+
     this.database
       .prepare(
         `
@@ -71,19 +76,27 @@ export class DeadLetterQueue {
           game_id,
           league_id,
           season_id,
+          provider,
           match_id,
           provider_game_id,
+          entity_type,
+          entity_key,
           error_type,
           error_message,
+          context_json,
           retry_count,
           status
         )
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         ON CONFLICT (game_id, match_id) DO UPDATE SET
           last_error_at = CURRENT_TIMESTAMP,
           retry_count = retry_count + 1,
+          provider = excluded.provider,
+          entity_type = excluded.entity_type,
+          entity_key = excluded.entity_key,
           error_type = excluded.error_type,
           error_message = excluded.error_message,
+          context_json = excluded.context_json,
           updated_at = CURRENT_TIMESTAMP
         `,
       )
@@ -91,10 +104,14 @@ export class DeadLetterQueue {
         mapping.game_id,
         mapping.league_id,
         mapping.season_id,
+        provider,
         mapping.match_id,
         mapping.provider_game_id,
+        entityType,
+        entityKey,
         errorType,
         errorMessage,
+        contextJson,
         0,
         "pending",
       );
@@ -146,10 +163,14 @@ export function initializeDatabase(databasePath) {
           game_id TEXT NOT NULL,
           league_id INTEGER NOT NULL,
           season_id INTEGER NOT NULL,
+          provider TEXT NOT NULL DEFAULT 'unknown',
           match_id TEXT NOT NULL,
           provider_game_id TEXT,
+          entity_type TEXT,
+          entity_key TEXT,
           error_type TEXT NOT NULL,
           error_message TEXT NOT NULL,
+          context_json TEXT,
           failed_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
           last_error_at TEXT,
           retry_count INTEGER NOT NULL DEFAULT 0,
