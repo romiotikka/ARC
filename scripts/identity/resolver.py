@@ -64,13 +64,13 @@ class IdentityResolver:
     def resolve(self, context: IdentityContext) -> ResolverResult:
         """Resolve one parser-supplied player occurrence to a persistent ARC player_id.
 
-        Resolution order:
+          Resolution order:
 
-        A. Provider roster — if team/season external IDs are configured, fetch the
-           roster and resolve via known external_player_id (O(1)) or name-match.
-           Raises ManualReviewRequired for ambiguous roster results.
-        B. Existing ARC name/alias matching (fallback when no provider mapping).
-        C. Create a new unverified ARC player when no reliable match is found.
+          A. Existing ARC name/alias matching, using context to refine plausible
+              candidates. Strong local matches are returned immediately.
+          B. Configured provider rosters are consulted when local evidence is
+              uncertain or unavailable; ambiguous evidence raises review.
+          C. Create a new unverified ARC player when no reliable match is found.
         """
         # A source-player ID that has already been confirmed is stronger than a
         # name form.  LiveStats importers use this path for stable feed IDs.
@@ -86,8 +86,7 @@ class IdentityResolver:
                         f"{context.external_player_id!r} maps to {existing_id!r}, "
                         f"but its name evidence conflicts with {context.raw_name!r}."
                     )
-                if score >= _MATCH:
-                    self._maybe_add_alias(existing_id, context.raw_name, context.provider)
+                self._maybe_add_alias(existing_id, context.raw_name, context.provider)
                 return ResolverResult(
                     status=ResolverStatus.MATCH,
                     player_id=existing_id,
@@ -97,12 +96,13 @@ class IdentityResolver:
 
         # Path A: existing ARC name/alias matching.
         candidates = self._search_candidates(context.raw_name, context)
+        local_result: ResolverResult | None = None
 
         if candidates:
-            result = self._evaluate_candidates(candidates, context)
-            if result is not None:
-                self._store_context_external_id(result.player_id, context)
-                return result
+            local_result = self._evaluate_candidates(candidates, context)
+            if local_result is not None and local_result.confidence >= _STRONG_MATCH:
+                self._store_context_external_id(local_result.player_id, context)
+                return local_result
 
             top_score = candidates[0]["_score"]
             if top_score >= _REVIEW_FLOOR:
@@ -115,6 +115,10 @@ class IdentityResolver:
                 local_review_error = None
         else:
             local_review_error = None
+
+        if local_result is not None and not self._providers:
+            self._store_context_external_id(local_result.player_id, context)
+            return local_result
 
         # Path B: provider roster evidence can resolve local ambiguity, but does
         # not override a strong local match already returned above.
@@ -132,6 +136,9 @@ class IdentityResolver:
             raise local_review_error
         if provider_review_error is not None:
             raise provider_review_error
+        if local_result is not None:
+            self._store_context_external_id(local_result.player_id, context)
+            return local_result
 
         # Path C: no plausible match anywhere — create a new unverified player.
         player_id = self._create_player(context)
@@ -458,7 +465,7 @@ class IdentityResolver:
             """,
             (provider, external_player_id),
         ).fetchone()
-        return row["player_id"] if row else None
+        return _coerce_arc_player_id(row["player_id"]) if row else None
 
     def _lookup_team_external_id(
         self, provider: str, arc_team_id: int
@@ -547,7 +554,7 @@ class IdentityResolver:
         caller falls through to name-only resolution.
         """
         had_provider_evidence = False
-        best_ambiguous: tuple[str, float, float] | None = None
+        best_ambiguous: tuple[str, float, float, list[dict[str, object]]] | None = None
 
         for provider_name, roster in self._iter_provider_rosters(context):
             had_provider_evidence = True
@@ -594,15 +601,35 @@ class IdentityResolver:
             # Ambiguous for this provider; keep the strongest ambiguous evidence,
             # but continue to the next provider before deciding REVIEW.
             if best_ambiguous is None or best_score > best_ambiguous[1]:
-                best_ambiguous = (provider_name, best_score, separation)
+                best_ambiguous = (
+                    provider_name,
+                    best_score,
+                    separation,
+                    [
+                        {
+                            "provider": candidate.provider,
+                            "external_player_id": candidate.external_player_id,
+                            "canonical_name": candidate.canonical_name,
+                            "first_name": candidate.first_name,
+                            "last_name": candidate.last_name,
+                            "team_id": candidate.team_id,
+                            "season_id": candidate.season_id,
+                            "jersey_number": candidate.jersey_number,
+                            "position": candidate.position,
+                            "confidence": score,
+                        }
+                        for candidate, score in scored
+                    ],
+                )
 
         if best_ambiguous is not None:
-            provider_name, best_score, separation = best_ambiguous
+            provider_name, best_score, separation, candidates = best_ambiguous
             raise ManualReviewRequired(
                 f"Ambiguous provider roster match for {context.raw_name!r} after "
                 f"trying all configured providers; strongest ambiguous evidence came "
                 f"from {provider_name!r} (score {best_score:.2f}, "
-                f"separation {separation:.2f}). Manual review required."
+                f"separation {separation:.2f}). Manual review required.",
+                details={"candidate_information": candidates},
             )
 
         if had_provider_evidence:
@@ -1114,6 +1141,14 @@ def _preferred_canonical_name(
     if fallback and _looks_like_full_name(fallback):
         return fallback
     return context.raw_name
+
+
+def _coerce_arc_player_id(value: object) -> int | str:
+    if isinstance(value, int):
+        return value
+    if isinstance(value, str) and value.isdigit():
+        return int(value)
+    return value  # type: ignore[return-value]
 
 
 def _looks_like_full_name(value: str | None) -> bool:

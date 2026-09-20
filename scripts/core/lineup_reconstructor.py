@@ -876,12 +876,32 @@ def run_debug_mode(connection: sqlite3.Connection) -> None:
         )
 
 
-def build_team_roster(game_data: dict, team_number: str, connection: sqlite3.Connection, player_lookup: dict[str, str]) -> list[str]:
+def build_team_roster(
+    game_data: dict,
+    team_number: str,
+    connection: sqlite3.Connection,
+    player_lookup: dict[str, str],
+    game_id: str | None = None,
+    team_id: str | None = None,
+) -> list[str]:
     team = game_data.get("tm", {}).get(team_number)
     if not team:
         raise ValueError(f"Missing team data for team number {team_number}")
 
     starters: list[str] = []
+    if game_id is not None and team_id is not None:
+        persisted_starters = connection.execute(
+            """
+            SELECT player_id
+            FROM player_games
+            WHERE game_id = ? AND team_id = ? AND starter = 1 AND player_id IS NOT NULL
+            ORDER BY player_game_id
+            """,
+            (game_id, team_id),
+        ).fetchall()
+        if len(persisted_starters) == 5:
+            return [str(row[0]) for row in persisted_starters]
+
     for player in team.get("pl", {}).values():
         if int(player.get("starter") or 0) != 1:
             continue
@@ -1054,6 +1074,7 @@ def prepare_team_substitutions(
     team_number: str,
     connection: sqlite3.Connection,
     player_lookup: dict[str, str],
+    game_id: str | None = None,
 ) -> list[dict]:
     substitutions: list[dict] = []
 
@@ -1076,6 +1097,19 @@ def prepare_team_substitutions(
         if not player_name:
             raise ValueError(f"Missing substitution player name for action {event.get('actionNumber')}")
 
+        player_id = None
+        if game_id is not None:
+            persisted = connection.execute(
+                """
+                SELECT player_id
+                FROM events
+                WHERE game_id = ? AND action_number = ?
+                LIMIT 1
+                """,
+                (game_id, int(event.get("actionNumber") or index)),
+            ).fetchone()
+            player_id = str(persisted[0]) if persisted and persisted[0] is not None else None
+
         substitutions.append(
             {
                 "index": index,
@@ -1083,7 +1117,7 @@ def prepare_team_substitutions(
                 "clock": current_clock,
                 "period": int(event.get("period") or 0),
                 "subType": sub_type,
-                "player_id": resolve_player_id(connection, player_lookup, player_name),
+                "player_id": player_id or resolve_player_id(connection, player_lookup, player_name),
             }
         )
 
@@ -1181,7 +1215,16 @@ def process_game(
     team_labels = {"1": "home", "2": "away"}
 
     current_lineups: dict[str, set[str]] = {
-        team_number: set(build_team_roster(game_data, team_number, connection, player_lookup))
+        team_number: set(
+            build_team_roster(
+                game_data,
+                team_number,
+                connection,
+                player_lookup,
+                game_row["game_id"],
+                team_ids[team_number],
+            )
+        )
         for team_number in ("1", "2")
     }
 
@@ -1198,7 +1241,13 @@ def process_game(
         for team_number in ("1", "2"):
             team_id = team_ids[team_number]
             team_label = team_labels[team_number]
-            team_substitutions = prepare_team_substitutions(events_in_period, team_number, connection, player_lookup)
+            team_substitutions = prepare_team_substitutions(
+                events_in_period,
+                team_number,
+                connection,
+                player_lookup,
+                game_row["game_id"],
+            )
             grouped_substitutions = group_substitutions_by_batch(team_substitutions)
 
             start_groups = [group for group in grouped_substitutions if group[0]["clock"] == period_start_clock]

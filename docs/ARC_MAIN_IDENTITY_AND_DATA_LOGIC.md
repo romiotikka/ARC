@@ -5,7 +5,6 @@
 This document defines the agreed logic for how ARC collects basketball data from sources such as FIBA LiveStats and resolves source players and teams to persistent ARC entities.
 
 This is an implementation contract. Existing identity logic should be connected to this model rather than redesigned unless explicitly decided otherwise.
-
 ## 1. Source data
 
 ARC receives a game from a source, currently primarily FIBA LiveStats.

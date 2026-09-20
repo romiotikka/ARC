@@ -179,7 +179,14 @@ function resolveLiveStatsPlayerOccurrences(mapping, data, teamIdsByLiveStatsNumb
     throw new Error(`IdentityResolver bridge could not start (${identityPython}): ${process.error.message}`);
   }
   if (process.status !== 0) {
-    throw new Error(`IdentityResolver bridge failed: ${process.stderr.trim() || process.stdout.trim()}`);
+    const reviewPayload = parseIdentityReview(process.stderr);
+    const error = new Error(
+      reviewPayload
+        ? "Identity resolution requires manual review"
+        : `IdentityResolver bridge failed: ${process.stderr.trim() || process.stdout.trim()}`,
+    );
+    if (reviewPayload) error.identityReviews = reviewPayload.reviews ?? [];
+    throw error;
   }
 
   let output;
@@ -206,6 +213,20 @@ function resolveLiveStatsPlayerOccurrences(mapping, data, teamIdsByLiveStatsNumb
       return key ? playerIdForKey(key) : null;
     },
   };
+}
+
+function parseIdentityReview(stderr) {
+  const marker = "ARC_IDENTITY_REVIEW ";
+  const line = stderr
+    .split(/\r?\n/)
+    .find((entry) => entry.startsWith(marker));
+  if (!line) return null;
+
+  try {
+    return JSON.parse(line.slice(marker.length));
+  } catch {
+    return null;
+  }
 }
 
 function buildLiveStatsPlayerLookup(data) {
@@ -647,6 +668,10 @@ function buildCanonicalPlayerName(player) {
     : null;
 }
 
+function providerTeamId(team) {
+  return normalizeText(team.teamId ?? team.code);
+}
+
 function selectMappings(database, args) {
   if (args.matchId) {
     return database
@@ -787,8 +812,8 @@ function importTeamGames(database, gameId, homeTeamId, awayTeamId, homeTeam, awa
     `,
   );
 
-  insert.run(gameId, homeTeamId, awayTeamId, 1, toInteger(homeTeam.score), normalizeText(homeTeam.teamId));
-  insert.run(gameId, awayTeamId, homeTeamId, 0, toInteger(awayTeam.score), normalizeText(awayTeam.teamId));
+  insert.run(gameId, homeTeamId, awayTeamId, 1, toInteger(homeTeam.score), providerTeamId(homeTeam));
+  insert.run(gameId, awayTeamId, homeTeamId, 0, toInteger(awayTeam.score), providerTeamId(awayTeam));
 }
 
 function importPlayerGames(database, gameId, data, teamIdsByLiveStatsNumber, playerResolver) {
@@ -1041,8 +1066,8 @@ async function importMapping(database, mapping) {
     throw new Error(`Missing home/away team data for match_id ${mapping.match_id}`);
   }
 
-  const homeTeamId = upsertTeam(database, homeTeam.name, "fiba_livestats", homeTeam.teamId ?? null);
-  const awayTeamId = upsertTeam(database, awayTeam.name, "fiba_livestats", awayTeam.teamId ?? null);
+  const homeTeamId = upsertTeam(database, homeTeam.name, "fiba_livestats", providerTeamId(homeTeam));
+  const awayTeamId = upsertTeam(database, awayTeam.name, "fiba_livestats", providerTeamId(awayTeam));
 
   const teamIdsByLiveStatsNumber = new Map([
     ["1", homeTeamId],
@@ -1211,6 +1236,8 @@ async function importMapping(database, mapping) {
           errorType = "json_parse_error";
         } else if (error.message.includes("Missing")) {
           errorType = "data_validation_error";
+        } else if (error.identityReviews?.length) {
+          errorType = "identity_review";
         }
 
         // Record failure in DLQ for later analysis/retry.
@@ -1218,12 +1245,15 @@ async function importMapping(database, mapping) {
         try {
           dlq.recordFailure(mapping, errorType, error.message, {
             provider: "fiba_livestats",
+            entityType: error.identityReviews?.length ? "player_occurrence" : null,
+            entityKey: error.identityReviews?.map((review) => review.key).join(",") || null,
             context: {
               game_id: mapping.game_id,
               league_id: mapping.league_id,
               season_id: mapping.season_id,
               match_id: mapping.match_id,
               provider_game_id: mapping.provider_game_id,
+              identity_reviews: error.identityReviews ?? [],
             },
           });
         } catch (dlqError) {

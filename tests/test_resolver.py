@@ -808,7 +808,7 @@ def test_cross_provider_alias_resolution() -> None:
     check("status MATCH",                      res.status == ResolverStatus.MATCH)
     check("returns existing player",           res.player_id == "abc")
     check("no duplicate created",             _player_count(db) == 1)
-    check("fake ext_id now linked to abc",    _ext_player_id(db, "fake", "abc") == "fp-88")
+    check("strong local match does not require provider link", _ext_player_id(db, "fake", "abc") is None)
     check("original other_provider link kept", r.resolve_by_external_id("other_provider", "op-123") == "abc")
 
 
@@ -1161,7 +1161,7 @@ def test_livestats_import_bridge_reuses_source_player_id() -> None:
         first = resolve({
             "key": "first",
             "raw_name": "Kristjan Kitsing",
-            "team_id": "team_kalev",
+            "team_id": 1,
             "season_id": 20252026,
             "league_id": 1,
             "game_id": "game_1",
@@ -1173,7 +1173,7 @@ def test_livestats_import_bridge_reuses_source_player_id() -> None:
         second = resolve({
             "key": "second",
             "raw_name": "K. Kitsing",
-            "team_id": "team_kalev",
+            "team_id": 1,
             "season_id": 20252026,
             "league_id": 1,
             "game_id": "game_2",
@@ -1212,7 +1212,7 @@ def test_livestats_sequence_name_forms_resolve_to_one_player() -> None:
     check("all occurrences resolved", all(result.player_id is not None for result in results))
     check("single persistent player_id", len(player_ids) == 1)
     check("one player row in database", _player_count(db) == 1)
-    check("short and reordered forms learned as aliases", {"K. Kitsing", "Kitsing, Kristjan", "Kitsing Kristjan", "Kristjan Mait Kitsing"}.issubset(aliases))
+    check("short and meaningful forms learned as aliases", {"K. Kitsing", "Kitsing, Kristjan", "Kristjan Mait Kitsing"}.issubset(aliases))
 
 
 def test_alias_learning_skips_normalized_duplicates() -> None:

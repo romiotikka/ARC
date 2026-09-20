@@ -62,17 +62,18 @@ def main() -> None:
         team_numbers_by_label = {"home": "1", "away": "2"}
         batch_groups: dict[tuple[str, tuple[int, ...]], str] = {}
 
-        def trace_build_team_roster(game_data, team_number, database, lookup):
-            lineup = original_build_team_roster(game_data, team_number, database, lookup)
+        def trace_build_team_roster(game_data, team_number, database, lookup, game_id=None, team_id=None):
+            lineup = original_build_team_roster(game_data, team_number, database, lookup, game_id, team_id)
             print(f"TRACE_STARTING_LINEUP team_number={team_number} lineup={format_lineup(lineup)}")
             return lineup
 
-        def trace_prepare_team_substitutions(period_events, team_number, database, lookup):
+        def trace_prepare_team_substitutions(period_events, team_number, database, lookup, game_id=None):
             substitutions = original_prepare_team_substitutions(
                 period_events,
                 team_number,
                 database,
                 lookup,
+                game_id,
             )
             batches = original_group_substitutions_by_batch(substitutions)
             period_start_clock = (

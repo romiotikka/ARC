@@ -6,7 +6,7 @@ import { DatabaseSync } from "node:sqlite";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const rootDir = join(__dirname, "..", "..");
 const databaseDir = join(rootDir, "data");
-const databasePath = join(databaseDir, "arc2.db");
+const databasePath = process.env.ARC_DATABASE_PATH ?? join(databaseDir, "arc2.db");
 const schemaPath = join(rootDir, "database", "schema.sql");
 const estlatblGamesCsv = join(rootDir, "data", "estlatbl", "estlatbl_2026_games.csv");
 
@@ -28,7 +28,7 @@ function tableCount(database, tableName) {
   return database.prepare(`SELECT COUNT(*) AS count FROM ${tableName}`).get().count;
 }
 
-mkdirSync(databaseDir, { recursive: true });
+mkdirSync(dirname(databasePath), { recursive: true });
 
 const database = new DatabaseSync(databasePath);
 database.exec("PRAGMA foreign_keys = ON;");

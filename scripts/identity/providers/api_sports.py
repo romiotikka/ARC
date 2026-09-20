@@ -153,6 +153,8 @@ class ApiSportsProvider(IdentityProvider):
 
         first_name: str | None = entry.get("firstname") or None
         last_name: str | None = entry.get("lastname") or None
+        if not first_name and not last_name:
+            first_name, last_name = self._parse_name_field(entry.get("name"))
 
         birth: dict[str, Any] = entry.get("birth") or {}
         birth_date: str | None = birth.get("date") or None
@@ -165,14 +167,29 @@ class ApiSportsProvider(IdentityProvider):
             first_name=first_name,
             last_name=last_name,
             birth_date=birth_date,
-            nationality=entry.get("nationality") or None,
+            nationality=entry.get("nationality") or entry.get("country") or None,
             height_cm=self._parse_height(entry.get("height")),
-            position=self._extract_position(leagues),
-            jersey_number=self._extract_jersey(leagues),
+            position=self._extract_position(leagues) or self._normalize_position(entry.get("position")),
+            jersey_number=self._extract_jersey(leagues) or self._optional_text(entry.get("number")),
             # team_id and season_id are ARC-internal keys; the resolver must
             # supply them after confirming which ARC entities correspond to the
             # API-Sports context.  TODO (IdentityResolver): populate these fields.
         )
+
+    def _parse_name_field(self, raw_name: Any) -> tuple[str | None, str | None]:
+        """Parse API-Sports' compact ``Last First`` name field when needed."""
+        if not isinstance(raw_name, str):
+            return None, None
+        parts = raw_name.split()
+        if len(parts) < 2:
+            return None, raw_name.strip() or None
+        return " ".join(parts[1:]), parts[0]
+
+    def _optional_text(self, value: Any) -> str | None:
+        if value is None:
+            return None
+        text = str(value).strip()
+        return text or None
 
     # ── Team parsing ──────────────────────────────────────────────────────────
 

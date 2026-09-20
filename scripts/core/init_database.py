@@ -16,6 +16,7 @@ ESTLATBL_GAMES_CSV = ROOT_DIR / "data" / "estlatbl" / "estlatbl_2026_games.csv"
 
 ESTLATBL_LEAGUE_ID = 1
 ESTLATBL_SEASON_ID = 20252026
+ESTLATBL_LEAGUE_KEY = "estlatbl"
 LIVE_STATS_URL = "https://www.estlatbl.com/et/tulemused/{}/live-stats"
 GAME_DATE_PATTERN = re.compile(r"(\d{1,2})\.(\d{1,2})\.(\d{2,4})")
 
@@ -107,7 +108,7 @@ def import_estlatbl_games(connection: sqlite3.Connection) -> int:
             provider_game_id = row["game_id"]
             match_id = row["match_id"]
             json_url = row["json_url"]
-            game_id = str(provider_game_id)
+            game_id = f"{ESTLATBL_LEAGUE_KEY}_{provider_game_id}"
             game_date = scrape_live_stats_game_date(provider_game_id)
 
             connection.execute(

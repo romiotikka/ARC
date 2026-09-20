@@ -75,6 +75,17 @@ The EstLatBL import stores:
 - team-game rows
 - player boxscore rows in `player_games`
 
-Player registry creation is intentionally separate. For now, `player_games`
-stores player names from LiveStats while `player_id` remains nullable until the
-identity system is built with proper matching and review.
+Player occurrences are resolved through `IdentityResolver` during LiveStats
+import. ARC creates persistent integer `player_id` values, reuses sufficiently
+strong local identities, consults configured provider evidence when local
+evidence is uncertain, and sends ambiguous/conflicting cases to review by
+failing the affected import transaction and recording the failure in
+`failed_imports`. A roster player is not silently persisted with a NULL
+`player_id` by the production importer.
+
+`player_games.player_id` remains nullable in the schema because the data model
+must support records whose source occurrence has no resolved ARC identity and
+because event/playerless source data can legitimately lack a player. Such a
+NULL value must represent an explicitly handled unresolved or playerless case,
+not a bypass of identity resolution. Source names and provider IDs remain in
+their dedicated columns/tables.

@@ -23,8 +23,8 @@ try {
 
   const payload = {
     tm: {
-      "1": { name: "Home", score: 2, pl: { a: { name: "K. Kitsing", scoreboardName: "K. Kitsing", firstName: "Kristjan", familyName: "Kitsing", playerId: "live-42", shirtNumber: "7", playingPosition: "F", sPoints: 2, starter: 1 } } },
-      "2": { name: "Away", score: 0, pl: { b: { name: "Other Player", playerId: "live-99", shirtNumber: "8", playingPosition: "G", sPoints: 0, starter: 1 } } },
+      "1": { name: "Home", code: "HOME", score: 2, pl: { a: { name: "K. Kitsing", scoreboardName: "K. Kitsing", firstName: "Kristjan", familyName: "Kitsing", playerId: "live-42", shirtNumber: "7", playingPosition: "F", sPoints: 2, starter: 1 } } },
+      "2": { name: "Away", code: "AWAY", score: 0, pl: { b: { name: "Other Player", playerId: "live-99", shirtNumber: "8", playingPosition: "G", sPoints: 0, starter: 1 } } },
     },
     pbp: [
       { actionNumber: 1, period: 1, clock: "10:00", tno: "1", player: "K. Kitsing", actionType: "2pt", success: 1 },
@@ -51,6 +51,7 @@ try {
   const teams = result.prepare("SELECT team_id, canonical_name FROM teams ORDER BY team_id").all();
   assert.deepEqual(teams.map((row) => typeof row.team_id), ["number", "number"]);
   assert.equal(teams[0].team_id, 1);
+  assert.equal(result.prepare("SELECT external_team_id FROM team_external_ids WHERE provider = ? AND team_id = ?").get("fiba_livestats", 1).external_team_id, "HOME");
   assert.equal(result.prepare("SELECT COUNT(*) AS count FROM player_games WHERE player_id IS NOT NULL").get().count, 2);
   assert.equal(result.prepare("SELECT COUNT(*) AS count FROM events WHERE player_id IS NULL").get().count, 1);
   assert.equal(result.prepare("SELECT COUNT(*) AS count FROM events WHERE player_id IS NOT NULL").get().count, 1);

@@ -1,11 +1,12 @@
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { promises as fs } from "node:fs";
+import { promises as fs, readFileSync } from "node:fs";
 import { DatabaseSync } from "node:sqlite";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const rootDir = join(__dirname, "..", "..");
 const logsDir = join(rootDir, "logs");
+const schemaPath = join(rootDir, "database", "schema.sql");
 
 /**
  * Logger - File-based logging for EstLat update pipeline
@@ -87,7 +88,7 @@ export class DeadLetterQueue {
           retry_count,
           status
         )
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         ON CONFLICT (game_id, match_id) DO UPDATE SET
           last_error_at = CURRENT_TIMESTAMP,
           retry_count = retry_count + 1,
@@ -156,6 +157,10 @@ export function initializeDatabase(databasePath) {
   database.exec("PRAGMA foreign_keys = ON;");
 
   try {
+    // Apply the repository schema so a fresh database gets every ARC table,
+    // not just the Dead Letter Queue table created below.
+    database.exec(readFileSync(schemaPath, "utf8"));
+
     // Create Dead Letter Queue table if it doesn't exist
     database.exec(`
       CREATE TABLE IF NOT EXISTS failed_imports (
