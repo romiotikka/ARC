@@ -7,6 +7,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const rootDir = join(__dirname, "..", "..");
 const databasePath = process.env.ARC_DATABASE_PATH ?? join(rootDir, "data", "arc2.db");
 const identityBridgePath = join(rootDir, "scripts", "identity", "resolve_livestats_players.py");
+const lineupReconstructorPath = join(rootDir, "scripts", "core", "lineup_reconstructor.py");
 const identityPython = process.env.ARC_PYTHON ?? process.env.PYTHON ?? "python";
 
 function parseArgs(argv) {
@@ -1111,6 +1112,37 @@ async function importMapping(database, mapping) {
   }
 }
 
+function reconstructLineupsForGame(gameId) {
+  const process = spawnSync(
+    identityPython,
+    [lineupReconstructorPath, "--database", databasePath, "--game-id", gameId],
+    { encoding: "utf8", windowsHide: true },
+  );
+
+  if (process.error) {
+    throw new Error(`Lineup reconstructor could not start (${identityPython}): ${process.error.message}`);
+  }
+
+  const output = {};
+  for (const line of (process.stdout ?? "").split(/\r?\n/)) {
+    const separatorIndex = line.indexOf("=");
+    if (separatorIndex === -1) continue;
+    output[line.slice(0, separatorIndex)] = line.slice(separatorIndex + 1);
+  }
+
+  if (process.status !== 0) {
+    throw new Error(
+      output.error || (process.stderr ?? "").trim() || `Lineup reconstruction failed for ${gameId}`,
+    );
+  }
+
+  return {
+    status: output.status ?? "unknown",
+    lineupsCreated: Number(output.lineups_created ?? 0),
+    lineupSegmentsCreated: Number(output.lineup_segments_created ?? 0),
+  };
+}
+
 (async function main() {
   const args = parseArgs(process.argv);
   const database = initializeDatabase(databasePath);
@@ -1214,6 +1246,9 @@ async function importMapping(database, mapping) {
     let maxEventTypesHandled = 0;
     let successCount = 0;
     let failureCount = 0;
+    let totalLineups = 0;
+    let totalLineupSegments = 0;
+    let lineupFailureCount = 0;
 
     for (const mapping of mappings) {
       try {
@@ -1225,6 +1260,39 @@ async function importMapping(database, mapping) {
         console.log(
           `Imported ${result.gameId} (${result.matchId}): ${result.homeTeam} vs ${result.awayTeam}, player_games=${result.playerGames}, events=${result.events}, event_types=${result.eventTypesHandled}`,
         );
+
+        // Lineup reconstruction runs only after a successful boxscore import,
+        // and its outcome must never flip an already-succeeded game to failed.
+        try {
+          const lineupResult = reconstructLineupsForGame(result.gameId);
+          totalLineups += lineupResult.lineupsCreated;
+          totalLineupSegments += lineupResult.lineupSegmentsCreated;
+          console.log(
+            `Lineups for ${result.gameId}: status=${lineupResult.status}, lineups=${lineupResult.lineupsCreated}, lineup_segments=${lineupResult.lineupSegmentsCreated}`,
+          );
+        } catch (lineupError) {
+          lineupFailureCount += 1;
+          console.error(`Lineup reconstruction failed for ${result.gameId}: ${lineupError.message}`);
+
+          try {
+            dlq.recordFailure(mapping, "lineup_reconstruction_error", lineupError.message, {
+              provider: "fiba_livestats",
+              entityType: "game",
+              entityKey: result.gameId,
+              context: {
+                game_id: mapping.game_id,
+                league_id: mapping.league_id,
+                season_id: mapping.season_id,
+                match_id: mapping.match_id,
+                provider_game_id: mapping.provider_game_id,
+              },
+            });
+          } catch (dlqError) {
+            console.error(
+              `DLQ record failed for lineup reconstruction of ${result.gameId}: ${dlqError.message}`,
+            );
+          }
+        }
       } catch (error) {
         failureCount += 1;
 
@@ -1285,6 +1353,11 @@ async function importMapping(database, mapping) {
     console.log(`Imported player_games: ${totalPlayerGames}`);
     console.log(`Imported events: ${totalEvents}`);
     console.log(`Event types handled (max per game): ${maxEventTypesHandled}`);
+    console.log(`Lineups created: ${totalLineups}`);
+    console.log(`Lineup segments created: ${totalLineupSegments}`);
+    if (lineupFailureCount > 0) {
+      console.log(`Lineup reconstruction failures: ${lineupFailureCount}`);
+    }
 
     // Report DLQ stats
     const dlqStats = dlq.getFailureStats();

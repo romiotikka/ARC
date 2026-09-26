@@ -1530,6 +1530,57 @@ def validate_one_game(
         return False
 
 
+def run_single_game_mode(connection: sqlite3.Connection, game_id: str) -> None:
+    """Reconstruct lineups for exactly one game, skipping games already reconstructed.
+
+    A game with any existing lineup_segments row is treated as already
+    processed, matching the "no existing lineup_segments" gate used by
+    load_game_rows()/process_all_games() elsewhere in this module.
+    """
+    game_row = load_game_row_by_id(connection, game_id)
+    if game_row is None:
+        print(f"game_id={game_id}")
+        print("status=game_not_found")
+        print("lineups_created=0")
+        print("lineup_segments_created=0")
+        raise SystemExit(1)
+
+    already_reconstructed = connection.execute(
+        "SELECT 1 FROM lineup_segments WHERE game_id = ? LIMIT 1",
+        (game_id,),
+    ).fetchone()
+    if already_reconstructed:
+        print(f"game_id={game_id}")
+        print("status=already_reconstructed")
+        print("lineups_created=0")
+        print("lineup_segments_created=0")
+        return
+
+    player_lookup = build_player_lookup(connection)
+    lineup_cache: dict[tuple[str, str], int] = {}
+    for row in connection.execute("SELECT lineup_id, team_id, lineup_hash FROM lineups"):
+        lineup_cache[(row[1], row[2])] = int(row[0])
+    lineup_segment_cache: dict[str, int] = {}
+
+    try:
+        connection.execute("BEGIN IMMEDIATE")
+        result = process_game(connection, game_row, player_lookup, lineup_cache, lineup_segment_cache)
+        connection.commit()
+    except Exception as exc:
+        connection.rollback()
+        print(f"game_id={game_id}")
+        print("status=failed")
+        print("lineups_created=0")
+        print("lineup_segments_created=0")
+        print(f"error={exc}")
+        raise SystemExit(1)
+
+    print(f"game_id={game_id}")
+    print("status=succeeded")
+    print(f"lineups_created={result['lineups_created']}")
+    print(f"lineup_segments_created={result['segments_created']}")
+
+
 def process_all_games(connection: sqlite3.Connection) -> dict[str, int]:
     player_lookup = build_player_lookup(connection)
     lineup_cache: dict[tuple[str, str], int] = {}
@@ -1582,6 +1633,7 @@ def main() -> None:
     parser.add_argument("--debug", action="store_true", help="Run debug analysis for first invalid lineup state per failed game")
     parser.add_argument("--trace", action="store_true", help="Run single-game trace mode for lineup transitions")
     parser.add_argument("--trace-game", default="1_20222023_0008", help="Game id for --trace mode")
+    parser.add_argument("--game-id", default=None, help="Reconstruct lineups for exactly one ARC game_id")
     args = parser.parse_args()
 
     database_path = Path(args.database)
@@ -1600,6 +1652,16 @@ def main() -> None:
             run_debug_mode(debug_connection)
         finally:
             debug_connection.close()
+        return
+
+    if args.game_id:
+        game_connection = connect(database_path)
+        try:
+            ensure_duration_seconds_column(game_connection)
+            game_connection.commit()
+            run_single_game_mode(game_connection, args.game_id)
+        finally:
+            game_connection.close()
         return
 
     validation_connection = connect(database_path)
