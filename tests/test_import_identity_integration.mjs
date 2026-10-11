@@ -38,7 +38,16 @@ try {
   database.close();
 
   execFileSync(process.execPath, [join(root, "scripts", "import", "import_livestats_games.mjs"), "--all"], {
-    env: { ...process.env, ARC_DATABASE_PATH: databasePath },
+    env: {
+      ...process.env,
+      ARC_DATABASE_PATH: databasePath,
+      ARC_IDENTITY_PROVIDERS: "",
+      ARC_API_SPORTS_MAPPINGS: JSON.stringify({
+        leagues: { "1": "api-league-test" },
+        seasons: { "20252026": "api-season-test" },
+        teams: { HOME: "api-team-home-test", AWAY: "api-team-away-test" },
+      }),
+    },
     stdio: "pipe",
   });
 
@@ -58,6 +67,18 @@ try {
   assert.equal(
     result.prepare("SELECT external_player_id FROM player_external_ids WHERE provider = ?").get("fiba_livestats").external_player_id,
     "live-42",
+  );
+  assert.equal(
+    result.prepare("SELECT external_league_id FROM league_external_ids WHERE provider = ?").get("api_sports").external_league_id,
+    "api-league-test",
+  );
+  assert.equal(
+    result.prepare("SELECT external_season_id FROM season_external_ids WHERE provider = ?").get("api_sports").external_season_id,
+    "api-season-test",
+  );
+  assert.deepEqual(
+    result.prepare("SELECT external_team_id FROM team_external_ids WHERE provider = ? ORDER BY team_id").all("api_sports").map((row) => row.external_team_id),
+    ["api-team-home-test", "api-team-away-test"],
   );
   result.close();
   console.log("PASS import delegates LiveStats players to IdentityResolver and preserves playerless events");

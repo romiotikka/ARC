@@ -120,6 +120,7 @@ function resolveLiveStatsPlayerOccurrences(mapping, data, teamIdsByLiveStatsNumb
     if (!rawName || !teamId) return null;
 
     const key = occurrenceKey(teamNumber, rawName, details.externalPlayerId);
+    const sourceTeam = data.tm?.[String(teamNumber)] ?? {};
     if (!occurrences.has(key)) {
       occurrences.set(key, {
         key,
@@ -129,6 +130,7 @@ function resolveLiveStatsPlayerOccurrences(mapping, data, teamIdsByLiveStatsNumb
         league_id: mapping.league_id,
         game_id: mapping.game_id,
         provider: "fiba_livestats",
+        provider_team_external_id: providerTeamId(sourceTeam),
         jersey_number: normalizeText(details.jerseyNumber),
         position: normalizeText(details.position),
         external_player_id: normalizeText(details.externalPlayerId),

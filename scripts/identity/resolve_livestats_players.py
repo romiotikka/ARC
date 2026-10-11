@@ -47,6 +47,7 @@ def main() -> int:
     reviews: list[dict[str, object]] = []
 
     try:
+        _apply_configured_api_sports_mappings(resolver, occurrences)
         for occurrence in occurrences:
             key = occurrence.get("key")
             raw_name = occurrence.get("raw_name")
@@ -137,6 +138,79 @@ def _configured_providers() -> tuple[object, ...]:
             continue
 
     return tuple(providers)
+
+
+def _apply_configured_api_sports_mappings(
+    resolver: IdentityResolver, occurrences: list[dict[str, object]]
+) -> None:
+    """Persist explicitly configured API-Sports IDs before resolving players.
+
+    ARC_API_SPORTS_MAPPINGS is JSON with ARC league/season IDs as keys and
+    LiveStats source team IDs/codes as team keys, e.g. leagues, seasons, teams.
+    """
+    raw_config = os.getenv("ARC_API_SPORTS_MAPPINGS")
+    if not raw_config:
+        return
+
+    try:
+        config = json.loads(raw_config)
+    except json.JSONDecodeError as exc:
+        raise ValueError(f"ARC_API_SPORTS_MAPPINGS is not valid JSON: {exc}") from exc
+    if not isinstance(config, dict):
+        raise ValueError("ARC_API_SPORTS_MAPPINGS must be a JSON object")
+
+    league_mappings = _mapping_section(config, "leagues")
+    season_mappings = _mapping_section(config, "seasons")
+    team_mappings = _mapping_section(config, "teams")
+
+    applied_leagues: set[tuple[int, str]] = set()
+    applied_seasons: set[tuple[int, str]] = set()
+    applied_teams: set[tuple[int, str]] = set()
+
+    for occurrence in occurrences:
+        league_id = int(occurrence["league_id"])
+        season_id = int(occurrence["season_id"])
+        team_id = int(occurrence["team_id"])
+
+        external_league_id = league_mappings.get(str(league_id))
+        if external_league_id:
+            mapping = (league_id, external_league_id)
+            if mapping not in applied_leagues:
+                resolver.store_league_external_id(league_id, "api_sports", external_league_id)
+                applied_leagues.add(mapping)
+
+        external_season_id = season_mappings.get(str(season_id))
+        if external_season_id:
+            mapping = (season_id, external_season_id)
+            if mapping not in applied_seasons:
+                resolver.store_season_external_id(season_id, "api_sports", external_season_id)
+                applied_seasons.add(mapping)
+
+        source_team_id = _optional_text(occurrence.get("provider_team_external_id"))
+        external_team_id = team_mappings.get(source_team_id) if source_team_id else None
+        if external_team_id:
+            mapping = (team_id, external_team_id)
+            if mapping not in applied_teams:
+                resolver.store_team_external_id(team_id, "api_sports", external_team_id)
+                applied_teams.add(mapping)
+
+
+def _mapping_section(config: dict[str, object], name: str) -> dict[str, str]:
+    section = config.get(name, {})
+    if not isinstance(section, dict):
+        raise ValueError(f"ARC_API_SPORTS_MAPPINGS.{name} must be a JSON object")
+
+    mappings: dict[str, str] = {}
+    for source_id, external_id in section.items():
+        if not isinstance(source_id, (str, int)) or isinstance(source_id, bool):
+            raise ValueError(f"Invalid key in ARC_API_SPORTS_MAPPINGS.{name}")
+        if not isinstance(external_id, (str, int)) or isinstance(external_id, bool):
+            raise ValueError(f"Invalid provider ID in ARC_API_SPORTS_MAPPINGS.{name}")
+        normalized_external_id = _optional_text(external_id)
+        if not normalized_external_id:
+            raise ValueError(f"Empty provider ID in ARC_API_SPORTS_MAPPINGS.{name}")
+        mappings[str(source_id)] = normalized_external_id
+    return mappings
 
 
 def _candidate_details(

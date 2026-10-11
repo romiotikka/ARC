@@ -4,6 +4,7 @@ import sqlite3
 import sys
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
@@ -13,16 +14,19 @@ from scripts.identity.providers.api_sports import ApiSportsProvider
 from scripts.identity.providers.base import IdentityProvider
 from scripts.identity.providers.basket import BasketProvider
 from scripts.identity.resolver import IdentityResolver
+from scripts.identity.resolve_livestats_players import _apply_configured_api_sports_mappings
 
 
 class StaticProvider(IdentityProvider):
     def __init__(self, name: str, roster: tuple[PlayerCandidate, ...]) -> None:
         self.provider_name = name
         self.roster = roster
+        self.calls: list[tuple[str, str]] = []
 
     def get_season_roster(
         self, external_team_id: str, external_season: str
     ) -> tuple[PlayerCandidate, ...]:
+        self.calls.append((external_team_id, external_season))
         return self.roster
 
 
@@ -158,6 +162,90 @@ class ProviderAdapterTests(unittest.TestCase):
         ).fetchall()]
         self.assertEqual(mappings, [("api_sports", "45678"), ("basket", "05811")])
         self.assertEqual(database.execute("SELECT COUNT(*) FROM players").fetchone()[0], 1)
+        database.close()
+
+    def test_configured_api_mappings_enable_existing_provider_resolution(self) -> None:
+        database = sqlite3.connect(":memory:")
+        database.executescript(
+            (Path(__file__).resolve().parents[1] / "database" / "schema.sql").read_text()
+        )
+        database.execute("INSERT INTO leagues (league_id, name) VALUES (1, 'EstLatBL')")
+        database.execute("INSERT INTO seasons (season_id, label, start_year, end_year) VALUES (20252026, '2025-26', 2025, 2026)")
+        database.execute("INSERT INTO teams (team_id, canonical_name) VALUES (1, 'TalTech/ALEXELA')")
+        database.execute(
+            "INSERT INTO players (player_id, canonical_name, first_name, last_name) VALUES (17, 'Kristjan Kitsing', 'Kristjan', 'Kitsing')"
+        )
+        database.commit()
+
+        provider = StaticProvider(
+            "api_sports",
+            (
+                PlayerCandidate(
+                    "api_sports",
+                    "api-player-456",
+                    "Kristjan Kitsing",
+                    "Kristjan",
+                    "Kitsing",
+                    birth_date="1990-12-15",
+                    nationality="Estonian",
+                    height_cm=204,
+                    position="F",
+                ),
+            ),
+        )
+        resolver = IdentityResolver(database, providers=(provider,))
+        occurrences = [{
+            "league_id": 1,
+            "season_id": 20252026,
+            "team_id": 1,
+            "provider_team_external_id": "TCH",
+        }]
+
+        with patch.dict(
+            "os.environ",
+            {
+                "ARC_API_SPORTS_MAPPINGS": (
+                    '{"leagues":{"1":"204"},"seasons":{"20252026":"2025"},'
+                    '"teams":{"TCH":"483"}}'
+                )
+            },
+        ):
+            _apply_configured_api_sports_mappings(resolver, occurrences)
+
+        result = resolver.resolve(
+            IdentityContext(
+                raw_name="K. Kitsing",
+                team_id=1,
+                season_id=20252026,
+                league_id=1,
+                provider="fiba_livestats",
+            )
+        )
+
+        self.assertEqual(provider.calls, [("483", "2025")])
+        self.assertEqual(result.player_id, 17)
+        self.assertNotEqual(result.player_id, "api-player-456")
+        self.assertEqual(
+            database.execute("SELECT external_player_id FROM player_external_ids WHERE provider = 'api_sports'").fetchone()[0],
+            "api-player-456",
+        )
+        self.assertEqual(
+            database.execute("SELECT external_league_id FROM league_external_ids WHERE provider = 'api_sports'").fetchone()[0],
+            "204",
+        )
+        self.assertEqual(
+            database.execute("SELECT external_season_id FROM season_external_ids WHERE provider = 'api_sports'").fetchone()[0],
+            "2025",
+        )
+        self.assertEqual(
+            database.execute("SELECT external_team_id FROM team_external_ids WHERE provider = 'api_sports'").fetchone()[0],
+            "483",
+        )
+        self.assertEqual(
+            tuple(database.execute("SELECT birth_date, nationality, height_cm, position FROM players WHERE player_id = 17").fetchone()),
+            ("1990-12-15", "Estonian", 204, "F"),
+        )
+        database.close()
 
 
 if __name__ == "__main__":
