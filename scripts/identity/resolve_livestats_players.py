@@ -56,9 +56,9 @@ def main() -> int:
 
             context = IdentityContext(
                 raw_name=raw_name,
-                team_id=int(occurrence["team_id"]),
-                season_id=int(occurrence["season_id"]),
-                league_id=int(occurrence["league_id"]),
+                team_id=_required_int(occurrence.get("team_id"), "team_id"),
+                season_id=_required_int(occurrence.get("season_id"), "season_id"),
+                league_id=_required_int(occurrence.get("league_id"), "league_id"),
                 jersey_number=_optional_text(occurrence.get("jersey_number")),
                 game_id=_optional_text(occurrence.get("game_id")),
                 provider=_optional_text(occurrence.get("provider")) or "fiba_livestats",
@@ -120,6 +120,12 @@ def _optional_text(value: object) -> str | None:
     return value or None
 
 
+def _required_int(value: object, field: str) -> int:
+    if not isinstance(value, int) or isinstance(value, bool):
+        raise ValueError(f"Each occurrence requires integer {field}")
+    return value
+
+
 def _configured_providers() -> tuple[object, ...]:
     configured = os.getenv("ARC_IDENTITY_PROVIDERS", "api_sports,basket")
     providers = []
@@ -168,9 +174,9 @@ def _apply_configured_api_sports_mappings(
     applied_teams: set[tuple[int, str]] = set()
 
     for occurrence in occurrences:
-        league_id = int(occurrence["league_id"])
-        season_id = int(occurrence["season_id"])
-        team_id = int(occurrence["team_id"])
+        league_id = _required_int(occurrence.get("league_id"), "league_id")
+        season_id = _required_int(occurrence.get("season_id"), "season_id")
+        team_id = _required_int(occurrence.get("team_id"), "team_id")
 
         external_league_id = league_mappings.get(str(league_id))
         if external_league_id:

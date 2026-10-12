@@ -247,6 +247,18 @@ class ProviderAdapterTests(unittest.TestCase):
         )
         database.close()
 
+    def test_configured_api_mappings_require_integer_arc_ids(self) -> None:
+        resolver = IdentityResolver(sqlite3.connect(":memory:"))
+        with patch.dict(
+            "os.environ",
+            {"ARC_API_SPORTS_MAPPINGS": '{"leagues":{},"seasons":{},"teams":{}}'},
+        ):
+            with self.assertRaisesRegex(ValueError, "integer league_id"):
+                _apply_configured_api_sports_mappings(
+                    resolver,
+                    [{"league_id": "1", "season_id": 20252026, "team_id": 1}],
+                )
+
 
 if __name__ == "__main__":
     unittest.main()
