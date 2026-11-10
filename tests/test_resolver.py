@@ -1244,6 +1244,44 @@ def test_alias_learning_skips_normalized_duplicates() -> None:
     check("stored alias is meaningful", aliases[0] in {"K. Kitsing", "K Kitsing"})
 
 
+def test_unmapped_provider_does_not_block_confident_local_match() -> None:
+    print("\n[28] Unmapped provider does not block confident local match (score >= 0.75)")
+    db = _make_db()
+    _seed(db, "abc", "Kristjan Kitsing", "Kristjan", "Kitsing")
+    provider = FakeProvider([])
+    r = IdentityResolver(db, providers=[provider])
+
+    # K. Kitsing scores ~0.80 against Kristjan Kitsing (above _MATCH threshold 0.75).
+    # Even though provider is configured, provider has no mapping/evidence,
+    # so resolver must return the local MATCH result rather than raising ManualReviewRequired.
+    res = r.resolve(_ctx("K. Kitsing"))
+    check("confident local match resolves", res.status == ResolverStatus.MATCH)
+    check("correct player_id", res.player_id == "abc")
+    check("confidence above match threshold", res.confidence >= 0.75)
+    check("no duplicate player created", _player_count(db) == 1)
+
+
+def test_unmapped_provider_preserves_review_for_low_confidence_match() -> None:
+    print("\n[29] Unmapped provider preserves review for low-confidence candidate (score 0.50)")
+    db = _make_db()
+    _seed(db, "ojars", "Ojars Berzins", "Ojars", "Berzins")
+    provider = FakeProvider([])
+    r = IdentityResolver(db, providers=[provider])
+
+    # R. Berzins scores 0.50 against Ojars Berzins (last name match, different first name).
+    # Without provider roster evidence, resolver must raise ManualReviewRequired
+    # rather than creating a duplicate or auto-matching across different first names.
+    raised = False
+    try:
+        r.resolve(_ctx("R. Berzins"))
+    except ManualReviewRequired as exc:
+        raised = True
+        check("reason notes below auto-match", "below the auto-match threshold" in str(exc))
+
+    check("ManualReviewRequired raised", raised)
+    check("no new player created", _player_count(db) == 1)
+
+
 # ── Runner ────────────────────────────────────────────────────────────────────
 
 if __name__ == "__main__":
@@ -1296,6 +1334,8 @@ if __name__ == "__main__":
     test_livestats_import_bridge_reuses_source_player_id()
     test_livestats_sequence_name_forms_resolve_to_one_player()
     test_alias_learning_skips_normalized_duplicates()
+    test_unmapped_provider_does_not_block_confident_local_match()
+    test_unmapped_provider_preserves_review_for_low_confidence_match()
 
     print(f"\n{'=' * 44}")
     print(f"  {_passed} passed   {_failed} failed")

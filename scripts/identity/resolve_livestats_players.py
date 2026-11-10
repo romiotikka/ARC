@@ -18,6 +18,10 @@ ROOT_DIR = Path(__file__).resolve().parents[2]
 if str(ROOT_DIR) not in sys.path:
     sys.path.insert(0, str(ROOT_DIR))
 
+from dotenv import load_dotenv
+
+load_dotenv()
+
 from scripts.identity.exceptions import ManualReviewRequired, ProviderError
 from scripts.identity.models import IdentityContext
 from scripts.identity.providers import ApiSportsProvider, BasketProvider
@@ -194,6 +198,8 @@ def _apply_configured_api_sports_mappings(
 
         source_team_id = _optional_text(occurrence.get("provider_team_external_id"))
         external_team_id = team_mappings.get(source_team_id) if source_team_id else None
+        if not external_team_id:
+            external_team_id = team_mappings.get(str(team_id))
         if external_team_id:
             mapping = (team_id, external_team_id)
             if mapping not in applied_teams:

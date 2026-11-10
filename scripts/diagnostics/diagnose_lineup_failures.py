@@ -31,7 +31,7 @@ def main() -> None:
 
         lineup_cache: dict[tuple[str, str], int] = {}
         for row in connection.execute("SELECT lineup_id, team_id, lineup_hash FROM lineups"):
-            lineup_cache[(row[1], row[2])] = int(row[0])
+            lineup_cache[(str(row[1]), row[2])] = int(row[0])
 
         grouped: dict[tuple[str, str], list[str]] = defaultdict(list)
 

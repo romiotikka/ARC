@@ -104,13 +104,16 @@ class IdentityResolver:
                 self._store_context_external_id(local_result.player_id, context)
                 return local_result
 
-            top_score = candidates[0]["_score"]
-            if top_score >= _REVIEW_FLOOR:
-                local_review_error = ManualReviewRequired(
-                    f"Ambiguous identity for {context.raw_name!r}: "
-                    f"best score {top_score:.2f} is below the auto-match threshold "
-                    "and above the creation floor. Manual review required."
-                )
+            if local_result is None:
+                top_score = candidates[0]["_score"]
+                if top_score >= _REVIEW_FLOOR:
+                    local_review_error = ManualReviewRequired(
+                        f"Ambiguous identity for {context.raw_name!r}: "
+                        f"best score {top_score:.2f} is below the auto-match threshold "
+                        "and above the creation floor. Manual review required."
+                    )
+                else:
+                    local_review_error = None
             else:
                 local_review_error = None
         else:
@@ -132,10 +135,10 @@ class IdentityResolver:
                 if result is not None:
                     return result
 
-        if local_review_error is not None:
-            raise local_review_error
         if provider_review_error is not None:
             raise provider_review_error
+        if local_review_error is not None:
+            raise local_review_error
         if local_result is not None:
             self._store_context_external_id(local_result.player_id, context)
             return local_result

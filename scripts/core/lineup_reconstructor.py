@@ -930,29 +930,50 @@ def get_or_create_lineup(
 ) -> tuple[int, bool]:
     normalized_players = sorted(lineup_players, key=natural_player_sort_key)
     lineup_hash = lineup_hash_for_players(normalized_players)
-    cache_key = (team_id, lineup_hash)
+    team_key = str(team_id)
+    cache_key = (team_key, lineup_hash)
 
     if cache_key in lineup_cache:
         return lineup_cache[cache_key], False
 
-    cursor = connection.execute(
-        """
-        INSERT INTO lineups (
-            team_id,
-            player_1,
-            player_2,
-            player_3,
-            player_4,
-            player_5,
-            lineup_hash
+    existing = connection.execute(
+        "SELECT lineup_id FROM lineups WHERE team_id = ? AND lineup_hash = ?",
+        (team_key, lineup_hash),
+    ).fetchone()
+    if existing:
+        lineup_id = int(existing[0])
+        lineup_cache[cache_key] = lineup_id
+        return lineup_id, False
+
+    try:
+        cursor = connection.execute(
+            """
+            INSERT INTO lineups (
+                team_id,
+                player_1,
+                player_2,
+                player_3,
+                player_4,
+                player_5,
+                lineup_hash
+            )
+            VALUES (?, ?, ?, ?, ?, ?, ?)
+            """,
+            (team_key, *normalized_players, lineup_hash),
         )
-        VALUES (?, ?, ?, ?, ?, ?, ?)
-        """,
-        (team_id, *normalized_players, lineup_hash),
-    )
-    lineup_id = int(cursor.lastrowid)
-    lineup_cache[cache_key] = lineup_id
-    return lineup_id, True
+        lineup_id = int(cursor.lastrowid)
+        lineup_cache[cache_key] = lineup_id
+        return lineup_id, True
+    except sqlite3.IntegrityError:
+        existing = connection.execute(
+            "SELECT lineup_id FROM lineups WHERE team_id = ? AND lineup_hash = ?",
+            (team_key, lineup_hash),
+        ).fetchone()
+        if existing:
+            lineup_id = int(existing[0])
+            lineup_cache[cache_key] = lineup_id
+            return lineup_id, False
+        raise
 
 
 def apply_substitution_batch(
@@ -1559,7 +1580,7 @@ def run_single_game_mode(connection: sqlite3.Connection, game_id: str) -> None:
     player_lookup = build_player_lookup(connection)
     lineup_cache: dict[tuple[str, str], int] = {}
     for row in connection.execute("SELECT lineup_id, team_id, lineup_hash FROM lineups"):
-        lineup_cache[(row[1], row[2])] = int(row[0])
+        lineup_cache[(str(row[1]), row[2])] = int(row[0])
     lineup_segment_cache: dict[str, int] = {}
 
     try:
@@ -1585,7 +1606,7 @@ def process_all_games(connection: sqlite3.Connection) -> dict[str, int]:
     player_lookup = build_player_lookup(connection)
     lineup_cache: dict[tuple[str, str], int] = {}
     for row in connection.execute("SELECT lineup_id, team_id, lineup_hash FROM lineups"):
-        lineup_cache[(row[1], row[2])] = int(row[0])
+        lineup_cache[(str(row[1]), row[2])] = int(row[0])
 
     lineup_segment_cache: dict[str, int] = {}
     pending_games = load_game_rows(connection)

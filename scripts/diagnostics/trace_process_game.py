@@ -24,7 +24,7 @@ def format_lineup(players: set[str] | list[str]) -> str:
 def build_lineup_cache(connection) -> dict[tuple[str, str], int]:
     cache: dict[tuple[str, str], int] = {}
     for row in connection.execute("SELECT lineup_id, team_id, lineup_hash FROM lineups"):
-        cache[(row[1], row[2])] = int(row[0])
+        cache[(str(row[1]), row[2])] = int(row[0])
     return cache
 
 

@@ -248,16 +248,85 @@ class ProviderAdapterTests(unittest.TestCase):
         database.close()
 
     def test_configured_api_mappings_require_integer_arc_ids(self) -> None:
-        resolver = IdentityResolver(sqlite3.connect(":memory:"))
+        database = sqlite3.connect(":memory:")
+        resolver = IdentityResolver(database)
+        try:
+            with patch.dict(
+                "os.environ",
+                {"ARC_API_SPORTS_MAPPINGS": '{"leagues":{},"seasons":{},"teams":{}}'},
+            ):
+                with self.assertRaisesRegex(ValueError, "integer league_id"):
+                    _apply_configured_api_sports_mappings(
+                        resolver,
+                        [{"league_id": "1", "season_id": 20252026, "team_id": 1}],
+                    )
+        finally:
+            database.close()
+
+    def test_configured_api_mappings_support_arc_team_id_key(self) -> None:
+        database = sqlite3.connect(":memory:")
+        database.executescript(
+            (Path(__file__).resolve().parents[1] / "database" / "schema.sql").read_text()
+        )
+        database.execute("INSERT INTO leagues (league_id, name) VALUES (1, 'EstLatBL')")
+        database.execute("INSERT INTO seasons (season_id, label, start_year, end_year) VALUES (20252026, '2025-26', 2025, 2026)")
+        database.execute("INSERT INTO teams (team_id, canonical_name) VALUES (1, 'TalTech/ALEXELA')")
+        database.commit()
+
+        resolver = IdentityResolver(database)
+        occurrences = [{
+            "league_id": 1,
+            "season_id": 20252026,
+            "team_id": 1,
+            "provider_team_external_id": None,
+        }]
+
         with patch.dict(
             "os.environ",
-            {"ARC_API_SPORTS_MAPPINGS": '{"leagues":{},"seasons":{},"teams":{}}'},
-        ):
-            with self.assertRaisesRegex(ValueError, "integer league_id"):
-                _apply_configured_api_sports_mappings(
-                    resolver,
-                    [{"league_id": "1", "season_id": 20252026, "team_id": 1}],
+            {
+                "ARC_API_SPORTS_MAPPINGS": (
+                    '{"leagues":{"1":"204"},"seasons":{"20252026":"2025"},'
+                    '"teams":{"1":"483"}}'
                 )
+            },
+        ):
+            _apply_configured_api_sports_mappings(resolver, occurrences)
+
+        self.assertEqual(
+            database.execute("SELECT external_team_id FROM team_external_ids WHERE provider = 'api_sports'").fetchone()[0],
+            "483",
+        )
+        database.close()
+
+    def test_resolver_with_providers_falls_back_to_moderate_local_match(self) -> None:
+        database = sqlite3.connect(":memory:")
+        database.executescript(
+            (Path(__file__).resolve().parents[1] / "database" / "schema.sql").read_text()
+        )
+        database.execute("INSERT INTO leagues (league_id, name) VALUES (1, 'EstLatBL')")
+        database.execute("INSERT INTO seasons (season_id, label, start_year, end_year) VALUES (20252026, '2025-26', 2025, 2026)")
+        database.execute("INSERT INTO teams (team_id, canonical_name) VALUES (1, 'VEF Riga')")
+        database.execute(
+            "INSERT INTO players (player_id, canonical_name, first_name, last_name) VALUES (14, 'Artis Ate', 'Artis', 'Ate')"
+        )
+        database.commit()
+
+        provider = StaticProvider("api_sports", ())
+        resolver = IdentityResolver(database, providers=(provider,))
+
+        result = resolver.resolve(
+            IdentityContext(
+                raw_name="A. Ate",
+                team_id=1,
+                season_id=20252026,
+                league_id=1,
+                provider="fiba_livestats",
+            )
+        )
+        self.assertEqual(result.player_id, 14)
+        self.assertEqual(result.status.value, "match")
+        self.assertAlmostEqual(result.confidence, 0.80, places=2)
+        database.close()
 
 
 if __name__ == "__main__":
