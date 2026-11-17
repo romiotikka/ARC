@@ -1,0 +1,77 @@
+{
+  "leagues": {
+    "1": "204"
+  },
+  "seasons": {
+    "20222023": "2022",
+    "20232024": "2023",
+    "20242025": "2024",
+    "20252026": "2025"
+  },
+  "teams": {
+    "1": {
+      "TCH": "483",
+      "VAL": "2746",
+      "VIA": "2746",
+      "BKL": "2748",
+      "VEF": "1663",
+      "TRT": "485",
+      "TLK": "484",
+      "BCP": "1317",
+      "OGR": "2743",
+      "PAR": "481",
+      "VMS": "2690",
+      "RAP": "482",
+      "LAT": "2745",
+      "KEI": "5599",
+      "BKV": "2747",
+      "KAL": "480",
+      "TRV": "1555"
+    }
+  },
+  "team_name_crosswalk": {
+    "TCH": { "arc": "TalTech/ALEXELA", "api_sports": "Tal Tech" },
+    "VAL": { "arc": "Valmiera Glass VIA", "api_sports": "Valmiera Glass Via" },
+    "BKL": { "arc": "BK Liepaja", "api_sports": "BK Liepaja" },
+    "VEF": { "arc": "VEF Riga", "api_sports": "VEF Riga" },
+    "TRT": { "arc": "Tartu \u00dclikool Maks & Moorits", "api_sports": "Tartu Ulikool" },
+    "TLK": { "arc": "Tallinna Kalev/Audentes", "api_sports": "Tallinna Kalev" },
+    "BCP": { "arc": "BC Prometey", "api_sports": "Prometey" },
+    "OGR": { "arc": "BK Ogre", "api_sports": "BK Ogre" },
+    "PAR": { "arc": "P\u00e4rnu Sadam", "api_sports": "Parnu" },
+    "VMS": { "arc": "Viimsi/Sportland", "api_sports": "Viimsi" },
+    "RAP": { "arc": "AVIS UTILITAS RAPLA", "api_sports": "Rapla" },
+    "LAT": { "arc": "Latvijas Universitate", "api_sports": "Latvijas Universitate" },
+    "KEI": { "arc": "Keila KK", "api_sports": "Keila KK" },
+    "BKV": { "arc": "BK Ventspils", "api_sports": "Ventspils" },
+    "KAL": { "arc": "BC Kalev/Cramo", "api_sports": "BC Kalev/Cramo" },
+    "TRV": { "arc": "BC Tarvas", "api_sports": "Rakvere Tarvas" }
+  },
+  "coverage": {
+    "league_id": "204",
+    "checked_at": "2026-11-10",
+    "seasons": {
+      "2022": {
+        "reported_players": false,
+        "team_endpoint": { "status": "available", "teams_returned": 16 },
+        "roster_endpoint": { "status": "available", "team": "VEF Riga", "team_id": "1663", "players_returned": 18, "berzins": "Roberts Berzins (7177)" },
+        "notes": "API metadata reports no player coverage, but the live VEF roster request returned players. Treat coverage metadata and endpoint results separately."
+      },
+      "2023": {
+        "reported_players": true,
+        "team_endpoint": { "status": "available", "teams_returned": 16 },
+        "roster_endpoint": { "status": "available", "team": "VEF Riga", "team_id": "1663", "players_returned": 17, "berzins": "Roberts Berzins (7177)" }
+      },
+      "2024": {
+        "reported_players": true,
+        "team_endpoint": { "status": "available", "teams_returned": 15 },
+        "roster_endpoint": { "status": "available", "team": "VEF Riga", "team_id": "1663", "players_returned": 17, "berzins": "not returned" }
+      },
+      "2025": {
+        "reported_players": true,
+        "team_endpoint": { "status": "plan_restricted", "error": "Free plans do not have access to this season, try from 2022 to 2024." },
+        "roster_endpoint": { "status": "plan_restricted", "team": "VEF Riga", "team_id": "1663", "error": "Free plans do not have access to this season, try from 2022 to 2024." }
+      }
+    }
+  }
+}

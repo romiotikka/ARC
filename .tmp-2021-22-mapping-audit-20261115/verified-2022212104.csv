@@ -1,0 +1,2 @@
+provider_game_id,season_id,game_date,home_team,away_team,home_score,away_score,match_id,source_url,notes,verification_status
+"2022212104","20212022","2022-02-22","TalTech/OPTIBET","Latvijas Universitāte","94","62","1999499","https://www.estlatbl.com/et/tulemused/2022212104/live-stats","Candidate observed in user-verified Chrome session; awaiting FIBA JSON validation.","VERIFIED"

@@ -1,10 +1,7 @@
 from __future__ import annotations
 
 import csv
-import re
 import sqlite3
-import urllib.request
-from datetime import datetime
 from pathlib import Path
 
 
@@ -17,38 +14,6 @@ ESTLATBL_GAMES_CSV = ROOT_DIR / "data" / "estlatbl" / "estlatbl_2026_games.csv"
 ESTLATBL_LEAGUE_ID = 1
 ESTLATBL_SEASON_ID = 20252026
 ESTLATBL_LEAGUE_KEY = "estlatbl"
-LIVE_STATS_URL = "https://www.estlatbl.com/et/tulemused/{}/live-stats"
-GAME_DATE_PATTERN = re.compile(r"(\d{1,2})\.(\d{1,2})\.(\d{2,4})")
-
-
-def parse_estlatbl_game_date(html: str) -> str | None:
-    match = GAME_DATE_PATTERN.search(html)
-    if not match:
-        return None
-
-    day, month, year = match.groups()
-    year = int(year)
-    if year < 100:
-        year += 2000
-
-    return f"{year:04d}-{int(month):02d}-{int(day):02d}"
-
-
-def scrape_live_stats_game_date(provider_game_id: str) -> str | None:
-    url = LIVE_STATS_URL.format(provider_game_id)
-    try:
-        with urllib.request.urlopen(url, timeout=20) as response:
-            html = response.read().decode("utf-8", errors="replace")
-    except Exception as exc:
-        print(f"Warning: failed to fetch live-stats page for {provider_game_id}: {exc}")
-        return None
-
-    date = parse_estlatbl_game_date(html)
-    if date is None:
-        print(f"Warning: could not parse game_date from live-stats HTML for {provider_game_id}")
-    return date
-
-
 
 def connect() -> sqlite3.Connection:
     DATABASE_DIR.mkdir(exist_ok=True)
@@ -109,23 +74,20 @@ def import_estlatbl_games(connection: sqlite3.Connection) -> int:
             match_id = row["match_id"]
             json_url = row["json_url"]
             game_id = f"{ESTLATBL_LEAGUE_KEY}_{provider_game_id}"
-            game_date = scrape_live_stats_game_date(provider_game_id)
 
             connection.execute(
                 """
-                INSERT INTO games (game_id, league_id, season_id, game_date, status)
-                VALUES (?, ?, ?, ?, ?)
+                INSERT INTO games (game_id, league_id, season_id, status)
+                VALUES (?, ?, ?, ?)
                 ON CONFLICT (game_id) DO UPDATE SET
                     league_id = excluded.league_id,
                     season_id = excluded.season_id,
-                    game_date = excluded.game_date,
                     status = excluded.status
                 """,
                 (
                     game_id,
                     ESTLATBL_LEAGUE_ID,
                     ESTLATBL_SEASON_ID,
-                    game_date,
                     "scheduled_or_import_pending",
                 ),
             )

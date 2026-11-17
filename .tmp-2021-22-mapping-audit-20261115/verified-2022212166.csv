@@ -1,0 +1,2 @@
+provider_game_id,season_id,game_date,home_team,away_team,home_score,away_score,match_id,source_url,notes,verification_status
+"2022212166","20212022","2022-03-09","BC Kalev/Cramo","Valmiera Glass VIA","97","66","1999594","https://www.estlatbl.com/et/tulemused/2022212166/live-stats","Candidate observed in user-verified Chrome session; awaiting FIBA JSON validation.","VERIFIED"

@@ -1,0 +1,2 @@
+provider_game_id,season_id,game_date,home_team,away_team,home_score,away_score,match_id,source_url,notes,verification_status
+"2022212110","20212022","2022-03-22","Tartu Ülikool Maks & Moorits","Valmiera Glass VIA","75","61","1999505","https://www.estlatbl.com/et/tulemused/2022212110/live-stats","Candidate observed in user-verified Chrome session; awaiting FIBA JSON validation.","VERIFIED"

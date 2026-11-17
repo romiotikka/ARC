@@ -8,7 +8,7 @@ from urllib.parse import urlencode
 
 from dotenv import load_dotenv
 
-from ..exceptions import ProviderError
+from ..exceptions import ProviderCoverageError, ProviderError
 from ..models import PlayerCandidate, TeamInfo
 from .base import IdentityProvider
 
@@ -127,6 +127,12 @@ class ApiSportsProvider(IdentityProvider):
         errors = payload.get("errors")
         # API-Sports returns {} or [] when there are no errors; a populated dict signals failure.
         if errors and isinstance(errors, (dict, list)):
+            if isinstance(errors, dict) and any(
+                key in errors for key in ("plan", "coverage")
+            ):
+                raise ProviderCoverageError(
+                    f"API-Sports coverage unavailable for {endpoint}: {errors}"
+                )
             raise ProviderError(f"API-Sports reported errors for {endpoint}: {errors}")
 
         if "response" not in payload:

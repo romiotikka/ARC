@@ -1,0 +1,1341 @@
+{
+  "generatedAt": "2026-11-17T21:56:59.219Z",
+  "sourceCsv": "C:\\Users\\Kasutaja\\Desktop\\ARC\\data\\estlatbl_2021_22_mapping_overrides.csv",
+  "candidateBundle": "C:\\Users\\Kasutaja\\Desktop\\ARC\\.tmp-2021-22-mapping-audit-20261115\\browser-batch\\arc-2021-22-live-stats-candidates.json",
+  "evidenceBundle": "C:\\Users\\Kasutaja\\Desktop\\ARC\\.tmp-2021-22-mapping-audit-20261115\\browser-batch\\arc-2021-22-fiba-evidence.json",
+  "summary": {
+    "VERIFIED": 124,
+    "CONFLICT": 8,
+    "UNVERIFIED": 1,
+    "UNAVAILABLE": 0
+  },
+  "rows": [
+    {
+      "provider_game_id": "2022212001",
+      "match_id": "1938495",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=VEF RIGA 86 vs BC Kalev/Cramo 84",
+      "capturedAt": "2026-11-17T21:55:14.723Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1938495/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1938495/data.json"
+    },
+    {
+      "provider_game_id": "2022212002",
+      "match_id": "1941452",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=BK Ventspils 89 vs Rakvere Tarvas 67",
+      "capturedAt": "2026-11-17T21:55:11.066Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1941452/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1941452/data.json"
+    },
+    {
+      "provider_game_id": "2022212003",
+      "match_id": "1941455",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=BK Ogre 107 vs AVIS UTILITAS RAPLA 84",
+      "capturedAt": "2026-11-17T21:54:55.950Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1941455/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1941455/data.json"
+    },
+    {
+      "provider_game_id": "2022212004",
+      "match_id": "1944168",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=BK Liepaja 105 vs Rakvere Tarvas 100",
+      "capturedAt": "2026-11-17T21:54:59.594Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1944168/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1944168/data.json"
+    },
+    {
+      "provider_game_id": "2022212005",
+      "match_id": "1941456",
+      "verification_status": "CONFLICT",
+      "transportStatus": "OK",
+      "validation_notes": "teams=false; score=true; date=true; competition=true; page_teams=true; FIBA=TalTech 78 vs VALMIERA GLASS VIA 76",
+      "capturedAt": "2026-11-17T21:55:03.601Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1941456/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1941456/data.json"
+    },
+    {
+      "provider_game_id": "2022212006",
+      "match_id": "1945252",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=Latvijas Universitate 80 vs Tartu Ülikool Maks & Moorits 77",
+      "capturedAt": "2026-11-17T21:55:07.251Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1945252/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1945252/data.json"
+    },
+    {
+      "provider_game_id": "2022212007",
+      "match_id": "1943183",
+      "verification_status": "CONFLICT",
+      "transportStatus": "OK",
+      "validation_notes": "teams=false; score=true; date=true; competition=true; page_teams=true; FIBA=KK Viimsi 87 vs Tallinna Kalev 62",
+      "capturedAt": "2026-11-17T21:54:52.391Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1943183/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1943183/data.json"
+    },
+    {
+      "provider_game_id": "2022212008",
+      "match_id": "1941458",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=Pärnu Sadam 79 vs BK Liepaja 68",
+      "capturedAt": "2026-11-17T21:54:45.154Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1941458/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1941458/data.json"
+    },
+    {
+      "provider_game_id": "2022212009",
+      "match_id": "1942649",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=Tallinna Kalev 89 vs VALMIERA GLASS VIA 69",
+      "capturedAt": "2026-11-17T21:54:48.750Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1942649/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1942649/data.json"
+    },
+    {
+      "provider_game_id": "2022212010",
+      "match_id": "2035496",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=BC Kalev/Cramo 80 vs KK Viimsi/Sportland 67",
+      "capturedAt": "2026-11-17T21:30:55.117Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/2035496/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/2035496/data.json"
+    },
+    {
+      "provider_game_id": "2022212011",
+      "match_id": "1944295",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=VEF RIGA 96 vs AVIS UTILITAS RAPLA 69",
+      "capturedAt": "2026-11-17T21:54:41.457Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1944295/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1944295/data.json"
+    },
+    {
+      "provider_game_id": "2022212012",
+      "match_id": "1944191",
+      "verification_status": "CONFLICT",
+      "transportStatus": "OK",
+      "validation_notes": "teams=false; score=true; date=true; competition=true; page_teams=true; FIBA=TalTech 103 vs BK Ogre 73",
+      "capturedAt": "2026-11-17T21:54:33.911Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1944191/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1944191/data.json"
+    },
+    {
+      "provider_game_id": "2022212013",
+      "match_id": "1946886",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=Latvijas Universitate 64 vs Rakvere Tarvas 61",
+      "capturedAt": "2026-11-17T21:54:37.700Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1946886/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1946886/data.json"
+    },
+    {
+      "provider_game_id": "2022212014",
+      "match_id": "1944192",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=KK Viimsi/Sportland 67 vs BK Ventspils 80",
+      "capturedAt": "2026-11-17T21:54:30.200Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1944192/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1944192/data.json"
+    },
+    {
+      "provider_game_id": "2022212015",
+      "match_id": "1954294",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=VALMIERA GLASS VIA 63 vs VEF RIGA 75",
+      "capturedAt": "2026-11-17T21:54:26.540Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1954294/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1954294/data.json"
+    },
+    {
+      "provider_game_id": "2022212017",
+      "match_id": "1944190",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=BK Liepaja 72 vs Latvijas Universitate 77",
+      "capturedAt": "2026-11-17T21:54:22.708Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1944190/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1944190/data.json"
+    },
+    {
+      "provider_game_id": "2022212018",
+      "match_id": "1944193",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=BK Ventspils 77 vs BK Ogre 57",
+      "capturedAt": "2026-11-17T21:54:18.940Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1944193/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1944193/data.json"
+    },
+    {
+      "provider_game_id": "2022212019",
+      "match_id": "1944296",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=VEF RIGA 92 vs Pärnu Sadam 95",
+      "capturedAt": "2026-11-17T21:54:08.337Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1944296/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1944296/data.json"
+    },
+    {
+      "provider_game_id": "2022212020",
+      "match_id": "1944194",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=BK Liepaja 80 vs VALMIERA GLASS VIA 82",
+      "capturedAt": "2026-11-17T21:54:12.005Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1944194/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1944194/data.json"
+    },
+    {
+      "provider_game_id": "2022212021",
+      "match_id": "1946891",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=AVIS UTILITAS RAPLA 90 vs Rakvere Tarvas 85",
+      "capturedAt": "2026-11-17T21:54:01.271Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1946891/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1946891/data.json"
+    },
+    {
+      "provider_game_id": "2022212022",
+      "match_id": "1944196",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=Tartu Ülikool Maks & Moorits 65 vs KK Viimsi/Sportland 82",
+      "capturedAt": "2026-11-17T21:54:15.381Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1944196/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1944196/data.json"
+    },
+    {
+      "provider_game_id": "2022212023",
+      "match_id": "1944197",
+      "verification_status": "CONFLICT",
+      "transportStatus": "OK",
+      "validation_notes": "teams=false; score=true; date=true; competition=true; page_teams=true; FIBA=TalTech 92 vs Tallinna Kalev 67",
+      "capturedAt": "2026-11-17T21:54:04.924Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1944197/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1944197/data.json"
+    },
+    {
+      "provider_game_id": "2022212024",
+      "match_id": "1946898",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=BC Kalev/Cramo 69 vs Latvijas Universitate 67",
+      "capturedAt": "2026-11-17T21:53:57.396Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1946898/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1946898/data.json"
+    },
+    {
+      "provider_game_id": "2022212025",
+      "match_id": "1946903",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=Rakvere Tarvas 65 vs BC Kalev/Cramo 93",
+      "capturedAt": "2026-11-17T21:53:53.819Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1946903/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1946903/data.json"
+    },
+    {
+      "provider_game_id": "2022212026",
+      "match_id": "1946906",
+      "verification_status": "CONFLICT",
+      "transportStatus": "OK",
+      "validation_notes": "teams=false; score=true; date=true; competition=true; page_teams=true; FIBA=BK Ventspils 86 vs TalTech 71",
+      "capturedAt": "2026-11-17T21:53:50.175Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1946906/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1946906/data.json"
+    },
+    {
+      "provider_game_id": "2022212027",
+      "match_id": "1954295",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=Tallinna Kalev 66 vs VEF RIGA 93",
+      "capturedAt": "2026-11-17T21:53:43.328Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1954295/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1954295/data.json"
+    },
+    {
+      "provider_game_id": "2022212029",
+      "match_id": "1954296",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=Tartu Ülikool Maks & Moorits 75 vs BK Ogre 81",
+      "capturedAt": "2026-11-17T21:53:39.742Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1954296/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1954296/data.json"
+    },
+    {
+      "provider_game_id": "2022212030",
+      "match_id": "1954297",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=AVIS UTILITAS RAPLA 93 vs VALMIERA GLASS VIA 77",
+      "capturedAt": "2026-11-17T21:53:46.862Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1954297/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1954297/data.json"
+    },
+    {
+      "provider_game_id": "2022212031",
+      "match_id": "1946914",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=KK Viimsi/Sportland 64 vs VEF RIGA 87",
+      "capturedAt": "2026-11-17T21:53:32.809Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1946914/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1946914/data.json"
+    },
+    {
+      "provider_game_id": "2022212032",
+      "match_id": "1946919",
+      "verification_status": "CONFLICT",
+      "transportStatus": "OK",
+      "validation_notes": "teams=false; score=true; date=true; competition=true; page_teams=true; FIBA=BK Liepaja 80 vs TalTech 81",
+      "capturedAt": "2026-11-17T21:53:36.308Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1946919/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1946919/data.json"
+    },
+    {
+      "provider_game_id": "2022212033",
+      "match_id": "1954298",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=BC Kalev/Cramo 86 vs Tartu Ülikool Maks & Moorits 36",
+      "capturedAt": "2026-11-17T21:53:29.328Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1954298/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1954298/data.json"
+    },
+    {
+      "provider_game_id": "2022212034",
+      "match_id": "1946923",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=BK Liepaja 77 vs VEF RIGA 83",
+      "capturedAt": "2026-11-17T21:53:15.492Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1946923/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1946923/data.json"
+    },
+    {
+      "provider_game_id": "2022212036",
+      "match_id": "1954303",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=VALMIERA GLASS VIA 70 vs BK Ventspils 80",
+      "capturedAt": "2026-11-17T21:53:22.474Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1954303/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1954303/data.json"
+    },
+    {
+      "provider_game_id": "2022212037",
+      "match_id": "1955394",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=AVIS UTILITAS RAPLA 87 vs Tallinna Kalev 96",
+      "capturedAt": "2026-11-17T21:53:25.874Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1955394/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1955394/data.json"
+    },
+    {
+      "provider_game_id": "2022212038",
+      "match_id": "1994323",
+      "verification_status": "CONFLICT",
+      "transportStatus": "OK",
+      "validation_notes": "teams=false; score=true; date=true; competition=true; page_teams=true; FIBA=Rakvere Tarvas 62 vs TalTech 92",
+      "capturedAt": "2026-11-17T21:53:11.927Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1994323/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1994323/data.json"
+    },
+    {
+      "provider_game_id": "2022212039",
+      "match_id": "1946936",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=Pärnu Sadam 74 vs KK Viimsi/Sportland 82",
+      "capturedAt": "2026-11-17T21:53:08.358Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1946936/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1946936/data.json"
+    },
+    {
+      "provider_game_id": "2022212040",
+      "match_id": "1957531",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=BK Ventspils 68 vs Latvijas Universitate 59",
+      "capturedAt": "2026-11-17T21:13:37.077Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1957531/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1957531/data.json"
+    },
+    {
+      "provider_game_id": "2022212042",
+      "match_id": "1996120",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=VEF RIGA 96 vs BK Ogre 84",
+      "capturedAt": "2026-11-17T21:52:54.264Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1996120/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1996120/data.json"
+    },
+    {
+      "provider_game_id": "2022212043",
+      "match_id": "1996122",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=Tallinna Kalev 74 vs BK Liepaja 97",
+      "capturedAt": "2026-11-17T21:52:01.032Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1996122/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1996122/data.json"
+    },
+    {
+      "provider_game_id": "2022212044",
+      "match_id": "1996121",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=Pärnu Sadam 94 vs VALMIERA GLASS VIA 71",
+      "capturedAt": "2026-11-17T21:52:57.705Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1996121/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1996121/data.json"
+    },
+    {
+      "provider_game_id": "2022212045",
+      "match_id": "1996124",
+      "verification_status": "CONFLICT",
+      "transportStatus": "OK",
+      "validation_notes": "teams=false; score=true; date=true; competition=true; page_teams=true; FIBA=TalTech 82 vs AVIS UTILITAS RAPLA 73",
+      "capturedAt": "2026-11-17T21:52:47.520Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1996124/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1996124/data.json"
+    },
+    {
+      "provider_game_id": "2022212046",
+      "match_id": "1996123",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=KK Viimsi/Sportland 81 vs BK Liepaja 69",
+      "capturedAt": "2026-11-17T21:52:50.936Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1996123/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1996123/data.json"
+    },
+    {
+      "provider_game_id": "2022212047",
+      "match_id": "1996125",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=VEF RIGA 97 vs Tallinna Kalev 51",
+      "capturedAt": "2026-11-17T21:52:44.128Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1996125/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1996125/data.json"
+    },
+    {
+      "provider_game_id": "2022212050",
+      "match_id": "1996128",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=BK Ogre 85 vs Tartu Ülikool Maks & Moorits 66",
+      "capturedAt": "2026-11-17T21:52:34.149Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1996128/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1996128/data.json"
+    },
+    {
+      "provider_game_id": "2022212051",
+      "match_id": "1996136",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=Tallinna Kalev 74 vs Latvijas Universitate 67",
+      "capturedAt": "2026-11-17T21:52:40.654Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1996136/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1996136/data.json"
+    },
+    {
+      "provider_game_id": "2022212052",
+      "match_id": "1996130",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=KK Viimsi/Sportland 84 vs Rakvere Tarvas 73",
+      "capturedAt": "2026-11-17T21:52:37.452Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1996130/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1996130/data.json"
+    },
+    {
+      "provider_game_id": "2022212053",
+      "match_id": "1996140",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=Pärnu Sadam 60 vs TalTech/OPTIBET 61",
+      "capturedAt": "2026-11-17T21:52:30.666Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1996140/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1996140/data.json"
+    },
+    {
+      "provider_game_id": "2022212054",
+      "match_id": "1996144",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=Tartu Ülikool Maks & Moorits 82 vs Pärnu Sadam 77",
+      "capturedAt": "2026-11-17T21:52:24.312Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1996144/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1996144/data.json"
+    },
+    {
+      "provider_game_id": "2022212055",
+      "match_id": "1996147",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=Tallinna Kalev 62 vs BC Kalev/Cramo 90",
+      "capturedAt": "2026-11-17T21:52:27.435Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1996147/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1996147/data.json"
+    },
+    {
+      "provider_game_id": "2022212056",
+      "match_id": "1996155",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=Rakvere Tarvas 57 vs BK Ogre 72",
+      "capturedAt": "2026-11-17T21:52:20.815Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1996155/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1996155/data.json"
+    },
+    {
+      "provider_game_id": "2022212057",
+      "match_id": "1996157",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=Pärnu Sadam 77 vs VEF RIGA 80",
+      "capturedAt": "2026-11-17T21:52:07.790Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1996157/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1996157/data.json"
+    },
+    {
+      "provider_game_id": "2022212058",
+      "match_id": "1996161",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=TalTech/OPTIBET 53 vs BC Kalev/Cramo 71",
+      "capturedAt": "2026-11-17T21:52:10.834Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1996161/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1996161/data.json"
+    },
+    {
+      "provider_game_id": "2022212059",
+      "match_id": "1996156",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=AVIS UTILITAS RAPLA 82 vs BK Ventspils 94",
+      "capturedAt": "2026-11-17T21:52:17.495Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1996156/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1996156/data.json"
+    },
+    {
+      "provider_game_id": "2022212060",
+      "match_id": "1996163",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=VALMIERA GLASS VIA 76 vs KK Viimsi/Sportland 81",
+      "capturedAt": "2026-11-17T21:52:13.920Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1996163/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1996163/data.json"
+    },
+    {
+      "provider_game_id": "2022212061",
+      "match_id": "1996175",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=Latvijas Universitate 57 vs KK Viimsi/Sportland 67",
+      "capturedAt": "2026-11-17T21:52:04.435Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1996175/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1996175/data.json"
+    },
+    {
+      "provider_game_id": "2022212062",
+      "match_id": "1996178",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=BC Kalev/Cramo 94 vs Rakvere Tarvas 65",
+      "capturedAt": "2026-11-17T21:51:57.796Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1996178/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1996178/data.json"
+    },
+    {
+      "provider_game_id": "2022212063",
+      "match_id": "1996182",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=Rakvere Tarvas 91 vs Tallinna Kalev 83",
+      "capturedAt": "2026-11-17T21:51:54.594Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1996182/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1996182/data.json"
+    },
+    {
+      "provider_game_id": "2022212064",
+      "match_id": "1996190",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=Tartu Ülikool Maks & Moorits 64 vs VEF RIGA 95",
+      "capturedAt": "2026-11-17T21:51:45.029Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1996190/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1996190/data.json"
+    },
+    {
+      "provider_game_id": "2022212065",
+      "match_id": "1996187",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=Pärnu Sadam 78 vs AVIS UTILITAS RAPLA 83",
+      "capturedAt": "2026-11-17T21:51:41.600Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1996187/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1996187/data.json"
+    },
+    {
+      "provider_game_id": "2022212066",
+      "match_id": "1996191",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=VALMIERA GLASS VIA 79 vs BK Ogre 75",
+      "capturedAt": "2026-11-17T21:51:48.388Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1996191/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1996191/data.json"
+    },
+    {
+      "provider_game_id": "2022212067",
+      "match_id": "1996189",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=TalTech/OPTIBET 70 vs KK Viimsi/Sportland 88",
+      "capturedAt": "2026-11-17T21:51:51.500Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1996189/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1996189/data.json"
+    },
+    {
+      "provider_game_id": "2022212068",
+      "match_id": "2035497",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=Pärnu Sadam 78 vs BC Kalev/Cramo 79",
+      "capturedAt": "2026-11-17T21:13:42.314Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/2035497/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/2035497/data.json"
+    },
+    {
+      "provider_game_id": "2022212069",
+      "match_id": "1996192",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=Tartu Ülikool Maks & Moorits 94 vs AVIS UTILITAS RAPLA 98",
+      "capturedAt": "2026-11-17T21:51:38.579Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1996192/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1996192/data.json"
+    },
+    {
+      "provider_game_id": "2022212070",
+      "match_id": "1996193",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=VEF RIGA 83 vs TalTech/OPTIBET 75",
+      "capturedAt": "2026-11-17T21:51:35.246Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1996193/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1996193/data.json"
+    },
+    {
+      "provider_game_id": "2022212071",
+      "match_id": "1996194",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=Rakvere Tarvas 86 vs VALMIERA GLASS VIA 81",
+      "capturedAt": "2026-11-17T21:51:31.851Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1996194/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1996194/data.json"
+    },
+    {
+      "provider_game_id": "2022212072",
+      "match_id": "1996195",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=AVIS UTILITAS RAPLA 105 vs BK Liepaja 69",
+      "capturedAt": "2026-11-17T21:51:21.972Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1996195/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1996195/data.json"
+    },
+    {
+      "provider_game_id": "2022212073",
+      "match_id": "1996196",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=BK Ventspils 81 vs Pärnu Sadam 72",
+      "capturedAt": "2026-11-17T21:51:25.264Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1996196/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1996196/data.json"
+    },
+    {
+      "provider_game_id": "2022212074",
+      "match_id": "1996198",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=BK Ogre 106 vs Tallinna Kalev 80",
+      "capturedAt": "2026-11-17T21:51:28.437Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1996198/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1996198/data.json"
+    },
+    {
+      "provider_game_id": "2022212075",
+      "match_id": "1996199",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=Latvijas Universitate 79 vs TalTech/OPTIBET 89",
+      "capturedAt": "2026-11-17T21:51:15.832Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1996199/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1996199/data.json"
+    },
+    {
+      "provider_game_id": "2022212076",
+      "match_id": "1996200",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=KK Viimsi/Sportland 88 vs Tartu Ülikool Maks & Moorits 75",
+      "capturedAt": "2026-11-17T21:51:18.978Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1996200/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1996200/data.json"
+    },
+    {
+      "provider_game_id": "2022212077",
+      "match_id": "1996202",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=VALMIERA GLASS VIA 59 vs BC Kalev/Cramo 92",
+      "capturedAt": "2026-11-17T21:51:09.698Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1996202/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1996202/data.json"
+    },
+    {
+      "provider_game_id": "2022212078",
+      "match_id": "1996201",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=Pärnu Sadam 105 vs Rakvere Tarvas 74",
+      "capturedAt": "2026-11-17T21:51:12.711Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1996201/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1996201/data.json"
+    },
+    {
+      "provider_game_id": "2022212079",
+      "match_id": "1996203",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=Tallinna Kalev 73 vs Tartu Ülikool Maks & Moorits 81",
+      "capturedAt": "2026-11-17T21:51:06.477Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1996203/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1996203/data.json"
+    },
+    {
+      "provider_game_id": "2022212080",
+      "match_id": "1996204",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=VEF RIGA 93 vs BK Ventspils 57",
+      "capturedAt": "2026-11-17T21:51:03.378Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1996204/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1996204/data.json"
+    },
+    {
+      "provider_game_id": "2022212081",
+      "match_id": "1996209",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=BK Liepaja 94 vs BK Ogre 83",
+      "capturedAt": "2026-11-17T21:51:00.249Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1996209/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1996209/data.json"
+    },
+    {
+      "provider_game_id": "2022212082",
+      "match_id": "1996213",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=Latvijas Universitate 68 vs VALMIERA GLASS VIA 60",
+      "capturedAt": "2026-11-17T21:50:57.164Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1996213/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1996213/data.json"
+    },
+    {
+      "provider_game_id": "2022212083",
+      "match_id": "1996225",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=AVIS UTILITAS RAPLA 95 vs KK Viimsi/Sportland 97",
+      "capturedAt": "2026-11-17T21:50:45.019Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1996225/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1996225/data.json"
+    },
+    {
+      "provider_game_id": "2022212084",
+      "match_id": "1996232",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=Latvijas Universitate 89 vs BK Liepaja 68",
+      "capturedAt": "2026-11-17T21:50:38.895Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1996232/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1996232/data.json"
+    },
+    {
+      "provider_game_id": "2022212085",
+      "match_id": "1996226",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=Pärnu Sadam 83 vs BK Ogre 78",
+      "capturedAt": "2026-11-17T21:50:48.218Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1996226/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1996226/data.json"
+    },
+    {
+      "provider_game_id": "2022212086",
+      "match_id": "1996237",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=Tallinna Kalev 64 vs BK Ventspils 103",
+      "capturedAt": "2026-11-17T21:50:54.143Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1996237/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1996237/data.json"
+    },
+    {
+      "provider_game_id": "2022212087",
+      "match_id": "1996236",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=VALMIERA GLASS VIA 65 vs Tartu Ülikool Maks & Moorits 93",
+      "capturedAt": "2026-11-17T21:50:51.192Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1996236/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1996236/data.json"
+    },
+    {
+      "provider_game_id": "2022212088",
+      "match_id": "1996227",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=TalTech/OPTIBET 106 vs Rakvere Tarvas 60",
+      "capturedAt": "2026-11-17T21:50:42.077Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1996227/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1996227/data.json"
+    },
+    {
+      "provider_game_id": "2022212089",
+      "match_id": "1996238",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=KK Viimsi/Sportland 49 vs BC Kalev/Cramo 97",
+      "capturedAt": "2026-11-17T21:50:35.688Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1996238/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1996238/data.json"
+    },
+    {
+      "provider_game_id": "2022212090",
+      "match_id": "1996243",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=AVIS UTILITAS RAPLA 95 vs TalTech/OPTIBET 78",
+      "capturedAt": "2026-11-17T21:50:26.574Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1996243/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1996243/data.json"
+    },
+    {
+      "provider_game_id": "2022212091",
+      "match_id": "1996239",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=Tartu Ülikool Maks & Moorits 64 vs BC Kalev/Cramo 92",
+      "capturedAt": "2026-11-17T21:50:32.614Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1996239/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1996239/data.json"
+    },
+    {
+      "provider_game_id": "2022212092",
+      "match_id": "1996240",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=VEF RIGA 73 vs VALMIERA GLASS VIA 55",
+      "capturedAt": "2026-11-17T21:50:29.535Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1996240/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1996240/data.json"
+    },
+    {
+      "provider_game_id": "2022212096",
+      "match_id": "1999491",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=Latvijas Universitate 72 vs VEF RIGA 94",
+      "capturedAt": "2026-11-17T21:50:20.789Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1999491/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999491/data.json"
+    },
+    {
+      "provider_game_id": "2022212097",
+      "match_id": "1999492",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=Rakvere Tarvas 79 vs BK Liepaja 86",
+      "capturedAt": "2026-11-17T21:30:38.836Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1999492/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999492/data.json"
+    },
+    {
+      "provider_game_id": "2022212099",
+      "match_id": "1999494",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=Pärnu Sadam 98 vs Tallinna Kalev 72",
+      "capturedAt": "2026-11-17T21:31:06.304Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1999494/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999494/data.json"
+    },
+    {
+      "provider_game_id": "2022212100",
+      "match_id": "1999495",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=VALMIERA GLASS VIA 91 vs AVIS UTILITAS RAPLA 87",
+      "capturedAt": "2026-11-17T21:13:24.299Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1999495/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999495/data.json"
+    },
+    {
+      "provider_game_id": "2022212101",
+      "match_id": "1999496",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=KK Viimsi/Sportland 71 vs TalTech/OPTIBET 76",
+      "capturedAt": "2026-11-17T21:50:15.257Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1999496/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999496/data.json"
+    },
+    {
+      "provider_game_id": "2022212102",
+      "match_id": "1999497",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=AVIS UTILITAS RAPLA 78 vs Tartu Ülikool Maks & Moorits 83",
+      "capturedAt": "2026-11-17T21:30:41.306Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1999497/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999497/data.json"
+    },
+    {
+      "provider_game_id": "2022212105",
+      "match_id": "1999500",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=Rakvere Tarvas 69 vs KK Viimsi/Sportland 89",
+      "capturedAt": "2026-11-17T21:13:26.927Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1999500/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999500/data.json"
+    },
+    {
+      "provider_game_id": "2022212106",
+      "match_id": "1999501",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=BK Ventspils 75 vs BC Kalev/Cramo 68",
+      "capturedAt": "2026-11-17T21:13:21.695Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1999501/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999501/data.json"
+    },
+    {
+      "provider_game_id": "2022212107",
+      "match_id": "1999502",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=BK Liepaja 59 vs BC Kalev/Cramo 78",
+      "capturedAt": "2026-11-17T21:31:28.991Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1999502/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999502/data.json"
+    },
+    {
+      "provider_game_id": "2022212108",
+      "match_id": "1999503",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=VEF RIGA 94 vs Rakvere Tarvas 52",
+      "capturedAt": "2026-11-17T21:13:47.663Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1999503/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999503/data.json"
+    },
+    {
+      "provider_game_id": "2022212109",
+      "match_id": "1999504",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=TalTech/OPTIBET 91 vs Pärnu Sadam 73",
+      "capturedAt": "2026-11-17T21:38:54.480Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1999504/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999504/data.json"
+    },
+    {
+      "provider_game_id": "2022212111",
+      "match_id": "1998467",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=Latvijas Universitate 63 vs BK Ogre 82",
+      "capturedAt": "2026-11-17T21:53:18.908Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1998467/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1998467/data.json"
+    },
+    {
+      "provider_game_id": "2022212113",
+      "match_id": "1999507",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=BC Kalev/Cramo 113 vs Tallinna Kalev 55",
+      "capturedAt": "2026-11-17T21:31:26.237Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1999507/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999507/data.json"
+    },
+    {
+      "provider_game_id": "2022212115",
+      "match_id": "1999509",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=BK Ventspils 100 vs KK Viimsi/Sportland 70",
+      "capturedAt": "2026-11-17T21:31:23.434Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1999509/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999509/data.json"
+    },
+    {
+      "provider_game_id": "2022212117",
+      "match_id": "1999529",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=BK Liepaja 66 vs KK Viimsi/Sportland 74",
+      "capturedAt": "2026-11-17T21:31:08.985Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1999529/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999529/data.json"
+    },
+    {
+      "provider_game_id": "2022212118",
+      "match_id": "1999530",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=Pärnu Sadam 76 vs Tartu Ülikool Maks & Moorits 66",
+      "capturedAt": "2026-11-17T21:31:11.691Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1999530/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999530/data.json"
+    },
+    {
+      "provider_game_id": "2022212119",
+      "match_id": "1999531",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=BK Ogre 77 vs TalTech/OPTIBET 65",
+      "capturedAt": "2026-11-17T21:31:14.772Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1999531/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999531/data.json"
+    },
+    {
+      "provider_game_id": "2022212120",
+      "match_id": "1999532",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=VALMIERA GLASS VIA 93 vs Tallinna Kalev 54",
+      "capturedAt": "2026-11-17T21:31:17.738Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1999532/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999532/data.json"
+    },
+    {
+      "provider_game_id": "2022212121",
+      "match_id": "1999533",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=VALMIERA GLASS VIA 86 vs BK Liepaja 71",
+      "capturedAt": "2026-11-17T21:30:57.853Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1999533/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999533/data.json"
+    },
+    {
+      "provider_game_id": "2022212122",
+      "match_id": "1999534",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=BK Ogre 69 vs BK Ventspils 78",
+      "capturedAt": "2026-11-17T21:31:00.752Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1999534/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999534/data.json"
+    },
+    {
+      "provider_game_id": "2022212123",
+      "match_id": "1999535",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=TalTech/OPTIBET 92 vs Tartu Ülikool Maks & Moorits 76",
+      "capturedAt": "2026-11-17T21:31:03.590Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1999535/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999535/data.json"
+    },
+    {
+      "provider_game_id": "2022212124",
+      "match_id": "1999536",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=BC Kalev/Cramo 66 vs Pärnu Sadam 79",
+      "capturedAt": "2026-11-17T21:38:57.767Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1999536/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999536/data.json"
+    },
+    {
+      "provider_game_id": "2022212125",
+      "match_id": "1999538",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=AVIS UTILITAS RAPLA 107 vs Pärnu Sadam 79",
+      "capturedAt": "2026-11-17T21:30:49.641Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1999538/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999538/data.json"
+    },
+    {
+      "provider_game_id": "2022212126",
+      "match_id": "1999541",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=Tallinna Kalev 80 vs Rakvere Tarvas 81",
+      "capturedAt": "2026-11-17T21:30:52.376Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1999541/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999541/data.json"
+    },
+    {
+      "provider_game_id": "2022212127",
+      "match_id": "1999543",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=KK Viimsi/Sportland 85 vs Latvijas Universitate 74",
+      "capturedAt": "2026-11-17T21:30:46.771Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1999543/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999543/data.json"
+    },
+    {
+      "provider_game_id": "2022212128",
+      "match_id": "1999545",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=BC Kalev/Cramo 87 vs BK Liepaja 62",
+      "capturedAt": "2026-11-17T21:13:50.354Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1999545/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999545/data.json"
+    },
+    {
+      "provider_game_id": "2022212129",
+      "match_id": "1999546",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=Pärnu Sadam 80 vs Latvijas Universitate 56",
+      "capturedAt": "2026-11-17T21:30:36.330Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1999546/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999546/data.json"
+    },
+    {
+      "provider_game_id": "2022212131",
+      "match_id": "1999552",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=Rakvere Tarvas 88 vs AVIS UTILITAS RAPLA 91",
+      "capturedAt": "2026-11-17T21:31:20.566Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1999552/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999552/data.json"
+    },
+    {
+      "provider_game_id": "2022212132",
+      "match_id": "1999555",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=Tartu Ülikool Maks & Moorits 77 vs Tallinna Kalev 62",
+      "capturedAt": "2026-11-17T21:13:45.187Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1999555/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999555/data.json"
+    },
+    {
+      "provider_game_id": "2022212133",
+      "match_id": "1999557",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=VEF RIGA 102 vs BK Liepaja 71",
+      "capturedAt": "2026-11-17T21:13:34.552Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1999557/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999557/data.json"
+    },
+    {
+      "provider_game_id": "2022212134",
+      "match_id": "1999559",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=KK Viimsi/Sportland 67 vs BK Ogre 74",
+      "capturedAt": "2026-11-17T21:13:39.592Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1999559/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999559/data.json"
+    },
+    {
+      "provider_game_id": "2022212135",
+      "match_id": "1999560",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=Latvijas Universitate 71 vs BK Ventspils 94",
+      "capturedAt": "2026-11-17T21:53:01.249Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1999560/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999560/data.json"
+    },
+    {
+      "provider_game_id": "2022212137",
+      "match_id": "1999562",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=Pärnu Sadam 94 vs BK Ventspils 79",
+      "capturedAt": "2026-11-17T21:13:29.478Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1999562/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999562/data.json"
+    },
+    {
+      "provider_game_id": "2022212138",
+      "match_id": "1999563",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=Tartu Ülikool Maks & Moorits 67 vs Latvijas Universitate 53",
+      "capturedAt": "2026-11-17T21:13:32.014Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1999563/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999563/data.json"
+    },
+    {
+      "provider_game_id": "2022212139",
+      "match_id": "1999564",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=BC Kalev/Cramo 92 vs AVIS UTILITAS RAPLA 66",
+      "capturedAt": "2026-11-17T21:50:17.956Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1999564/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999564/data.json"
+    },
+    {
+      "provider_game_id": "2022212140",
+      "match_id": "1999565",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=Rakvere Tarvas 58 vs VEF RIGA 110",
+      "capturedAt": "2026-11-17T21:13:19.007Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1999565/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999565/data.json"
+    },
+    {
+      "provider_game_id": "2022212141",
+      "match_id": "1999566",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=TalTech/OPTIBET 88 vs VEF RIGA 102",
+      "capturedAt": "2026-11-17T21:13:11.109Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1999566/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999566/data.json"
+    },
+    {
+      "provider_game_id": "2022212142",
+      "match_id": "1999567",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=BK Liepaja 83 vs Tartu Ülikool Maks & Moorits 86",
+      "capturedAt": "2026-11-17T21:13:16.235Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1999567/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999567/data.json"
+    },
+    {
+      "provider_game_id": "2022212143",
+      "match_id": "1999568",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=Tallinna Kalev 52 vs BK Ogre 97",
+      "capturedAt": "2026-11-17T21:13:13.825Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1999568/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999568/data.json"
+    },
+    {
+      "provider_game_id": "2022212144",
+      "match_id": "1999569",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=KK Viimsi/Sportland 73 vs VALMIERA GLASS VIA 70",
+      "capturedAt": "2026-11-17T21:13:03.676Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1999569/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999569/data.json"
+    },
+    {
+      "provider_game_id": "2022212145",
+      "match_id": "1999570",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=BK Ventspils 69 vs Tartu Ülikool Maks & Moorits 62",
+      "capturedAt": "2026-11-17T21:13:06.079Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1999570/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999570/data.json"
+    },
+    {
+      "provider_game_id": "2022212146",
+      "match_id": "1999571",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=Latvijas Universitate 61 vs AVIS UTILITAS RAPLA 92",
+      "capturedAt": "2026-11-17T21:13:08.571Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1999571/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999571/data.json"
+    },
+    {
+      "provider_game_id": "2022212149",
+      "match_id": "1999575",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=BK Ogre 74 vs Pärnu Sadam 71",
+      "capturedAt": "2026-11-17T21:13:01.232Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1999575/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999575/data.json"
+    },
+    {
+      "provider_game_id": "2022212150",
+      "match_id": "1998425",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=Rakvere Tarvas 91 vs Tartu Ülikool Maks & Moorits 89",
+      "capturedAt": "2026-11-17T21:53:04.893Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1998425/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1998425/data.json"
+    },
+    {
+      "provider_game_id": "2022212160",
+      "match_id": "1999588",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=BK Ogre 59 vs VEF RIGA 83",
+      "capturedAt": "2026-11-17T21:30:43.778Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1999588/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999588/data.json"
+    },
+    {
+      "provider_game_id": "2022212175",
+      "match_id": "1999605",
+      "verification_status": "VERIFIED",
+      "transportStatus": "OK",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=BC Kalev/Cramo 93 vs TalTech/OPTIBET 63",
+      "capturedAt": "2026-11-17T21:50:23.572Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/1999605/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999605/data.json"
+    },
+    {
+      "provider_game_id": "2022212147",
+      "match_id": "1999572",
+      "verification_status": "UNVERIFIED",
+      "validation_notes": "FIBA response evidence is missing"
+    }
+  ],
+  "collectionIssues": []
+}

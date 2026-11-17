@@ -1,0 +1,19 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "ARC: Reset & Populate Database",
+      "type": "process",
+      "command": "node",
+      "args": ["scripts/import/rebuild_estlatbl.mjs"],
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": false,
+        "focus": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+provider_game_id,season_id,game_date,home_team,away_team,home_score,away_score,match_id,source_url,notes,verification_status
+"2022212161","20212022","2022-03-05","BK Liepaja","Pärnu Sadam","84","70","1999589","https://www.estlatbl.com/et/tulemused/2022212161/live-stats","Candidate observed in user-verified Chrome session; awaiting FIBA JSON validation.","VERIFIED"

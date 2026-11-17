@@ -1,0 +1,3234 @@
+{
+  "createdAt": "2026-11-15T21:14:44.887Z",
+  "sourceHtml": "C:/Users/Kasutaja/Downloads/Tulemused_21_22.html",
+  "disposableDatabase": ".tmp-2021-22-mapping-audit-20261115/arc2-disposable.sqlite",
+  "scope": "2021-22 EstLatBL completed games",
+  "summary": {
+    "discovered": 194,
+    "completed": 194,
+    "parseIssues": 0,
+    "parsedDuplicateGameIds": 0,
+    "confirmedMappings": 61,
+    "confirmedMissingMatchId": 0,
+    "confirmedInaccessiblePages": 0,
+    "remainingPerGameLookupsNotAttempted": 132,
+    "verifiedJsonForCorrectGame": 61,
+    "knownClaimedMappingConflicts": 1,
+    "appliedToDisposableDatabase": 41,
+    "disposableApplyFailures": 11
+  },
+  "access": {
+    "seasonResultsPage": {
+      "httpStatus": 200,
+      "bodyTitle": "Turvakontroll",
+      "turnstile": true
+    },
+    "referenceGamePage": {
+      "httpStatus": 200,
+      "bodyTitle": "Turvakontroll",
+      "turnstile": true
+    },
+    "referenceLiveStatsPage": {
+      "httpStatus": 200,
+      "bodyTitle": "Turvakontroll",
+      "turnstile": true
+    },
+    "fibaJson1999499": {
+      "status": 200,
+      "validJson": true,
+      "teams": {
+        "1": {
+          "name": "TalTech/OPTIBET",
+          "score": 94
+        },
+        "2": {
+          "name": "Latvijas Universitate",
+          "score": 62
+        }
+      }
+    }
+  },
+  "games": [
+    {
+      "providerGameId": "2022212803",
+      "date": "2022-04-10",
+      "homeTeam": "BK Ogre",
+      "awayTeam": "Pärnu Sadam",
+      "officialScore": [
+        77,
+        84
+      ],
+      "completed": true,
+      "lookupStatus": "match_id_extracted_and_verified",
+      "matchId": "2082682",
+      "jsonStatus": "verified",
+      "reason": "Chrome LiveStats page identified BK Ogre vs Pärnu Sadam, 77–84, 10.04.2022; ARC validator confirmed teams, score, date, competition and page teams.",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/2082682/data.json",
+      "sourceUrl": "https://www.estlatbl.com/et/tulemused/2022212803/live-stats",
+      "mappingSource": "User-verified ordinary Chrome session",
+      "applyStatus": "applied_to_disposable"
+    },
+    {
+      "providerGameId": "2022212804",
+      "date": "2022-04-10",
+      "homeTeam": "VEF Rīga",
+      "awayTeam": "KK Viimsi/Sportland",
+      "officialScore": [
+        95,
+        64
+      ],
+      "completed": true,
+      "lookupStatus": "match_id_extracted_and_verified",
+      "matchId": "2082683",
+      "jsonStatus": "verified",
+      "reason": "Browser URL resolved to FIBA match 2082683; JSON teams/score and FIBA page date/competition match the official result. Prior 1999499 proposal is incorrect.",
+      "claimedMatchId": 1999499,
+      "candidateMappingVerification": {
+        "status": "conflict",
+        "httpStatus": 200,
+        "validJson": true,
+        "fibaTeams": {
+          "1": {
+            "name": "TalTech/OPTIBET",
+            "score": 94
+          },
+          "2": {
+            "name": "Latvijas Universitate",
+            "score": 62
+          }
+        },
+        "reason": "FIBA JSON is TalTech/OPTIBET 94–62 Latvijas Universitate; does not match VEF Rīga 95–64 KK Viimsi/Sportland."
+      },
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/2082683/data.json",
+      "sourceUrl": "https://www.estlatbl.com/et/tulemused/2022212804/live-stats",
+      "mappingSource": "User-verified ordinary Chrome session",
+      "verificationStatus": "VERIFIED",
+      "applyStatus": "applied_to_disposable"
+    },
+    {
+      "providerGameId": "2022212801",
+      "date": "2022-04-09",
+      "homeTeam": "VEF Rīga",
+      "awayTeam": "BK Ogre",
+      "officialScore": [
+        116,
+        55
+      ],
+      "completed": true,
+      "lookupStatus": "match_id_extracted_and_verified",
+      "matchId": "2080120",
+      "jsonStatus": "verified",
+      "reason": "Chrome LiveStats page showed VEF RIGA vs BK Ogre, 116–55, 09.04.22; ARC validator confirmed teams, score, date, competition and page teams.",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/2080120/data.json",
+      "sourceUrl": "https://www.estlatbl.com/et/tulemused/2022212801/live-stats",
+      "mappingSource": "User-verified ordinary Chrome session",
+      "applyStatus": "applied_to_disposable"
+    },
+    {
+      "providerGameId": "2022212802",
+      "date": "2022-04-09",
+      "homeTeam": "KK Viimsi/Sportland",
+      "awayTeam": "Pärnu Sadam",
+      "officialScore": [
+        83,
+        81
+      ],
+      "completed": true,
+      "lookupStatus": "match_id_extracted_and_verified",
+      "matchId": "2080135",
+      "jsonStatus": "verified",
+      "reason": "Chrome LiveStats page showed KK Viimsi/Sportland vs Pärnu Sadam, 83–81, 09.04.22; ARC validator confirmed teams, score, date, competition and page teams.",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/2080135/data.json",
+      "sourceUrl": "https://www.estlatbl.com/et/tulemused/2022212802/live-stats",
+      "mappingSource": "User-verified ordinary Chrome session",
+      "applyStatus": "applied_to_disposable"
+    },
+    {
+      "providerGameId": "2022212208",
+      "date": "2022-04-03",
+      "homeTeam": "KK Viimsi/Sportland",
+      "awayTeam": "BK Ventspils",
+      "officialScore": [
+        79,
+        77
+      ],
+      "completed": true,
+      "lookupStatus": "match_id_extracted_and_verified",
+      "matchId": "2076532",
+      "jsonStatus": "verified",
+      "reason": "Chrome LiveStats page showed KK Viimsi/Sportland vs BK Ventspils, 79–77, 03.04.22; ARC validator confirmed teams, score, date, competition and page teams.",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/2076532/data.json",
+      "sourceUrl": "https://www.estlatbl.com/et/tulemused/2022212208/live-stats",
+      "mappingSource": "User-verified ordinary Chrome session",
+      "applyStatus": "applied_to_disposable"
+    },
+    {
+      "providerGameId": "2022212206",
+      "date": "2022-04-02",
+      "homeTeam": "Pärnu Sadam",
+      "awayTeam": "BC Kalev/Cramo",
+      "officialScore": [
+        76,
+        57
+      ],
+      "completed": true,
+      "lookupStatus": "match_id_extracted_and_verified",
+      "matchId": "2076529",
+      "jsonStatus": "verified",
+      "reason": "Chrome LiveStats page showed Pärnu Sadam vs BC Kalev/Cramo, 76–57, 02.04.22; ARC validator confirmed teams, score, date, competition and page teams.",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/2076529/data.json",
+      "sourceUrl": "https://www.estlatbl.com/et/tulemused/2022212206/live-stats",
+      "mappingSource": "User-verified ordinary Chrome session",
+      "applyStatus": "applied_to_disposable"
+    },
+    {
+      "providerGameId": "2022212207",
+      "date": "2022-04-02",
+      "homeTeam": "BK Ogre",
+      "awayTeam": "TalTech/OPTIBET",
+      "officialScore": [
+        85,
+        69
+      ],
+      "completed": true,
+      "lookupStatus": "match_id_extracted_and_verified",
+      "matchId": "2076528",
+      "jsonStatus": "verified",
+      "reason": "Chrome LiveStats page showed BK Ogre vs TalTech/OPTIBET, 85–69, 02.04.22; ARC validator confirmed teams, score, date, competition and page teams.",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/2076528/data.json",
+      "sourceUrl": "https://www.estlatbl.com/et/tulemused/2022212207/live-stats",
+      "mappingSource": "User-verified ordinary Chrome session",
+      "applyStatus": "applied_to_disposable"
+    },
+    {
+      "providerGameId": "2022212205",
+      "date": "2022-04-01",
+      "homeTeam": "Tartu Ülikool Maks & Moorits",
+      "awayTeam": "VEF Rīga",
+      "officialScore": [
+        85,
+        88
+      ],
+      "completed": true,
+      "lookupStatus": "match_id_extracted_and_verified",
+      "matchId": "2076221",
+      "jsonStatus": "verified",
+      "reason": "Chrome LiveStats page showed Tartu Ülikool Maks & Moorits vs VEF RIGA, 85–88, 01.04.22; ARC validator confirmed teams, score, date, competition and page teams.",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/2076221/data.json",
+      "sourceUrl": "https://www.estlatbl.com/et/tulemused/2022212205/live-stats",
+      "mappingSource": "User-verified ordinary Chrome session",
+      "applyStatus": "applied_to_disposable"
+    },
+    {
+      "providerGameId": "2022212204",
+      "date": "2022-03-31",
+      "homeTeam": "BK Ventspils",
+      "awayTeam": "KK Viimsi/Sportland",
+      "officialScore": [
+        63,
+        70
+      ],
+      "completed": true,
+      "lookupStatus": "match_id_extracted_and_verified",
+      "matchId": "2076531",
+      "jsonStatus": "verified",
+      "reason": "Chrome LiveStats page showed BK Ventspils vs KK Viimsi/Sportland, 63–70, 31.03.22; ARC validator confirmed teams, score, date, competition and page teams.",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/2076531/data.json",
+      "sourceUrl": "https://www.estlatbl.com/et/tulemused/2022212204/live-stats",
+      "mappingSource": "User-verified ordinary Chrome session",
+      "applyStatus": "applied_to_disposable"
+    },
+    {
+      "providerGameId": "2022212203",
+      "date": "2022-03-30",
+      "homeTeam": "TalTech/OPTIBET",
+      "awayTeam": "BK Ogre",
+      "officialScore": [
+        77,
+        89
+      ],
+      "completed": true,
+      "lookupStatus": "match_id_extracted_and_verified",
+      "matchId": "2076527",
+      "jsonStatus": "verified",
+      "reason": "Chrome LiveStats page showed TalTech/OPTIBET vs BK Ogre, 77–89, 30.03.22; ARC validator confirmed teams, score, date, competition and page teams.",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/2076527/data.json",
+      "sourceUrl": "https://www.estlatbl.com/et/tulemused/2022212203/live-stats",
+      "mappingSource": "User-verified ordinary Chrome session",
+      "applyStatus": "applied_to_disposable"
+    },
+    {
+      "providerGameId": "2022212202",
+      "date": "2022-03-29",
+      "homeTeam": "BC Kalev/Cramo",
+      "awayTeam": "Pärnu Sadam",
+      "officialScore": [
+        60,
+        67
+      ],
+      "completed": true,
+      "lookupStatus": "match_id_extracted_and_verified",
+      "matchId": "2076526",
+      "jsonStatus": "verified",
+      "reason": "Chrome LiveStats page showed BC Kalev/Cramo vs Pärnu Sadam, 60–67, 29.03.22; ARC validator confirmed teams, score, date, competition and page teams.",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/2076526/data.json",
+      "sourceUrl": "https://www.estlatbl.com/et/tulemused/2022212202/live-stats",
+      "mappingSource": "User-verified ordinary Chrome session",
+      "applyStatus": "applied_to_disposable"
+    },
+    {
+      "providerGameId": "2022212201",
+      "date": "2022-03-29",
+      "homeTeam": "VEF Rīga",
+      "awayTeam": "Tartu Ülikool Maks & Moorits",
+      "officialScore": [
+        91,
+        57
+      ],
+      "completed": true,
+      "lookupStatus": "match_id_extracted_and_verified",
+      "matchId": "2076171",
+      "jsonStatus": "verified",
+      "reason": "Chrome LiveStats page showed VEF RIGA vs Tartu Ülikool Maks & Moorits, 91–57, 29.03.22; ARC validator confirmed teams, score, date, competition and page teams.",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/2076171/data.json",
+      "sourceUrl": "https://www.estlatbl.com/et/tulemused/2022212201/live-stats",
+      "mappingSource": "User-verified ordinary Chrome session",
+      "applyStatus": "applied_to_disposable"
+    },
+    {
+      "providerGameId": "2022212095",
+      "date": "2022-03-26",
+      "homeTeam": "BK Ogre",
+      "awayTeam": "Rakvere Tarvas",
+      "officialScore": [
+        95,
+        75
+      ],
+      "completed": true,
+      "lookupStatus": "match_id_extracted_and_verified",
+      "matchId": "1999490",
+      "jsonStatus": "verified",
+      "reason": "Chrome LiveStats page showed BK Ogre vs Rakvere Tarvas, 95–75, 26.03.22; ARC validator confirmed teams, score, date, competition and page teams. This is distinct from the rejected 1999499 candidate.",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999490/data.json",
+      "sourceUrl": "https://www.estlatbl.com/et/tulemused/2022212095/live-stats",
+      "mappingSource": "User-verified ordinary Chrome session",
+      "applyStatus": "not_applied",
+      "applyError": "team 'Rakvere Tarvas' resolves to 0 ARC IDs; disposable DB has canonical team BC Tarvas (team_id 8) with no Rakvere Tarvas alias. No forced match attempted."
+    },
+    {
+      "providerGameId": "2022212112",
+      "date": "2022-03-26",
+      "homeTeam": "Tallinna Kalev",
+      "awayTeam": "AVIS UTILITAS Rapla",
+      "officialScore": [
+        64,
+        78
+      ],
+      "completed": true,
+      "lookupStatus": "match_id_extracted_and_verified",
+      "matchId": "1999506",
+      "jsonStatus": "verified",
+      "reason": "Chrome LiveStats page showed Tallinna Kalev vs AVIS UTILITAS RAPLA, 64–78, 26.03.22; ARC validator confirmed teams, score, date, competition and page teams.",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999506/data.json",
+      "sourceUrl": "https://www.estlatbl.com/et/tulemused/2022212112/live-stats",
+      "mappingSource": "User-verified ordinary Chrome session",
+      "applyStatus": "not_applied",
+      "applyError": "team 'Tallinna Kalev' resolves to 0 ARC IDs; no matching team or alias in disposable DB. No forced match attempted."
+    },
+    {
+      "providerGameId": "2022212155",
+      "date": "2022-03-26",
+      "homeTeam": "Valmiera Glass VIA",
+      "awayTeam": "Pärnu Sadam",
+      "officialScore": [
+        81,
+        84
+      ],
+      "completed": true,
+      "lookupStatus": "match_id_extracted_and_verified",
+      "matchId": "1999583",
+      "jsonStatus": "verified",
+      "reason": "Chrome LiveStats page showed VALMIERA GLASS VIA vs Pärnu Sadam, 81–84, 26.03.22; ARC validator confirmed teams, score, date, competition and page teams.",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999583/data.json",
+      "sourceUrl": "https://www.estlatbl.com/et/tulemused/2022212155/live-stats",
+      "mappingSource": "User-verified ordinary Chrome session",
+      "applyStatus": "applied_to_disposable"
+    },
+    {
+      "providerGameId": "2022212130",
+      "date": "2022-03-25",
+      "homeTeam": "TalTech/OPTIBET",
+      "awayTeam": "BK Ventspils",
+      "officialScore": [
+        102,
+        90
+      ],
+      "completed": true,
+      "lookupStatus": "match_id_extracted_and_verified",
+      "matchId": "1999549",
+      "jsonStatus": "verified",
+      "reason": "Chrome LiveStats page showed TalTech/OPTIBET vs BK Ventspils, 102–90, 25.03.22; ARC validator confirmed teams, score, date, competition and page teams.",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999549/data.json",
+      "sourceUrl": "https://www.estlatbl.com/et/tulemused/2022212130/live-stats",
+      "mappingSource": "User-verified ordinary Chrome session",
+      "applyStatus": "applied_to_disposable"
+    },
+    {
+      "providerGameId": "2022212098",
+      "date": "2022-03-24",
+      "homeTeam": "Tartu Ülikool Maks & Moorits",
+      "awayTeam": "BK Ventspils",
+      "officialScore": [
+        83,
+        63
+      ],
+      "completed": true,
+      "lookupStatus": "match_id_extracted_and_verified",
+      "matchId": "1999493",
+      "jsonStatus": "verified",
+      "reason": "Chrome LiveStats page showed Tartu Ülikool Maks & Moorits vs BK Ventspils, 83–63, 24.03.22; ARC validator confirmed teams, score, date, competition and page teams.",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999493/data.json",
+      "sourceUrl": "https://www.estlatbl.com/et/tulemused/2022212098/live-stats",
+      "mappingSource": "User-verified ordinary Chrome session",
+      "applyStatus": "applied_to_disposable"
+    },
+    {
+      "providerGameId": "2022212103",
+      "date": "2022-03-23",
+      "homeTeam": "BK Ogre",
+      "awayTeam": "BK Liepaja",
+      "officialScore": [
+        90,
+        76
+      ],
+      "completed": true,
+      "lookupStatus": "match_id_extracted_and_verified",
+      "matchId": "1999498",
+      "jsonStatus": "verified",
+      "reason": "Chrome LiveStats page showed BK Ogre vs BK Liepaja, 90–76, 23.03.22; ARC validator confirmed teams, score, date, competition and page teams.",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999498/data.json",
+      "sourceUrl": "https://www.estlatbl.com/et/tulemused/2022212103/live-stats",
+      "mappingSource": "User-verified ordinary Chrome session",
+      "applyStatus": "applied_to_disposable"
+    },
+    {
+      "providerGameId": "2022212114",
+      "date": "2022-03-23",
+      "homeTeam": "Rakvere Tarvas",
+      "awayTeam": "Latvijas Universitāte",
+      "officialScore": [
+        91,
+        79
+      ],
+      "completed": true,
+      "lookupStatus": "match_id_extracted_and_verified",
+      "matchId": "1999508",
+      "jsonStatus": "verified",
+      "reason": "Chrome LiveStats page showed Rakvere Tarvas vs Latvijas Universitate, 91–79, 23.03.22; ARC validator confirmed teams, score, date, competition and page teams.",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999508/data.json",
+      "sourceUrl": "https://www.estlatbl.com/et/tulemused/2022212114/live-stats",
+      "mappingSource": "User-verified ordinary Chrome session",
+      "applyStatus": "not_applied",
+      "applyError": "ARC disposable DB has no Rakvere Tarvas alias; prior apply attempt for this same team failed resolution. No forced match attempted."
+    },
+    {
+      "providerGameId": "2022212048",
+      "date": "2022-03-22",
+      "homeTeam": "AVIS UTILITAS Rapla",
+      "awayTeam": "BC Kalev/Cramo",
+      "officialScore": [
+        61,
+        85
+      ],
+      "completed": true,
+      "lookupStatus": "match_id_extracted_and_verified",
+      "matchId": "2062806",
+      "jsonStatus": "verified",
+      "reason": "Chrome LiveStats page showed AVIS UTILITAS RAPLA vs BC Kalev/Cramo, 61–85, 22.03.22; ARC validator confirmed teams, score, date, competition and page teams.",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/2062806/data.json",
+      "sourceUrl": "https://www.estlatbl.com/et/tulemused/2022212048/live-stats",
+      "mappingSource": "User-verified ordinary Chrome session",
+      "applyStatus": "applied_to_disposable"
+    },
+    {
+      "providerGameId": "2022212110",
+      "date": "2022-03-22",
+      "homeTeam": "Tartu Ülikool Maks & Moorits",
+      "awayTeam": "Valmiera Glass VIA",
+      "officialScore": [
+        75,
+        61
+      ],
+      "completed": true,
+      "lookupStatus": "match_id_extracted_and_verified",
+      "matchId": "1999505",
+      "jsonStatus": "verified",
+      "reason": "Chrome LiveStats page showed Tartu Ülikool Maks & Moorits vs VALMIERA GLASS VIA, 75–61, 22.03.22; ARC validator confirmed teams, score, date, competition and page teams.",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999505/data.json",
+      "sourceUrl": "https://www.estlatbl.com/et/tulemused/2022212110/live-stats",
+      "mappingSource": "User-verified ordinary Chrome session",
+      "applyStatus": "applied_to_disposable"
+    },
+    {
+      "providerGameId": "2022212182",
+      "date": "2022-03-20",
+      "homeTeam": "KK Viimsi/Sportland",
+      "awayTeam": "Pärnu Sadam",
+      "officialScore": [
+        82,
+        83
+      ],
+      "completed": true,
+      "lookupStatus": "match_id_extracted_and_verified",
+      "matchId": "1999612",
+      "jsonStatus": "verified",
+      "reason": "Chrome LiveStats page showed KK Viimsi/Sportland vs Pärnu Sadam, 82–83, 20.03.22; ARC validator confirmed teams, score, date, competition and page teams.",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999612/data.json",
+      "sourceUrl": "https://www.estlatbl.com/et/tulemused/2022212182/live-stats",
+      "mappingSource": "User-verified ordinary Chrome session",
+      "applyStatus": "applied_to_disposable"
+    },
+    {
+      "providerGameId": "2022212178",
+      "date": "2022-03-19",
+      "homeTeam": "VEF Rīga",
+      "awayTeam": "Tartu Ülikool Maks & Moorits",
+      "officialScore": [
+        86,
+        93
+      ],
+      "completed": true,
+      "lookupStatus": "match_id_extracted_and_verified",
+      "matchId": "1999608",
+      "jsonStatus": "verified",
+      "reason": "Chrome LiveStats page showed VEF RIGA vs Tartu Ülikool Maks & Moorits, 86–93, 19.03.22; ARC validator confirmed teams, score, date, competition and page teams.",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999608/data.json",
+      "sourceUrl": "https://www.estlatbl.com/et/tulemused/2022212178/live-stats",
+      "mappingSource": "User-verified ordinary Chrome session",
+      "applyStatus": "applied_to_disposable"
+    },
+    {
+      "providerGameId": "2022212016",
+      "date": "2022-03-19",
+      "homeTeam": "BK Ogre",
+      "awayTeam": "BC Kalev/Cramo",
+      "officialScore": [
+        76,
+        64
+      ],
+      "completed": true,
+      "lookupStatus": "match_id_extracted_and_verified",
+      "matchId": "2068535",
+      "jsonStatus": "verified",
+      "reason": "Chrome LiveStats page showed BK Ogre vs BC Kalev/Cramo, 76–64, 19.03.22; ARC validator confirmed teams, score, date, competition and page teams.",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/2068535/data.json",
+      "sourceUrl": "https://www.estlatbl.com/et/tulemused/2022212016/live-stats",
+      "mappingSource": "User-verified ordinary Chrome session",
+      "applyStatus": "applied_to_disposable"
+    },
+    {
+      "providerGameId": "2022212180",
+      "date": "2022-03-19",
+      "homeTeam": "BK Liepaja",
+      "awayTeam": "Tallinna Kalev",
+      "officialScore": [
+        79,
+        80
+      ],
+      "completed": true,
+      "lookupStatus": "match_id_extracted_and_verified",
+      "matchId": "1999610",
+      "jsonStatus": "verified",
+      "reason": "Chrome LiveStats page showed BK Liepaja vs Tallinna Kalev, 79–80, 19.03.22; ARC validator confirmed teams, score, date, competition and page teams.",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999610/data.json",
+      "sourceUrl": "https://www.estlatbl.com/et/tulemused/2022212180/live-stats",
+      "mappingSource": "User-verified ordinary Chrome session",
+      "applyStatus": "not_applied",
+      "applyError": "team 'Tallinna Kalev' is not present in the disposable ARC team map; no forced match attempted."
+    },
+    {
+      "providerGameId": "2022212181",
+      "date": "2022-03-19",
+      "homeTeam": "AVIS UTILITAS Rapla",
+      "awayTeam": "Latvijas Universitāte",
+      "officialScore": [
+        84,
+        74
+      ],
+      "completed": true,
+      "lookupStatus": "match_id_extracted_and_verified",
+      "matchId": "1999611",
+      "jsonStatus": "verified",
+      "reason": "Chrome LiveStats page showed AVIS UTILITAS RAPLA vs Latvijas Universitate, 84–74, 19.03.22; ARC validator confirmed teams, score, date, competition and page teams.",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999611/data.json",
+      "sourceUrl": "https://www.estlatbl.com/et/tulemused/2022212181/live-stats",
+      "mappingSource": "User-verified ordinary Chrome session",
+      "applyStatus": "applied_to_disposable"
+    },
+    {
+      "providerGameId": "2022212177",
+      "date": "2022-03-18",
+      "homeTeam": "BK Ventspils",
+      "awayTeam": "Tallinna Kalev",
+      "officialScore": [
+        93,
+        54
+      ],
+      "completed": true,
+      "lookupStatus": "match_id_extracted_and_verified",
+      "matchId": "1999607",
+      "jsonStatus": "verified",
+      "reason": "Chrome LiveStats page showed BK Ventspils vs Tallinna Kalev, 93–54, 18.03.22; ARC validator confirmed teams, score, date, competition and page teams.",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999607/data.json",
+      "sourceUrl": "https://www.estlatbl.com/et/tulemused/2022212177/live-stats",
+      "mappingSource": "User-verified ordinary Chrome session",
+      "applyStatus": "not_applied",
+      "applyError": "team 'Tallinna Kalev' is not present in the disposable ARC team map; no forced match attempted."
+    },
+    {
+      "providerGameId": "2022212028",
+      "date": "2022-03-16",
+      "homeTeam": "Latvijas Universitāte",
+      "awayTeam": "Pärnu Sadam",
+      "officialScore": [
+        79,
+        99
+      ],
+      "completed": true,
+      "lookupStatus": "match_id_extracted_and_verified",
+      "matchId": "1946911",
+      "jsonStatus": "verified",
+      "reason": "Chrome LiveStats page showed Latvijas Universitate vs Pärnu Sadam, 79–99, 16.03.22; ARC validator confirmed teams, score, date, competition and page teams.",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1946911/data.json",
+      "sourceUrl": "https://www.estlatbl.com/et/tulemused/2022212028/live-stats",
+      "mappingSource": "User-verified ordinary Chrome session",
+      "applyStatus": "applied_to_disposable"
+    },
+    {
+      "providerGameId": "2022212116",
+      "date": "2022-03-16",
+      "homeTeam": "AVIS UTILITAS Rapla",
+      "awayTeam": "VEF Rīga",
+      "officialScore": [
+        52,
+        99
+      ],
+      "completed": true,
+      "lookupStatus": "match_id_extracted_and_verified",
+      "matchId": "1999510",
+      "jsonStatus": "verified",
+      "reason": "Chrome LiveStats page showed AVIS UTILITAS RAPLA vs VEF RIGA, 52–99, 16.03.22; ARC validator confirmed teams, score, date, competition and page teams.",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999510/data.json",
+      "sourceUrl": "https://www.estlatbl.com/et/tulemused/2022212116/live-stats",
+      "mappingSource": "User-verified ordinary Chrome session",
+      "applyStatus": "applied_to_disposable"
+    },
+    {
+      "providerGameId": "2022212176",
+      "date": "2022-03-16",
+      "homeTeam": "BK Ogre",
+      "awayTeam": "Valmiera Glass VIA",
+      "officialScore": [
+        81,
+        87
+      ],
+      "completed": true,
+      "lookupStatus": "match_id_extracted_and_verified",
+      "matchId": "1999606",
+      "jsonStatus": "verified",
+      "reason": "Chrome LiveStats page showed BK Ogre vs VALMIERA GLASS VIA, 81–87, 16.03.22; ARC validator confirmed teams, score, date, competition and page teams.",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999606/data.json",
+      "sourceUrl": "https://www.estlatbl.com/et/tulemused/2022212176/live-stats",
+      "mappingSource": "User-verified ordinary Chrome session",
+      "applyStatus": "applied_to_disposable"
+    },
+    {
+      "providerGameId": "2022212049",
+      "date": "2022-03-15",
+      "homeTeam": "BK Ventspils",
+      "awayTeam": "BK Liepaja",
+      "officialScore": [
+        94,
+        71
+      ],
+      "completed": true,
+      "lookupStatus": "match_id_extracted_and_verified",
+      "matchId": "1996242",
+      "jsonStatus": "verified",
+      "reason": "Chrome LiveStats page showed BK Ventspils vs BK Liepaja, 94–71, 15.03.22; ARC validator confirmed teams, score, date, competition and page teams.",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1996242/data.json",
+      "sourceUrl": "https://www.estlatbl.com/et/tulemused/2022212049/live-stats",
+      "mappingSource": "User-verified ordinary Chrome session",
+      "applyStatus": "applied_to_disposable"
+    },
+    {
+      "providerGameId": "2022212171",
+      "date": "2022-03-12",
+      "homeTeam": "Valmiera Glass VIA",
+      "awayTeam": "Latvijas Universitāte",
+      "officialScore": [
+        76,
+        70
+      ],
+      "completed": true,
+      "lookupStatus": "match_id_extracted_and_verified",
+      "matchId": "1999601",
+      "jsonStatus": "verified",
+      "reason": "Chrome LiveStats page showed VALMIERA GLASS VIA vs Latvijas Universitate, 76–70, 12.03.22; ARC validator confirmed teams, score, date, competition and page teams.",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999601/data.json",
+      "sourceUrl": "https://www.estlatbl.com/et/tulemused/2022212171/live-stats",
+      "mappingSource": "User-verified ordinary Chrome session",
+      "applyStatus": "applied_to_disposable"
+    },
+    {
+      "providerGameId": "2022212172",
+      "date": "2022-03-12",
+      "homeTeam": "BK Ogre",
+      "awayTeam": "KK Viimsi/Sportland",
+      "officialScore": [
+        100,
+        77
+      ],
+      "completed": true,
+      "lookupStatus": "match_id_extracted_and_verified",
+      "matchId": "1999602",
+      "jsonStatus": "verified",
+      "reason": "Chrome LiveStats page showed BK Ogre vs KK Viimsi/Sportland, 100–77, 12.03.22; ARC validator confirmed teams, score, date, competition and page teams.",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999602/data.json",
+      "sourceUrl": "https://www.estlatbl.com/et/tulemused/2022212172/live-stats",
+      "mappingSource": "User-verified ordinary Chrome session",
+      "applyStatus": "applied_to_disposable"
+    },
+    {
+      "providerGameId": "2022212173",
+      "date": "2022-03-12",
+      "homeTeam": "BK Liepaja",
+      "awayTeam": "AVIS UTILITAS Rapla",
+      "officialScore": [
+        61,
+        63
+      ],
+      "completed": true,
+      "lookupStatus": "match_id_extracted_and_verified",
+      "matchId": "1999603",
+      "jsonStatus": "verified",
+      "reason": "Chrome LiveStats page showed BK Liepaja vs AVIS UTILITAS RAPLA, 61–63, 12.03.22; ARC validator confirmed teams, score, date, competition and page teams.",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999603/data.json",
+      "sourceUrl": "https://www.estlatbl.com/et/tulemused/2022212173/live-stats",
+      "mappingSource": "User-verified ordinary Chrome session",
+      "applyStatus": "applied_to_disposable"
+    },
+    {
+      "providerGameId": "2022212168",
+      "date": "2022-03-11",
+      "homeTeam": "Rakvere Tarvas",
+      "awayTeam": "Pärnu Sadam",
+      "officialScore": [
+        61,
+        95
+      ],
+      "completed": true,
+      "lookupStatus": "match_id_extracted_and_verified",
+      "matchId": "1999597",
+      "jsonStatus": "verified",
+      "reason": "Chrome LiveStats page showed Rakvere Tarvas vs Pärnu Sadam, 61–95, 11.03.22; ARC validator confirmed teams, score, date, competition and page teams.",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999597/data.json",
+      "sourceUrl": "https://www.estlatbl.com/et/tulemused/2022212168/live-stats",
+      "mappingSource": "User-verified ordinary Chrome session",
+      "applyStatus": "not_applied",
+      "applyError": "ARC disposable DB has canonical team BC Tarvas but no Rakvere Tarvas alias; existing apply validation rejected that team. No forced match attempted."
+    },
+    {
+      "providerGameId": "2022212170",
+      "date": "2022-03-11",
+      "homeTeam": "BK Ventspils",
+      "awayTeam": "AVIS UTILITAS Rapla",
+      "officialScore": [
+        91,
+        81
+      ],
+      "completed": true,
+      "lookupStatus": "match_id_extracted_and_verified",
+      "matchId": "1999600",
+      "jsonStatus": "verified",
+      "reason": "Chrome LiveStats page showed BK Ventspils vs AVIS UTILITAS RAPLA, 91–81, 11.03.22; ARC validator confirmed teams, score, date, competition and page teams.",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999600/data.json",
+      "sourceUrl": "https://www.estlatbl.com/et/tulemused/2022212170/live-stats",
+      "mappingSource": "User-verified ordinary Chrome session",
+      "applyStatus": "applied_to_disposable"
+    },
+    {
+      "providerGameId": "2022212169",
+      "date": "2022-03-11",
+      "homeTeam": "VEF Rīga",
+      "awayTeam": "KK Viimsi/Sportland",
+      "officialScore": [
+        94,
+        60
+      ],
+      "completed": true,
+      "lookupStatus": "match_id_extracted_and_verified",
+      "matchId": "1999599",
+      "jsonStatus": "verified",
+      "reason": "Chrome LiveStats page showed VEF RIGA vs KK Viimsi/Sportland, 94–60, 11.03.22; ARC validator confirmed teams, score, date, competition and page teams.",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999599/data.json",
+      "sourceUrl": "https://www.estlatbl.com/et/tulemused/2022212169/live-stats",
+      "mappingSource": "User-verified ordinary Chrome session",
+      "applyStatus": "applied_to_disposable"
+    },
+    {
+      "providerGameId": "2022212035",
+      "date": "2022-03-09",
+      "homeTeam": "BK Ogre",
+      "awayTeam": "Latvijas Universitāte",
+      "officialScore": [
+        93,
+        79
+      ],
+      "completed": true,
+      "lookupStatus": "match_id_extracted_and_verified",
+      "matchId": "1946928",
+      "jsonStatus": "verified",
+      "reason": "Chrome LiveStats page showed BK Ogre vs Latvijas Universitate, 93–79, 09.03.22; ARC validator confirmed teams, score, date, competition and page teams.",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1946928/data.json",
+      "sourceUrl": "https://www.estlatbl.com/et/tulemused/2022212035/live-stats",
+      "mappingSource": "User-verified ordinary Chrome session",
+      "applyStatus": "applied_to_disposable"
+    },
+    {
+      "providerGameId": "2022212166",
+      "date": "2022-03-09",
+      "homeTeam": "BC Kalev/Cramo",
+      "awayTeam": "Valmiera Glass VIA",
+      "officialScore": [
+        97,
+        66
+      ],
+      "completed": true,
+      "lookupStatus": "match_id_extracted_and_verified",
+      "matchId": "1999594",
+      "jsonStatus": "verified",
+      "reason": "Chrome LiveStats page showed BC Kalev/Cramo vs VALMIERA GLASS VIA, 97–66, 09.03.22; ARC validator confirmed teams, score, date, competition and page teams.",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999594/data.json",
+      "sourceUrl": "https://www.estlatbl.com/et/tulemused/2022212166/live-stats",
+      "mappingSource": "User-verified ordinary Chrome session",
+      "applyStatus": "applied_to_disposable"
+    },
+    {
+      "providerGameId": "2022212167",
+      "date": "2022-03-09",
+      "homeTeam": "Tartu Ülikool Maks & Moorits",
+      "awayTeam": "BK Liepaja",
+      "officialScore": [
+        78,
+        71
+      ],
+      "completed": true,
+      "lookupStatus": "match_id_extracted_and_verified",
+      "matchId": "1999596",
+      "jsonStatus": "verified",
+      "reason": "Chrome LiveStats page showed Tartu Ülikool Maks & Moorits vs BK Liepaja, 78–71, 09.03.22; ARC validator confirmed teams, score, date, competition and page teams.",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999596/data.json",
+      "sourceUrl": "https://www.estlatbl.com/et/tulemused/2022212167/live-stats",
+      "mappingSource": "User-verified ordinary Chrome session",
+      "applyStatus": "applied_to_disposable"
+    },
+    {
+      "providerGameId": "2022212093",
+      "date": "2022-03-08",
+      "homeTeam": "Tallinna Kalev",
+      "awayTeam": "Pärnu Sadam",
+      "officialScore": [
+        57,
+        84
+      ],
+      "completed": true,
+      "lookupStatus": "match_id_extracted_and_verified",
+      "matchId": "1996241",
+      "jsonStatus": "verified",
+      "reason": "Chrome LiveStats page showed Tallinna Kalev vs Pärnu Sadam, 57–84, 08.03.22; ARC validator confirmed teams, score, date, competition and page teams.",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1996241/data.json",
+      "sourceUrl": "https://www.estlatbl.com/et/tulemused/2022212093/live-stats",
+      "mappingSource": "User-verified ordinary Chrome session",
+      "applyStatus": "not_applied",
+      "applyError": "ARC disposable DB has no Tallinna Kalev team/alias; no forced match attempted."
+    },
+    {
+      "providerGameId": "2022212162",
+      "date": "2022-03-06",
+      "homeTeam": "Valmiera Glass VIA",
+      "awayTeam": "Rakvere Tarvas",
+      "officialScore": [
+        80,
+        75
+      ],
+      "completed": true,
+      "lookupStatus": "match_id_extracted_and_verified",
+      "matchId": "1999590",
+      "jsonStatus": "verified",
+      "reason": "Chrome LiveStats page showed VALMIERA GLASS VIA vs Rakvere Tarvas, 80–75, 06.03.22; ARC validator confirmed teams, score, date, competition and page teams.",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999590/data.json",
+      "sourceUrl": "https://www.estlatbl.com/et/tulemused/2022212162/live-stats",
+      "mappingSource": "User-verified ordinary Chrome session",
+      "applyStatus": "not_applied",
+      "applyError": "ARC disposable DB lacks Rakvere Tarvas alias (canonical BC Tarvas only); no forced match attempted."
+    },
+    {
+      "providerGameId": "2022212164",
+      "date": "2022-03-06",
+      "homeTeam": "Latvijas Universitāte",
+      "awayTeam": "Tallinna Kalev",
+      "officialScore": [
+        92,
+        64
+      ],
+      "completed": true,
+      "lookupStatus": "match_id_extracted_and_verified",
+      "matchId": "1999592",
+      "jsonStatus": "verified",
+      "reason": "Chrome LiveStats page showed Latvijas Universitate vs Tallinna Kalev, 92–64, 06.03.22; ARC validator confirmed teams, score, date, competition and page teams.",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999592/data.json",
+      "sourceUrl": "https://www.estlatbl.com/et/tulemused/2022212164/live-stats",
+      "mappingSource": "User-verified ordinary Chrome session",
+      "applyStatus": "not_applied",
+      "applyError": "ARC disposable DB has no Tallinna Kalev team/alias; no forced match attempted."
+    },
+    {
+      "providerGameId": "2022212165",
+      "date": "2022-03-06",
+      "homeTeam": "KK Viimsi/Sportland",
+      "awayTeam": "AVIS UTILITAS Rapla",
+      "officialScore": [
+        91,
+        84
+      ],
+      "completed": true,
+      "lookupStatus": "match_id_extracted_and_verified",
+      "matchId": "1999593",
+      "jsonStatus": "verified",
+      "reason": "Chrome LiveStats page showed KK Viimsi/Sportland vs AVIS UTILITAS RAPLA, 91–84, 06.03.22; ARC validator confirmed teams, score, date, competition and page teams.",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999593/data.json",
+      "sourceUrl": "https://www.estlatbl.com/et/tulemused/2022212165/live-stats",
+      "mappingSource": "User-verified ordinary Chrome session",
+      "applyStatus": "applied_to_disposable"
+    },
+    {
+      "providerGameId": "2022212179",
+      "date": "2022-03-06",
+      "homeTeam": "BC Kalev/Cramo",
+      "awayTeam": "BK Ogre",
+      "officialScore": [
+        94,
+        69
+      ],
+      "completed": true,
+      "lookupStatus": "match_id_extracted_and_verified",
+      "matchId": "1999609",
+      "jsonStatus": "verified",
+      "reason": "Chrome LiveStats page and JSON both matched BC Kalev/Cramo vs BK Ogre, 2022-03-06, 94-69; page showed Paf Estonian-Latvian Basketball League.",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999609/data.json",
+      "sourceUrl": "https://www.estlatbl.com/et/tulemused/2022212179/live-stats",
+      "mappingSource": "User-verified ordinary Chrome session",
+      "applyStatus": "not_applied"
+    },
+    {
+      "providerGameId": "2022212161",
+      "date": "2022-03-05",
+      "homeTeam": "BK Liepaja",
+      "awayTeam": "Pärnu Sadam",
+      "officialScore": [
+        84,
+        70
+      ],
+      "completed": true,
+      "lookupStatus": "match_id_extracted_and_verified",
+      "matchId": "1999589",
+      "jsonStatus": "verified",
+      "reason": "Chrome LiveStats page showed BK Liepaja vs Pärnu Sadam, 84–70, 05.03.22; ARC validator confirmed teams, score, date, competition and page teams.",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999589/data.json",
+      "sourceUrl": "https://www.estlatbl.com/et/tulemused/2022212161/live-stats",
+      "mappingSource": "User-verified ordinary Chrome session",
+      "applyStatus": "applied_to_disposable"
+    },
+    {
+      "providerGameId": "2022212163",
+      "date": "2022-03-05",
+      "homeTeam": "Tartu Ülikool Maks & Moorits",
+      "awayTeam": "TalTech/OPTIBET",
+      "officialScore": [
+        68,
+        81
+      ],
+      "completed": true,
+      "lookupStatus": "match_id_extracted_and_verified",
+      "matchId": "1999591",
+      "jsonStatus": "verified",
+      "reason": "Chrome LiveStats page showed Tartu Ülikool Maks & Moorits vs TalTech/OPTIBET, 68–81, 05.03.22; ARC validator confirmed teams, score, date, competition and page teams.",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999591/data.json",
+      "sourceUrl": "https://www.estlatbl.com/et/tulemused/2022212163/live-stats",
+      "mappingSource": "User-verified ordinary Chrome session",
+      "applyStatus": "applied_to_disposable"
+    },
+    {
+      "providerGameId": "2022212159",
+      "date": "2022-03-03",
+      "homeTeam": "BC Kalev/Cramo",
+      "awayTeam": "BK Ventspils",
+      "officialScore": [
+        81,
+        55
+      ],
+      "completed": true,
+      "lookupStatus": "match_id_extracted_and_verified",
+      "matchId": "1999587",
+      "jsonStatus": "verified",
+      "reason": "Chrome LiveStats page showed BC Kalev/Cramo vs BK Ventspils, 81–55, 03.03.22; ARC validator confirmed teams, score, date, competition and page teams.",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999587/data.json",
+      "sourceUrl": "https://www.estlatbl.com/et/tulemused/2022212159/live-stats",
+      "mappingSource": "User-verified ordinary Chrome session",
+      "applyStatus": "applied_to_disposable"
+    },
+    {
+      "providerGameId": "2022212157",
+      "date": "2022-03-02",
+      "homeTeam": "VEF Rīga",
+      "awayTeam": "Latvijas Universitāte",
+      "officialScore": [
+        79,
+        59
+      ],
+      "completed": true,
+      "lookupStatus": "match_id_extracted_and_verified",
+      "matchId": "1999585",
+      "jsonStatus": "verified",
+      "reason": "Chrome LiveStats page showed VEF RIGA vs Latvijas Universitate, 79–59, 02.03.22; ARC validator confirmed teams, score, date, competition and page teams.",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999585/data.json",
+      "sourceUrl": "https://www.estlatbl.com/et/tulemused/2022212157/live-stats",
+      "mappingSource": "User-verified ordinary Chrome session",
+      "applyStatus": "applied_to_disposable"
+    },
+    {
+      "providerGameId": "2022212158",
+      "date": "2022-03-02",
+      "homeTeam": "Rakvere Tarvas",
+      "awayTeam": "BK Ventspils",
+      "officialScore": [
+        67,
+        99
+      ],
+      "completed": true,
+      "lookupStatus": "match_id_extracted_and_verified",
+      "matchId": "1999586",
+      "jsonStatus": "verified",
+      "reason": "Chrome LiveStats page showed Rakvere Tarvas vs BK Ventspils, 67–99, 02.03.22; ARC validator confirmed teams, score, date, competition and page teams.",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999586/data.json",
+      "sourceUrl": "https://www.estlatbl.com/et/tulemused/2022212158/live-stats",
+      "mappingSource": "User-verified ordinary Chrome session",
+      "applyStatus": "not_applied",
+      "applyError": "ARC disposable DB lacks Rakvere Tarvas alias (canonical BC Tarvas only); no forced match attempted."
+    },
+    {
+      "providerGameId": "2022212174",
+      "date": "2022-02-27",
+      "homeTeam": "Tallinna Kalev",
+      "awayTeam": "TalTech/OPTIBET",
+      "officialScore": [
+        53,
+        84
+      ],
+      "completed": true,
+      "lookupStatus": "match_id_extracted_and_verified",
+      "matchId": "1999604",
+      "jsonStatus": "verified",
+      "reason": "Chrome LiveStats page showed Tallinna Kalev vs TalTech/OPTIBET, 53–84, 27.02.22; ARC validator confirmed teams, score, date, competition and page teams.",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999604/data.json",
+      "sourceUrl": "https://www.estlatbl.com/et/tulemused/2022212174/live-stats",
+      "mappingSource": "User-verified ordinary Chrome session",
+      "applyStatus": "not_applied",
+      "applyError": "ARC disposable DB has no Tallinna Kalev team/alias; no forced match attempted."
+    },
+    {
+      "providerGameId": "2022212094",
+      "date": "2022-02-24",
+      "homeTeam": "BK Ventspils",
+      "awayTeam": "Valmiera Glass VIA",
+      "officialScore": [
+        83,
+        80
+      ],
+      "completed": true,
+      "lookupStatus": "match_id_extracted_and_verified",
+      "matchId": "1999489",
+      "jsonStatus": "verified",
+      "reason": "Chrome LiveStats page showed BK Ventspils vs VALMIERA GLASS VIA, 83–80, 24.02.22; ARC validator confirmed teams, score, date, competition and page teams.",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999489/data.json",
+      "sourceUrl": "https://www.estlatbl.com/et/tulemused/2022212094/live-stats",
+      "mappingSource": "User-verified ordinary Chrome session",
+      "applyStatus": "applied_to_disposable"
+    },
+    {
+      "providerGameId": "2022212104",
+      "date": "2022-02-22",
+      "homeTeam": "TalTech/OPTIBET",
+      "awayTeam": "Latvijas Universitāte",
+      "officialScore": [
+        94,
+        62
+      ],
+      "completed": true,
+      "lookupStatus": "match_id_extracted_and_verified",
+      "matchId": "1999499",
+      "jsonStatus": "verified",
+      "reason": "Chrome LiveStats page for this distinct game showed TalTech/OPTIBET vs Latvijas Universitate, 94–62, 22.02.22; ARC validator confirmed teams, score, date, competition and page teams. This does not match the rejected association to game 2022212804.",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999499/data.json",
+      "sourceUrl": "https://www.estlatbl.com/et/tulemused/2022212104/live-stats",
+      "mappingSource": "User-verified ordinary Chrome session",
+      "applyStatus": "applied_to_disposable"
+    },
+    {
+      "providerGameId": "2022212151",
+      "date": "2022-02-19",
+      "homeTeam": "Latvijas Universitāte",
+      "awayTeam": "BC Kalev/Cramo",
+      "officialScore": [
+        58,
+        68
+      ],
+      "completed": true,
+      "lookupStatus": "match_id_extracted_and_verified",
+      "matchId": "1999576",
+      "jsonStatus": "verified",
+      "reason": "LiveStats page and JSON matched Latvijas Universitate vs BC Kalev/Cramo, 2022-02-19, 58-68; competition was Paf Estonian-Latvian Basketball League.",
+      "sourceUrl": "https://www.estlatbl.com/et/tulemused/2022212151/live-stats",
+      "mappingSource": "User-verified ordinary Chrome session",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999576/data.json",
+      "applyStatus": "not_applied"
+    },
+    {
+      "providerGameId": "2022212152",
+      "date": "2022-02-19",
+      "homeTeam": "TalTech/OPTIBET",
+      "awayTeam": "BK Liepaja",
+      "officialScore": [
+        87,
+        81
+      ],
+      "completed": true,
+      "lookupStatus": "match_id_extracted_and_verified",
+      "matchId": "1999577",
+      "jsonStatus": "verified",
+      "reason": "LiveStats page and JSON matched TalTech/OPTIBET vs BK Liepaja, 2022-02-19, 87-81; competition Paf Estonian-Latvian Basketball League."
+    },
+    {
+      "providerGameId": "2022212153",
+      "date": "2022-02-19",
+      "homeTeam": "AVIS UTILITAS Rapla",
+      "awayTeam": "BK Ogre",
+      "officialScore": [
+        86,
+        88
+      ],
+      "completed": true,
+      "lookupStatus": "match_id_extracted_and_verified",
+      "matchId": "1999580",
+      "jsonStatus": "verified",
+      "reason": "LiveStats page and JSON matched AVIS UTILITAS RAPLA vs BK Ogre, 2022-02-19, 86-88 after one overtime; competition Paf Estonian-Latvian Basketball League.",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999580/data.json",
+      "sourceUrl": "https://www.estlatbl.com/et/tulemused/2022212153/live-stats",
+      "mappingSource": "User-verified ordinary Chrome session",
+      "applyStatus": "not_applied"
+    },
+    {
+      "providerGameId": "2022212154",
+      "date": "2022-02-19",
+      "homeTeam": "BK Ventspils",
+      "awayTeam": "VEF Rīga",
+      "officialScore": [
+        87,
+        81
+      ],
+      "completed": true,
+      "lookupStatus": "match_id_extracted_and_verified",
+      "matchId": "1999581",
+      "jsonStatus": "verified",
+      "reason": "Chrome LiveStats page showed BK Ventspils vs VEF RIGA, 87–81, 19.02.22; corresponding FIBA JSON confirmed BK Ventspils 87, VEF RIGA 81, and Paf Estonian-Latvian Basketball League.",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999581/data.json",
+      "sourceUrl": "https://www.estlatbl.com/et/tulemused/2022212154/live-stats",
+      "mappingSource": "User-verified ordinary Chrome session",
+      "applyStatus": "not_applied"
+    },
+    {
+      "providerGameId": "2022212156",
+      "date": "2022-02-19",
+      "homeTeam": "Tallinna Kalev",
+      "awayTeam": "KK Viimsi/Sportland",
+      "officialScore": [
+        75,
+        97
+      ],
+      "completed": true,
+      "lookupStatus": "match_id_extracted_and_verified",
+      "matchId": "1999584",
+      "jsonStatus": "verified",
+      "reason": "Chrome LiveStats page showed Tallinna Kalev vs KK Viimsi/Sportland, 75–97, 19.02.22; corresponding FIBA JSON confirmed teams, scores and Paf Estonian-Latvian Basketball League.",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999584/data.json",
+      "sourceUrl": "https://www.estlatbl.com/et/tulemused/2022212156/live-stats",
+      "mappingSource": "User-verified ordinary Chrome session",
+      "applyStatus": "not_applied"
+    },
+    {
+      "providerGameId": "2022212041",
+      "date": "2022-02-18",
+      "homeTeam": "Tartu Ülikool Maks & Moorits",
+      "awayTeam": "Rakvere Tarvas",
+      "officialScore": [
+        70,
+        67
+      ],
+      "completed": true,
+      "lookupStatus": "match_id_extracted_and_verified",
+      "matchId": "1999613",
+      "jsonStatus": "verified",
+      "reason": "Official LiveStats page showed Tartu Ülikool Maks & Moorits vs Rakvere Tarvas, 2022-02-18, 70-67. FIBA JSON confirmed tm[1]=Tartu Ülikool Maks & Moorits score 70; tm[2]=Rakvere Tarvas score 67; Paf Estonian-Latvian Basketball League.",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999613/data.json",
+      "sourceUrl": "https://www.estlatbl.com/et/tulemused/2022212041/live-stats",
+      "mappingSource": "User-verified ordinary Chrome session",
+      "applyStatus": "not_applied"
+    },
+    {
+      "providerGameId": "2022212148",
+      "date": "2022-02-16",
+      "homeTeam": "BK Liepaja",
+      "awayTeam": "BK Ventspils",
+      "officialScore": [
+        73,
+        98
+      ],
+      "completed": true,
+      "lookupStatus": "match_id_extracted_and_verified",
+      "matchId": "1999574",
+      "jsonStatus": "verified",
+      "reason": "Official LiveStats page showed BK Liepaja vs BK Ventspils, 2022-02-16, 73-98. FIBA JSON confirmed tm[1]=BK Liepaja score 73; tm[2]=BK Ventspils score 98; Paf Estonian-Latvian Basketball League.",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999574/data.json",
+      "sourceUrl": "https://www.estlatbl.com/et/tulemused/2022212148/live-stats",
+      "mappingSource": "User-verified ordinary Chrome session",
+      "applyStatus": "not_applied"
+    },
+    {
+      "providerGameId": "2022212136",
+      "date": "2022-02-16",
+      "homeTeam": "Valmiera Glass VIA",
+      "awayTeam": "TalTech/OPTIBET",
+      "officialScore": [
+        71,
+        94
+      ],
+      "completed": true,
+      "lookupStatus": "match_id_extracted_and_verified",
+      "matchId": "1999561",
+      "jsonStatus": "verified",
+      "reason": "Official LiveStats page showed VALMIERA GLASS VIA vs TalTech/OPTIBET, 2022-02-16, 71-94. FIBA JSON confirmed tm[1]=VALMIERA GLASS VIA score 71; tm[2]=TalTech/OPTIBET score 94; Paf Estonian-Latvian Basketball League.",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/1999561/data.json",
+      "sourceUrl": "https://www.estlatbl.com/et/tulemused/2022212136/live-stats",
+      "mappingSource": "User-verified ordinary Chrome session",
+      "applyStatus": "not_applied"
+    },
+    {
+      "providerGameId": "2022212147",
+      "date": "2022-02-16",
+      "homeTeam": "BC Kalev/Cramo",
+      "awayTeam": "VEF Rīga",
+      "officialScore": [
+        76,
+        93
+      ],
+      "completed": true,
+      "lookupStatus": "candidate_extracted_json_pending",
+      "matchId": "1999572",
+      "jsonStatus": "not_checked",
+      "reason": "Official EstLatBL live-stats route led to FIBA match 1999572; displayed game details were BC Kalev/Cramo vs VEF RIGA, 2022-02-16, 76-93. JSON endpoint has not been validated; retain as UNVERIFIED.",
+      "sourceUrl": "https://www.estlatbl.com/et/tulemused/2022212147/live-stats",
+      "mappingSource": "Ordinary Chrome session page lookup; JSON pending"
+    },
+    {
+      "providerGameId": "2022212149",
+      "date": "2022-02-16",
+      "homeTeam": "BK Ogre",
+      "awayTeam": "Pärnu Sadam",
+      "officialScore": [
+        74,
+        71
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212144",
+      "date": "2022-02-13",
+      "homeTeam": "KK Viimsi/Sportland",
+      "awayTeam": "Valmiera Glass VIA",
+      "officialScore": [
+        73,
+        70
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212145",
+      "date": "2022-02-13",
+      "homeTeam": "BK Ventspils",
+      "awayTeam": "Tartu Ülikool Maks & Moorits",
+      "officialScore": [
+        69,
+        62
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212146",
+      "date": "2022-02-13",
+      "homeTeam": "Latvijas Universitāte",
+      "awayTeam": "AVIS UTILITAS Rapla",
+      "officialScore": [
+        61,
+        92
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212141",
+      "date": "2022-02-12",
+      "homeTeam": "TalTech/OPTIBET",
+      "awayTeam": "VEF Rīga",
+      "officialScore": [
+        88,
+        102
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212143",
+      "date": "2022-02-12",
+      "homeTeam": "Tallinna Kalev",
+      "awayTeam": "BK Ogre",
+      "officialScore": [
+        52,
+        97
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212142",
+      "date": "2022-02-12",
+      "homeTeam": "BK Liepaja",
+      "awayTeam": "Tartu Ülikool Maks & Moorits",
+      "officialScore": [
+        83,
+        86
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212140",
+      "date": "2022-02-11",
+      "homeTeam": "Rakvere Tarvas",
+      "awayTeam": "VEF Rīga",
+      "officialScore": [
+        58,
+        110
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212106",
+      "date": "2022-02-10",
+      "homeTeam": "BK Ventspils",
+      "awayTeam": "BC Kalev/Cramo",
+      "officialScore": [
+        75,
+        68
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212100",
+      "date": "2022-02-09",
+      "homeTeam": "Valmiera Glass VIA",
+      "awayTeam": "AVIS UTILITAS Rapla",
+      "officialScore": [
+        91,
+        87
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212105",
+      "date": "2022-02-09",
+      "homeTeam": "Rakvere Tarvas",
+      "awayTeam": "KK Viimsi/Sportland",
+      "officialScore": [
+        69,
+        89
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212137",
+      "date": "2022-02-09",
+      "homeTeam": "Pärnu Sadam",
+      "awayTeam": "BK Ventspils",
+      "officialScore": [
+        94,
+        79
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212138",
+      "date": "2022-02-09",
+      "homeTeam": "Tartu Ülikool Maks & Moorits",
+      "awayTeam": "Latvijas Universitāte",
+      "officialScore": [
+        67,
+        53
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212133",
+      "date": "2022-02-05",
+      "homeTeam": "VEF Rīga",
+      "awayTeam": "BK Liepaja",
+      "officialScore": [
+        102,
+        71
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212040",
+      "date": "2022-02-05",
+      "homeTeam": "BK Ventspils",
+      "awayTeam": "Latvijas Universitāte",
+      "officialScore": [
+        68,
+        59
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212134",
+      "date": "2022-02-05",
+      "homeTeam": "KK Viimsi/Sportland",
+      "awayTeam": "BK Ogre",
+      "officialScore": [
+        67,
+        74
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212068",
+      "date": "2022-02-04",
+      "homeTeam": "Pärnu Sadam",
+      "awayTeam": "BC Kalev/Cramo",
+      "officialScore": [
+        78,
+        79
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212132",
+      "date": "2022-02-04",
+      "homeTeam": "Tartu Ülikool Maks & Moorits",
+      "awayTeam": "Tallinna Kalev",
+      "officialScore": [
+        77,
+        62
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212108",
+      "date": "2022-02-03",
+      "homeTeam": "VEF Rīga",
+      "awayTeam": "Rakvere Tarvas",
+      "officialScore": [
+        94,
+        52
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212128",
+      "date": "2022-02-02",
+      "homeTeam": "BC Kalev/Cramo",
+      "awayTeam": "BK Liepaja",
+      "officialScore": [
+        87,
+        62
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212129",
+      "date": "2022-02-02",
+      "homeTeam": "Pärnu Sadam",
+      "awayTeam": "Latvijas Universitāte",
+      "officialScore": [
+        80,
+        56
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212097",
+      "date": "2022-02-01",
+      "homeTeam": "Rakvere Tarvas",
+      "awayTeam": "BK Liepaja",
+      "officialScore": [
+        79,
+        86
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212102",
+      "date": "2022-02-01",
+      "homeTeam": "AVIS UTILITAS Rapla",
+      "awayTeam": "Tartu Ülikool Maks & Moorits",
+      "officialScore": [
+        78,
+        83
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212160",
+      "date": "2022-01-30",
+      "homeTeam": "BK Ogre",
+      "awayTeam": "VEF Rīga",
+      "officialScore": [
+        59,
+        83
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212127",
+      "date": "2022-01-30",
+      "homeTeam": "KK Viimsi/Sportland",
+      "awayTeam": "Latvijas Universitāte",
+      "officialScore": [
+        85,
+        74
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212125",
+      "date": "2022-01-29",
+      "homeTeam": "AVIS UTILITAS Rapla",
+      "awayTeam": "Pärnu Sadam",
+      "officialScore": [
+        107,
+        79
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212126",
+      "date": "2022-01-29",
+      "homeTeam": "Tallinna Kalev",
+      "awayTeam": "Rakvere Tarvas",
+      "officialScore": [
+        80,
+        81
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212010",
+      "date": "2022-01-27",
+      "homeTeam": "BC Kalev/Cramo",
+      "awayTeam": "KK Viimsi/Sportland",
+      "officialScore": [
+        80,
+        67
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212121",
+      "date": "2022-01-26",
+      "homeTeam": "Valmiera Glass VIA",
+      "awayTeam": "BK Liepaja",
+      "officialScore": [
+        86,
+        71
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212122",
+      "date": "2022-01-26",
+      "homeTeam": "BK Ogre",
+      "awayTeam": "BK Ventspils",
+      "officialScore": [
+        69,
+        78
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212123",
+      "date": "2022-01-26",
+      "homeTeam": "TalTech/OPTIBET",
+      "awayTeam": "Tartu Ülikool Maks & Moorits",
+      "officialScore": [
+        92,
+        76
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212099",
+      "date": "2022-01-25",
+      "homeTeam": "Pärnu Sadam",
+      "awayTeam": "Tallinna Kalev",
+      "officialScore": [
+        98,
+        72
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212117",
+      "date": "2022-01-22",
+      "homeTeam": "BK Liepaja",
+      "awayTeam": "KK Viimsi/Sportland",
+      "officialScore": [
+        66,
+        74
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212118",
+      "date": "2022-01-22",
+      "homeTeam": "Pärnu Sadam",
+      "awayTeam": "Tartu Ülikool Maks & Moorits",
+      "officialScore": [
+        76,
+        66
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212119",
+      "date": "2022-01-22",
+      "homeTeam": "BK Ogre",
+      "awayTeam": "TalTech/OPTIBET",
+      "officialScore": [
+        77,
+        65
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212120",
+      "date": "2022-01-22",
+      "homeTeam": "Valmiera Glass VIA",
+      "awayTeam": "Tallinna Kalev",
+      "officialScore": [
+        93,
+        54
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212131",
+      "date": "2022-01-21",
+      "homeTeam": "Rakvere Tarvas",
+      "awayTeam": "AVIS UTILITAS Rapla",
+      "officialScore": [
+        88,
+        91
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212115",
+      "date": "2022-01-20",
+      "homeTeam": "BK Ventspils",
+      "awayTeam": "KK Viimsi/Sportland",
+      "officialScore": [
+        100,
+        70
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212113",
+      "date": "2022-01-19",
+      "homeTeam": "BC Kalev/Cramo",
+      "awayTeam": "Tallinna Kalev",
+      "officialScore": [
+        113,
+        55
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212107",
+      "date": "2022-01-15",
+      "homeTeam": "BK Liepaja",
+      "awayTeam": "BC Kalev/Cramo",
+      "officialScore": [
+        59,
+        78
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212109",
+      "date": "2022-01-15",
+      "homeTeam": "TalTech/OPTIBET",
+      "awayTeam": "Pärnu Sadam",
+      "officialScore": [
+        91,
+        73
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212124",
+      "date": "2022-01-11",
+      "homeTeam": "BC Kalev/Cramo",
+      "awayTeam": "Pärnu Sadam",
+      "officialScore": [
+        66,
+        79
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212101",
+      "date": "2022-01-09",
+      "homeTeam": "KK Viimsi/Sportland",
+      "awayTeam": "TalTech/OPTIBET",
+      "officialScore": [
+        71,
+        76
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212139",
+      "date": "2022-01-09",
+      "homeTeam": "BC Kalev/Cramo",
+      "awayTeam": "AVIS UTILITAS Rapla",
+      "officialScore": [
+        92,
+        66
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212096",
+      "date": "2022-01-07",
+      "homeTeam": "Latvijas Universitāte",
+      "awayTeam": "VEF Rīga",
+      "officialScore": [
+        72,
+        94
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212175",
+      "date": "2022-01-04",
+      "homeTeam": "BC Kalev/Cramo",
+      "awayTeam": "TalTech/OPTIBET",
+      "officialScore": [
+        93,
+        63
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212090",
+      "date": "2021-12-30",
+      "homeTeam": "AVIS UTILITAS Rapla",
+      "awayTeam": "TalTech/OPTIBET",
+      "officialScore": [
+        95,
+        78
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212092",
+      "date": "2021-12-30",
+      "homeTeam": "VEF Rīga",
+      "awayTeam": "Valmiera Glass VIA",
+      "officialScore": [
+        73,
+        55
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212091",
+      "date": "2021-12-29",
+      "homeTeam": "Tartu Ülikool Maks & Moorits",
+      "awayTeam": "BC Kalev/Cramo",
+      "officialScore": [
+        64,
+        92
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212089",
+      "date": "2021-12-28",
+      "homeTeam": "KK Viimsi/Sportland",
+      "awayTeam": "BC Kalev/Cramo",
+      "officialScore": [
+        49,
+        97
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212084",
+      "date": "2021-12-22",
+      "homeTeam": "Latvijas Universitāte",
+      "awayTeam": "BK Liepaja",
+      "officialScore": [
+        89,
+        68
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212088",
+      "date": "2021-12-22",
+      "homeTeam": "TalTech/OPTIBET",
+      "awayTeam": "Rakvere Tarvas",
+      "officialScore": [
+        106,
+        60
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212083",
+      "date": "2021-12-22",
+      "homeTeam": "AVIS UTILITAS Rapla",
+      "awayTeam": "KK Viimsi/Sportland",
+      "officialScore": [
+        95,
+        97
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212085",
+      "date": "2021-12-22",
+      "homeTeam": "Pärnu Sadam",
+      "awayTeam": "BK Ogre",
+      "officialScore": [
+        83,
+        78
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212087",
+      "date": "2021-12-22",
+      "homeTeam": "Valmiera Glass VIA",
+      "awayTeam": "Tartu Ülikool Maks & Moorits",
+      "officialScore": [
+        65,
+        93
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212086",
+      "date": "2021-12-22",
+      "homeTeam": "Tallinna Kalev",
+      "awayTeam": "BK Ventspils",
+      "officialScore": [
+        64,
+        103
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212082",
+      "date": "2021-12-18",
+      "homeTeam": "Latvijas Universitāte",
+      "awayTeam": "Valmiera Glass VIA",
+      "officialScore": [
+        68,
+        60
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212081",
+      "date": "2021-12-18",
+      "homeTeam": "BK Liepaja",
+      "awayTeam": "BK Ogre",
+      "officialScore": [
+        94,
+        83
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212080",
+      "date": "2021-12-18",
+      "homeTeam": "VEF Rīga",
+      "awayTeam": "BK Ventspils",
+      "officialScore": [
+        93,
+        57
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212079",
+      "date": "2021-12-15",
+      "homeTeam": "Tallinna Kalev",
+      "awayTeam": "Tartu Ülikool Maks & Moorits",
+      "officialScore": [
+        73,
+        81
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212077",
+      "date": "2021-12-15",
+      "homeTeam": "Valmiera Glass VIA",
+      "awayTeam": "BC Kalev/Cramo",
+      "officialScore": [
+        59,
+        92
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212078",
+      "date": "2021-12-15",
+      "homeTeam": "Pärnu Sadam",
+      "awayTeam": "Rakvere Tarvas",
+      "officialScore": [
+        105,
+        74
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212075",
+      "date": "2021-12-12",
+      "homeTeam": "Latvijas Universitāte",
+      "awayTeam": "TalTech/OPTIBET",
+      "officialScore": [
+        79,
+        89
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212076",
+      "date": "2021-12-12",
+      "homeTeam": "KK Viimsi/Sportland",
+      "awayTeam": "Tartu Ülikool Maks & Moorits",
+      "officialScore": [
+        88,
+        75
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212072",
+      "date": "2021-12-11",
+      "homeTeam": "AVIS UTILITAS Rapla",
+      "awayTeam": "BK Liepaja",
+      "officialScore": [
+        105,
+        69
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212073",
+      "date": "2021-12-11",
+      "homeTeam": "BK Ventspils",
+      "awayTeam": "Pärnu Sadam",
+      "officialScore": [
+        81,
+        72
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212074",
+      "date": "2021-12-11",
+      "homeTeam": "BK Ogre",
+      "awayTeam": "Tallinna Kalev",
+      "officialScore": [
+        106,
+        80
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212071",
+      "date": "2021-12-10",
+      "homeTeam": "Rakvere Tarvas",
+      "awayTeam": "Valmiera Glass VIA",
+      "officialScore": [
+        86,
+        81
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212070",
+      "date": "2021-12-10",
+      "homeTeam": "VEF Rīga",
+      "awayTeam": "TalTech/OPTIBET",
+      "officialScore": [
+        83,
+        75
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212069",
+      "date": "2021-12-08",
+      "homeTeam": "Tartu Ülikool Maks & Moorits",
+      "awayTeam": "AVIS UTILITAS Rapla",
+      "officialScore": [
+        94,
+        98
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212065",
+      "date": "2021-12-04",
+      "homeTeam": "Pärnu Sadam",
+      "awayTeam": "AVIS UTILITAS Rapla",
+      "officialScore": [
+        78,
+        83
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212064",
+      "date": "2021-12-04",
+      "homeTeam": "Tartu Ülikool Maks & Moorits",
+      "awayTeam": "VEF Rīga",
+      "officialScore": [
+        64,
+        95
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212066",
+      "date": "2021-12-04",
+      "homeTeam": "Valmiera Glass VIA",
+      "awayTeam": "BK Ogre",
+      "officialScore": [
+        79,
+        75
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212067",
+      "date": "2021-12-04",
+      "homeTeam": "TalTech/OPTIBET",
+      "awayTeam": "KK Viimsi/Sportland",
+      "officialScore": [
+        70,
+        88
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212063",
+      "date": "2021-12-03",
+      "homeTeam": "Rakvere Tarvas",
+      "awayTeam": "Tallinna Kalev",
+      "officialScore": [
+        91,
+        83
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212062",
+      "date": "2021-12-01",
+      "homeTeam": "BC Kalev/Cramo",
+      "awayTeam": "Rakvere Tarvas",
+      "officialScore": [
+        94,
+        65
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212043",
+      "date": "2021-11-21",
+      "homeTeam": "Tallinna Kalev",
+      "awayTeam": "BK Liepaja",
+      "officialScore": [
+        74,
+        97
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212061",
+      "date": "2021-11-21",
+      "homeTeam": "Latvijas Universitāte",
+      "awayTeam": "KK Viimsi/Sportland",
+      "officialScore": [
+        57,
+        67
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212057",
+      "date": "2021-11-20",
+      "homeTeam": "Pärnu Sadam",
+      "awayTeam": "VEF Rīga",
+      "officialScore": [
+        77,
+        80
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212058",
+      "date": "2021-11-20",
+      "homeTeam": "TalTech/OPTIBET",
+      "awayTeam": "BC Kalev/Cramo",
+      "officialScore": [
+        53,
+        71
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212060",
+      "date": "2021-11-20",
+      "homeTeam": "Valmiera Glass VIA",
+      "awayTeam": "KK Viimsi/Sportland",
+      "officialScore": [
+        76,
+        81
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212059",
+      "date": "2021-11-20",
+      "homeTeam": "AVIS UTILITAS Rapla",
+      "awayTeam": "BK Ventspils",
+      "officialScore": [
+        82,
+        94
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212056",
+      "date": "2021-11-19",
+      "homeTeam": "Rakvere Tarvas",
+      "awayTeam": "BK Ogre",
+      "officialScore": [
+        57,
+        72
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212054",
+      "date": "2021-11-17",
+      "homeTeam": "Tartu Ülikool Maks & Moorits",
+      "awayTeam": "Pärnu Sadam",
+      "officialScore": [
+        82,
+        77
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212055",
+      "date": "2021-11-17",
+      "homeTeam": "Tallinna Kalev",
+      "awayTeam": "BC Kalev/Cramo",
+      "officialScore": [
+        62,
+        90
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212053",
+      "date": "2021-11-14",
+      "homeTeam": "Pärnu Sadam",
+      "awayTeam": "TalTech/OPTIBET",
+      "officialScore": [
+        60,
+        61
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212050",
+      "date": "2021-11-13",
+      "homeTeam": "BK Ogre",
+      "awayTeam": "Tartu Ülikool Maks & Moorits",
+      "officialScore": [
+        85,
+        66
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212052",
+      "date": "2021-11-13",
+      "homeTeam": "KK Viimsi/Sportland",
+      "awayTeam": "Rakvere Tarvas",
+      "officialScore": [
+        84,
+        73
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212051",
+      "date": "2021-11-13",
+      "homeTeam": "Tallinna Kalev",
+      "awayTeam": "Latvijas Universitāte",
+      "officialScore": [
+        74,
+        67
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212047",
+      "date": "2021-11-10",
+      "homeTeam": "VEF Rīga",
+      "awayTeam": "Tallinna Kalev",
+      "officialScore": [
+        97,
+        51
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212045",
+      "date": "2021-11-07",
+      "homeTeam": "TalTech/OPTIBET",
+      "awayTeam": "AVIS UTILITAS Rapla",
+      "officialScore": [
+        82,
+        73
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212046",
+      "date": "2021-11-07",
+      "homeTeam": "KK Viimsi/Sportland",
+      "awayTeam": "BK Liepaja",
+      "officialScore": [
+        81,
+        69
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212042",
+      "date": "2021-11-06",
+      "homeTeam": "VEF Rīga",
+      "awayTeam": "BK Ogre",
+      "officialScore": [
+        96,
+        84
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212044",
+      "date": "2021-11-06",
+      "homeTeam": "Pärnu Sadam",
+      "awayTeam": "Valmiera Glass VIA",
+      "officialScore": [
+        94,
+        71
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212135",
+      "date": "2021-11-05",
+      "homeTeam": "Latvijas Universitāte",
+      "awayTeam": "BK Ventspils",
+      "officialScore": [
+        71,
+        94
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212150",
+      "date": "2021-11-05",
+      "homeTeam": "Rakvere Tarvas",
+      "awayTeam": "Tartu Ülikool Maks & Moorits",
+      "officialScore": [
+        91,
+        89
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212039",
+      "date": "2021-10-31",
+      "homeTeam": "Pärnu Sadam",
+      "awayTeam": "KK Viimsi/Sportland",
+      "officialScore": [
+        74,
+        82
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212038",
+      "date": "2021-10-31",
+      "homeTeam": "Rakvere Tarvas",
+      "awayTeam": "TalTech/OPTIBET",
+      "officialScore": [
+        62,
+        92
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212034",
+      "date": "2021-10-30",
+      "homeTeam": "BK Liepaja",
+      "awayTeam": "VEF Rīga",
+      "officialScore": [
+        77,
+        83
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212111",
+      "date": "2021-10-30",
+      "homeTeam": "Latvijas Universitāte",
+      "awayTeam": "BK Ogre",
+      "officialScore": [
+        63,
+        82
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212036",
+      "date": "2021-10-30",
+      "homeTeam": "Valmiera Glass VIA",
+      "awayTeam": "BK Ventspils",
+      "officialScore": [
+        70,
+        80
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212037",
+      "date": "2021-10-30",
+      "homeTeam": "AVIS UTILITAS Rapla",
+      "awayTeam": "Tallinna Kalev",
+      "officialScore": [
+        87,
+        96
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212033",
+      "date": "2021-10-29",
+      "homeTeam": "BC Kalev/Cramo",
+      "awayTeam": "Tartu Ülikool Maks & Moorits",
+      "officialScore": [
+        86,
+        36
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212031",
+      "date": "2021-10-24",
+      "homeTeam": "KK Viimsi/Sportland",
+      "awayTeam": "VEF Rīga",
+      "officialScore": [
+        64,
+        87
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212032",
+      "date": "2021-10-24",
+      "homeTeam": "BK Liepaja",
+      "awayTeam": "TalTech/OPTIBET",
+      "officialScore": [
+        80,
+        81
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212029",
+      "date": "2021-10-23",
+      "homeTeam": "Tartu Ülikool Maks & Moorits",
+      "awayTeam": "BK Ogre",
+      "officialScore": [
+        75,
+        81
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212027",
+      "date": "2021-10-23",
+      "homeTeam": "Tallinna Kalev",
+      "awayTeam": "VEF Rīga",
+      "officialScore": [
+        66,
+        93
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212030",
+      "date": "2021-10-23",
+      "homeTeam": "AVIS UTILITAS Rapla",
+      "awayTeam": "Valmiera Glass VIA",
+      "officialScore": [
+        93,
+        77
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212026",
+      "date": "2021-10-22",
+      "homeTeam": "BK Ventspils",
+      "awayTeam": "TalTech/OPTIBET",
+      "officialScore": [
+        86,
+        71
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212025",
+      "date": "2021-10-22",
+      "homeTeam": "Rakvere Tarvas",
+      "awayTeam": "BC Kalev/Cramo",
+      "officialScore": [
+        65,
+        93
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212024",
+      "date": "2021-10-20",
+      "homeTeam": "BC Kalev/Cramo",
+      "awayTeam": "Latvijas Universitāte",
+      "officialScore": [
+        69,
+        67
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212021",
+      "date": "2021-10-17",
+      "homeTeam": "AVIS UTILITAS Rapla",
+      "awayTeam": "Rakvere Tarvas",
+      "officialScore": [
+        90,
+        85
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212023",
+      "date": "2021-10-17",
+      "homeTeam": "TalTech/OPTIBET",
+      "awayTeam": "Tallinna Kalev",
+      "officialScore": [
+        92,
+        67
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212019",
+      "date": "2021-10-16",
+      "homeTeam": "VEF Rīga",
+      "awayTeam": "Pärnu Sadam",
+      "officialScore": [
+        92,
+        95
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212020",
+      "date": "2021-10-16",
+      "homeTeam": "BK Liepaja",
+      "awayTeam": "Valmiera Glass VIA",
+      "officialScore": [
+        80,
+        82
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212022",
+      "date": "2021-10-16",
+      "homeTeam": "Tartu Ülikool Maks & Moorits",
+      "awayTeam": "KK Viimsi/Sportland",
+      "officialScore": [
+        65,
+        82
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212018",
+      "date": "2021-10-15",
+      "homeTeam": "BK Ventspils",
+      "awayTeam": "BK Ogre",
+      "officialScore": [
+        77,
+        57
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212017",
+      "date": "2021-10-13",
+      "homeTeam": "BK Liepaja",
+      "awayTeam": "Latvijas Universitāte",
+      "officialScore": [
+        72,
+        77
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212015",
+      "date": "2021-10-13",
+      "homeTeam": "Valmiera Glass VIA",
+      "awayTeam": "VEF Rīga",
+      "officialScore": [
+        63,
+        75
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212014",
+      "date": "2021-10-10",
+      "homeTeam": "KK Viimsi/Sportland",
+      "awayTeam": "BK Ventspils",
+      "officialScore": [
+        67,
+        80
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212012",
+      "date": "2021-10-09",
+      "homeTeam": "TalTech/OPTIBET",
+      "awayTeam": "BK Ogre",
+      "officialScore": [
+        103,
+        73
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212013",
+      "date": "2021-10-09",
+      "homeTeam": "Latvijas Universitāte",
+      "awayTeam": "Rakvere Tarvas",
+      "officialScore": [
+        64,
+        61
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212011",
+      "date": "2021-10-08",
+      "homeTeam": "VEF Rīga",
+      "awayTeam": "AVIS UTILITAS Rapla",
+      "officialScore": [
+        96,
+        69
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212008",
+      "date": "2021-10-06",
+      "homeTeam": "Pärnu Sadam",
+      "awayTeam": "BK Liepaja",
+      "officialScore": [
+        79,
+        68
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212009",
+      "date": "2021-10-06",
+      "homeTeam": "Tallinna Kalev",
+      "awayTeam": "Valmiera Glass VIA",
+      "officialScore": [
+        89,
+        69
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212007",
+      "date": "2021-10-03",
+      "homeTeam": "KK Viimsi/Sportland",
+      "awayTeam": "Tallinna Kalev",
+      "officialScore": [
+        87,
+        62
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212003",
+      "date": "2021-10-02",
+      "homeTeam": "BK Ogre",
+      "awayTeam": "AVIS UTILITAS Rapla",
+      "officialScore": [
+        107,
+        84
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212004",
+      "date": "2021-10-02",
+      "homeTeam": "BK Liepaja",
+      "awayTeam": "Rakvere Tarvas",
+      "officialScore": [
+        105,
+        100
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212005",
+      "date": "2021-10-02",
+      "homeTeam": "TalTech/OPTIBET",
+      "awayTeam": "Valmiera Glass VIA",
+      "officialScore": [
+        78,
+        76
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212006",
+      "date": "2021-10-02",
+      "homeTeam": "Latvijas Universitāte",
+      "awayTeam": "Tartu Ülikool Maks & Moorits",
+      "officialScore": [
+        80,
+        77
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212002",
+      "date": "2021-10-01",
+      "homeTeam": "BK Ventspils",
+      "awayTeam": "Rakvere Tarvas",
+      "officialScore": [
+        89,
+        67
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    },
+    {
+      "providerGameId": "2022212001",
+      "date": "2021-10-01",
+      "homeTeam": "VEF Rīga",
+      "awayTeam": "BC Kalev/Cramo",
+      "officialScore": [
+        86,
+        84
+      ],
+      "completed": true,
+      "lookupStatus": "not_attempted_browser_tool_stop",
+      "matchId": null,
+      "jsonStatus": "not_checked",
+      "reason": "Not attempted in this continuation: the computer-use tool halted browser navigation because it could not determine the current Chrome URL with sufficient confidence. No Cloudflare challenge was seen during this continuation."
+    }
+  ]
+}

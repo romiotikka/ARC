@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import re
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from datetime import datetime
 from html.parser import HTMLParser
 from typing import Callable
@@ -12,6 +12,8 @@ from urllib.request import Request, urlopen
 from ..exceptions import ProviderError
 from ..models import PlayerCandidate
 from .base import IdentityProvider
+
+_POSITION_MAP = {"PG": "G", "SG": "G", "SF": "F", "PF": "F", "C": "C"}
 
 
 class BasketProvider(IdentityProvider):
@@ -41,7 +43,20 @@ class BasketProvider(IdentityProvider):
             f"{quote_plus(team_id)}//roster?setSid={quote_plus(season)}"
         )
         roster_html = self._fetch(url)
-        return tuple(self._fetch_profile(player_id) for player_id in _extract_player_ids(roster_html))
+        roster_details = _parse_roster_details(roster_html)
+        player_ids = _extract_player_ids(roster_html)
+        candidates = []
+        for player_id in player_ids:
+            candidate = self._fetch_profile(player_id)
+            details = roster_details.get(player_id)
+            if details is not None:
+                candidate = replace(
+                    candidate,
+                    jersey_number=details.jersey_number or candidate.jersey_number,
+                    position=details.position or candidate.position,
+                )
+            candidates.append(candidate)
+        return tuple(candidates)
 
     def search_players(self, search: str) -> tuple[PlayerCandidate, ...]:
         """Search the public player directory and normalize matching profiles."""
@@ -107,6 +122,95 @@ class _ProfileParser(HTMLParser):
         self.text_parts.append(text)
         if self._heading_depth:
             self.headings.append(text)
+
+
+@dataclass(frozen=True, slots=True)
+class _RosterDetails:
+    jersey_number: str | None
+    position: str | None
+
+
+class _RosterParser(HTMLParser):
+    _PLAYER_ID = re.compile(r"pid=(\d+)")
+    _JERSEY_AND_NAME = re.compile(r"^\s*#?(\d+)\s+(.+?)\s*$")
+    _POSITION = re.compile(r"\b(PG|SG|SF|PF|C)\b", re.IGNORECASE)
+    _VOID_TAGS = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "param", "source", "track", "wbr"}
+
+    def __init__(self) -> None:
+        super().__init__()
+        self.details: dict[str, _RosterDetails] = {}
+        self._stack: list[str] = []
+        self._player_id: str | None = None
+        self._player_depth: int | None = None
+        self._capture: str | None = None
+        self._capture_depth: int | None = None
+        self._capture_text: list[str] = []
+        self._position_text: str | None = None
+        self._jersey_number: str | None = None
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        attributes = dict(attrs)
+        depth = len(self._stack) + 1
+        classes = set((attributes.get("class") or "").split())
+        if tag == "div" and "player" in classes:
+            onclick = attributes.get("onclick") or ""
+            match = self._PLAYER_ID.search(onclick)
+            self._player_id = match.group(1) if match else None
+            self._player_depth = depth
+            self._position_text = None
+            self._jersey_number = None
+        elif self._player_id and tag == "div" and "name" in classes:
+            self._capture = "name"
+            self._capture_depth = depth
+            self._capture_text = []
+        elif self._player_id and tag == "div" and "positionAndHeight" in classes:
+            self._capture = "position"
+            self._capture_depth = depth
+            self._capture_text = []
+        if tag not in self._VOID_TAGS:
+            self._stack.append(tag)
+
+    def handle_endtag(self, tag: str) -> None:
+        depth = len(self._stack)
+        if self._capture and tag == "div" and depth == self._capture_depth:
+            value = _clean_text(" ".join(self._capture_text))
+            if self._capture == "name":
+                match = self._JERSEY_AND_NAME.match(value)
+                if match:
+                    self._jersey_number = match.group(1)
+            else:
+                self._position_text = value
+            self._capture = None
+            self._capture_depth = None
+            self._capture_text = []
+
+        if tag == "div" and self._player_id and depth == self._player_depth:
+            jersey = getattr(self, "_jersey_number", None)
+            position_match = self._POSITION.search(self._position_text or "")
+            position = (
+                _POSITION_MAP[position_match.group(1).upper()]
+                if position_match
+                else None
+            )
+            self.details[self._player_id] = _RosterDetails(jersey, position)
+            self._player_id = None
+            self._player_depth = None
+            self._jersey_number = None
+
+        for index in range(len(self._stack) - 1, -1, -1):
+            if self._stack[index] == tag:
+                del self._stack[index:]
+                break
+
+    def handle_data(self, data: str) -> None:
+        if self._capture:
+            self._capture_text.append(data)
+
+
+def _parse_roster_details(html: str) -> dict[str, _RosterDetails]:
+    parser = _RosterParser()
+    parser.feed(html)
+    return parser.details
 
 
 def _parse_profile(html: str, player_id: str) -> PlayerCandidate:

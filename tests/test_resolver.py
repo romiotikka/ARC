@@ -9,6 +9,7 @@ from __future__ import annotations
 import sqlite3
 import sys
 import json
+import os
 import subprocess
 import tempfile
 from pathlib import Path
@@ -317,17 +318,18 @@ def test_team_change_does_not_duplicate_player() -> None:
 # ── Scenario 2: same player with a different name form ────────────────────────
 
 def test_initial_form_matches_full_name() -> None:
-    print("\n[2] Same player — initial name form 'K. Kitsing'")
+    print("\n[2] Initial-only name requires REVIEW without independent evidence")
     db = _make_db()
     _seed(db, "abc", "Kristjan Kitsing", "Kristjan", "Kitsing")
     r = IdentityResolver(db)
 
-    res = r.resolve(_ctx("K. Kitsing"))
-    check("status MATCH",            res.status == ResolverStatus.MATCH)
-    check("same player_id",          res.player_id == "abc")
-    check("confidence ~0.80",        res.confidence == 0.80)
-    check("no duplicate",            _player_count(db) == 1)
-    # 0.80 < _STRONG_MATCH (0.90): alias must NOT be auto-learned
+    raised = False
+    try:
+        r.resolve(_ctx("K. Kitsing"))
+    except ManualReviewRequired:
+        raised = True
+    check("ManualReviewRequired raised", raised)
+    check("no duplicate", _player_count(db) == 1)
     check("no alias learned",        "K. Kitsing" not in _aliases(db, "abc"))
 
 
@@ -630,10 +632,10 @@ def test_provider_team_change_same_external_id() -> None:
 def test_provider_roster_creates_new_player() -> None:
     print("\n[12] Provider — new external_player_id creates a new ARC player")
     roster = [_candidate("pid-42", "Marcus Johnson", "Marcus", "Johnson",
-                         birth_date="1995-06-15", nationality="USA", height_cm=198)]
+                         jersey_number="7", birth_date="1995-06-15", nationality="USA", height_cm=198)]
     db, r = _setup_provider_db(roster)
 
-    res = r.resolve(_ctx("Marcus Johnson"))
+    res = r.resolve(_ctx("Marcus Johnson", jersey="7"))
     check("status CREATED",              res.status == ResolverStatus.CREATED)
     check("player_id assigned",          res.player_id is not None)
     check("one player in DB",            _player_count(db) == 1)
@@ -653,11 +655,11 @@ def test_provider_roster_creates_new_player() -> None:
 
 def test_provider_roster_links_to_existing_player() -> None:
     print("\n[13] Provider — roster name-match links external ID to existing ARC player")
-    roster = [_candidate("pid-77", "Kristjan Kitsing", "Kristjan", "Kitsing")]
+    roster = [_candidate("pid-77", "Kristjan Kitsing", "Kristjan", "Kitsing", jersey_number="7")]
     db, r = _setup_provider_db(roster)
     _seed(db, "abc", "Kristjan Kitsing", "Kristjan", "Kitsing")
 
-    res = r.resolve(_ctx("K. Kitsing"))
+    res = r.resolve(_ctx("K. Kitsing", jersey="7"))
     check("status MATCH",               res.status == ResolverStatus.MATCH)
     check("existing player reused",     res.player_id == "abc")
     check("no duplicate",               _player_count(db) == 1)
@@ -732,7 +734,7 @@ def test_provider_calls_require_all_entity_mappings() -> None:
     db = _make_db()
     provider_a = TrackingProvider("p_a", [_candidate("a-1", "Other Name", provider="p_a")])
     provider_b = TrackingProvider(
-        "p_b", [_candidate("b-1", "Kristjan Kitsing", "Kristjan", "Kitsing", provider="p_b")]
+        "p_b", [_candidate("b-1", "Kristjan Kitsing", "Kristjan", "Kitsing", provider="p_b", jersey_number="7")]
     )
     r = IdentityResolver(db, providers=[provider_a, provider_b])
     _seed(db, "abc", "Kristjan Kitsing", "Kristjan", "Kitsing")
@@ -746,7 +748,7 @@ def test_provider_calls_require_all_entity_mappings() -> None:
     r.store_season_external_id(3, "p_b", "season-b")
     r.store_league_external_id(1, "p_b", "league-b")
 
-    result = r.resolve(_ctx("K. Kitsing"))
+    result = r.resolve(_ctx("K. Kitsing", jersey="7"))
     check("same ARC team maps differently per provider", _team_ext_id(db, "p_a", "TLM") == "external-team-a" and _team_ext_id(db, "p_b", "TLM") == "external-team-b")
     check("same ARC season maps differently per provider", _season_ext_id(db, "p_a", 3) == "season-a" and _season_ext_id(db, "p_b", 3) == "season-b")
     check("provider without league mapping skipped", provider_a.calls == [])
@@ -865,8 +867,12 @@ def test_diacritic_canonical_discovery_without_existing_ascii_alias() -> None:
 
     candidates = resolver._search_candidates("A Smits")
     check("candidate discovered without pre-learned ASCII alias", [candidate["player_id"] for candidate in candidates] == ["smits"])
-    result = resolver.resolve(_ctx("A Smits"))
-    check("identity resolves to existing player", result.player_id == "smits")
+    raised = False
+    try:
+        resolver.resolve(_ctx("A Smits"))
+    except ManualReviewRequired:
+        raised = True
+    check("initial-only diacritic candidate requires review", raised)
 
 
 def test_local_discovery_is_targeted_across_name_forms() -> None:
@@ -978,14 +984,14 @@ def test_roster_known_id_requires_matching_occurrence_evidence() -> None:
     print("\n[21e] Known roster ID cannot hijack another player's occurrence")
     roster = [
         _candidate("john-id", "John Smith", "John", "Smith"),
-        _candidate("kitsing-id", "Kristjan Kitsing", "Kristjan", "Kitsing"),
+        _candidate("kitsing-id", "Kristjan Kitsing", "Kristjan", "Kitsing", jersey_number="33"),
     ]
     db, r = _setup_provider_db(roster)
     _seed(db, "john", "John Smith", "John", "Smith")
     _seed(db, "kitsing", "Kristjan Kitsing", "Kristjan", "Kitsing")
     r.store_external_id("john", "fake", "john-id")
 
-    result = r.resolve(_ctx("K. Kitsing"))
+    result = r.resolve(_ctx("K. Kitsing", jersey="33"))
     check("resolves Kitsing, not first mapped roster player", result.player_id == "kitsing")
     check("Kitsing provider ID linked", _ext_player_id(db, "fake", "kitsing") == "kitsing-id")
     check("wrong alias not learned", "K. Kitsing" not in _aliases(db, "john"))
@@ -1056,7 +1062,7 @@ def test_provider_fallback_a_insufficient_b_resolves() -> None:
     provider_b = NamedFakeProvider(
         "p_b",
         [
-            _candidate("b-99", "Kristjan Kitsing", "Kristjan", "Kitsing", provider="p_b"),
+            _candidate("b-99", "Kristjan Kitsing", "Kristjan", "Kitsing", provider="p_b", jersey_number="7"),
         ],
     )
     r = IdentityResolver(db, providers=[provider_a, provider_b])
@@ -1069,7 +1075,7 @@ def test_provider_fallback_a_insufficient_b_resolves() -> None:
     r.store_season_external_id(3, "p_b", "2025")
     r.store_league_external_id(1, "p_b", "league-b")
 
-    res = r.resolve(_ctx("K. Kitsing"))
+    res = r.resolve(_ctx("K. Kitsing", jersey="7"))
     check("status MATCH",              res.status == ResolverStatus.MATCH)
     check("resolved existing player",  res.player_id == "abc")
     check("linked via provider B",     _ext_player_id(db, "p_b", "abc") == "b-99")
@@ -1136,8 +1142,8 @@ def test_provider_ambiguous_across_all_providers_requires_review() -> None:
 
 
 def test_livestats_import_bridge_reuses_source_player_id() -> None:
-    """The Node importer bridge must delegate name variants to IdentityResolver."""
-    print("\n[25] LiveStats bridge - source ID reuses ARC player across name forms")
+    """The Python bridge stages identity changes without writing its source DB."""
+    print("\n[25] LiveStats bridge - identity changes are staged for the game transaction")
     root = Path(__file__).resolve().parents[1]
     bridge = root / "scripts" / "identity" / "resolve_livestats_players.py"
     schema = (root / "database" / "schema.sql").read_text(encoding="utf-8")
@@ -1154,9 +1160,14 @@ def test_livestats_import_bridge_reuses_source_player_id() -> None:
                 input=json.dumps({"occurrences": [occurrence]}),
                 text=True,
                 capture_output=True,
+                env={
+                    **os.environ,
+                    "ARC_API_SPORTS_MAPPINGS": "",
+                    "ARC_IDENTITY_PROVIDERS": "",
+                },
                 check=True,
             )
-            return json.loads(completed.stdout)["resolved"][occurrence["key"]]
+            return json.loads(completed.stdout)
 
         first = resolve({
             "key": "first",
@@ -1170,25 +1181,15 @@ def test_livestats_import_bridge_reuses_source_player_id() -> None:
             "jersey_number": "7",
             "position": "F",
         })
-        second = resolve({
-            "key": "second",
-            "raw_name": "K. Kitsing",
-            "team_id": 1,
-            "season_id": 20252026,
-            "league_id": 1,
-            "game_id": "game_2",
-            "provider": "fiba_livestats",
-            "external_player_id": "live-42",
-            "jersey_number": "7",
-            "position": "F",
-        })
 
-        check("first occurrence created", first["status"] == ResolverStatus.CREATED.value)
-        check("alternate name matched by source ID", second["status"] == ResolverStatus.MATCH.value)
-        check("same ARC player ID", first["player_id"] == second["player_id"])
+        resolved = first["resolved"]["first"]
+        changes = first["identity_changes"]
+        check("first occurrence resolved as created", resolved["status"] == ResolverStatus.CREATED.value)
+        check("staged player row returned", any(row["canonical_name"] == "Kristjan Kitsing" for row in changes["players"]))
+        check("staged LiveStats external ID returned", any(row["provider"] == "fiba_livestats" and row["external_player_id"] == "live-42" for row in changes["player_external_ids"]))
 
         connection = sqlite3.connect(database_path)
-        check("one ARC player after repeated occurrence", connection.execute("SELECT COUNT(*) FROM players").fetchone()[0] == 1)
+        check("source database unchanged before transaction commit", connection.execute("SELECT COUNT(*) FROM players").fetchone()[0] == 0)
         connection.close()
 
 
@@ -1245,16 +1246,16 @@ def test_alias_learning_skips_normalized_duplicates() -> None:
 
 
 def test_unmapped_provider_does_not_block_confident_local_match() -> None:
-    print("\n[28] Unmapped provider does not block confident local match (score >= 0.75)")
+    print("\n[28] Unmapped provider does not block a full-name local match")
     db = _make_db()
-    _seed(db, "abc", "Kristjan Kitsing", "Kristjan", "Kitsing")
+    _seed(db, "abc", "Artis Ate", "Artis", "Ate")
     provider = FakeProvider([])
     r = IdentityResolver(db, providers=[provider])
 
-    # K. Kitsing scores ~0.80 against Kristjan Kitsing (above _MATCH threshold 0.75).
-    # Even though provider is configured, provider has no mapping/evidence,
-    # so resolver must return the local MATCH result rather than raising ManualReviewRequired.
-    res = r.resolve(_ctx("K. Kitsing"))
+    res = r.resolve(IdentityContext(
+        raw_name="A. Ate", first_name="Artis", last_name="Ate",
+        team_id="TLM", season_id=3, league_id=1,
+    ))
     check("confident local match resolves", res.status == ResolverStatus.MATCH)
     check("correct player_id", res.player_id == "abc")
     check("confidence above match threshold", res.confidence >= 0.75)
@@ -1280,6 +1281,178 @@ def test_unmapped_provider_preserves_review_for_low_confidence_match() -> None:
 
     check("ManualReviewRequired raised", raised)
     check("no new player created", _player_count(db) == 1)
+
+
+def test_full_source_names_disambiguate_real_collisions() -> None:
+    print("\n[30] Full source names distinguish the 2155261 roster collisions")
+    for raw, existing, incoming, last in (
+        ("K. Kitsing", "Kristjan", "Kaspar", "Kitsing"),
+        ("A. Lippasaar", "Arvan-Johhannes", "Arden-Joosep", "Lippasaar"),
+    ):
+        db = _make_db()
+        _seed(db, "existing", f"{existing} {last}", existing, last)
+        resolver = IdentityResolver(db)
+        context = IdentityContext(
+            raw_name=raw,
+            team_id="TLM",
+            season_id=3,
+            league_id=1,
+            jersey_number="13",
+            first_name=incoming,
+            last_name=last,
+            canonical_name_hint=f"{incoming} {last}",
+        )
+        raised = False
+        try:
+            resolver.resolve(context)
+        except ManualReviewRequired:
+            raised = True
+        check(f"{incoming} does not match {existing}", raised)
+        check(f"{incoming} does not create a duplicate", _player_count(db) == 1)
+
+        _seed(db, "incoming", f"{incoming} {last}", incoming, last)
+        result = resolver.resolve(context)
+        check(f"full source name selects {incoming}", result.player_id == "incoming")
+
+
+def test_full_name_evidence_and_known_source_id() -> None:
+    print("\n[31] Full names strengthen valid matches and constrain known IDs")
+    db = _make_db()
+    _seed(db, "kristjan", "Kristjan Kitsing", "Kristjan", "Kitsing")
+    resolver = IdentityResolver(db)
+    context = IdentityContext(
+        raw_name="K. Kitsing", team_id="TLM", season_id=3, league_id=1,
+        first_name="Kristjan", last_name="Kitsing", canonical_name_hint="Kristjan Kitsing",
+    )
+    result = resolver.resolve(context)
+    check("matching full evidence reuses the existing identity", result.player_id == "kristjan")
+    check("matching full evidence is strong", result.confidence >= 0.90)
+
+    resolver.store_external_id("kristjan", "fiba_livestats", "live-known")
+    for raw, first in (("Andrei Kitsing", "Andrei"), ("K. Kitsing", "Kaspar")):
+        raised = False
+        try:
+            resolver.resolve(IdentityContext(
+                raw_name=raw, team_id="TLM", season_id=3, league_id=1,
+                provider="fiba_livestats", external_player_id="live-known",
+                first_name=first, last_name="Kitsing",
+            ))
+        except ManualReviewRequired:
+            raised = True
+        check(f"known ID cannot override conflicting {first} evidence", raised)
+    check("conflicting names are not learned as aliases", "Andrei Kitsing" not in _aliases(db, "kristjan"))
+
+    unrelated_hint = IdentityContext(
+        raw_name="K. Kitsing", team_id="TLM", season_id=3, league_id=1,
+        first_name="Alice", last_name="Example", canonical_name_hint="Alice Example",
+    )
+    raised = False
+    try:
+        resolver.resolve(unrelated_hint)
+    except ManualReviewRequired:
+        raised = True
+    check("contradictory full and abbreviated evidence requires review", raised)
+    check("contradictory evidence does not create a player", _player_count(db) == 1)
+
+
+def test_mapped_provider_candidates_are_ranked_before_selection() -> None:
+    print("\n[32] Mapped provider candidates are ranked before selection")
+    roster = [
+        _candidate("john-id", "John Smith", "John", "Smith"),
+        _candidate("james-id", "James Smith", "James", "Smith"),
+    ]
+    db, resolver = _setup_provider_db(roster)
+    _seed(db, "john", "John Smith", "John", "Smith")
+    _seed(db, "james", "James Smith", "James", "Smith")
+    resolver.store_external_id("john", "fake", "john-id")
+    resolver.store_external_id("james", "fake", "james-id")
+    raised = False
+    try:
+        resolver.resolve(_ctx("J. Smith"))
+    except ManualReviewRequired:
+        raised = True
+    check("equally plausible mapped providers require review", raised)
+    check("no new player is created for a provider tie", _player_count(db) == 2)
+
+    result = resolver.resolve(IdentityContext(
+        raw_name="J. Smith", team_id="TLM", season_id=3, league_id=1,
+        first_name="James", last_name="Smith", canonical_name_hint="James Smith",
+    ))
+    check("full name selects James regardless of roster order", result.player_id == "james")
+
+    conflicting = _candidate(
+        "conflict", "Kristjan Kitsing", "Kristjan", "Kitsing",
+        jersey_number="7", position="F", team_id="TLM", season_id=3,
+    )
+    score = _score_candidate_with_context(
+        IdentityContext(raw_name="Andrei Kitsing", team_id="TLM", season_id=3,
+                        league_id=1, jersey_number="7", position="F"),
+        conflicting,
+    )
+    check("context cannot promote conflicting first names", score == 0.50)
+
+    db, resolver = _setup_provider_db([_candidate("provider-id", "Alice Example", "Alice", "Example", jersey_number="9")])
+    result = resolver.resolve(IdentityContext(
+        raw_name="A. Example", team_id="TLM", season_id=3, league_id=1,
+        first_name="Alice", last_name="Example",
+        jersey_number="9",
+        provider="fiba_livestats", external_player_id="live-id",
+    ))
+    check("provider-confirmed source ID is stored", resolver.resolve_by_external_id("fiba_livestats", "live-id") == result.player_id)
+    check("provider ID is stored separately", resolver.resolve_by_external_id("fake", "provider-id") == result.player_id)
+
+
+def test_provider_candidates_are_ranked_across_providers() -> None:
+    print("\n[32b] Cross-provider evidence is compared before selection")
+    db = _make_db()
+    _seed(db, "john", "John Smith", "John", "Smith")
+    _seed(db, "james", "James Smith", "James", "Smith")
+    providers = [
+        NamedFakeProvider("p_a", [_candidate("a", "John Smith", "John", "Smith", provider="p_a")]),
+        NamedFakeProvider("p_b", [_candidate("b", "James Smith", "James", "Smith", provider="p_b")]),
+    ]
+    resolver = IdentityResolver(db, providers)
+    for provider_name in ("p_a", "p_b"):
+        resolver.store_team_external_id("TLM", provider_name, "team")
+        resolver.store_season_external_id(3, provider_name, "season")
+        resolver.store_league_external_id(1, provider_name, "league")
+    raised = False
+    try:
+        resolver.resolve(_ctx("J. Smith"))
+    except ManualReviewRequired:
+        raised = True
+    check("competing provider candidates require review", raised)
+
+    providers = [
+        NamedFakeProvider("p_a", [_candidate("a", "John Smith", "John", "Smith", provider="p_a")]),
+        NamedFakeProvider("p_b", [_candidate("b", "John Smith", "John", "Smith", provider="p_b")]),
+    ]
+    resolver = IdentityResolver(db, providers)
+    resolver.store_external_id("john", "p_a", "a")
+    resolver.store_external_id("john", "p_b", "b")
+    result = resolver.resolve(_ctx("J. Smith"))
+    check("confirmed cross-provider IDs resolve to the same player", result.player_id == "john")
+    check("confirmed cross-provider IDs do not create duplicates", _player_count(db) == 2)
+
+
+def test_unicode_names_preserve_distinct_identities() -> None:
+    print("\n[33] Unicode names retain meaningful distinctions")
+    from scripts.identity.utils import normalize_alias
+
+    check("Latin diacritic variants still match", normalize_alias("A. Šmits") == normalize_alias("A Smits"))
+    check("different Chinese surnames remain distinct", normalize_alias("John 李") != normalize_alias("John 王"))
+    check("meaningful Indic combining marks remain distinct", normalize_alias("क") != normalize_alias("क़"))
+    check("different name boundaries are not an exact match", _score_name("An Nalee", {
+        "canonical_name": "Anna Lee", "first_name": "Anna", "last_name": "Lee", "aliases": [],
+    }) < 0.75)
+    db = _make_db()
+    _seed(db, "one", "John 李", "John", "李")
+    try:
+        result = IdentityResolver(db).resolve(_ctx("John 王"))
+    except ManualReviewRequired:
+        result = None
+    check("different non-Latin surnames do not merge", result is None or result.player_id != "one")
+    check("Unicode identity remains explicit", _player_count(db) == (1 if result is None else 2))
 
 
 # ── Runner ────────────────────────────────────────────────────────────────────
@@ -1336,6 +1509,11 @@ if __name__ == "__main__":
     test_alias_learning_skips_normalized_duplicates()
     test_unmapped_provider_does_not_block_confident_local_match()
     test_unmapped_provider_preserves_review_for_low_confidence_match()
+    test_full_source_names_disambiguate_real_collisions()
+    test_full_name_evidence_and_known_source_id()
+    test_mapped_provider_candidates_are_ranked_before_selection()
+    test_provider_candidates_are_ranked_across_providers()
+    test_unicode_names_preserve_distinct_identities()
 
     print(f"\n{'=' * 44}")
     print(f"  {_passed} passed   {_failed} failed")

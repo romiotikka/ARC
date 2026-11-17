@@ -1,0 +1,15 @@
+import { DatabaseSync } from 'node:sqlite';
+import { createHash } from 'node:crypto';
+import { gunzipSync } from 'node:zlib';
+const db=new DatabaseSync(process.env.ARC_DATABASE_PATH,{readOnly:true});
+const game='validation-2155684';
+const c=db.prepare("SELECT * FROM source_import_analytical_candidates WHERE game_id=? AND status='promoted' ORDER BY candidate_id DESC LIMIT 1").get(game);
+const snap=db.prepare('SELECT * FROM source_game_snapshots WHERE snapshot_id=?').get(c.snapshot_id);
+const body=gunzipSync(snap.payload_gzip);
+const replay=db.prepare("SELECT input_sha256,output_sha256 FROM reconstruction_runs WHERE game_id=? AND status='succeeded' ORDER BY reconstruction_run_id").all(game);
+const segments=db.prepare('SELECT ls.*,l.player_1,l.player_2,l.player_3,l.player_4,l.player_5 FROM lineup_segments ls JOIN lineups l USING(lineup_id) WHERE game_id=?').all(game);
+const invalid=segments.filter(s=>new Set([s.player_1,s.player_2,s.player_3,s.player_4,s.player_5]).size!==5).length;
+const batch=db.prepare("SELECT action_number,period,clock,team_id,player_id,event_type,json_extract(metadata_json,'$.shirtNumber') shirt FROM events WHERE game_id=? AND action_number BETWEEN 484 AND 495 ORDER BY action_number").all(game);
+const counts={team_games:db.prepare('SELECT COUNT(*) n FROM team_games WHERE game_id=?').get(game).n,player_games:db.prepare('SELECT COUNT(*) n FROM player_games WHERE game_id=?').get(game).n,events:db.prepare('SELECT COUNT(*) n FROM events WHERE game_id=?').get(game).n,lineup_segments:segments.length};
+const result={captured_body_hash_ok:createHash('sha256').update(body).digest('hex')===snap.captured_body_sha256,counts,invalid_five_player_lineups:invalid,reconstruction_runs:replay,repeat_hashes_identical:replay.length===2&&replay[0].input_sha256===replay[1].input_sha256&&replay[0].output_sha256===replay[1].output_sha256,batch_action_order:batch.map(x=>x.action_number),batch_events:batch,foreign_key_violations:db.prepare('PRAGMA foreign_key_check').all().length};
+console.log(JSON.stringify(result,null,2));db.close();

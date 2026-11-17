@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import re
 import unicodedata
 
 
@@ -30,8 +29,18 @@ def normalize_alias(value: str) -> str:
     """Return a stable comparison key for a player name or alias."""
 
     decomposed = unicodedata.normalize("NFKD", value)
-    without_marks = "".join(character for character in decomposed if not unicodedata.combining(character))
-    return re.sub(r"[^a-z0-9]+", "", without_marks.lower())
+    normalized: list[str] = []
+    latin_base = False
+    for character in decomposed.casefold():
+        if unicodedata.category(character).startswith("M"):
+            if not latin_base:
+                normalized.append(character)
+        elif character.isalnum():
+            normalized.append(character)
+            latin_base = unicodedata.name(character, "").startswith("LATIN ")
+        else:
+            latin_base = False
+    return "".join(normalized)
 
 
 def normalize_position(value: str | None) -> str | None:

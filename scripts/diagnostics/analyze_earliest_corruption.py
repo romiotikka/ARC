@@ -13,11 +13,11 @@ from lineup_segment_generator import (
     build_team_roster,
     connect,
     extract_sorted_events,
-    fetch_json,
     load_game_row_by_id,
+    load_source_snapshot_data,
     natural_player_sort_key,
     normalize_text,
-    resolve_player_id,
+    resolve_substitution_occurrence,
 )
 
 
@@ -42,17 +42,16 @@ def format_lineup(players: set[str]) -> str:
     return ",".join(sorted(players, key=natural_player_sort_key))
 
 
-def resolve_player_id_safe(connection, player_lookup: dict[str, str], player_name: str | None) -> str | None:
-    if not normalize_text(player_name):
-        return None
+def resolve_player_id_safe(connection, game_id: str, team_id: str, team_number: str, event: dict, team_rosters: dict) -> str | None:
     try:
-        return resolve_player_id(connection, player_lookup, normalize_text(player_name) or "")
+        return resolve_substitution_occurrence(connection, game_id, team_id, event, team_rosters)
     except Exception:
         return None
 
 
 def build_event_records_for_game(connection, game_row, player_lookup: dict[str, str]) -> tuple[list[dict], dict[str, dict[str, dict]]]:
-    game_data = fetch_json(game_row["json_url"])
+    source_row = load_game_row_by_id(connection, str(game_row["game_id"]))
+    game_data = load_source_snapshot_data(connection, source_row)
     sorted_events = extract_sorted_events(game_data)
 
     team_ids = {
@@ -61,8 +60,8 @@ def build_event_records_for_game(connection, game_row, player_lookup: dict[str, 
     }
 
     starters = {
-        team_ids["1"]: set(build_team_roster(game_data, "1", connection, player_lookup)),
-        team_ids["2"]: set(build_team_roster(game_data, "2", connection, player_lookup)),
+        team_ids["1"]: set(build_team_roster(game_data, "1", connection, player_lookup, game_row["game_id"], team_ids["1"])),
+        team_ids["2"]: set(build_team_roster(game_data, "2", connection, player_lookup, game_row["game_id"], team_ids["2"])),
     }
 
     current = {
@@ -117,7 +116,7 @@ def build_event_records_for_game(connection, game_row, player_lookup: dict[str, 
 
         if event_type == "substitution" and team_id in current:
             player_name = normalize_text(event.get("player"))
-            player_id = resolve_player_id_safe(connection, player_lookup, player_name)
+            player_id = resolve_player_id_safe(connection, game_row["game_id"], team_id, team_number, event, game_data.get("tm") or {})
 
             if sub_type == "out":
                 if player_id is None:

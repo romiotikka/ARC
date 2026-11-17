@@ -4,29 +4,20 @@ import argparse
 import json
 from collections import Counter, defaultdict
 from pathlib import Path
-from urllib.error import HTTPError
-from urllib.request import Request, urlopen
-
 from lineup_reconstructor import build_player_lookup
 from lineup_reconstructor import connect
+from lineup_reconstructor import load_game_row_by_id
 from lineup_reconstructor import load_game_rows
+from lineup_reconstructor import load_source_snapshot_data
 from lineup_reconstructor import normalize_text
-from lineup_reconstructor import resolve_player_id
+from lineup_reconstructor import resolve_substitution_occurrence
 
 
 ROOT_DIR = Path(__file__).resolve().parents[2]
 DEFAULT_DATABASE_PATH = ROOT_DIR / "data" / "arc2.db"
-FETCH_TIMEOUT_SECONDS = 30
-
-
-def fetch_json(url: str) -> dict:
-    request = Request(url, headers={"User-Agent": "Mozilla/5.0"})
-    with urlopen(request, timeout=FETCH_TIMEOUT_SECONDS) as response:
-        return json.loads(response.read().decode("utf-8"))
-
-
 def load_source_substitutions(connection, game_row, player_lookup: dict[str, str]) -> list[dict]:
-    data = fetch_json(game_row["json_url"])
+    source_row = load_game_row_by_id(connection, str(game_row["game_id"]))
+    data = load_source_snapshot_data(connection, source_row)
     team_ids_by_livestats_number = {
         "1": normalize_text(game_row["home_team_id"]),
         "2": normalize_text(game_row["away_team_id"]),
@@ -45,7 +36,16 @@ def load_source_substitutions(connection, game_row, player_lookup: dict[str, str
         team_id = team_ids_by_livestats_number.get(livestats_team_number)
 
         player_name = normalize_text(event.get("player"))
-        player_id = resolve_player_id(connection, player_lookup, player_name) if player_name else None
+        try:
+            player_id = resolve_substitution_occurrence(
+                connection,
+                str(game_row["game_id"]),
+                str(team_id or ""),
+                event,
+                data.get("tm") or {},
+            )
+        except Exception:
+            player_id = None
 
         substitutions.append(
             {

@@ -1,0 +1,13 @@
+Imported validation-2155684 (2155684): TalTech/OPTIBET vs BK Ogre, player_games=22, events=497, event_types=16
+Lineups for validation-2155684: status=promoted, lineups=0, lineup_segments=42
+
+Import complete: succeeded=1, failed=0
+Imported games: 1
+Imported player_games: 22
+Imported events: 497
+Event types handled (max per game): 16
+Lineups created: 0
+Lineup segments created: 42
+
+Dead Letter Queue Status:
+  pending: 2 (max_retries=0)

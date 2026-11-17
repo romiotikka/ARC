@@ -112,7 +112,7 @@ class UpdateOrchestrator {
   }
 
   async runCollection(args) {
-    await this.logger.info("Step 1: Collecting game mappings from EstLat...");
+    await this.logger.info("Step 1: Collecting EstLat games and official dates...");
 
     const collectArgs = [];
     if (!args.allSeasons) {
@@ -124,7 +124,7 @@ class UpdateOrchestrator {
 
     try {
       await this.runScript("collect_estlatbl_seasons.mjs", collectArgs);
-      await this.logger.info("✓ Collection complete");
+      await this.logger.info("✓ Game and date collection complete");
     } catch (error) {
       await this.logger.error(`✗ Collection failed: ${error.message}`);
       throw error;

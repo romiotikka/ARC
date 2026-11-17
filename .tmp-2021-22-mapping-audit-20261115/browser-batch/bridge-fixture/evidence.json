@@ -1,0 +1,16 @@
+{
+  "seasonId": "20212022",
+  "evidence": [
+    {
+      "matchId": "test-id",
+      "capturedAt": "2026-11-16T07:53:55.8429670Z",
+      "jsonStatus": 200,
+      "pageStatus": 200,
+      "dataJsonText": "{\"tm\":{\"1\":{\"name\":\"VEF RIGA\",\"score\":95},\"2\":{\"name\":\"KK Viimsi/Sportland\",\"score\":64}}}",
+      "pageHtml": "<h6>Competition</h6><p>Paf Estonian-Latvian Basketball League</p><h6>Game Details</h6><p>Tip off: 5:00 pm GMT 10/4/22</p><p>VEF RIGA vs KK Viimsi/Sportland</p>",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/test-id/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/test-id/data.json",
+      "error": null
+    }
+  ]
+}

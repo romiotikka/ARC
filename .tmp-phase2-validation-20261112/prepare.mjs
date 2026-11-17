@@ -1,0 +1,11 @@
+import { readFileSync } from 'node:fs';
+import { DatabaseSync } from 'node:sqlite';
+const path = process.env.ARC_VALIDATION_DB;
+const db = new DatabaseSync(path);
+db.exec(readFileSync('database/schema.sql', 'utf8'));
+db.prepare('INSERT INTO leagues(league_id,name) VALUES(1,?)').run('Estonian-Latvian Basketball League');
+db.prepare('INSERT INTO seasons(season_id,label,start_year,end_year) VALUES(20252026,?,?,?)').run('2025-26', 2025, 2026);
+db.prepare('INSERT INTO games(game_id,league_id,season_id,status) VALUES(?,1,20252026,?)').run('2026212024', 'pending');
+db.prepare('INSERT INTO source_livestats_games(game_id,league_id,season_id,provider_game_id,match_id,json_url) VALUES(?,1,20252026,?,?,?)').run('2026212024', '2823541', '2823541', 'https://fibalivestats.dcd.shared.geniussports.com/data/2823541/data.json');
+db.close();
+console.log(`DB=${path}`);

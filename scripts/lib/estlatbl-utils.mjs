@@ -5,7 +5,7 @@ import { DatabaseSync } from "node:sqlite";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const rootDir = join(__dirname, "..", "..");
-const logsDir = join(rootDir, "logs");
+const logsDir = process.env.ARC_LOG_DIR ?? join(rootDir, "logs");
 const schemaPath = join(rootDir, "database", "schema.sql");
 
 /**
@@ -210,5 +210,5 @@ export function initializeDatabase(databasePath) {
  * Utility to get database path consistently
  */
 export function getDatabasePath() {
-  return join(rootDir, "data", "arc2.db");
+  return process.env.ARC_DATABASE_PATH ?? join(rootDir, "data", "arc2.db");
 }

@@ -1,0 +1,24 @@
+{
+  "generatedAt": "2026-11-16T07:53:55.934Z",
+  "sourceCsv": "C:\\Users\\Kasutaja\\Desktop\\ARC\\.tmp-2021-22-mapping-audit-20261115\\browser-batch\\bridge-fixture\\base.csv",
+  "candidateBundle": "C:\\Users\\Kasutaja\\Desktop\\ARC\\.tmp-2021-22-mapping-audit-20261115\\browser-batch\\bridge-fixture\\candidates.json",
+  "evidenceBundle": "C:\\Users\\Kasutaja\\Desktop\\ARC\\.tmp-2021-22-mapping-audit-20261115\\browser-batch\\bridge-fixture\\evidence.json",
+  "summary": {
+    "VERIFIED": 1,
+    "CONFLICT": 0,
+    "UNVERIFIED": 0,
+    "UNAVAILABLE": 0
+  },
+  "rows": [
+    {
+      "provider_game_id": "fixture-provider-1",
+      "match_id": "test-id",
+      "verification_status": "VERIFIED",
+      "validation_notes": "teams=true; score=true; date=true; competition=true; page_teams=true; FIBA=VEF RIGA 95 vs KK Viimsi/Sportland 64",
+      "capturedAt": "2026-11-16T07:53:55.8429670Z",
+      "sourceUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/EBF/test-id/p.html",
+      "jsonUrl": "https://fibalivestats.dcd.shared.geniussports.com/data/test-id/data.json"
+    }
+  ],
+  "collectionIssues": []
+}

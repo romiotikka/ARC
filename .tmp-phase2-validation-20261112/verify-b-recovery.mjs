@@ -1,0 +1,14 @@
+import { DatabaseSync } from 'node:sqlite';
+import { gunzipSync } from 'node:zlib';
+import { createHash } from 'node:crypto';
+const db=new DatabaseSync(process.env.ARC_DATABASE_PATH,{readOnly:true});
+const game='validation-2155684';
+const active=db.prepare("SELECT * FROM source_import_analytical_candidates WHERE game_id=? AND status='promoted' ORDER BY candidate_id DESC LIMIT 1").get(game);
+const source=db.prepare('SELECT * FROM source_game_snapshots WHERE snapshot_id=?').get(active.snapshot_id);
+const raw=gunzipSync(source.payload_gzip);
+const activeRun=db.prepare('SELECT rr.* FROM active_reconstructions a JOIN reconstruction_runs rr USING(reconstruction_run_id) WHERE a.game_id=?').get(game);
+const counts=Object.fromEntries(['team_games','player_games','events','lineup_segments'].map(t=>[t,db.prepare(`SELECT COUNT(*) n FROM ${t} WHERE game_id=?`).get(game).n]));
+const playerOccurrenceCount=db.prepare('SELECT COUNT(*) n FROM source_player_occurrences WHERE normalization_id=?').get(active.normalization_id).n;
+const decisionCount=db.prepare('SELECT COUNT(*) n FROM identity_decisions WHERE decision_set_id=?').get(active.decision_set_id).n;
+const result={latest_candidate:{candidate_id:active.candidate_id,status:active.status,snapshot_id:active.snapshot_id,normalization_id:active.normalization_id,decision_set_id:active.decision_set_id},active_source:db.prepare('SELECT snapshot_id,normalization_id FROM active_game_source_snapshots WHERE game_id=?').get(game),active_identity:db.prepare('SELECT normalization_id,decision_set_id FROM active_identity_decision_sets WHERE game_id=?').get(game),active_reconstruction:{id:activeRun.reconstruction_run_id,status:activeRun.status,input_sha256:activeRun.input_sha256,output_sha256:activeRun.output_sha256},counts,occurrences_and_decisions:{players:playerOccurrenceCount,decisions:decisionCount},raw_hash_ok:createHash('sha256').update(raw).digest('hex')===source.captured_body_sha256,foreign_key_violations:db.prepare('PRAGMA foreign_key_check').all().length};
+console.log(JSON.stringify(result,null,2));db.close();

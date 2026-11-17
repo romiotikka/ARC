@@ -1,0 +1,2 @@
+provider_game_id,season_id,game_date,home_team,away_team,home_score,away_score,match_id,source_url,notes,verification_status
+"2022212801","20212022","2022-04-09","VEF Rīga","BK Ogre","116","55","2080120","https://www.estlatbl.com/et/tulemused/2022212801/live-stats","Candidate observed in user-verified Chrome session; awaiting FIBA JSON validation.","VERIFIED"

@@ -1,0 +1,1589 @@
+{
+  "generatedAt": "2026-11-16T07:48:46.1380860Z",
+  "seasonId": "20212022",
+  "sourceCsv": "data/estlatbl_2021_22_mapping_overrides.csv",
+  "sourceAudit": ".tmp-2021-22-mapping-audit-20261115/mapping-audit.json",
+  "parseMatchIdPattern": "matchId=(\\d+)",
+  "verifiedMappings": [
+    {
+      "providerGameId": "2022212803",
+      "matchId": "2082682"
+    },
+    {
+      "providerGameId": "2022212804",
+      "matchId": "2082683"
+    },
+    {
+      "providerGameId": "2022212801",
+      "matchId": "2080120"
+    },
+    {
+      "providerGameId": "2022212802",
+      "matchId": "2080135"
+    },
+    {
+      "providerGameId": "2022212208",
+      "matchId": "2076532"
+    },
+    {
+      "providerGameId": "2022212206",
+      "matchId": "2076529"
+    },
+    {
+      "providerGameId": "2022212207",
+      "matchId": "2076528"
+    },
+    {
+      "providerGameId": "2022212205",
+      "matchId": "2076221"
+    },
+    {
+      "providerGameId": "2022212204",
+      "matchId": "2076531"
+    },
+    {
+      "providerGameId": "2022212203",
+      "matchId": "2076527"
+    },
+    {
+      "providerGameId": "2022212202",
+      "matchId": "2076526"
+    },
+    {
+      "providerGameId": "2022212201",
+      "matchId": "2076171"
+    },
+    {
+      "providerGameId": "2022212095",
+      "matchId": "1999490"
+    },
+    {
+      "providerGameId": "2022212112",
+      "matchId": "1999506"
+    },
+    {
+      "providerGameId": "2022212155",
+      "matchId": "1999583"
+    },
+    {
+      "providerGameId": "2022212130",
+      "matchId": "1999549"
+    },
+    {
+      "providerGameId": "2022212098",
+      "matchId": "1999493"
+    },
+    {
+      "providerGameId": "2022212103",
+      "matchId": "1999498"
+    },
+    {
+      "providerGameId": "2022212114",
+      "matchId": "1999508"
+    },
+    {
+      "providerGameId": "2022212048",
+      "matchId": "2062806"
+    },
+    {
+      "providerGameId": "2022212110",
+      "matchId": "1999505"
+    },
+    {
+      "providerGameId": "2022212182",
+      "matchId": "1999612"
+    },
+    {
+      "providerGameId": "2022212178",
+      "matchId": "1999608"
+    },
+    {
+      "providerGameId": "2022212016",
+      "matchId": "2068535"
+    },
+    {
+      "providerGameId": "2022212180",
+      "matchId": "1999610"
+    },
+    {
+      "providerGameId": "2022212181",
+      "matchId": "1999611"
+    },
+    {
+      "providerGameId": "2022212177",
+      "matchId": "1999607"
+    },
+    {
+      "providerGameId": "2022212028",
+      "matchId": "1946911"
+    },
+    {
+      "providerGameId": "2022212116",
+      "matchId": "1999510"
+    },
+    {
+      "providerGameId": "2022212176",
+      "matchId": "1999606"
+    },
+    {
+      "providerGameId": "2022212049",
+      "matchId": "1996242"
+    },
+    {
+      "providerGameId": "2022212171",
+      "matchId": "1999601"
+    },
+    {
+      "providerGameId": "2022212172",
+      "matchId": "1999602"
+    },
+    {
+      "providerGameId": "2022212173",
+      "matchId": "1999603"
+    },
+    {
+      "providerGameId": "2022212168",
+      "matchId": "1999597"
+    },
+    {
+      "providerGameId": "2022212170",
+      "matchId": "1999600"
+    },
+    {
+      "providerGameId": "2022212169",
+      "matchId": "1999599"
+    },
+    {
+      "providerGameId": "2022212035",
+      "matchId": "1946928"
+    },
+    {
+      "providerGameId": "2022212166",
+      "matchId": "1999594"
+    },
+    {
+      "providerGameId": "2022212167",
+      "matchId": "1999596"
+    },
+    {
+      "providerGameId": "2022212093",
+      "matchId": "1996241"
+    },
+    {
+      "providerGameId": "2022212162",
+      "matchId": "1999590"
+    },
+    {
+      "providerGameId": "2022212164",
+      "matchId": "1999592"
+    },
+    {
+      "providerGameId": "2022212165",
+      "matchId": "1999593"
+    },
+    {
+      "providerGameId": "2022212179",
+      "matchId": "1999609"
+    },
+    {
+      "providerGameId": "2022212161",
+      "matchId": "1999589"
+    },
+    {
+      "providerGameId": "2022212163",
+      "matchId": "1999591"
+    },
+    {
+      "providerGameId": "2022212159",
+      "matchId": "1999587"
+    },
+    {
+      "providerGameId": "2022212157",
+      "matchId": "1999585"
+    },
+    {
+      "providerGameId": "2022212158",
+      "matchId": "1999586"
+    },
+    {
+      "providerGameId": "2022212174",
+      "matchId": "1999604"
+    },
+    {
+      "providerGameId": "2022212094",
+      "matchId": "1999489"
+    },
+    {
+      "providerGameId": "2022212104",
+      "matchId": "1999499"
+    },
+    {
+      "providerGameId": "2022212151",
+      "matchId": "1999576"
+    },
+    {
+      "providerGameId": "2022212152",
+      "matchId": "1999577"
+    },
+    {
+      "providerGameId": "2022212153",
+      "matchId": "1999580"
+    },
+    {
+      "providerGameId": "2022212154",
+      "matchId": "1999581"
+    },
+    {
+      "providerGameId": "2022212156",
+      "matchId": "1999584"
+    },
+    {
+      "providerGameId": "2022212041",
+      "matchId": "1999613"
+    },
+    {
+      "providerGameId": "2022212148",
+      "matchId": "1999574"
+    },
+    {
+      "providerGameId": "2022212136",
+      "matchId": "1999561"
+    }
+  ],
+  "preservedUnverified": [
+    {
+      "providerGameId": "2022212147",
+      "matchId": "1999572",
+      "gameDate": "2022-02-16",
+      "homeTeam": "BC Kalev/Cramo",
+      "awayTeam": "VEF Rīga",
+      "homeScore": 76,
+      "awayScore": 93,
+      "sourceUrl": "https://www.estlatbl.com/et/tulemused/2022212147/live-stats",
+      "status": "UNVERIFIED",
+      "notes": "Candidate extracted from official LiveStats page: BC Kalev/Cramo vs VEF RIGA, 16.02.2022, 76-93; FIBA page path exposed 1999572. JSON endpoint validation is still pending."
+    }
+  ],
+  "games": [
+    {
+      "providerGameId": "2022212149",
+      "gameDate": "2022-02-16",
+      "homeTeam": "BK Ogre",
+      "awayTeam": "Pärnu Sadam",
+      "homeScore": 74,
+      "awayScore": 71,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212149/live-stats"
+    },
+    {
+      "providerGameId": "2022212144",
+      "gameDate": "2022-02-13",
+      "homeTeam": "KK Viimsi/Sportland",
+      "awayTeam": "Valmiera Glass VIA",
+      "homeScore": 73,
+      "awayScore": 70,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212144/live-stats"
+    },
+    {
+      "providerGameId": "2022212145",
+      "gameDate": "2022-02-13",
+      "homeTeam": "BK Ventspils",
+      "awayTeam": "Tartu Ülikool Maks & Moorits",
+      "homeScore": 69,
+      "awayScore": 62,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212145/live-stats"
+    },
+    {
+      "providerGameId": "2022212146",
+      "gameDate": "2022-02-13",
+      "homeTeam": "Latvijas Universitāte",
+      "awayTeam": "AVIS UTILITAS Rapla",
+      "homeScore": 61,
+      "awayScore": 92,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212146/live-stats"
+    },
+    {
+      "providerGameId": "2022212141",
+      "gameDate": "2022-02-12",
+      "homeTeam": "TalTech/OPTIBET",
+      "awayTeam": "VEF Rīga",
+      "homeScore": 88,
+      "awayScore": 102,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212141/live-stats"
+    },
+    {
+      "providerGameId": "2022212143",
+      "gameDate": "2022-02-12",
+      "homeTeam": "Tallinna Kalev",
+      "awayTeam": "BK Ogre",
+      "homeScore": 52,
+      "awayScore": 97,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212143/live-stats"
+    },
+    {
+      "providerGameId": "2022212142",
+      "gameDate": "2022-02-12",
+      "homeTeam": "BK Liepaja",
+      "awayTeam": "Tartu Ülikool Maks & Moorits",
+      "homeScore": 83,
+      "awayScore": 86,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212142/live-stats"
+    },
+    {
+      "providerGameId": "2022212140",
+      "gameDate": "2022-02-11",
+      "homeTeam": "Rakvere Tarvas",
+      "awayTeam": "VEF Rīga",
+      "homeScore": 58,
+      "awayScore": 110,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212140/live-stats"
+    },
+    {
+      "providerGameId": "2022212106",
+      "gameDate": "2022-02-10",
+      "homeTeam": "BK Ventspils",
+      "awayTeam": "BC Kalev/Cramo",
+      "homeScore": 75,
+      "awayScore": 68,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212106/live-stats"
+    },
+    {
+      "providerGameId": "2022212100",
+      "gameDate": "2022-02-09",
+      "homeTeam": "Valmiera Glass VIA",
+      "awayTeam": "AVIS UTILITAS Rapla",
+      "homeScore": 91,
+      "awayScore": 87,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212100/live-stats"
+    },
+    {
+      "providerGameId": "2022212105",
+      "gameDate": "2022-02-09",
+      "homeTeam": "Rakvere Tarvas",
+      "awayTeam": "KK Viimsi/Sportland",
+      "homeScore": 69,
+      "awayScore": 89,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212105/live-stats"
+    },
+    {
+      "providerGameId": "2022212137",
+      "gameDate": "2022-02-09",
+      "homeTeam": "Pärnu Sadam",
+      "awayTeam": "BK Ventspils",
+      "homeScore": 94,
+      "awayScore": 79,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212137/live-stats"
+    },
+    {
+      "providerGameId": "2022212138",
+      "gameDate": "2022-02-09",
+      "homeTeam": "Tartu Ülikool Maks & Moorits",
+      "awayTeam": "Latvijas Universitāte",
+      "homeScore": 67,
+      "awayScore": 53,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212138/live-stats"
+    },
+    {
+      "providerGameId": "2022212133",
+      "gameDate": "2022-02-05",
+      "homeTeam": "VEF Rīga",
+      "awayTeam": "BK Liepaja",
+      "homeScore": 102,
+      "awayScore": 71,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212133/live-stats"
+    },
+    {
+      "providerGameId": "2022212040",
+      "gameDate": "2022-02-05",
+      "homeTeam": "BK Ventspils",
+      "awayTeam": "Latvijas Universitāte",
+      "homeScore": 68,
+      "awayScore": 59,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212040/live-stats"
+    },
+    {
+      "providerGameId": "2022212134",
+      "gameDate": "2022-02-05",
+      "homeTeam": "KK Viimsi/Sportland",
+      "awayTeam": "BK Ogre",
+      "homeScore": 67,
+      "awayScore": 74,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212134/live-stats"
+    },
+    {
+      "providerGameId": "2022212068",
+      "gameDate": "2022-02-04",
+      "homeTeam": "Pärnu Sadam",
+      "awayTeam": "BC Kalev/Cramo",
+      "homeScore": 78,
+      "awayScore": 79,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212068/live-stats"
+    },
+    {
+      "providerGameId": "2022212132",
+      "gameDate": "2022-02-04",
+      "homeTeam": "Tartu Ülikool Maks & Moorits",
+      "awayTeam": "Tallinna Kalev",
+      "homeScore": 77,
+      "awayScore": 62,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212132/live-stats"
+    },
+    {
+      "providerGameId": "2022212108",
+      "gameDate": "2022-02-03",
+      "homeTeam": "VEF Rīga",
+      "awayTeam": "Rakvere Tarvas",
+      "homeScore": 94,
+      "awayScore": 52,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212108/live-stats"
+    },
+    {
+      "providerGameId": "2022212128",
+      "gameDate": "2022-02-02",
+      "homeTeam": "BC Kalev/Cramo",
+      "awayTeam": "BK Liepaja",
+      "homeScore": 87,
+      "awayScore": 62,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212128/live-stats"
+    },
+    {
+      "providerGameId": "2022212129",
+      "gameDate": "2022-02-02",
+      "homeTeam": "Pärnu Sadam",
+      "awayTeam": "Latvijas Universitāte",
+      "homeScore": 80,
+      "awayScore": 56,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212129/live-stats"
+    },
+    {
+      "providerGameId": "2022212097",
+      "gameDate": "2022-02-01",
+      "homeTeam": "Rakvere Tarvas",
+      "awayTeam": "BK Liepaja",
+      "homeScore": 79,
+      "awayScore": 86,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212097/live-stats"
+    },
+    {
+      "providerGameId": "2022212102",
+      "gameDate": "2022-02-01",
+      "homeTeam": "AVIS UTILITAS Rapla",
+      "awayTeam": "Tartu Ülikool Maks & Moorits",
+      "homeScore": 78,
+      "awayScore": 83,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212102/live-stats"
+    },
+    {
+      "providerGameId": "2022212160",
+      "gameDate": "2022-01-30",
+      "homeTeam": "BK Ogre",
+      "awayTeam": "VEF Rīga",
+      "homeScore": 59,
+      "awayScore": 83,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212160/live-stats"
+    },
+    {
+      "providerGameId": "2022212127",
+      "gameDate": "2022-01-30",
+      "homeTeam": "KK Viimsi/Sportland",
+      "awayTeam": "Latvijas Universitāte",
+      "homeScore": 85,
+      "awayScore": 74,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212127/live-stats"
+    },
+    {
+      "providerGameId": "2022212125",
+      "gameDate": "2022-01-29",
+      "homeTeam": "AVIS UTILITAS Rapla",
+      "awayTeam": "Pärnu Sadam",
+      "homeScore": 107,
+      "awayScore": 79,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212125/live-stats"
+    },
+    {
+      "providerGameId": "2022212126",
+      "gameDate": "2022-01-29",
+      "homeTeam": "Tallinna Kalev",
+      "awayTeam": "Rakvere Tarvas",
+      "homeScore": 80,
+      "awayScore": 81,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212126/live-stats"
+    },
+    {
+      "providerGameId": "2022212010",
+      "gameDate": "2022-01-27",
+      "homeTeam": "BC Kalev/Cramo",
+      "awayTeam": "KK Viimsi/Sportland",
+      "homeScore": 80,
+      "awayScore": 67,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212010/live-stats"
+    },
+    {
+      "providerGameId": "2022212121",
+      "gameDate": "2022-01-26",
+      "homeTeam": "Valmiera Glass VIA",
+      "awayTeam": "BK Liepaja",
+      "homeScore": 86,
+      "awayScore": 71,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212121/live-stats"
+    },
+    {
+      "providerGameId": "2022212122",
+      "gameDate": "2022-01-26",
+      "homeTeam": "BK Ogre",
+      "awayTeam": "BK Ventspils",
+      "homeScore": 69,
+      "awayScore": 78,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212122/live-stats"
+    },
+    {
+      "providerGameId": "2022212123",
+      "gameDate": "2022-01-26",
+      "homeTeam": "TalTech/OPTIBET",
+      "awayTeam": "Tartu Ülikool Maks & Moorits",
+      "homeScore": 92,
+      "awayScore": 76,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212123/live-stats"
+    },
+    {
+      "providerGameId": "2022212099",
+      "gameDate": "2022-01-25",
+      "homeTeam": "Pärnu Sadam",
+      "awayTeam": "Tallinna Kalev",
+      "homeScore": 98,
+      "awayScore": 72,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212099/live-stats"
+    },
+    {
+      "providerGameId": "2022212117",
+      "gameDate": "2022-01-22",
+      "homeTeam": "BK Liepaja",
+      "awayTeam": "KK Viimsi/Sportland",
+      "homeScore": 66,
+      "awayScore": 74,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212117/live-stats"
+    },
+    {
+      "providerGameId": "2022212118",
+      "gameDate": "2022-01-22",
+      "homeTeam": "Pärnu Sadam",
+      "awayTeam": "Tartu Ülikool Maks & Moorits",
+      "homeScore": 76,
+      "awayScore": 66,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212118/live-stats"
+    },
+    {
+      "providerGameId": "2022212119",
+      "gameDate": "2022-01-22",
+      "homeTeam": "BK Ogre",
+      "awayTeam": "TalTech/OPTIBET",
+      "homeScore": 77,
+      "awayScore": 65,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212119/live-stats"
+    },
+    {
+      "providerGameId": "2022212120",
+      "gameDate": "2022-01-22",
+      "homeTeam": "Valmiera Glass VIA",
+      "awayTeam": "Tallinna Kalev",
+      "homeScore": 93,
+      "awayScore": 54,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212120/live-stats"
+    },
+    {
+      "providerGameId": "2022212131",
+      "gameDate": "2022-01-21",
+      "homeTeam": "Rakvere Tarvas",
+      "awayTeam": "AVIS UTILITAS Rapla",
+      "homeScore": 88,
+      "awayScore": 91,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212131/live-stats"
+    },
+    {
+      "providerGameId": "2022212115",
+      "gameDate": "2022-01-20",
+      "homeTeam": "BK Ventspils",
+      "awayTeam": "KK Viimsi/Sportland",
+      "homeScore": 100,
+      "awayScore": 70,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212115/live-stats"
+    },
+    {
+      "providerGameId": "2022212113",
+      "gameDate": "2022-01-19",
+      "homeTeam": "BC Kalev/Cramo",
+      "awayTeam": "Tallinna Kalev",
+      "homeScore": 113,
+      "awayScore": 55,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212113/live-stats"
+    },
+    {
+      "providerGameId": "2022212107",
+      "gameDate": "2022-01-15",
+      "homeTeam": "BK Liepaja",
+      "awayTeam": "BC Kalev/Cramo",
+      "homeScore": 59,
+      "awayScore": 78,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212107/live-stats"
+    },
+    {
+      "providerGameId": "2022212109",
+      "gameDate": "2022-01-15",
+      "homeTeam": "TalTech/OPTIBET",
+      "awayTeam": "Pärnu Sadam",
+      "homeScore": 91,
+      "awayScore": 73,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212109/live-stats"
+    },
+    {
+      "providerGameId": "2022212124",
+      "gameDate": "2022-01-11",
+      "homeTeam": "BC Kalev/Cramo",
+      "awayTeam": "Pärnu Sadam",
+      "homeScore": 66,
+      "awayScore": 79,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212124/live-stats"
+    },
+    {
+      "providerGameId": "2022212101",
+      "gameDate": "2022-01-09",
+      "homeTeam": "KK Viimsi/Sportland",
+      "awayTeam": "TalTech/OPTIBET",
+      "homeScore": 71,
+      "awayScore": 76,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212101/live-stats"
+    },
+    {
+      "providerGameId": "2022212139",
+      "gameDate": "2022-01-09",
+      "homeTeam": "BC Kalev/Cramo",
+      "awayTeam": "AVIS UTILITAS Rapla",
+      "homeScore": 92,
+      "awayScore": 66,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212139/live-stats"
+    },
+    {
+      "providerGameId": "2022212096",
+      "gameDate": "2022-01-07",
+      "homeTeam": "Latvijas Universitāte",
+      "awayTeam": "VEF Rīga",
+      "homeScore": 72,
+      "awayScore": 94,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212096/live-stats"
+    },
+    {
+      "providerGameId": "2022212175",
+      "gameDate": "2022-01-04",
+      "homeTeam": "BC Kalev/Cramo",
+      "awayTeam": "TalTech/OPTIBET",
+      "homeScore": 93,
+      "awayScore": 63,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212175/live-stats"
+    },
+    {
+      "providerGameId": "2022212090",
+      "gameDate": "2021-12-30",
+      "homeTeam": "AVIS UTILITAS Rapla",
+      "awayTeam": "TalTech/OPTIBET",
+      "homeScore": 95,
+      "awayScore": 78,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212090/live-stats"
+    },
+    {
+      "providerGameId": "2022212092",
+      "gameDate": "2021-12-30",
+      "homeTeam": "VEF Rīga",
+      "awayTeam": "Valmiera Glass VIA",
+      "homeScore": 73,
+      "awayScore": 55,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212092/live-stats"
+    },
+    {
+      "providerGameId": "2022212091",
+      "gameDate": "2021-12-29",
+      "homeTeam": "Tartu Ülikool Maks & Moorits",
+      "awayTeam": "BC Kalev/Cramo",
+      "homeScore": 64,
+      "awayScore": 92,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212091/live-stats"
+    },
+    {
+      "providerGameId": "2022212089",
+      "gameDate": "2021-12-28",
+      "homeTeam": "KK Viimsi/Sportland",
+      "awayTeam": "BC Kalev/Cramo",
+      "homeScore": 49,
+      "awayScore": 97,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212089/live-stats"
+    },
+    {
+      "providerGameId": "2022212084",
+      "gameDate": "2021-12-22",
+      "homeTeam": "Latvijas Universitāte",
+      "awayTeam": "BK Liepaja",
+      "homeScore": 89,
+      "awayScore": 68,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212084/live-stats"
+    },
+    {
+      "providerGameId": "2022212088",
+      "gameDate": "2021-12-22",
+      "homeTeam": "TalTech/OPTIBET",
+      "awayTeam": "Rakvere Tarvas",
+      "homeScore": 106,
+      "awayScore": 60,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212088/live-stats"
+    },
+    {
+      "providerGameId": "2022212083",
+      "gameDate": "2021-12-22",
+      "homeTeam": "AVIS UTILITAS Rapla",
+      "awayTeam": "KK Viimsi/Sportland",
+      "homeScore": 95,
+      "awayScore": 97,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212083/live-stats"
+    },
+    {
+      "providerGameId": "2022212085",
+      "gameDate": "2021-12-22",
+      "homeTeam": "Pärnu Sadam",
+      "awayTeam": "BK Ogre",
+      "homeScore": 83,
+      "awayScore": 78,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212085/live-stats"
+    },
+    {
+      "providerGameId": "2022212087",
+      "gameDate": "2021-12-22",
+      "homeTeam": "Valmiera Glass VIA",
+      "awayTeam": "Tartu Ülikool Maks & Moorits",
+      "homeScore": 65,
+      "awayScore": 93,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212087/live-stats"
+    },
+    {
+      "providerGameId": "2022212086",
+      "gameDate": "2021-12-22",
+      "homeTeam": "Tallinna Kalev",
+      "awayTeam": "BK Ventspils",
+      "homeScore": 64,
+      "awayScore": 103,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212086/live-stats"
+    },
+    {
+      "providerGameId": "2022212082",
+      "gameDate": "2021-12-18",
+      "homeTeam": "Latvijas Universitāte",
+      "awayTeam": "Valmiera Glass VIA",
+      "homeScore": 68,
+      "awayScore": 60,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212082/live-stats"
+    },
+    {
+      "providerGameId": "2022212081",
+      "gameDate": "2021-12-18",
+      "homeTeam": "BK Liepaja",
+      "awayTeam": "BK Ogre",
+      "homeScore": 94,
+      "awayScore": 83,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212081/live-stats"
+    },
+    {
+      "providerGameId": "2022212080",
+      "gameDate": "2021-12-18",
+      "homeTeam": "VEF Rīga",
+      "awayTeam": "BK Ventspils",
+      "homeScore": 93,
+      "awayScore": 57,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212080/live-stats"
+    },
+    {
+      "providerGameId": "2022212079",
+      "gameDate": "2021-12-15",
+      "homeTeam": "Tallinna Kalev",
+      "awayTeam": "Tartu Ülikool Maks & Moorits",
+      "homeScore": 73,
+      "awayScore": 81,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212079/live-stats"
+    },
+    {
+      "providerGameId": "2022212077",
+      "gameDate": "2021-12-15",
+      "homeTeam": "Valmiera Glass VIA",
+      "awayTeam": "BC Kalev/Cramo",
+      "homeScore": 59,
+      "awayScore": 92,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212077/live-stats"
+    },
+    {
+      "providerGameId": "2022212078",
+      "gameDate": "2021-12-15",
+      "homeTeam": "Pärnu Sadam",
+      "awayTeam": "Rakvere Tarvas",
+      "homeScore": 105,
+      "awayScore": 74,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212078/live-stats"
+    },
+    {
+      "providerGameId": "2022212075",
+      "gameDate": "2021-12-12",
+      "homeTeam": "Latvijas Universitāte",
+      "awayTeam": "TalTech/OPTIBET",
+      "homeScore": 79,
+      "awayScore": 89,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212075/live-stats"
+    },
+    {
+      "providerGameId": "2022212076",
+      "gameDate": "2021-12-12",
+      "homeTeam": "KK Viimsi/Sportland",
+      "awayTeam": "Tartu Ülikool Maks & Moorits",
+      "homeScore": 88,
+      "awayScore": 75,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212076/live-stats"
+    },
+    {
+      "providerGameId": "2022212072",
+      "gameDate": "2021-12-11",
+      "homeTeam": "AVIS UTILITAS Rapla",
+      "awayTeam": "BK Liepaja",
+      "homeScore": 105,
+      "awayScore": 69,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212072/live-stats"
+    },
+    {
+      "providerGameId": "2022212073",
+      "gameDate": "2021-12-11",
+      "homeTeam": "BK Ventspils",
+      "awayTeam": "Pärnu Sadam",
+      "homeScore": 81,
+      "awayScore": 72,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212073/live-stats"
+    },
+    {
+      "providerGameId": "2022212074",
+      "gameDate": "2021-12-11",
+      "homeTeam": "BK Ogre",
+      "awayTeam": "Tallinna Kalev",
+      "homeScore": 106,
+      "awayScore": 80,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212074/live-stats"
+    },
+    {
+      "providerGameId": "2022212071",
+      "gameDate": "2021-12-10",
+      "homeTeam": "Rakvere Tarvas",
+      "awayTeam": "Valmiera Glass VIA",
+      "homeScore": 86,
+      "awayScore": 81,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212071/live-stats"
+    },
+    {
+      "providerGameId": "2022212070",
+      "gameDate": "2021-12-10",
+      "homeTeam": "VEF Rīga",
+      "awayTeam": "TalTech/OPTIBET",
+      "homeScore": 83,
+      "awayScore": 75,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212070/live-stats"
+    },
+    {
+      "providerGameId": "2022212069",
+      "gameDate": "2021-12-08",
+      "homeTeam": "Tartu Ülikool Maks & Moorits",
+      "awayTeam": "AVIS UTILITAS Rapla",
+      "homeScore": 94,
+      "awayScore": 98,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212069/live-stats"
+    },
+    {
+      "providerGameId": "2022212065",
+      "gameDate": "2021-12-04",
+      "homeTeam": "Pärnu Sadam",
+      "awayTeam": "AVIS UTILITAS Rapla",
+      "homeScore": 78,
+      "awayScore": 83,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212065/live-stats"
+    },
+    {
+      "providerGameId": "2022212064",
+      "gameDate": "2021-12-04",
+      "homeTeam": "Tartu Ülikool Maks & Moorits",
+      "awayTeam": "VEF Rīga",
+      "homeScore": 64,
+      "awayScore": 95,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212064/live-stats"
+    },
+    {
+      "providerGameId": "2022212066",
+      "gameDate": "2021-12-04",
+      "homeTeam": "Valmiera Glass VIA",
+      "awayTeam": "BK Ogre",
+      "homeScore": 79,
+      "awayScore": 75,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212066/live-stats"
+    },
+    {
+      "providerGameId": "2022212067",
+      "gameDate": "2021-12-04",
+      "homeTeam": "TalTech/OPTIBET",
+      "awayTeam": "KK Viimsi/Sportland",
+      "homeScore": 70,
+      "awayScore": 88,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212067/live-stats"
+    },
+    {
+      "providerGameId": "2022212063",
+      "gameDate": "2021-12-03",
+      "homeTeam": "Rakvere Tarvas",
+      "awayTeam": "Tallinna Kalev",
+      "homeScore": 91,
+      "awayScore": 83,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212063/live-stats"
+    },
+    {
+      "providerGameId": "2022212062",
+      "gameDate": "2021-12-01",
+      "homeTeam": "BC Kalev/Cramo",
+      "awayTeam": "Rakvere Tarvas",
+      "homeScore": 94,
+      "awayScore": 65,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212062/live-stats"
+    },
+    {
+      "providerGameId": "2022212043",
+      "gameDate": "2021-11-21",
+      "homeTeam": "Tallinna Kalev",
+      "awayTeam": "BK Liepaja",
+      "homeScore": 74,
+      "awayScore": 97,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212043/live-stats"
+    },
+    {
+      "providerGameId": "2022212061",
+      "gameDate": "2021-11-21",
+      "homeTeam": "Latvijas Universitāte",
+      "awayTeam": "KK Viimsi/Sportland",
+      "homeScore": 57,
+      "awayScore": 67,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212061/live-stats"
+    },
+    {
+      "providerGameId": "2022212057",
+      "gameDate": "2021-11-20",
+      "homeTeam": "Pärnu Sadam",
+      "awayTeam": "VEF Rīga",
+      "homeScore": 77,
+      "awayScore": 80,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212057/live-stats"
+    },
+    {
+      "providerGameId": "2022212058",
+      "gameDate": "2021-11-20",
+      "homeTeam": "TalTech/OPTIBET",
+      "awayTeam": "BC Kalev/Cramo",
+      "homeScore": 53,
+      "awayScore": 71,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212058/live-stats"
+    },
+    {
+      "providerGameId": "2022212060",
+      "gameDate": "2021-11-20",
+      "homeTeam": "Valmiera Glass VIA",
+      "awayTeam": "KK Viimsi/Sportland",
+      "homeScore": 76,
+      "awayScore": 81,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212060/live-stats"
+    },
+    {
+      "providerGameId": "2022212059",
+      "gameDate": "2021-11-20",
+      "homeTeam": "AVIS UTILITAS Rapla",
+      "awayTeam": "BK Ventspils",
+      "homeScore": 82,
+      "awayScore": 94,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212059/live-stats"
+    },
+    {
+      "providerGameId": "2022212056",
+      "gameDate": "2021-11-19",
+      "homeTeam": "Rakvere Tarvas",
+      "awayTeam": "BK Ogre",
+      "homeScore": 57,
+      "awayScore": 72,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212056/live-stats"
+    },
+    {
+      "providerGameId": "2022212054",
+      "gameDate": "2021-11-17",
+      "homeTeam": "Tartu Ülikool Maks & Moorits",
+      "awayTeam": "Pärnu Sadam",
+      "homeScore": 82,
+      "awayScore": 77,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212054/live-stats"
+    },
+    {
+      "providerGameId": "2022212055",
+      "gameDate": "2021-11-17",
+      "homeTeam": "Tallinna Kalev",
+      "awayTeam": "BC Kalev/Cramo",
+      "homeScore": 62,
+      "awayScore": 90,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212055/live-stats"
+    },
+    {
+      "providerGameId": "2022212053",
+      "gameDate": "2021-11-14",
+      "homeTeam": "Pärnu Sadam",
+      "awayTeam": "TalTech/OPTIBET",
+      "homeScore": 60,
+      "awayScore": 61,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212053/live-stats"
+    },
+    {
+      "providerGameId": "2022212050",
+      "gameDate": "2021-11-13",
+      "homeTeam": "BK Ogre",
+      "awayTeam": "Tartu Ülikool Maks & Moorits",
+      "homeScore": 85,
+      "awayScore": 66,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212050/live-stats"
+    },
+    {
+      "providerGameId": "2022212052",
+      "gameDate": "2021-11-13",
+      "homeTeam": "KK Viimsi/Sportland",
+      "awayTeam": "Rakvere Tarvas",
+      "homeScore": 84,
+      "awayScore": 73,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212052/live-stats"
+    },
+    {
+      "providerGameId": "2022212051",
+      "gameDate": "2021-11-13",
+      "homeTeam": "Tallinna Kalev",
+      "awayTeam": "Latvijas Universitāte",
+      "homeScore": 74,
+      "awayScore": 67,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212051/live-stats"
+    },
+    {
+      "providerGameId": "2022212047",
+      "gameDate": "2021-11-10",
+      "homeTeam": "VEF Rīga",
+      "awayTeam": "Tallinna Kalev",
+      "homeScore": 97,
+      "awayScore": 51,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212047/live-stats"
+    },
+    {
+      "providerGameId": "2022212045",
+      "gameDate": "2021-11-07",
+      "homeTeam": "TalTech/OPTIBET",
+      "awayTeam": "AVIS UTILITAS Rapla",
+      "homeScore": 82,
+      "awayScore": 73,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212045/live-stats"
+    },
+    {
+      "providerGameId": "2022212046",
+      "gameDate": "2021-11-07",
+      "homeTeam": "KK Viimsi/Sportland",
+      "awayTeam": "BK Liepaja",
+      "homeScore": 81,
+      "awayScore": 69,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212046/live-stats"
+    },
+    {
+      "providerGameId": "2022212042",
+      "gameDate": "2021-11-06",
+      "homeTeam": "VEF Rīga",
+      "awayTeam": "BK Ogre",
+      "homeScore": 96,
+      "awayScore": 84,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212042/live-stats"
+    },
+    {
+      "providerGameId": "2022212044",
+      "gameDate": "2021-11-06",
+      "homeTeam": "Pärnu Sadam",
+      "awayTeam": "Valmiera Glass VIA",
+      "homeScore": 94,
+      "awayScore": 71,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212044/live-stats"
+    },
+    {
+      "providerGameId": "2022212135",
+      "gameDate": "2021-11-05",
+      "homeTeam": "Latvijas Universitāte",
+      "awayTeam": "BK Ventspils",
+      "homeScore": 71,
+      "awayScore": 94,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212135/live-stats"
+    },
+    {
+      "providerGameId": "2022212150",
+      "gameDate": "2021-11-05",
+      "homeTeam": "Rakvere Tarvas",
+      "awayTeam": "Tartu Ülikool Maks & Moorits",
+      "homeScore": 91,
+      "awayScore": 89,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212150/live-stats"
+    },
+    {
+      "providerGameId": "2022212039",
+      "gameDate": "2021-10-31",
+      "homeTeam": "Pärnu Sadam",
+      "awayTeam": "KK Viimsi/Sportland",
+      "homeScore": 74,
+      "awayScore": 82,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212039/live-stats"
+    },
+    {
+      "providerGameId": "2022212038",
+      "gameDate": "2021-10-31",
+      "homeTeam": "Rakvere Tarvas",
+      "awayTeam": "TalTech/OPTIBET",
+      "homeScore": 62,
+      "awayScore": 92,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212038/live-stats"
+    },
+    {
+      "providerGameId": "2022212034",
+      "gameDate": "2021-10-30",
+      "homeTeam": "BK Liepaja",
+      "awayTeam": "VEF Rīga",
+      "homeScore": 77,
+      "awayScore": 83,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212034/live-stats"
+    },
+    {
+      "providerGameId": "2022212111",
+      "gameDate": "2021-10-30",
+      "homeTeam": "Latvijas Universitāte",
+      "awayTeam": "BK Ogre",
+      "homeScore": 63,
+      "awayScore": 82,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212111/live-stats"
+    },
+    {
+      "providerGameId": "2022212036",
+      "gameDate": "2021-10-30",
+      "homeTeam": "Valmiera Glass VIA",
+      "awayTeam": "BK Ventspils",
+      "homeScore": 70,
+      "awayScore": 80,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212036/live-stats"
+    },
+    {
+      "providerGameId": "2022212037",
+      "gameDate": "2021-10-30",
+      "homeTeam": "AVIS UTILITAS Rapla",
+      "awayTeam": "Tallinna Kalev",
+      "homeScore": 87,
+      "awayScore": 96,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212037/live-stats"
+    },
+    {
+      "providerGameId": "2022212033",
+      "gameDate": "2021-10-29",
+      "homeTeam": "BC Kalev/Cramo",
+      "awayTeam": "Tartu Ülikool Maks & Moorits",
+      "homeScore": 86,
+      "awayScore": 36,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212033/live-stats"
+    },
+    {
+      "providerGameId": "2022212031",
+      "gameDate": "2021-10-24",
+      "homeTeam": "KK Viimsi/Sportland",
+      "awayTeam": "VEF Rīga",
+      "homeScore": 64,
+      "awayScore": 87,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212031/live-stats"
+    },
+    {
+      "providerGameId": "2022212032",
+      "gameDate": "2021-10-24",
+      "homeTeam": "BK Liepaja",
+      "awayTeam": "TalTech/OPTIBET",
+      "homeScore": 80,
+      "awayScore": 81,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212032/live-stats"
+    },
+    {
+      "providerGameId": "2022212029",
+      "gameDate": "2021-10-23",
+      "homeTeam": "Tartu Ülikool Maks & Moorits",
+      "awayTeam": "BK Ogre",
+      "homeScore": 75,
+      "awayScore": 81,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212029/live-stats"
+    },
+    {
+      "providerGameId": "2022212027",
+      "gameDate": "2021-10-23",
+      "homeTeam": "Tallinna Kalev",
+      "awayTeam": "VEF Rīga",
+      "homeScore": 66,
+      "awayScore": 93,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212027/live-stats"
+    },
+    {
+      "providerGameId": "2022212030",
+      "gameDate": "2021-10-23",
+      "homeTeam": "AVIS UTILITAS Rapla",
+      "awayTeam": "Valmiera Glass VIA",
+      "homeScore": 93,
+      "awayScore": 77,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212030/live-stats"
+    },
+    {
+      "providerGameId": "2022212026",
+      "gameDate": "2021-10-22",
+      "homeTeam": "BK Ventspils",
+      "awayTeam": "TalTech/OPTIBET",
+      "homeScore": 86,
+      "awayScore": 71,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212026/live-stats"
+    },
+    {
+      "providerGameId": "2022212025",
+      "gameDate": "2021-10-22",
+      "homeTeam": "Rakvere Tarvas",
+      "awayTeam": "BC Kalev/Cramo",
+      "homeScore": 65,
+      "awayScore": 93,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212025/live-stats"
+    },
+    {
+      "providerGameId": "2022212024",
+      "gameDate": "2021-10-20",
+      "homeTeam": "BC Kalev/Cramo",
+      "awayTeam": "Latvijas Universitāte",
+      "homeScore": 69,
+      "awayScore": 67,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212024/live-stats"
+    },
+    {
+      "providerGameId": "2022212021",
+      "gameDate": "2021-10-17",
+      "homeTeam": "AVIS UTILITAS Rapla",
+      "awayTeam": "Rakvere Tarvas",
+      "homeScore": 90,
+      "awayScore": 85,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212021/live-stats"
+    },
+    {
+      "providerGameId": "2022212023",
+      "gameDate": "2021-10-17",
+      "homeTeam": "TalTech/OPTIBET",
+      "awayTeam": "Tallinna Kalev",
+      "homeScore": 92,
+      "awayScore": 67,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212023/live-stats"
+    },
+    {
+      "providerGameId": "2022212019",
+      "gameDate": "2021-10-16",
+      "homeTeam": "VEF Rīga",
+      "awayTeam": "Pärnu Sadam",
+      "homeScore": 92,
+      "awayScore": 95,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212019/live-stats"
+    },
+    {
+      "providerGameId": "2022212020",
+      "gameDate": "2021-10-16",
+      "homeTeam": "BK Liepaja",
+      "awayTeam": "Valmiera Glass VIA",
+      "homeScore": 80,
+      "awayScore": 82,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212020/live-stats"
+    },
+    {
+      "providerGameId": "2022212022",
+      "gameDate": "2021-10-16",
+      "homeTeam": "Tartu Ülikool Maks & Moorits",
+      "awayTeam": "KK Viimsi/Sportland",
+      "homeScore": 65,
+      "awayScore": 82,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212022/live-stats"
+    },
+    {
+      "providerGameId": "2022212018",
+      "gameDate": "2021-10-15",
+      "homeTeam": "BK Ventspils",
+      "awayTeam": "BK Ogre",
+      "homeScore": 77,
+      "awayScore": 57,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212018/live-stats"
+    },
+    {
+      "providerGameId": "2022212017",
+      "gameDate": "2021-10-13",
+      "homeTeam": "BK Liepaja",
+      "awayTeam": "Latvijas Universitāte",
+      "homeScore": 72,
+      "awayScore": 77,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212017/live-stats"
+    },
+    {
+      "providerGameId": "2022212015",
+      "gameDate": "2021-10-13",
+      "homeTeam": "Valmiera Glass VIA",
+      "awayTeam": "VEF Rīga",
+      "homeScore": 63,
+      "awayScore": 75,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212015/live-stats"
+    },
+    {
+      "providerGameId": "2022212014",
+      "gameDate": "2021-10-10",
+      "homeTeam": "KK Viimsi/Sportland",
+      "awayTeam": "BK Ventspils",
+      "homeScore": 67,
+      "awayScore": 80,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212014/live-stats"
+    },
+    {
+      "providerGameId": "2022212012",
+      "gameDate": "2021-10-09",
+      "homeTeam": "TalTech/OPTIBET",
+      "awayTeam": "BK Ogre",
+      "homeScore": 103,
+      "awayScore": 73,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212012/live-stats"
+    },
+    {
+      "providerGameId": "2022212013",
+      "gameDate": "2021-10-09",
+      "homeTeam": "Latvijas Universitāte",
+      "awayTeam": "Rakvere Tarvas",
+      "homeScore": 64,
+      "awayScore": 61,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212013/live-stats"
+    },
+    {
+      "providerGameId": "2022212011",
+      "gameDate": "2021-10-08",
+      "homeTeam": "VEF Rīga",
+      "awayTeam": "AVIS UTILITAS Rapla",
+      "homeScore": 96,
+      "awayScore": 69,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212011/live-stats"
+    },
+    {
+      "providerGameId": "2022212008",
+      "gameDate": "2021-10-06",
+      "homeTeam": "Pärnu Sadam",
+      "awayTeam": "BK Liepaja",
+      "homeScore": 79,
+      "awayScore": 68,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212008/live-stats"
+    },
+    {
+      "providerGameId": "2022212009",
+      "gameDate": "2021-10-06",
+      "homeTeam": "Tallinna Kalev",
+      "awayTeam": "Valmiera Glass VIA",
+      "homeScore": 89,
+      "awayScore": 69,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212009/live-stats"
+    },
+    {
+      "providerGameId": "2022212007",
+      "gameDate": "2021-10-03",
+      "homeTeam": "KK Viimsi/Sportland",
+      "awayTeam": "Tallinna Kalev",
+      "homeScore": 87,
+      "awayScore": 62,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212007/live-stats"
+    },
+    {
+      "providerGameId": "2022212003",
+      "gameDate": "2021-10-02",
+      "homeTeam": "BK Ogre",
+      "awayTeam": "AVIS UTILITAS Rapla",
+      "homeScore": 107,
+      "awayScore": 84,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212003/live-stats"
+    },
+    {
+      "providerGameId": "2022212004",
+      "gameDate": "2021-10-02",
+      "homeTeam": "BK Liepaja",
+      "awayTeam": "Rakvere Tarvas",
+      "homeScore": 105,
+      "awayScore": 100,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212004/live-stats"
+    },
+    {
+      "providerGameId": "2022212005",
+      "gameDate": "2021-10-02",
+      "homeTeam": "TalTech/OPTIBET",
+      "awayTeam": "Valmiera Glass VIA",
+      "homeScore": 78,
+      "awayScore": 76,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212005/live-stats"
+    },
+    {
+      "providerGameId": "2022212006",
+      "gameDate": "2021-10-02",
+      "homeTeam": "Latvijas Universitāte",
+      "awayTeam": "Tartu Ülikool Maks & Moorits",
+      "homeScore": 80,
+      "awayScore": 77,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212006/live-stats"
+    },
+    {
+      "providerGameId": "2022212002",
+      "gameDate": "2021-10-01",
+      "homeTeam": "BK Ventspils",
+      "awayTeam": "Rakvere Tarvas",
+      "homeScore": 89,
+      "awayScore": 67,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212002/live-stats"
+    },
+    {
+      "providerGameId": "2022212001",
+      "gameDate": "2021-10-01",
+      "homeTeam": "VEF Rīga",
+      "awayTeam": "BC Kalev/Cramo",
+      "homeScore": 86,
+      "awayScore": 84,
+      "sourceUrl": "",
+      "liveStatsUrl": "https://www.estlatbl.com/et/tulemused/2022212001/live-stats"
+    }
+  ]
+}

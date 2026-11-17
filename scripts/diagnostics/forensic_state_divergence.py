@@ -16,13 +16,14 @@ from lineup_segment_generator import (
     FAILURE_UNKNOWN,
     connect,
     extract_sorted_events,
-    fetch_json,
     group_period_events,
+    load_game_row_by_id,
     load_game_rows,
+    load_source_snapshot_data,
     normalize_text,
-    resolve_player_id,
     build_player_lookup,
     build_team_roster,
+    resolve_substitution_occurrence,
     natural_player_sort_key,
     validate_lineup_state,
 )
@@ -32,18 +33,11 @@ def format_lineup(lineup: set[str]) -> str:
     return ",".join(sorted(lineup, key=natural_player_sort_key))
 
 
-def resolve_team_players(game_data: dict, team_number: str, connection, player_lookup: dict[str, str]) -> set[str]:
-    resolved: set[str] = set()
-    team_payload = game_data.get("tm", {}).get(team_number) or {}
-    for player in (team_payload.get("pl") or {}).values():
-        player_name = normalize_text(player.get("name") or player.get("scoreboardName"))
-        if not player_name:
-            continue
-        try:
-            resolved.add(resolve_player_id(connection, player_lookup, player_name))
-        except Exception:
-            continue
-    return resolved
+def resolve_team_players(connection, game_id: str, team_id: str) -> set[str]:
+    return {str(row[0]) for row in connection.execute(
+        "SELECT DISTINCT player_id FROM player_games WHERE game_id = ? AND team_id = ? AND player_id IS NOT NULL",
+        (game_id, team_id),
+    )}
 
 
 def impossible_explanation(reason_code: str, mutation: str) -> str:
@@ -68,7 +62,8 @@ def impossible_explanation(reason_code: str, mutation: str) -> str:
 
 def analyze_game(connection, game_row, player_lookup: dict[str, str]) -> dict:
     game_id = game_row["game_id"]
-    game_data = fetch_json(game_row["json_url"])
+    source_row = load_game_row_by_id(connection, str(game_id))
+    game_data = load_source_snapshot_data(connection, source_row)
     sorted_events = extract_sorted_events(game_data)
 
     team_ids = {
@@ -77,13 +72,13 @@ def analyze_game(connection, game_row, player_lookup: dict[str, str]) -> dict:
     }
 
     allowed_players = {
-        team_ids["1"]: resolve_team_players(game_data, "1", connection, player_lookup),
-        team_ids["2"]: resolve_team_players(game_data, "2", connection, player_lookup),
+        team_ids["1"]: resolve_team_players(connection, game_id, team_ids["1"]),
+        team_ids["2"]: resolve_team_players(connection, game_id, team_ids["2"]),
     }
 
     starters = {
-        team_ids["1"]: set(build_team_roster(game_data, "1", connection, player_lookup)),
-        team_ids["2"]: set(build_team_roster(game_data, "2", connection, player_lookup)),
+        team_ids["1"]: set(build_team_roster(game_data, "1", connection, player_lookup, game_id, team_ids["1"])),
+        team_ids["2"]: set(build_team_roster(game_data, "2", connection, player_lookup, game_id, team_ids["2"])),
     }
 
     current_lineups = {
@@ -147,7 +142,7 @@ def analyze_game(connection, game_row, player_lookup: dict[str, str]) -> dict:
         if event_type == "substitution" and team_id in current_lineups:
             player_name = normalize_text(event.get("player")) or ""
             try:
-                player_id = resolve_player_id(connection, player_lookup, player_name)
+                player_id = resolve_substitution_occurrence(connection, game_id, team_id, event, game_data.get("tm") or {})
             except Exception:
                 player_id = None
 

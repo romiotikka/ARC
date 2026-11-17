@@ -1,0 +1,10 @@
+import { DatabaseSync } from 'node:sqlite';
+import { gunzipSync } from 'node:zlib';
+const db=new DatabaseSync(process.env.ARC_DATABASE_PATH);
+const row=db.prepare('SELECT payload_gzip FROM source_game_snapshots WHERE snapshot_id=2 AND game_id=?').get('validation-2155684');
+if (!row) throw new Error('Original captured Test B source not found');
+const raw=gunzipSync(row.payload_gzip).toString('utf8');
+const url=`data:application/json,${encodeURIComponent(raw)}`;
+db.prepare('UPDATE source_livestats_games SET json_url=? WHERE game_id=?').run(url,'validation-2155684');
+db.close();
+console.log('Restored exact captured provider body as a local data URL for retry; no provider call required.');

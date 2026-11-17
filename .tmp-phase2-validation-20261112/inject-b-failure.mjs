@@ -1,0 +1,12 @@
+import { DatabaseSync } from 'node:sqlite';
+import { gunzipSync } from 'node:zlib';
+const db=new DatabaseSync(process.env.ARC_DATABASE_PATH);
+const row=db.prepare("SELECT payload_gzip FROM source_game_snapshots WHERE game_id='validation-2155684' ORDER BY snapshot_id DESC LIMIT 1").get();
+const body=gunzipSync(row.payload_gzip).toString('utf8');
+const data=JSON.parse(body);
+if (Number(data.tm?.['1']?.pl?.['1']?.starter)!==1) throw new Error('Expected fixture starter not found');
+data.tm['1'].pl['1'].starter=0;
+const testUrl=`data:application/json,${encodeURIComponent(JSON.stringify(data))}`;
+db.prepare('UPDATE source_livestats_games SET json_url=? WHERE game_id=?').run(testUrl,'validation-2155684');
+db.close();
+console.log('Installed controlled four-starter failure payload in disposable DB; saved source evidence unchanged.');

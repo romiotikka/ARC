@@ -18,5 +18,9 @@ class ProviderError(IdentityError):
     """Base exception for identity-provider failures."""
 
 
+class ProviderCoverageError(ProviderError):
+    """Raised when a provider rejects a request because coverage is unavailable."""
+
+
 class ProviderNotImplementedError(ProviderError, NotImplementedError):
     """Raised by provider stubs before their integration is implemented."""

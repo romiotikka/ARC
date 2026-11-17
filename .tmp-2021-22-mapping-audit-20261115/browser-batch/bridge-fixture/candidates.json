@@ -1,0 +1,15 @@
+{
+  "seasonId": "20212022",
+  "games": [],
+  "verifiedMappings": [],
+  "preservedUnverified": [],
+  "results": [
+    {
+      "providerGameId": "fixture-provider-1",
+      "matchId": "test-id",
+      "sourceUrl": "https://www.estlatbl.com/et/tulemused/fixture-provider-1/live-stats",
+      "status": "CANDIDATE_EXTRACTED_UNVERIFIED",
+      "error": null
+    }
+  ]
+}

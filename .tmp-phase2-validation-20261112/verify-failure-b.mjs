@@ -1,0 +1,12 @@
+import { DatabaseSync } from 'node:sqlite';
+const db=new DatabaseSync(process.env.ARC_DATABASE_PATH,{readOnly:true});
+const game='validation-2155684';
+const first=db.prepare("SELECT candidate_id,import_run_id,snapshot_id,normalization_id,decision_set_id FROM source_import_analytical_candidates WHERE game_id=? AND status='promoted' ORDER BY candidate_id LIMIT 1").get(game);
+const failed=db.prepare("SELECT candidate_id,import_run_id,status,error_message,snapshot_id,normalization_id FROM source_import_analytical_candidates WHERE game_id=? ORDER BY candidate_id DESC LIMIT 1").get(game);
+const activeSource=db.prepare('SELECT snapshot_id,normalization_id FROM active_game_source_snapshots WHERE game_id=?').get(game);
+const activeIdentity=db.prepare('SELECT normalization_id,decision_set_id FROM active_identity_decision_sets WHERE game_id=?').get(game);
+const activeRun=db.prepare('SELECT reconstruction_run_id FROM active_reconstructions WHERE game_id=?').get(game);
+const projection=JSON.parse(db.prepare('SELECT candidate_json FROM source_import_analytical_candidates WHERE candidate_id=?').get(first.candidate_id).candidate_json).projection;
+const activeCounts=Object.fromEntries(['team_games','player_games','events'].map(t=>[t,db.prepare(`SELECT COUNT(*) n FROM ${t} WHERE game_id=?`).get(game).n]));
+const result={failed,baseline:first,activeSource,activeIdentity,activeRun,activeCounts,candidateCounts:{team_games:projection.team_games.length,player_games:projection.player_games.length,events:projection.events.length},lineup_segments:db.prepare('SELECT COUNT(*) n FROM lineup_segments WHERE game_id=?').get(game).n,failed_candidate_not_active:failed.snapshot_id!==activeSource.snapshot_id,source_pointers_match_baseline:activeSource.snapshot_id===first.snapshot_id&&activeSource.normalization_id===first.normalization_id&&activeIdentity.normalization_id===first.normalization_id&&activeIdentity.decision_set_id===first.decision_set_id,run_pointer_matches_baseline:activeRun.reconstruction_run_id===1,foreign_key_violations:db.prepare('PRAGMA foreign_key_check').all().length};
+console.log(JSON.stringify(result,null,2));db.close();

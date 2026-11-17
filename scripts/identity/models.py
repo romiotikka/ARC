@@ -36,6 +36,7 @@ class IdentityContext:
     first_name: str | None = None
     last_name: str | None = None
     position: str | None = None
+    ambiguous_source_name_group: bool = False
 
 
 @dataclass(frozen=True, slots=True)

@@ -1,0 +1,1 @@
+const r=await fetch('https://fibalivestats.dcd.shared.geniussports.com/data/1999499/data.json'); const j=await r.json(); console.log(JSON.stringify({status:r.status,teams:Object.fromEntries(Object.entries(j.tm).map(([k,v])=>[k,{name:v.name,score:v.score,full_score:v.full_score}])),periods:j.periodsMax,attendance:j.attendance}));

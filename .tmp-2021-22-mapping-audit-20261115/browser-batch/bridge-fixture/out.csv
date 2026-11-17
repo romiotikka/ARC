@@ -1,0 +1,3 @@
+provider_game_id,season_id,game_date,home_team,away_team,home_score,away_score,match_id,source_url,notes,verification_status
+"fixture-provider-1","20212022","2022-04-10","VEF Rīga","KK Viimsi/Sportland","95","64","test-id","https://www.estlatbl.com/et/tulemused/fixture-provider-1/live-stats","retain this note","VERIFIED"
+"fixture-already-verified","20212022","2022-04-10","VEF Rīga","KK Viimsi/Sportland","95","64","keep-id","fixture source","do not downgrade","VERIFIED"

@@ -1,0 +1,14 @@
+import { DatabaseSync } from 'node:sqlite';
+import { createHash } from 'node:crypto';
+import { gunzipSync } from 'node:zlib';
+const db=new DatabaseSync(process.env.ARC_DATABASE_PATH,{readOnly:true});
+const game='validation-2155684';
+const active=db.prepare("SELECT c.*,r.status import_status FROM source_import_analytical_candidates c JOIN source_import_runs r USING(import_run_id) WHERE c.game_id=? AND c.status='promoted' ORDER BY candidate_id DESC LIMIT 1").get(game);
+const source=db.prepare('SELECT s.*,n.normalized_sha256,n.normalized_json_gzip,n.status normalization_status FROM source_game_snapshots s JOIN source_snapshot_normalizations n ON n.snapshot_id=s.snapshot_id WHERE s.snapshot_id=? AND n.normalization_id=?').get(active.snapshot_id,active.normalization_id);
+const raw=gunzipSync(source.payload_gzip), normalized=gunzipSync(source.normalized_json_gzip);
+const old=db.prepare("SELECT decision_set_id FROM source_import_analytical_candidates WHERE game_id=? AND status='promoted' ORDER BY candidate_id LIMIT 1").get(game).decision_set_id;
+const sameMapping=db.prepare(`SELECT COUNT(*) n FROM identity_decisions a JOIN identity_decisions b USING(normalization_id,player_occurrence_id) WHERE a.decision_set_id=? AND b.decision_set_id=? AND a.arc_player_id IS NOT b.arc_player_id`).get(old,active.decision_set_id).n;
+const dupPlayers=db.prepare('SELECT COUNT(*) n FROM (SELECT 1 FROM player_games WHERE game_id=? GROUP BY player_name,team_name,shirt_number HAVING COUNT(*)>1)').get(game).n;
+const counts=Object.fromEntries(['team_games','player_games','events'].map(t=>[t,db.prepare(`SELECT COUNT(*) n FROM ${t} WHERE game_id=?`).get(game).n]));
+const result={candidate_status:active.status,import_status:active.import_status,source:{snapshot_id:source.snapshot_id,normalization_id:active.normalization_id,normalization_status:source.normalization_status,raw_hash_ok:createHash('sha256').update(raw).digest('hex')===source.captured_body_sha256,normalized_hash_ok:createHash('sha256').update(normalized).digest('hex')===source.normalized_sha256,source_occurrences:{teams:db.prepare('SELECT COUNT(*) n FROM source_team_occurrences WHERE normalization_id=?').get(active.normalization_id).n,players:db.prepare('SELECT COUNT(*) n FROM source_player_occurrences WHERE normalization_id=?').get(active.normalization_id).n,events:db.prepare('SELECT COUNT(*) n FROM source_event_occurrences WHERE normalization_id=?').get(active.normalization_id).n}},decision_sets:{versions:db.prepare('SELECT COUNT(*) n FROM identity_decision_sets WHERE normalization_id=?').get(active.normalization_id).n,first_decision_set_id:old,active_decision_set_id:active.decision_set_id,unresolved_mapping_differences:sameMapping},counts,duplicate_player_game_keys:dupPlayers,foreign_key_violations:db.prepare('PRAGMA foreign_key_check').all().length};
+console.log(JSON.stringify(result,null,2));db.close();

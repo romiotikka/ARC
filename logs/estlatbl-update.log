@@ -146,3 +146,156 @@
 [2026-09-20T19:04:16.394Z] INFO  Configuration: recent_seasons=true, import_limit=1
 [2026-09-20T19:04:16.396Z] WARN  ⚠ 1 games in Dead Letter Queue (pending retry)
 [2026-09-20T19:04:16.397Z] INFO  ✓ Pipeline succeeded
+[2026-11-10T21:00:29.282Z] INFO  
+[2026-11-10T21:00:29.287Z] INFO  ╔═══════════════════════════════════════════════════════════╗
+[2026-11-10T21:00:29.288Z] INFO  ║    EstLat Automatic Update Pipeline                       ║
+[2026-11-10T21:00:29.289Z] INFO  ╚═══════════════════════════════════════════════════════════╝
+[2026-11-10T21:00:29.290Z] INFO  Started at 2026-11-10T21:00:29.290Z
+[2026-11-10T21:00:29.292Z] INFO  Initializing database...
+[2026-11-10T21:00:29.296Z] INFO  Database initialized successfully
+[2026-11-10T21:00:29.297Z] INFO  Step 1: Collecting game mappings from EstLat...
+[2026-11-10T21:06:14.737Z] INFO  ✓ Collection complete
+[2026-11-10T21:06:14.738Z] INFO  Step 2: Importing game boxscores from FIBA LiveStats...
+[2026-11-10T21:06:34.276Z] INFO  ✓ Import complete
+[2026-11-10T21:06:34.279Z] INFO  
+[2026-11-10T21:06:34.280Z] INFO  === Update Complete ===
+[2026-11-10T21:06:34.281Z] INFO  Duration: 365s
+[2026-11-10T21:06:34.282Z] INFO  Configuration: recent_seasons=true, import_limit=20
+[2026-11-10T21:06:34.283Z] WARN  ⚠ 20 games in Dead Letter Queue (pending retry)
+[2026-11-10T21:06:34.284Z] INFO  ✓ Pipeline succeeded
+[2026-11-10T21:38:22.369Z] INFO  
+[2026-11-10T21:38:22.377Z] INFO  ╔═══════════════════════════════════════════════════════════╗
+[2026-11-10T21:38:22.379Z] INFO  ║    EstLat Automatic Update Pipeline                       ║
+[2026-11-10T21:38:22.381Z] INFO  ╚═══════════════════════════════════════════════════════════╝
+[2026-11-10T21:38:22.382Z] INFO  Started at 2026-11-10T21:38:22.382Z
+[2026-11-10T21:38:22.386Z] INFO  Initializing database...
+[2026-11-10T21:38:22.391Z] INFO  Database initialized successfully
+[2026-11-10T21:38:22.393Z] INFO  Step 1: Collecting game mappings from EstLat...
+[2026-11-10T21:42:54.809Z] INFO  ✓ Collection complete
+[2026-11-10T21:42:54.812Z] INFO  Step 2: Importing game boxscores from FIBA LiveStats...
+[2026-11-10T21:47:19.864Z] INFO  ✓ Import complete
+[2026-11-10T21:47:19.870Z] INFO  
+[2026-11-10T21:47:19.872Z] INFO  === Update Complete ===
+[2026-11-10T21:47:19.874Z] INFO  Duration: 537s
+[2026-11-10T21:47:19.875Z] INFO  Configuration: recent_seasons=true, import_limit=20
+[2026-11-10T21:47:19.876Z] WARN  ⚠ 40 games in Dead Letter Queue (pending retry)
+[2026-11-10T21:47:19.877Z] INFO  ✓ Pipeline succeeded
+[2026-11-10T22:30:08.856Z] INFO  
+[2026-11-10T22:30:08.865Z] INFO  ╔═══════════════════════════════════════════════════════════╗
+[2026-11-10T22:30:08.867Z] INFO  ║    EstLat Automatic Update Pipeline                       ║
+[2026-11-10T22:30:08.868Z] INFO  ╚═══════════════════════════════════════════════════════════╝
+[2026-11-10T22:30:08.870Z] INFO  Started at 2026-11-10T22:30:08.869Z
+[2026-11-10T22:30:08.873Z] INFO  Initializing database...
+[2026-11-10T22:30:08.881Z] INFO  Database initialized successfully
+[2026-11-10T22:30:08.884Z] INFO  Step 1: Collecting game mappings from EstLat...
+[2026-11-10T22:34:12.415Z] INFO  ✓ Collection complete
+[2026-11-10T22:34:12.416Z] INFO  Step 2: Importing game boxscores from FIBA LiveStats...
+[2026-11-10T22:35:10.664Z] INFO  ✓ Import complete
+[2026-11-10T22:35:10.668Z] INFO  
+[2026-11-10T22:35:10.670Z] INFO  === Update Complete ===
+[2026-11-10T22:35:10.671Z] INFO  Duration: 302s
+[2026-11-10T22:35:10.672Z] INFO  Configuration: recent_seasons=true, import_limit=20
+[2026-11-10T22:35:10.673Z] WARN  ⚠ 44 games in Dead Letter Queue (pending retry)
+[2026-11-10T22:35:10.675Z] INFO  ✓ Pipeline succeeded
+[2026-11-11T09:21:35.444Z] INFO  
+[2026-11-11T09:21:35.451Z] INFO  ╔═══════════════════════════════════════════════════════════╗
+[2026-11-11T09:21:35.453Z] INFO  ║    EstLat Automatic Update Pipeline                       ║
+[2026-11-11T09:21:35.455Z] INFO  ╚═══════════════════════════════════════════════════════════╝
+[2026-11-11T09:21:35.457Z] INFO  Started at 2026-11-11T09:21:35.457Z
+[2026-11-11T09:21:35.461Z] INFO  Initializing database...
+[2026-11-11T09:21:35.468Z] INFO  Database initialized successfully
+[2026-11-11T09:21:35.470Z] INFO  Step 1: Collecting game mappings from EstLat...
+[2026-11-11T09:26:14.749Z] INFO  ✓ Collection complete
+[2026-11-11T09:26:14.752Z] INFO  Step 2: Importing game boxscores from FIBA LiveStats...
+[2026-11-11T09:27:02.661Z] INFO  ✓ Import complete
+[2026-11-11T09:27:02.667Z] INFO  
+[2026-11-11T09:27:02.669Z] INFO  === Update Complete ===
+[2026-11-11T09:27:02.671Z] INFO  Duration: 327s
+[2026-11-11T09:27:02.673Z] INFO  Configuration: recent_seasons=true, import_limit=20
+[2026-11-11T09:27:02.676Z] WARN  ⚠ 47 games in Dead Letter Queue (pending retry)
+[2026-11-11T09:27:02.678Z] INFO  ✓ Pipeline succeeded
+[2026-11-11T12:53:26.987Z] INFO  
+[2026-11-11T12:53:26.994Z] INFO  ╔═══════════════════════════════════════════════════════════╗
+[2026-11-11T12:53:26.995Z] INFO  ║    EstLat Automatic Update Pipeline                       ║
+[2026-11-11T12:53:26.996Z] INFO  ╚═══════════════════════════════════════════════════════════╝
+[2026-11-11T12:53:26.999Z] INFO  Started at 2026-11-11T12:53:26.999Z
+[2026-11-11T12:53:27.002Z] INFO  Initializing database...
+[2026-11-11T12:53:27.009Z] INFO  Database initialized successfully
+[2026-11-11T12:53:27.010Z] INFO  Step 1: Collecting game mappings from EstLat...
+[2026-11-11T12:57:35.537Z] INFO  ✓ Collection complete
+[2026-11-11T12:57:35.542Z] INFO  Step 2: Importing game boxscores from FIBA LiveStats...
+[2026-11-11T12:58:41.294Z] INFO  ✓ Import complete
+[2026-11-11T12:58:41.302Z] INFO  
+[2026-11-11T12:58:41.305Z] INFO  === Update Complete ===
+[2026-11-11T12:58:41.308Z] INFO  Duration: 314s
+[2026-11-11T12:58:41.315Z] INFO  Configuration: recent_seasons=true, import_limit=20
+[2026-11-11T12:58:41.320Z] WARN  ⚠ 49 games in Dead Letter Queue (pending retry)
+[2026-11-11T12:58:41.322Z] INFO  ✓ Pipeline succeeded
+[2026-11-11T13:49:00.042Z] INFO  
+[2026-11-11T13:49:00.047Z] INFO  ╔═══════════════════════════════════════════════════════════╗
+[2026-11-11T13:49:00.048Z] INFO  ║    EstLat Automatic Update Pipeline                       ║
+[2026-11-11T13:49:00.049Z] INFO  ╚═══════════════════════════════════════════════════════════╝
+[2026-11-11T13:49:00.051Z] INFO  Started at 2026-11-11T13:49:00.050Z
+[2026-11-11T13:49:00.052Z] INFO  Initializing database...
+[2026-11-11T13:49:00.057Z] INFO  Database initialized successfully
+[2026-11-11T13:49:00.058Z] INFO  Step 1: Collecting game mappings from EstLat...
+[2026-11-11T13:52:58.780Z] INFO  ✓ Collection complete
+[2026-11-11T13:52:58.782Z] INFO  Step 2: Importing game boxscores from FIBA LiveStats...
+[2026-11-11T13:53:40.172Z] INFO  ✓ Import complete
+[2026-11-11T13:53:40.176Z] INFO  
+[2026-11-11T13:53:40.177Z] INFO  === Update Complete ===
+[2026-11-11T13:53:40.179Z] INFO  Duration: 280s
+[2026-11-11T13:53:40.180Z] INFO  Configuration: recent_seasons=true, import_limit=20
+[2026-11-11T13:53:40.181Z] WARN  ⚠ 52 games in Dead Letter Queue (pending retry)
+[2026-11-11T13:53:40.182Z] INFO  ✓ Pipeline succeeded
+[2026-11-11T14:26:40.942Z] INFO  
+[2026-11-11T14:26:40.947Z] INFO  ╔═══════════════════════════════════════════════════════════╗
+[2026-11-11T14:26:40.948Z] INFO  ║    EstLat Automatic Update Pipeline                       ║
+[2026-11-11T14:26:40.949Z] INFO  ╚═══════════════════════════════════════════════════════════╝
+[2026-11-11T14:26:40.950Z] INFO  Started at 2026-11-11T14:26:40.950Z
+[2026-11-11T14:26:40.952Z] INFO  Initializing database...
+[2026-11-11T14:26:40.957Z] INFO  Database initialized successfully
+[2026-11-11T14:26:40.959Z] INFO  Step 1: Collecting game mappings from EstLat...
+[2026-11-11T14:30:35.948Z] INFO  ✓ Collection complete
+[2026-11-11T14:30:35.952Z] INFO  Step 2: Importing game boxscores from FIBA LiveStats...
+[2026-11-11T14:31:18.328Z] INFO  ✓ Import complete
+[2026-11-11T14:31:18.330Z] INFO  
+[2026-11-11T14:31:18.332Z] INFO  === Update Complete ===
+[2026-11-11T14:31:18.333Z] INFO  Duration: 277s
+[2026-11-11T14:31:18.335Z] INFO  Configuration: recent_seasons=true, import_limit=20
+[2026-11-11T14:31:18.336Z] WARN  ⚠ 57 games in Dead Letter Queue (pending retry)
+[2026-11-11T14:31:18.337Z] INFO  ✓ Pipeline succeeded
+[2026-11-11T14:36:32.821Z] INFO  
+[2026-11-11T14:36:32.827Z] INFO  ╔═══════════════════════════════════════════════════════════╗
+[2026-11-11T14:36:32.829Z] INFO  ║    EstLat Automatic Update Pipeline                       ║
+[2026-11-11T14:36:32.830Z] INFO  ╚═══════════════════════════════════════════════════════════╝
+[2026-11-11T14:36:32.831Z] INFO  Started at 2026-11-11T14:36:32.831Z
+[2026-11-11T14:36:32.834Z] INFO  Initializing database...
+[2026-11-11T14:36:32.839Z] INFO  Database initialized successfully
+[2026-11-11T14:36:32.840Z] INFO  Step 1: Collecting game mappings from EstLat...
+[2026-11-11T14:40:29.408Z] INFO  ✓ Collection complete
+[2026-11-11T14:40:29.412Z] INFO  Step 2: Importing game boxscores from FIBA LiveStats...
+[2026-11-11T14:41:15.524Z] INFO  ✓ Import complete
+[2026-11-11T14:41:15.529Z] INFO  
+[2026-11-11T14:41:15.531Z] INFO  === Update Complete ===
+[2026-11-11T14:41:15.532Z] INFO  Duration: 283s
+[2026-11-11T14:41:15.533Z] INFO  Configuration: recent_seasons=true, import_limit=20
+[2026-11-11T14:41:15.534Z] WARN  ⚠ 59 games in Dead Letter Queue (pending retry)
+[2026-11-11T14:41:15.536Z] INFO  ✓ Pipeline succeeded
+[2026-11-11T18:55:32.290Z] INFO  
+[2026-11-11T18:55:32.294Z] INFO  ╔═══════════════════════════════════════════════════════════╗
+[2026-11-11T18:55:32.295Z] INFO  ║    EstLat Automatic Update Pipeline                       ║
+[2026-11-11T18:55:32.297Z] INFO  ╚═══════════════════════════════════════════════════════════╝
+[2026-11-11T18:55:32.299Z] INFO  Started at 2026-11-11T18:55:32.298Z
+[2026-11-11T18:55:32.302Z] INFO  Initializing database...
+[2026-11-11T18:55:32.308Z] INFO  Database initialized successfully
+[2026-11-11T18:55:32.309Z] INFO  Step 1: Collecting game mappings from EstLat...
+[2026-11-11T18:59:36.305Z] INFO  ✓ Collection complete
+[2026-11-11T18:59:36.307Z] INFO  Step 2: Importing game boxscores from FIBA LiveStats...
+[2026-11-11T19:00:28.098Z] INFO  ✓ Import complete
+[2026-11-11T19:00:28.103Z] INFO  
+[2026-11-11T19:00:28.105Z] INFO  === Update Complete ===
+[2026-11-11T19:00:28.106Z] INFO  Duration: 296s
+[2026-11-11T19:00:28.108Z] INFO  Configuration: recent_seasons=true, import_limit=20
+[2026-11-11T19:00:28.110Z] WARN  ⚠ 62 games in Dead Letter Queue (pending retry)
+[2026-11-11T19:00:28.112Z] INFO  ✓ Pipeline succeeded

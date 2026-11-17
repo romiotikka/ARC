@@ -1,0 +1,13 @@
+Imported 2026212024 (2823541): Kalev/Cramo vs TalTech/ALEXELA, player_games=22, events=542, event_types=15
+Lineups for 2026212024: status=promoted, lineups=37, lineup_segments=49
+
+Import complete: succeeded=1, failed=0
+Imported games: 1
+Imported player_games: 22
+Imported events: 542
+Event types handled (max per game): 15
+Lineups created: 37
+Lineup segments created: 49
+
+Dead Letter Queue Status:
+  pending: 1 (max_retries=0)

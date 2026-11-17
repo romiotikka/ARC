@@ -229,9 +229,9 @@ Resolver must never overwrite confirmed data with lower-quality information.
 
 # 7. Provider Chain
 
-Primary provider:
-
-API-Sports
+Provider order is competition-specific. For EstLatBL, Basket.ee is the primary
+roster source and API-Sports is the fallback. Other competitions retain their
+configured provider order; API-Sports may remain primary where appropriate.
 
 Purpose:
 
@@ -240,7 +240,7 @@ Purpose:
 - player metadata
 - external player IDs
 
-Secondary providers:
+League-specific providers:
 
 League-specific providers
 
@@ -254,6 +254,101 @@ Purpose:
 - improve Estonian league coverage
 - provide additional metadata
 - validate local rosters
+
+---
+
+# 7A. API-Sports Runtime Mappings and Coverage
+
+Persistent API-Sports mappings and observed coverage are stored in
+`scripts/identity/providers/api_sports_mappings.json`. The `leagues` section maps
+ARC league IDs to API-Sports league IDs. The `seasons` section maps ARC season
+IDs to API-Sports season codes. The `teams` section is scoped by ARC league ID
+and maps the LiveStats team code to the API-Sports team ID. LiveStats codes are
+used because ARC team IDs are created during game import and are not stable
+configuration keys.
+
+The LiveStats parser includes the game league and season, the created ARC team
+ID, and the source team code in each resolver occurrence. Before resolving
+players, `resolve_livestats_players.py` loads the mapping file and persists the
+matching API-Sports external IDs in the existing league, season, and team
+mapping tables. The resolver requests a roster only when all three mappings are
+available. `ARC_API_SPORTS_MAPPINGS` can override the file for a deployment or
+an isolated test; setting it to an empty string disables the file mapping.
+
+Mappings do not imply data coverage. The separate `coverage` section records
+observed endpoint results and API-reported coverage. As checked on 2026-11-10
+for Latvia-Estonian League 204:
+
+- API season 2022: team lookup returned 16 teams and VEF roster returned 18
+	players, including Roberts Berzins (7177), although API metadata reported
+	player coverage as false.
+- API season 2023: team lookup returned 16 teams and VEF roster returned 17
+	players, including Roberts Berzins (7177).
+- API season 2024: team lookup returned 15 teams and VEF roster returned 17
+	players; Roberts Berzins was not returned.
+- API season 2025: league metadata recognizes the season, but both team and
+	direct VEF roster requests were rejected by the current free plan.
+
+The current cache stores roster outcomes by provider, external league, season,
+and team under the operating-system user cache directory (overridable with
+`ARC_IDENTITY_ROSTER_CACHE_DIR`). Successful rosters expire after seven days,
+empty rosters and unsupported-coverage responses after one day, and other
+provider errors after five minutes. These distinct outcomes are logged and are
+not treated as equivalent to missing mappings. Missing league, season, or team
+mappings are logged before that provider is skipped. Basket.ee remains a
+separate provider; because its team IDs are season-specific, its roster IDs are
+loaded from the season-scoped config described below rather than written to the
+seasonless team mapping table. EuroBasket is not implemented.
+
+To add a season, verify it through the API-Sports league endpoint, then test
+team retrieval and representative team-season roster requests. Add its ARC to
+API season code mapping and record actual coverage separately. To add a team,
+match its LiveStats code and ARC team to the name returned by the mapped league
+team endpoint; do not infer IDs from names alone. Update the scoped `teams`
+mapping only after that crosswalk is verified.
+
+For match 2155133, LiveStats supplies `Roberts Berzins` as the full name for
+`R. Berzins`. The API-Sports VEF Riga 2022 roster returns Roberts Berzins
+(7177). The cache and mapping path expose this candidate to the normal resolver
+scoring and review flow. The provider evidence does not authorize a match based
+only on a surname or initial, and existing conflicting ARC evidence can still
+require review.
+
+# 7B. Basket.ee First for EstLatBL
+
+Basket.ee roster mappings and provider order are stored in
+`scripts/identity/providers/basket_mappings.json`. ARC season IDs map to Basket
+`setSid` values; each season maps LiveStats team codes to the team IDs verified
+on that season's participating-teams page. Some team-season mappings are
+intentionally absent where the team name or identity could not be verified.
+
+For ARC league 1, the resolver checks Basket.ee first. It reads complete names,
+jersey numbers, and positions from roster pages, and complete profile fields
+from player pages. The roster-page jersey and position take precedence over
+missing profile fields. A season/team-scoped roster mapping is passed in memory
+to the resolver because Basket team IDs change by season and the existing ARC
+external-team-ID table has no season key. This does not write mappings or
+identities during configuration loading.
+
+Within the selected team-season roster, full names are compared in either
+display order. Jersey numbers can separate similar initial forms. A full-name
+candidate whose jersey conflicts with another plausible roster member's jersey
+requires REVIEW. Provider-based automatic matching requires a matching jersey
+in the mapped team-season roster when name evidence is based on initials or is
+otherwise non-strong. A unique strong full-name match may resolve without a
+jersey. A conflicting jersey remains REVIEW, and a number alone never
+establishes identity. Weak, malformed local structured-name candidates do not block a
+strong provider match unless they have verified identity status or matching
+team-season-player-game evidence. Multiple strong local or provider candidates
+remain REVIEW. If Basket has no usable roster candidate or mapping, API-Sports
+is tried next. A strong Basket candidate is not replaced by weaker API-Sports
+name evidence. Conflicting provider candidates remain REVIEW.
+
+To add a Basket season, verify its `setSid` and team IDs from that season's
+participating-teams page, then add only confirmed LiveStats-code/team-ID pairs
+to `basket_mappings.json`. The adapter caches the roster by provider, league,
+season, and team. Unmapped teams are logged and can fall through to API-Sports;
+Basket.ee remains separate from API-Sports.
 
 ---
 
